@@ -1,6 +1,6 @@
 ---
 title: 1.1.- XML Creació i Validació
-parent: home
+parent: Llenguatges de Marques
 layout: default
 nav_order: 10
 has_children:true

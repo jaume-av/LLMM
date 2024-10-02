@@ -1,10 +1,10 @@
-title: Llenguatges de Marques
-description: Curs 2024-2025 IES Benigasló
+title: Llenguatges de Marques - IES Benigasló
+description: Llenguatges de Marques i Sistemes de Gestió de la Informació.
 theme: just-the-docs
 
-url: https://jaume-av.github.io/LLMM
+url: https://jaume-av.github.io/LLMM/
 aux_links:
   "Accés a Aules":
-    - https://aules.edu.gva.es/fp/
+    - https://aules.edu.gva.es/fp/course/view.php?id=138357
 
 search_enabled: true

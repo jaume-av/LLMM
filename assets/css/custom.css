@@ -1,0 +1,110 @@
+/* Estils generals per al cos del document */
+body {
+  font-family: 'Calibri', sans-serif !important; /* Calibri com a font principal */
+  font-size: 14px !important; /* Tamany de lletra per al text principal */
+  color: #000000 !important; /* Color negre per al text */
+  line-height: 1.8 !important; /* Alçada de línia per millor llegibilitat */
+  margin: 0 !important; /* Elimina marges extra */
+}
+
+/* Estils per al títol nivell 1 amb fons verd i centrat */
+h1 {
+  font-family: 'Calibri', sans-serif !important;
+  color: #12450b !important; /* Verd oliva fosc per al títol */
+  background-color: #e6f5e6 !important; /* Verd molt clar per al fons */
+  padding: 10px !important;
+  margin-bottom: 20px !important;
+  font-weight: bold !important;
+  border-radius: 5px !important; /* Cants arrodonits */
+  box-shadow: none !important; /* Elimina les ombres */
+  text-align: center !important; /* Centra el text */
+}
+
+/* Estils per al títol nivell 2 amb fons verd */
+h2 {
+  font-family: 'Calibri', sans-serif !important;
+  color: #12450b !important; /* Verd oliva fosc per als títols */
+  background-color: #e6f5e6 !important; /* Verd molt clar per al fons dels títols */
+  padding: 10px !important;
+  margin-bottom: 20px !important;
+  font-weight: bold !important;
+  border-radius: 5px !important; /* Cants arrodonits als títols */
+  box-shadow: none !important; /* Elimina les ombres */
+}
+
+/* Estils per als títols nivells 3 a 6 sense fons ni ombra */
+h3, h4, h5, h6 {
+  font-family: 'Calibri', sans-serif !important;
+  color: #12450b !important; /* Verd oliva fosc per als títols */
+  padding: 10px !important;
+  margin-bottom: 20px !important;
+  font-weight: bold !important;
+  border-radius: 0px !important; /* Sense cants arrodonits */
+  background-color: transparent !important; /* Elimina el fons verd */
+  box-shadow: none !important; /* Elimina les ombres */
+}
+
+/* Elimina tot el marge esquerre del contingut i ajusta l'amplada */
+.main-content {
+  margin-left: 0 !important; /* Elimina marge esquerre */
+  padding: 20px !important; /* Afegir una mica de padding per a l'espaiat */
+  max-width: 100% !important; /* Assegura que el contingut ocupi tot l'espai disponible */
+}
+
+/* Estil per a la barra lateral (TOC) */
+.sidebar {
+  background-color: #e6f5e6 !important; /* Fons verd molt clar per al menú lateral */
+  padding: 10px !important;
+  width: 170px !important; /* Amplada de la barra lateral */
+}
+
+/* Estil per als enllaços de la barra lateral */
+.nav-list a {
+  font-family: 'Calibri', sans-serif !important;
+  color: #12450b !important; /* Verd oliva fosc per als enllaços de la barra lateral */
+}
+
+.nav-list a:hover {
+  color: #2da41e !important; /* Verd clar en hover */
+}
+
+/* Estil per als títols de la barra lateral */
+.navbar-brand {
+  font-size: 16px !important; /* Ajusta la mida del text del títol "Just the Docs Template" */
+  color: #12450b !important; /* Verd fosc per al text */
+}
+
+/* Estil per a blocs de codi o text preformat */
+pre, code {
+  font-family: 'Consolas', monospace !important; /* Consolas per al codi */
+  font-size: 12px !important; /* Tamany 12px per al codi */
+  font-weight: bold !important; /* Negreta per al codi */
+  background-color: #f5f5f5 !important; /* Fons gris clar */
+  color: #000000 !important; /* Color negre per al text */
+  padding: 15px !important; /* Espai dins dels blocs de codi */
+  line-height: 1.6 !important; /* Alçada de línia per evitar solapaments */
+  border: none !important; /* Elimina les vores */
+  border-radius: 0px !important; /* Elimina els cants arrodonits */
+  margin: 10px 0 !important; /* Afegir espai abans i després del codi */
+  white-space: pre-wrap !important; /* Evitar que el text es talli */
+  overflow-x: auto !important; /* Afegir desplaçament horitzontal si cal */
+  box-shadow: none !important; /* Elimina qualsevol ombra */
+}
+
+/* Ajustos visuals per a les etiquetes de codi dins de blocs de text */
+code {
+  background-color: #f5f5f5 !important; /* Fons gris clar */
+  padding: 3px 5px !important; /* Espai dins de les etiquetes de codi */
+  border-radius: 3px !important; /* Cants arrodonits */
+  font-size: 13px !important; /* Mida lleugerament més gran per a millor llegibilitat */
+}
+
+/* Ajustar l'amplada total del contingut perquè sigui més ample */
+@media (min-width: 768px) {
+  .main-content {
+    max-width: 100% !important; /* Ocupa tot l'espai disponible a pantalles grans */
+  }
+  .sidebar {
+    width: 170px !important; /* Amplada mínima de la barra lateral */
+  }
+}

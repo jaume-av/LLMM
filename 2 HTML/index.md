@@ -1,5 +1,5 @@
 ---
-title: 1.- XML i DTD
+title: 2.- HTML
 layout: default
 parent: Llenguatges de Marques
 nav_order: 2
@@ -8,9 +8,9 @@ has_toc: true
 ---
 
 
-# Streams
+# HTML
 {: .text-center }
-![alt text](../assets/imatges/XMLDTD.png)
+![alt text](../assets/imatges/HTML.png)
 
-### Apunts disponibles a Aules
+
 {:toc}

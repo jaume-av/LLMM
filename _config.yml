@@ -3,9 +3,11 @@ description: Llenguatges de Marques i Sistemes de Gestió de la Informació.
 theme: just-the-docs
 
 url: https://jaume-av.github.io/LLMM/
+baseurl: "/LLMM" 
+
 aux_links:
   "Accés a Aules":
-    - https://aules.edu.gva.es/fp/course/view.php?id=138357
+    - https://aules.edu.gva.es/fp/
 
 search_enabled: true
 

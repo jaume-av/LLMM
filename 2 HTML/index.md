@@ -52,7 +52,7 @@ No obstant això, el desenvolupament web estava evolucionant ràpidament, i la n
 ![alt text](../assets/imatges/2html5.png)
 
 ---
-Per tant quan parlem d’HTML5 en realitat ens referim a la combinació d’**HTML** + **CSS** + **JavaScript** + **APIs**. 
+### Per tant quan parlem d’HTML5 en realitat ens referim a la combinació d’**HTML** + **CSS** + **JavaScript** + **APIs**. 
 
 ---
 

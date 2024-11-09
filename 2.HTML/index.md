@@ -9,7 +9,7 @@ has_toc: true
 
 
 {: .text-center }
-![alt text](../assets/imatges/HTML.png)
+![alt text](imatges/HTML.png)
 
 
 
@@ -42,15 +42,14 @@ A mesura que la web va créixer en popularitat i complexitat, es van fer diverse
 Amb l'evolució constant d'Internet, HTML va continuar millorant. HTML 3.2 es va estandarditzar el 1997 i va afegir suport per scripts i applets Java. La versió següent, HTML 4.01, va sortir el 1999 i va ser una revisió important amb més funcionalitats i millora de la semàntica.
 
 {: .text-center }
-![alt text](../assets/imatges/1html5.png)
+![alt text](imatges/1html5.png)
 
 No obstant això, el desenvolupament web estava evolucionant ràpidament, i la necessitat de suport per a continguts multimèdia i altres tecnologies va fer evident que calia una nova versió. Així va sorgir HTML5, una revisió important del llenguatge que va ser finalitzada com a recomanació del W3C (World Wide Web Consortium) l'any 2014. HTML5 introdueix etiquetes semàntiques, suport multimèdia natiu, API de JavaScript millorades i altres característiques per fer la web més potent i interactiva.
 
 **Des de llavors, HTML5 ha estat àmpliament adoptat i és la versió més utilitzada del llenguatge fins avui.**
 
 {: .text-center }
-![alt text](../assets/imatges/2html5.png)
-
+![alt text](imatges/2html5.png)
 ---
 ### Per tant quan parlem d’HTML5 en realitat ens referim a la combinació d’**HTML** + **CSS** + **JavaScript** + **APIs**. 
 

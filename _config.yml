@@ -8,3 +8,10 @@ aux_links:
     - https://aules.edu.gva.es/fp/course/view.php?id=138357
 
 search_enabled: true
+
+
+# Navegació directa sense desplegables
+collections:
+  docs:
+    output: true
+    permalink: /:path/

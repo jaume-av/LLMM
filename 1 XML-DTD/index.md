@@ -1,5 +1,5 @@
 ---
-title: 1.- XML i DTD
+title: XML i DTD
 layout: default
 parent: Llenguatges de Marques
 nav_order: 2

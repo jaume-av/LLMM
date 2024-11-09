@@ -11,6 +11,11 @@ aux_links:
 
 search_enabled: true
 
+footer:
+  copyright: "© 2024 El Meu Projecte"
+  links:
+    - title: "Llicència CC BY-SA 4.0"
+      url: "https://creativecommons.org/licenses/by-sa/4.0/"
 
 # Navegació directa sense desplegables
 collections:

@@ -8,7 +8,7 @@ has_toc: true
 ---
 
 
-# Streams
+# XML i DTD
 {: .text-center }
 ![alt text](../assets/imatges/XMLDTD.png)
 

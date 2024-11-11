@@ -25,17 +25,14 @@ has_toc: true
 
 Html (HyperText Markup Language) és un llenguatge de marques que s'utilitza per a crear pàgines web. És un llenguatge format per **etiquetes** que permeten definir **l'estructura de la pàgina web**, així com el seu contingut. Aquestes etiquetes són interpretades pels navegadors web, que s'encarreguen de mostrar la pàgina de forma visual.    
 
-És com l'esquelet' de la web, ja que defineix l'estructura bàsica de la pàgina, com ara els títols, els paràgrafs, les imatges, els enllaços, etc. A més, també permet incloure altres elements com ara scripts, estils, formularis, etc, A més, també permet incloure altres elements com ara scripts, estils, formularis, etc.
+És com l'esquelet' de la web, ja que defineix l'estructura bàsica de la pàgina, com ara els títols, els paràgrafs, les imatges, els enllaços, etc. A més, també permet incloure altres elements com ara scripts, estils, formularis, etc.
 
-En resum, amb HTML ens assegurem que tot estiga en el lloc correcte i que els navegadors puguen interpretar-ho per mostrar el contingut de manera coherent i atractiva.
+En resum, amb HTML **ens assegurem que tot estiga en el lloc correcte** i que els navegadors puguen interpretar-ho per mostrar el contingut de manera coherent i atractiva.
      
          
 ## Un poc d’Història
 
-HTML va ser creat per Tim Berners-Lee el 1991. La primera versió de HTML va ser publicada el 1993. Des de llavors, s'han anat publicant diverses versions de HTML, cadascuna amb noves característiques i millores. La versió més recent és HTML5, que va ser publicada el 2014. HTML5 inclou noves etiquetes i funcionalitats que permeten crear pàgines web més interactives i atractives.
-
-
-HTML va ser creat per Tim Berners-Lee, un físic britànic, mentre treballava al CERN (Organització Europea per a la Investigació Nuclear). Berners-Lee va concebre la idea de la web l'any 1989 i va desenvolupar el primer navegador i servidor web l'any 1990. L'objectiu era crear un sistema per permetre als científics compartir i accedir a la informació de manera eficient.
+HTML va ser creat per Tim Berners-Lee el 1991. La primera versió de HTML va ser publicada el 1993. Des de llavors, s'han anat publicant diverses versions de HTML, cadascuna amb noves característiques i millores. La versió més recent és **HTML5**, que va ser publicada el 2014. HTML5 inclou noves etiquetes i funcionalitats que permeten crear pàgines web més interactives i atractives.
 
 La primera versió de HTML, anomenada HTML 1.0, va ser llançada el 1991 com a part del paquet WorldWideWeb (més tard anomenat Nexus), el primer navegador web creat per Berners-Lee. Aquesta primera versió de HTML tenia un conjunt molt bàsic d'etiquetes i funcionalitats.
 

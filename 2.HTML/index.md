@@ -19,8 +19,6 @@ has_toc: true
     
 
 
-
-
 # Introducció
 
 Html (HyperText Markup Language) és un llenguatge de marques que s'utilitza per a crear pàgines web. És un llenguatge format per **etiquetes** que permeten definir **l'estructura de la pàgina web**, així com el seu contingut. Aquestes etiquetes són interpretades pels navegadors web, que s'encarreguen de mostrar la pàgina de forma visual.    

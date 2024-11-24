@@ -10,7 +10,6 @@ has_toc: true
 ---
 
 
-# CSS
 
 {: .text-center }
 ![alt text](imatges/CSS.png)

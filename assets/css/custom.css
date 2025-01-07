@@ -44,6 +44,27 @@ h3, h4, h5, h6 {
   box-shadow: none !important; /* Elimina les ombres */
 }
 
+
+h3 {
+  border-bottom: 1px solid #12450b !important; /* Vora fina (2px) per als h3 */
+}
+
+h1 code, h2 code {
+  background-color: #d0e6f7 !important; /* Color de fons blau suau */
+  color: inherit !important; /* Manté el color de la capçalera */
+  font-family: inherit !important; /* Utilitza la mateixa font que la capçalera, no monoespaiada */
+  font-size: inherit !important; /* Fa que la mida de la font sigui igual que la de la capçalera */
+  font-weight: inherit !important; /* Manté el pes de la lletra igual que la de la capçalera */
+  letter-spacing: inherit !important; /* Manté l'espai entre les lletres igual que la capçalera */
+  padding: 0.1em 0.2em !important; /* Petit espaiat al voltant del text per a llegibilitat */
+  border-radius: 0.2em !important; /* Arrodonim lleugerament els cants */
+  border: none !important; /* Eliminem qualsevol vora */
+  white-space: normal !important; /* Permet trencar línies si és necessari */
+}
+
+
+
+
 /* Elimina tot el marge esquerre del contingut i ajusta l'amplada */
 .main-content {
   margin-left: 0 !important; /* Elimina marge esquerre */

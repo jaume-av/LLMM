@@ -1,12 +1,12 @@
-# **Llenguatges de Marques - CSS**
 
-## **Animacions amb CSS**
+
+# **Animacions amb CSS**
 
 Les animacions en CSS es defineixen amb la propietat **`animation`** i la regla **`@keyframes`**, que ens permet especificar els estats clau d'una animació per controlar els canvis visuals de manera precisa.
 
-### **1. Exemples pràctics**
 
-#### **1.1. Animació de desplaçament**
+
+### **1.- Animació de desplaçament**
 Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ```css
@@ -24,7 +24,6 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 ```
 
-**Explicació:**
 - **`from`**: L'estat inicial sense desplaçament.
 - **`to`**: L'estat final desplaçat 100px cap a la dreta.
 - La classe `.element` aplica l'animació amb les propietats següents:
@@ -35,7 +34,9 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-#### **1.2. Animació de canvi de color**
+### **2. Animació de canvi de color**
+
+
 
 ```css
 @keyframes changeColor {
@@ -52,7 +53,6 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 ```
 
-**Explicació:**
 - Canvia el color del text de roig a blau:
   - **`from`**: Color inicial roig.
   - **`to`**: Color final blau.
@@ -60,7 +60,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-#### **1.3. Animació de canvi de color de fons**
+### **3. Animació de canvi de color de fons**
 
 ```css
 @keyframes changeBackground {
@@ -80,7 +80,6 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 ```
 
-**Explicació:**
 - Aquesta animació canvia el color de fons seguint estos passos:
   - **0%**: Color inicial roig.
   - **50%**: Color intermedi groc.
@@ -89,7 +88,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-#### **1.4. Animació de rotació**
+### **4. Animació de rotació**
 
 ```css
 @keyframes rotate {
@@ -106,7 +105,6 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 ```
 
-**Explicació:**
 - L'element rota 360 graus:
   - **`from`**: Rotació inicial de 0 graus.
   - **`to`**: Rotació final de 360 graus.
@@ -114,7 +112,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-#### **1.5. Animació de desplaçament amb estats intermedis**
+### **5. Animació de desplaçament amb estats intermedis**
 
 ```css
 @keyframes move {
@@ -134,7 +132,6 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 ```
 
-**Explicació:**
 - El desplaçament segueix una trajectòria d'anada i tornada:
   - **0%**: Estat inicial.
   - **50%**: Desplaçat 100px cap a la dreta.
@@ -143,7 +140,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-#### **1.6. Animació d'opacitat**
+### **6. Animació d'opacitat**
 
 ```css
 @keyframes fade {
@@ -160,7 +157,6 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 ```
 
-**Explicació:**
 - Modifica l'opacitat de l'element:
   - **`from`**: Totalment opac (1).
   - **`to`**: Semiopac (0.5).
@@ -168,7 +164,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-#### **1.7. Animació de mida**
+### **7. Animació de mida**
 
 ```css
 @keyframes resize {
@@ -185,7 +181,6 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 ```
 
-**Explicació:**
 - L'element augmenta i disminueix de mida:
   - **`from`**: Mida inicial.
   - **`to`**: Augmenta un 50% de mida.
@@ -193,7 +188,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-### **2. Propietats clau d'animació**
+### **2. Propietats  d'animació**
 
 | **Propietat**                | **Descripció**                                                                 |
 |------------------------------|-------------------------------------------------------------------------------|
@@ -210,73 +205,6 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 ### **3. Exercici Pràctic**
 
 Crea les animacions següents utilitzant el codi HTML proporcionat i combina-ho amb **CSS Grid** per organitzar els elements.
-
-#### **HTML inicial**
-```html
-<!DOCTYPE html>
-<html lang="ca">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animacions CSS amb CSS Grid</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="grid-container">
-    <div class="animated-element" id="color-animation">Color</div>
-    <div class="animated-element" id="background-animation">Fons</div>
-    <div class="animated-element" id="rotate-animation">Rotació</div>
-    <div class="animated-element" id="move-animation">Desplaçament</div>
-    <div class="animated-element" id="fade-animation">Opacitat</div>
-    <div class="animated-element" id="resize-animation">Mida</div>
-  </div>
-</body>
-</html>
-```
-
-#### **CSS suggerit**
-```css
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.animated-element {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  border: 1px solid black;
-}
-
-/* Aplica les animacions als elements */
-#color-animation {
-  animation: changeColor 2s infinite alternate;
-}
-
-#background-animation {
-  animation: changeBackground 3s infinite;
-}
-
-#rotate-animation {
-  animation: rotate 2s linear infinite;
-}
-
-#move-animation {
-  animation: move 3s ease-in-out infinite;
-}
-
-#fade-animation {
-  animation: fade 2s infinite alternate;
-}
-
-#resize-animation {
-  animation: resize 2s ease-in-out infinite alternate;
-}
-```
-
----
 
 
 

@@ -278,5 +278,454 @@ Crea les animacions següents utilitzant el codi HTML proporcionat i combina-ho 
 
 ---
 
+
+
+
+
+
+
+
+### **4. Regles `@media` i `@supports`**
+
+#### **4.1. `@media`: Estils adaptatius segons condicions del dispositiu**
+
+La regla **`@media`** ens permet aplicar estils que només es faran efectius si es compleixen certes condicions del dispositiu, com la mida de la pantalla, l'orientació o la resolució. És essencial per a dissenys responsius.
+
+---
+
+##### **Exemple bàsic: Mida de pantalla**
+```css
+body {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+}
+```
+
+**Explicació:**
+- Per pantalles més grans de 768px, el text tindrà una mida de 16px.
+- Quan la pantalla és de 768px o menys, la mida del text es redueix a 14px.
+- Per pantalles molt xicotetes (480px o menys), el text es fa encara més menut (12px).
+
+---
+
+##### **Altres condicions útils de `@media`**
+
+1. **Orientació del dispositiu**:
+   ```css
+   @media (orientation: landscape) {
+     body {
+       background-color: lightblue;
+     }
+   }
+
+   @media (orientation: portrait) {
+     body {
+       background-color: lightgreen;
+     }
+   }
+   ```
+   - **`landscape`**: Mode horitzontal.
+   - **`portrait`**: Mode vertical.
+
+2. **Resolució del dispositiu**:
+   ```css
+   @media (min-resolution: 300dpi) {
+     img {
+       border: 5px solid red;
+     }
+   }
+   ```
+   - Aplica estils només en dispositius d'alta resolució.
+
+---
+
+##### **Exemple complet amb disseny responsiu**
+Disseny d'una pàgina amb una estructura diferent segons la mida de pantalla.
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+```
+
+**Explicació:**
+- Per pantalles grans: 4 columnes.
+- Per pantalles mitjanes (1024px o menys): 2 columnes.
+- Per pantalles menudes (600px o menys): 1 columna.
+
+---
+
+#### **4.2. `@supports`: Detectar compatibilitat de funcionalitats CSS**
+
+Amb **`@supports`**, podem aplicar estils només si el navegador suporta certes propietats CSS. Això és especialment útil quan s'utilitzen característiques modernes.
+
+---
+
+##### **Exemple bàsic**
+```css
+@supports (display: grid) {
+  .contenidor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@supports not (display: grid) {
+  .contenidor {
+    display: flex;
+    flex-direction: column;
+  }
+}
+```
+
+**Explicació:**
+- Si el navegador suporta **CSS Grid**, el contenidor s'organitza en dues columnes.
+- Si no és compatible, es fa servir **Flexbox** com a alternativa.
+
+---
+
+##### **Combinació de condicions amb `@supports`**
+1. **Múltiples condicions amb `and` i `or`**:
+   ```css
+   @supports (display: grid) and (display: flex) {
+     .contenidor {
+       display: grid;
+     }
+   }
+   ```
+
+2. **Condicions negades amb `not`**:
+   ```css
+   @supports not (position: sticky) {
+     header {
+       position: fixed;
+     }
+   }
+   ```
+
+---
+
+##### **Exemple complet amb compatibilitat**
+Dissenyem un botó amb efectes visuals només si el navegador suporta **gradients CSS**.
+
+```css
+button {
+  background-color: #0078d7;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+}
+
+@supports (background: linear-gradient(to right, #0078d7, #00a1ff)) {
+  button {
+    background: linear-gradient(to right, #0078d7, #00a1ff);
+  }
+}
+```
+
+**Explicació:**
+- Si el navegador suporta **`linear-gradient`**, el botó tindrà un fons degradat.
+- Si no, es mantindrà el color blau predeterminat.
+
+---
+
+### **5. Exercici final amb combinació**
+
+Combina **`@media`**, **`@supports`** i **`@keyframes`** per crear un disseny dinàmic:
+1. Defineix estils responsius amb `@media` per adaptar els elements segons la mida de pantalla.
+2. Utilitza `@supports` per assegurar que es mostren efectes avançats només si el navegador els suporta.
+3. Afegix animacions amb `@keyframes` per millorar l'experiència visual.
+
+```css
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.animated-element {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  animation: fade 2s infinite alternate;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .animated-element {
+    animation: resize 2s infinite alternate;
+  }
+}
+
+@supports (display: grid) and (background: linear-gradient(to right, red, blue)) {
+  .grid-container {
+    background: linear-gradient(to right, red, blue);
+  }
+}
+```
+
+Amb aquestes eines pots aconseguir dissenys adaptatius, dinàmics i compatibles amb diferents navegadors. Si necessites més exemples o ajustos, només digues-ho! 😊
+
+
+
+
+
+
+
+A part de **`:hover`**, hi ha moltes propietats i pseudoelements en **CSS** que pots utilitzar per activar i controlar animacions. Algunes d'aquestes són molt útils per a crear interaccions dinàmiques i transicions fluides.
+
+---
+
+## **Pseudoelements i pseudoclasses per activar animacions**
+
+### **1. :focus**
+- Activa animacions quan un element rep el focus (exemple: camps de formularis o botons seleccionats).
+```css
+input:focus {
+  outline: none;
+  animation: focusEffect 0.5s ease-in-out;
+}
+
+@keyframes focusEffect {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: blue;
+  }
+}
+```
+
+---
+
+### **2. :active**
+- Activa animacions quan un element està sent clicat.
+```css
+button:active {
+  animation: clickEffect 0.3s ease-in-out;
+}
+
+@keyframes clickEffect {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.95);
+  }
+}
+```
+
+---
+
+### **3. :checked**
+- Ideal per a inputs com **checkboxes** o **radios**, permet activar animacions quan estan seleccionats.
+```css
+input[type="checkbox"]:checked + label {
+  animation: checkEffect 0.5s ease-in-out;
+}
+
+@keyframes checkEffect {
+  from {
+    color: black;
+  }
+  to {
+    color: green;
+  }
+}
+```
+
+---
+
+### **4. :disabled**
+- Aplica animacions a elements deshabilitats, com botons o inputs.
+```css
+button:disabled {
+  animation: fadeOut 1s ease-in-out;
+  cursor: not-allowed;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+```
+
+---
+
+### **5. :nth-child()**
+- Permet animar elements segons la seva posició dins d'un contenidor.
+```css
+div:nth-child(odd) {
+  animation: oddEffect 2s infinite;
+}
+
+@keyframes oddEffect {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+```
+
+---
+
+### **6. :before i :after**
+- Amb aquests pseudoelements, pots afegir animacions a continguts generats.
+```css
+button::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: red;
+  animation: lineMove 1s infinite;
+}
+
+@keyframes lineMove {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+```
+
+---
+
+## **Propietats CSS que poden activar animacions**
+
+### **1. `animation`**
+L'animació s'inicia automàticament quan la pàgina es carrega.
+
+```css
+.element {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+```
+
+---
+
+### **2. `transition`**
+Permet una animació suau quan una propietat canvia.
+
+```css
+.button {
+  background-color: blue;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: green;
+}
+```
+
+---
+
+## **Eventualitats per a animacions basades en CSS**
+
+### **1. Animacions en carregar la pàgina (`:root`)**
+Activa una animació global per a tota la pàgina quan es carrega.
+
+```css
+:root {
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+```
+
+---
+
+### **2. Animacions en scroll**
+No es controla directament amb pseudoclases, però combinant **`position: sticky`** o **`scroll-behavior`** amb JavaScript pots animar elements en fer scroll.
+
+---
+
+### **3. Interaccions amb JavaScript**
+Si necessites més control, pots utilitzar **classes CSS** activades per **event listeners** en JavaScript:
+```javascript
+document.querySelector(".button").addEventListener("click", function () {
+  this.classList.add("clicked");
+});
+```
+
+```css
+.button.clicked {
+  animation: buttonClick 0.3s ease;
+}
+
+@keyframes buttonClick {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.9);
+  }
+}
+```
+
+---
+
+Amb aquestes propietats i pseudoelements, pots aconseguir animacions molt diverses i dinàmiques sense necessitat de dependre completament de JavaScript. 😊
+
+
+
+
+
+
+
+
 **Nota:** Si tens qualsevol dubte o necessites més explicacions, no dubtes a preguntar!
 

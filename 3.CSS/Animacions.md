@@ -2,11 +2,108 @@
 
 # **Animacions amb CSS**
 
-Les animacions en CSS es defineixen amb la propietat **`animation`** i la regla **`@keyframes`**, que ens permet especificar els estats clau d'una animació per controlar els canvis visuals de manera precisa.
+
+Les animacions en CSS permeten crear canvis visuals dinàmics i atractius sense la necessitat de JavaScript. Mitjançant la propietat **`animation`** i la regla **`@keyframes`**, podem definir i aplicar comportaments animats que canvien les propietats d'un element al llarg del temps.
+
+---
+
+## **Regla `@keyframes`**
+
+La regla **`@keyframes`** defineix els **estats clau** d'una animació, especificant com canvien les propietats CSS d'un element en moments determinats. Cada estat clau és una instantània en el temps, que descriu un conjunt de propietats i els seus valors.
+
+**Funcionament**
+- **Definició del nom**: Cada animació definida amb `@keyframes` necessita un nom únic.
+- **Estats clau (`from`, `to` o percentatges)**:
+  - **`from`**: Representa l'estat inicial (equivalent al **0%**).
+  - **`to`**: Representa l'estat final (equivalent al **100%**).
+  - Percentatges (ex. **`0%`**, **`50%`**, **`100%`**) permeten afegir passos intermedis.
+
+**Exemple:**
+```css
+@keyframes exemple {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+```
+- Al `@keyframes` aunterior, un element passa d'una opacitat de **0** (invisible) a **1** (totalment visible).
+
+---
+
+### **Propietat `animation`?
+
+La propietat **`animation`** aplica les animacions definides amb `@keyframes` als elements seleccionats. 
+És una propietat **abreujada** que encapsula múltiples paràmetres per controlar com es comporta l'animació.
+
+**Sintaxi general:**
+```css
+animation: nom-animacio duracio funcio-temporitzacio retard iteracions direccio mode-final estat-joc;
+```
+
+#### **Exemple bàsic:**
+```css
+.element {
+  animation: fadeIn 2s ease-in-out 1s infinite alternate;
+}
+```
+
+- **`fadeIn`**: Nom de l'animació definida amb `@keyframes`.
+- **`2s`**: Durada de l'animació.
+- **`ease-in-out`**: La velocitat és suau al principi i al final.
+- **`1s`**: Retard abans que comenci l'animació.
+- **`infinite`**: L'animació es repeteix indefinidament.
+- **`alternate`**: L'animació alterna entre els estats inicial i final.
+
+---
+
+### **Propietats de `animation`**
+
+| **Propietat**                | **Descripció**                                                                 |
+|------------------------------|-------------------------------------------------------------------------------|
+| **`animation-name`**         | Nom de l'animació definida amb `@keyframes`.                                  |
+| **`animation-@keyframesduration`**     | Temps que dura l'animació (en segons o mil·lisegons).                         |
+| **`animation-timing-function`** | Defineix la velocitat de l'animació (`ease`, `linear`, `ease-in`, etc.).        |
+| **`animation-delay`**        | Temps d'espera abans de començar l'animació.                                  |
+| **`animation-iteration-count`** | Nombre de vegades que es repeteix l'animació (`1`, `infinite`, etc.).           |
+| **`animation-direction`**    | Direcció de l'animació (`normal`, `reverse`, `alternate`, etc.).               |
+| **`animation-fill-mode`**    | Defineix com es comporta l'element abans o després de l'animació (`forwards`, `backwards`, etc.). |
+| **`animation-play-state`**   | Pausa o reprèn l'animació (`running`, `paused`).                              |
+
+---
+
+- **Com funcionen `@keyframes` i `animation` junts?**
+
+1. **Definim l'animació amb `@keyframes`:**
+   ```css
+   @keyframes move {
+     from {
+       transform: translateX(0);
+     }
+     to {
+       transform: translateX(100px);
+     }
+   }
+   ```
+
+2. **Apliquem l'animació a un element amb `animation`:**
+   ```css
+   .element {
+     animation: move 3s ease-in-out infinite alternate;
+   }
+   ```
+
+- L'element es mou 100px cap a la dreta en **3 segons**, amb una transició suau, alternant entre els estats inicial i final, i es repeteix infinitament.
+
+---
 
 
 
-### **1.- Animació de desplaçament**
+## Exemples d'animació
+
+### **1.- Animació de desplaçament**: `move`
 Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ```css
@@ -34,7 +131,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-### **2. Animació de canvi de color**
+### **2. Animació de canvi de color**: `changeColor`
 
 
 
@@ -60,7 +157,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-### **3. Animació de canvi de color de fons**
+### **3. Animació de canvi de color de fons**: `changeBackground`
 
 ```css
 @keyframes changeBackground {
@@ -88,7 +185,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-### **4. Animació de rotació**
+### **4. Animació de rotació**: `rotate`
 
 ```css
 @keyframes rotate {
@@ -112,7 +209,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-### **5. Animació de desplaçament amb estats intermedis**
+### **5. Animació de desplaçament amb estats intermedis**: `move`
 
 ```css
 @keyframes move {
@@ -140,7 +237,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-### **6. Animació d'opacitat**
+### **6. Animació d'opacitat** `fade`
 
 ```css
 @keyframes fade {
@@ -164,7 +261,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-### **7. Animació de mida**
+### **7. Animació de mida**: `resize`
 
 ```css
 @keyframes resize {
@@ -188,23 +285,6 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-### **2. Propietats  d'animació**
-
-| **Propietat**                | **Descripció**                                                                 |
-|------------------------------|-------------------------------------------------------------------------------|
-| **`animation-name`**         | Nom de l'animació definida amb `@keyframes`.                                  |
-| **`animation-duration`**     | Durada de l'animació en segons o milisegons.                                   |
-| **`animation-timing-function`** | Controla la velocitat de l'animació (ex. `ease`, `linear`, `ease-in-out`).        |
-| **`animation-delay`**        | Retard abans que comence l'animació.                                           |
-| **`animation-iteration-count`** | Nombre de vegades que es repeteix l'animació (ex. `infinite`, `1`, `3`).         |
-| **`animation-direction`**    | Direcció de l'animació (ex. `normal`, `reverse`, `alternate`).                 |
-| **`animation-fill-mode`**    | Controla com es comporta l'element abans/després de l'animació (`forwards`, `backwards`). |
-
----
-
-### **3. Exercici Pràctic**
-
-Crea les animacions següents utilitzant el codi HTML proporcionat i combina-ho amb **CSS Grid** per organitzar els elements.
 
 
 
@@ -213,15 +293,19 @@ Crea les animacions següents utilitzant el codi HTML proporcionat i combina-ho 
 
 
 
-### **4. Regles `@media` i `@supports`**
 
-#### **4.1. `@media`: Estils adaptatius segons condicions del dispositiu**
+
+
+
+## **4. Regles `@media` i `@supports`**
+
+### **`@media`: Estils adaptatius segons condicions del dispositiu**
 
 La regla **`@media`** ens permet aplicar estils que només es faran efectius si es compleixen certes condicions del dispositiu, com la mida de la pantalla, l'orientació o la resolució. És essencial per a dissenys responsius.
 
 ---
 
-##### **Exemple bàsic: Mida de pantalla**
+**Exemple bàsic: Mida de pantalla**
 ```css
 body {
   font-size: 16px;
@@ -240,14 +324,14 @@ body {
 }
 ```
 
-**Explicació:**
+
 - Per pantalles més grans de 768px, el text tindrà una mida de 16px.
 - Quan la pantalla és de 768px o menys, la mida del text es redueix a 14px.
 - Per pantalles molt xicotetes (480px o menys), el text es fa encara més menut (12px).
 
 ---
 
-##### **Altres condicions útils de `@media`**
+**Altres condicions útils de `@media`**
 
 1. **Orientació del dispositiu**:
    ```css
@@ -278,7 +362,7 @@ body {
 
 ---
 
-##### **Exemple complet amb disseny responsiu**
+**Exemple complet amb disseny responsiu**
 Disseny d'una pàgina amb una estructura diferent segons la mida de pantalla.
 
 ```css
@@ -301,127 +385,18 @@ Disseny d'una pàgina amb una estructura diferent segons la mida de pantalla.
 }
 ```
 
-**Explicació:**
+
 - Per pantalles grans: 4 columnes.
 - Per pantalles mitjanes (1024px o menys): 2 columnes.
 - Per pantalles menudes (600px o menys): 1 columna.
 
 ---
 
-#### **4.2. `@supports`: Detectar compatibilitat de funcionalitats CSS**
 
-Amb **`@supports`**, podem aplicar estils només si el navegador suporta certes propietats CSS. Això és especialment útil quan s'utilitzen característiques modernes.
 
----
 
-##### **Exemple bàsic**
-```css
-@supports (display: grid) {
-  .contenidor {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
-@supports not (display: grid) {
-  .contenidor {
-    display: flex;
-    flex-direction: column;
-  }
-}
-```
 
-**Explicació:**
-- Si el navegador suporta **CSS Grid**, el contenidor s'organitza en dues columnes.
-- Si no és compatible, es fa servir **Flexbox** com a alternativa.
-
----
-
-##### **Combinació de condicions amb `@supports`**
-1. **Múltiples condicions amb `and` i `or`**:
-   ```css
-   @supports (display: grid) and (display: flex) {
-     .contenidor {
-       display: grid;
-     }
-   }
-   ```
-
-2. **Condicions negades amb `not`**:
-   ```css
-   @supports not (position: sticky) {
-     header {
-       position: fixed;
-     }
-   }
-   ```
-
----
-
-##### **Exemple complet amb compatibilitat**
-Dissenyem un botó amb efectes visuals només si el navegador suporta **gradients CSS**.
-
-```css
-button {
-  background-color: #0078d7;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-}
-
-@supports (background: linear-gradient(to right, #0078d7, #00a1ff)) {
-  button {
-    background: linear-gradient(to right, #0078d7, #00a1ff);
-  }
-}
-```
-
-**Explicació:**
-- Si el navegador suporta **`linear-gradient`**, el botó tindrà un fons degradat.
-- Si no, es mantindrà el color blau predeterminat.
-
----
-
-### **5. Exercici final amb combinació**
-
-Combina **`@media`**, **`@supports`** i **`@keyframes`** per crear un disseny dinàmic:
-1. Defineix estils responsius amb `@media` per adaptar els elements segons la mida de pantalla.
-2. Utilitza `@supports` per assegurar que es mostren efectes avançats només si el navegador els suporta.
-3. Afegix animacions amb `@keyframes` per millorar l'experiència visual.
-
-```css
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.animated-element {
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-  animation: fade 2s infinite alternate;
-}
-
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .animated-element {
-    animation: resize 2s infinite alternate;
-  }
-}
-
-@supports (display: grid) and (background: linear-gradient(to right, red, blue)) {
-  .grid-container {
-    background: linear-gradient(to right, red, blue);
-  }
-}
-```
-
-Amb aquestes eines pots aconseguir dissenys adaptatius, dinàmics i compatibles amb diferents navegadors. Si necessites més exemples o ajustos, només digues-ho! 😊
 
 
 

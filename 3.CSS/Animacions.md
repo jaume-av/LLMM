@@ -74,7 +74,7 @@ animation: nom-animacio duracio funcio-temporitzacio retard iteracions direccio 
 
 ---
 
-- **Com funcionen `@keyframes` i `animation` junts?**
+- **Us conjunt de`@keyframes` i `animation`**
 
 1. **Definim l'animació amb `@keyframes`:**
    ```css
@@ -100,14 +100,15 @@ animation: nom-animacio duracio funcio-temporitzacio retard iteracions direccio 
 ---
 
 
-
 ## Exemples d'animació
 
-### **1.- Animació de desplaçament**: `move`
-Definim una animació anomenada **`move`** que mou un element horitzontalment.
+### **1.- Animació de desplaçament**: `moure` (move)
+
+- Nom: `moure`.  
+- Desplaça un element horitzontalment entre dos punts fixats.
 
 ```css
-@keyframes move {
+@keyframes moure {
   from {
     transform: translateX(0);
   }
@@ -117,7 +118,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 
 .element {
-  animation: move 2s ease-in-out infinite alternate;
+  animation: moure 2s ease-in-out infinite alternate;
 }
 ```
 
@@ -131,12 +132,13 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 ---
 
-### **2. Animació de canvi de color**: `changeColor`
+### **2. Animació de canvi de color**: `canviColor` (changeColor)
 
-
+- Nom: `canviColor`.  
+- Alterna el color del text entre roig i blau.
 
 ```css
-@keyframes changeColor {
+@keyframes canviColor {
   from {
     color: red;
   }
@@ -146,21 +148,23 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 
 .element {
-  animation: changeColor 2s infinite alternate;
+  animation: canviColor 2s infinite alternate;
 }
 ```
 
-- Canvia el color del text de roig a blau:
-  - **`from`**: Color inicial roig.
-  - **`to`**: Color final blau.
+- **`from`**: Color inicial roig.
+- **`to`**: Color final blau.
 - L'animació es repeteix infinitament i alterna entre els dos colors.
 
 ---
 
-### **3. Animació de canvi de color de fons**: `changeBackground`
+### **3. Animació de canvi de color de fons**: `canviFons` (changeBackground)
+
+- Nom: `canviFons`.  
+- Modifica el color de fons en tres fases: roig, groc i blau.
 
 ```css
-@keyframes changeBackground {
+@keyframes canviFons {
   0% {
     background-color: red;
   }
@@ -173,22 +177,24 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 
 .element {
-  animation: changeBackground 3s infinite;
+  animation: canviFons 3s infinite;
 }
 ```
 
-- Aquesta animació canvia el color de fons seguint estos passos:
-  - **0%**: Color inicial roig.
-  - **50%**: Color intermedi groc.
-  - **100%**: Color final blau.
+- **0%**: Color inicial roig.
+- **50%**: Color intermedi groc.
+- **100%**: Color final blau.
 - Es repeteix cada 3 segons de forma infinita.
 
 ---
 
-### **4. Animació de rotació**: `rotate`
+### **4. Animació de rotació**: `rotar` (rotate)
+
+- Nom: `rotar`.  
+- Fa girar un element completant una volta de 360 graus.
 
 ```css
-@keyframes rotate {
+@keyframes rotar {
   from {
     transform: rotate(0);
   }
@@ -198,21 +204,23 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 
 .element {
-  animation: rotate 2s linear infinite;
+  animation: rotar 2s linear infinite;
 }
 ```
 
-- L'element rota 360 graus:
-  - **`from`**: Rotació inicial de 0 graus.
-  - **`to`**: Rotació final de 360 graus.
+- **`from`**: Rotació inicial de 0 graus.
+- **`to`**: Rotació final de 360 graus.
 - La velocitat és constant gràcies a la funció de temporització **`linear`**.
 
 ---
 
-### **5. Animació de desplaçament amb estats intermedis**: `move`
+### **5. Animació de desplaçament amb estats intermedis**: `moure` (move)
+
+- Nom: `moure`.  
+- Desplaça un element 100px cap a la dreta amb un estat intermedi de tornada.
 
 ```css
-@keyframes move {
+@keyframes moure {
   0% {
     transform: translateX(0);
   }
@@ -225,22 +233,24 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 
 .element {
-  animation: move 3s ease-in-out infinite;
+  animation: moure 3s ease-in-out infinite;
 }
 ```
 
-- El desplaçament segueix una trajectòria d'anada i tornada:
-  - **0%**: Estat inicial.
-  - **50%**: Desplaçat 100px cap a la dreta.
-  - **100%**: Torna al punt inicial.
+- **0%**: Estat inicial.
+- **50%**: Desplaçat 100px cap a la dreta.
+- **100%**: Torna al punt inicial.
 - Es repeteix infinitament amb una transició suau.
 
 ---
 
-### **6. Animació d'opacitat** `fade`
+### **6. Animació d'opacitat**: `fondre` (fade)
+
+- Nom: `fondre`.  
+- Altera l'opacitat d'un element entre totalment visible i semiopac.
 
 ```css
-@keyframes fade {
+@keyframes fondre {
   from {
     opacity: 1;
   }
@@ -250,21 +260,23 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 
 .element {
-  animation: fade 2s infinite alternate;
+  animation: fondre 2s infinite alternate;
 }
 ```
 
-- Modifica l'opacitat de l'element:
-  - **`from`**: Totalment opac (1).
-  - **`to`**: Semiopac (0.5).
+- **`from`**: Totalment opac (1).
+- **`to`**: Semiopac (0.5).
 - Es repeteix infinitament alternant entre els estats inicial i final.
 
 ---
 
-### **7. Animació de mida**: `resize`
+### **7. Animació de mida**: `redimensionar` (resize)
+
+- Nom: `redimensionar`.  
+- Augmenta la mida d'un element fins a un 50% més gran i torna al seu estat inicial.
 
 ```css
-@keyframes resize {
+@keyframes redimensionar {
   from {
     transform: scale(1);
   }
@@ -274,13 +286,12 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 }
 
 .element {
-  animation: resize 2s ease-in-out infinite alternate;
+  animation: redimensionar 2s ease-in-out infinite alternate;
 }
 ```
 
-- L'element augmenta i disminueix de mida:
-  - **`from`**: Mida inicial.
-  - **`to`**: Augmenta un 50% de mida.
+- **`from`**: Mida inicial.
+- **`to`**: Augmenta un 50% de mida.
 - Es repeteix infinitament amb una transició suau.
 
 ---
@@ -290,14 +301,7 @@ Definim una animació anomenada **`move`** que mou un element horitzontalment.
 
 
 
-
-
-
-
-
-
-
-## **4. Regles `@media` i `@supports`**
+## **. Regles `@media` i `@supports`**
 
 ### **`@media`: Estils adaptatius segons condicions del dispositiu**
 
@@ -396,47 +400,120 @@ Disseny d'una pàgina amb una estructura diferent segons la mida de pantalla.
 
 
 
+## Animacions amb pseudoclases, pseudoelements i propietats CSS
 
-
-
-
-
-
-
-
-A part de **`:hover`**, hi ha moltes propietats i pseudoelements en **CSS** que pots utilitzar per activar i controlar animacions. Algunes d'aquestes són molt útils per a crear interaccions dinàmiques i transicions fluides.
+Les **pseudoclases** i **pseudoelements** en **CSS** són molt útils per activar animacions i millorar la interactivitat dels elements de la pàgina. Algunes, com **`:hover`**, són bàsiques per a interaccions dinàmiques, mentre que altres, com **`:nth-child()`**, permeten efectes més avançats.
 
 ---
 
-## **Pseudoelements i pseudoclasses per activar animacions**
+### **Exemple genèric d'ús**
 
-### **1. :focus**
-- Activa animacions quan un element rep el focus (exemple: camps de formularis o botons seleccionats).
+Les pseudoclases es combinen amb les **propietats CSS** per definir animacions senzilles i fluides:
+
 ```css
-input:focus {
-  outline: none;
-  animation: focusEffect 0.5s ease-in-out;
+.element:hover {
+  animation: exampleEffect 0.5s ease-in-out;
 }
 
-@keyframes focusEffect {
+@keyframes exampleEffect {
   from {
-    border-color: transparent;
+    transform: scale(1);
   }
   to {
-    border-color: blue;
+    transform: scale(1.1);
   }
 }
 ```
 
+En aquest exemple:
+- **`:hover`** activa l'animació quan el ratolí passa per damunt de l'element.
+- L'animació augmenta lleugerament la mida de l'element.
+
 ---
 
-### **2. :active**
-- Activa animacions quan un element està sent clicat.
+### **Taula resum de propietats i pseudoclases**
+
+| **Propietat/Pseudoclasse** | **Descripció**                                                                 | **Exemple d'ús**                                           |
+|----------------------------|-------------------------------------------------------------------------------|-----------------------------------------------------------|
+| `:hover`                   | Activa animacions quan el ratolí passa per damunt de l'element.               | Canviar el color o escalar un element.                   |
+| `:focus`                   | Activa animacions quan un element rep el focus (inputs o botons).             | Ressaltar el contorn d’un input seleccionat.             |
+| `:active`                  | Activa animacions quan un element està sent clicat.                          | Reduir la mida d’un botó temporalment.                   |
+| `:checked`                 | Activa animacions per a checkboxes o radios seleccionats.                    | Canviar el color d’un text associat a un checkbox marcat.|
+| `:disabled`                | Aplica animacions a elements deshabilitats.                                  | Reduir l’opacitat d’un botó deshabilitat.                |
+| `:nth-child()`             | Aplica animacions segons la posició de l’element dins del contenidor.         | Moure elements imparells lleugerament.                   |
+| `:before` / `:after`       | Genera continguts animats abans o després d’un element.                      | Afegir una línia animada o decoració a botons.           |
+| `animation`                | Defineix animacions completes que s’inicien automàticament.                  | Crear un efecte de rebot o desplaçament automàtic.       |
+| `transition`               | Defineix transicions suaus entre canvis d’estil.                             | Canviar el color d’un botó en passar el ratolí.          |
+
+---
+
+
+### Exemple  d'ús d'animacions amb pseudoclases, pseudoelements i propietats CSS
+
+Aquest exemple combina diverses **pseudoclases**, **pseudoelements** i **propietats CSS** per crear un botó interactiu amb animacions suaus.
+
+#### **HTML**
+```html
+<button class="interactive-button">Clica'm</button>
+```
+
+#### **CSS**
 ```css
-button:active {
+/* Estils inicials del botó */
+.interactive-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: blue;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Canvi de color en passar el ratolí */
+.interactive-button:hover {
+  background-color: darkblue;
+  transform: scale(1.05);
+}
+
+/* Animació quan es clica */
+.interactive-button:active {
+  transform: scale(0.95);
   animation: clickEffect 0.3s ease-in-out;
 }
 
+/* Decoració animada abans del contingut */
+.interactive-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Activar la decoració en passar el ratolí */
+.interactive-button:hover::before {
+  transform: scaleX(1);
+}
+
+/* Animació per canviar el color quan el botó està deshabilitat */
+.interactive-button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  animation: fadeOut 0.5s ease-in-out;
+}
+
+/* Efecte clic */
 @keyframes clickEffect {
   from {
     transform: scale(1);
@@ -445,37 +522,8 @@ button:active {
     transform: scale(0.95);
   }
 }
-```
 
----
-
-### **3. :checked**
-- Ideal per a inputs com **checkboxes** o **radios**, permet activar animacions quan estan seleccionats.
-```css
-input[type="checkbox"]:checked + label {
-  animation: checkEffect 0.5s ease-in-out;
-}
-
-@keyframes checkEffect {
-  from {
-    color: black;
-  }
-  to {
-    color: green;
-  }
-}
-```
-
----
-
-### **4. :disabled**
-- Aplica animacions a elements deshabilitats, com botons o inputs.
-```css
-button:disabled {
-  animation: fadeOut 1s ease-in-out;
-  cursor: not-allowed;
-}
-
+/* Efecte fade-out per a botons deshabilitats */
 @keyframes fadeOut {
   from {
     opacity: 1;
@@ -488,147 +536,19 @@ button:disabled {
 
 ---
 
-### **5. :nth-child()**
-- Permet animar elements segons la seva posició dins d'un contenidor.
-```css
-div:nth-child(odd) {
-  animation: oddEffect 2s infinite;
-}
+### **Explicació de les funcionalitats**
 
-@keyframes oddEffect {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(10px);
-  }
-}
-```
+1. **Pseudoclases utilitzades**:
+   - **`:hover`**: Canvia el color de fons i augmenta la mida lleugerament quan el ratolí passa pel botó.
+   - **`:active`**: Redueix la mida del botó quan es clica.
+   - **`:disabled`**: Canvia el color de fons i redueix l’opacitat quan el botó està deshabilitat.
+
+2. **Pseudoelements**:
+   - **`::before`**: Afegeix una decoració animada (un efecte de brillantor) al botó en passar el ratolí.
+
+3. **Propietats CSS**:
+   - **`transition`**: Suavitza els canvis d’estil (color de fons i mida).
+   - **`animation`**: Aplica efectes definits a través de `@keyframes`, com el clic i la desactivació.
 
 ---
-
-### **6. :before i :after**
-- Amb aquests pseudoelements, pots afegir animacions a continguts generats.
-```css
-button::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: red;
-  animation: lineMove 1s infinite;
-}
-
-@keyframes lineMove {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
-```
-
----
-
-## **Propietats CSS que poden activar animacions**
-
-### **1. `animation`**
-L'animació s'inicia automàticament quan la pàgina es carrega.
-
-```css
-.element {
-  animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-20px);
-  }
-}
-```
-
----
-
-### **2. `transition`**
-Permet una animació suau quan una propietat canvia.
-
-```css
-.button {
-  background-color: blue;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: green;
-}
-```
-
----
-
-## **Eventualitats per a animacions basades en CSS**
-
-### **1. Animacions en carregar la pàgina (`:root`)**
-Activa una animació global per a tota la pàgina quan es carrega.
-
-```css
-:root {
-  animation: fadeIn 2s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-```
-
----
-
-### **2. Animacions en scroll**
-No es controla directament amb pseudoclases, però combinant **`position: sticky`** o **`scroll-behavior`** amb JavaScript pots animar elements en fer scroll.
-
----
-
-### **3. Interaccions amb JavaScript**
-Si necessites més control, pots utilitzar **classes CSS** activades per **event listeners** en JavaScript:
-```javascript
-document.querySelector(".button").addEventListener("click", function () {
-  this.classList.add("clicked");
-});
-```
-
-```css
-.button.clicked {
-  animation: buttonClick 0.3s ease;
-}
-
-@keyframes buttonClick {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(0.9);
-  }
-}
-```
-
----
-
-Amb aquestes propietats i pseudoelements, pots aconseguir animacions molt diverses i dinàmiques sense necessitat de dependre completament de JavaScript. 😊
-
-
-
-
-
-
-
-
-**Nota:** Si tens qualsevol dubte o necessites més explicacions, no dubtes a preguntar!
 

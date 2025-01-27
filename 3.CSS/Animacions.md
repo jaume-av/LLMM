@@ -1,13 +1,3 @@
----
-
-title: 3.6.- Animacions amb CSS
-layout: default
-parent: 3.- CSS
-nav_order: 60
-has_children: true
-
----
-
 # **Animacions amb CSS**
 
 Les animacions en CSS ens permeten crear efectes visuals dinàmics i atractius sense necessitat de JavaScript. Amb la propietat **`animation`** i la regla **`@keyframes`**, podem definir i aplicar comportaments animats que alteren les propietats d'un element al llarg del temps.

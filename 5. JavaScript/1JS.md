@@ -12,4 +12,4 @@ has_children: true
 
 ### Apunts i Exercicis JSON (Pdf)
 
-<iframe src="json.pdf" width="100%" height="600px" style="border: none;"></iframe>
+<iframe src="JavaScript.pdf" width="100%" height="600px" style="border: none;"></iframe>

@@ -2,17 +2,19 @@
 
 title: 2.- Document Object Model (DOM)
 parent: 5.- JavaScript
+layout: default
 nav_order: 20
 has_children: true
 
 ---
 
-
 # Document Object Model
 
 Les sigles **DOM** signifiquen *Document Object Model*, o el que és el mateix, l'estructura del document HTML.
 
-El DOM és una **API de W3C** que permet que els programes i els scripts d’una pàgina web actualitzen i accedisquen tant als continguts, els estils i l’estructura d’un document **HTML** o **XML**. Per tant, el DOM ens permetrà accedir dinàmicament a les pàgines web, interactuar i respondre a les accions dels usuaris (com prémer un botó, moure el ratolí, fer clic en una part del document, escriure un text, etc.), sense haver de recarregar la pàgina.
+- El DOM és una **API de W3C** que permet que els programes i els scripts d’una pàgina web actualitzen i accedisquen tant als continguts, els estils i l’estructura d’un document **HTML** o **XML**. 
+
+- Per tant, **el DOM ens permet accedir dinàmicament a les pàgines web**, interactuar i respondre a les accions dels usuaris (com prémer un botó, moure el ratolí, fer clic en una part del document, escriure un text, etc.), sense haver de **recarregar** la pàgina.
 
 Una pàgina **HTML** està formada per múltiples etiquetes **HTML**, anidades una dins de l'altra, formant un arbre d'etiquetes relacionades entre si, que es denomina **arbre DOM** (o simplement **DOM**).
 

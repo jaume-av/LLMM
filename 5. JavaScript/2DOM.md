@@ -21,7 +21,7 @@ Una pàgina **HTML** està formada per múltiples etiquetes **HTML**, anidades u
 ![alt text](imatges/esquemaDom.webp)
 
 
-Quan ens referim al **DOM**, ens referim a aquesta estructura d'arbre, que ens permet accedir i modificar els elements de l'**HTML** des de **JavaScript**, afegint noves etiquetes, modificant o eliminant altres, canviant els seus atributs **HTML**, afegint classes, canviant el contingut de text, etc.
+Quan ens referim al **DOM**, ens referim a **aquesta estructura d'arbre**, que ens permet accedir i modificar els elements de l'**HTML** des de **JavaScript**, afegint noves etiquetes, modificant o eliminant altres, canviant els seus atributs **HTML**, afegint classes, canviant el contingut de text, etc.
 
 En **JavaScript**, la forma d'accedir al **DOM** és a través d'un objecte anomenat `document`, que representa l'arbre **DOM** de la pàgina. En el seu interior poden existir diversos tipus d'elements, però principalment seran **ELEMENT** o **NODE**.
 
@@ -66,6 +66,9 @@ divElement.textContent = 'Aquest és un nou div';
 document.body.appendChild(divElement);
 ```
 
+A l'exemple anterior, creem un nou`div` utilitzant el mètode **createElement**. Després, afegim l'atribut `id`al nou `div` amb `setAtrribute`. Assignem contingut de text a l'element utilitzant la propietat `textContent` i finalment, afegim el text al cos del document amb `appendChild`
+
+
 ### Atribut
 Un **atribut** és una característica específica d'un element **HTML**, com l'atribut `id` o `class`. Els atributs proporcionen informació addicional sobre l'element i poden ser utilitzats per identificar o estilitzar l'element.
 
@@ -75,6 +78,8 @@ const element = document.getElementById('meuElement');
 // Canviem un atribut de l'element
 element.setAttribute('alt', 'Nova descripció');
 ```
+A  l'exemple anterior, accedim a un element utilitzant el seu `id` amb **getElementById**. A continuació, utilitzem **setAttribute** per canviar
+l'atribut `alt` de l'element a "Nova descripció"
 
 ### Nivell d'Element
 El **nivell d'element** fa referència a la relació jeràrquica entre els elements del document, que es representa com un arbre en el **DOM**. Cada element té un **pare** (excepte el `document`), i pot tindre **fills** i **germans**.
@@ -86,8 +91,14 @@ const pare = fill.parentNode;
 console.log('El pare de l\'element fill és:', pare.tagName);
 ```
 
+En este cas, accedim a l'element **fill** amb l'id "fill". A continuació, utilitzem la propietat **parentNode** per obtenir una
+referència al pare de l'element. Finalment, mostrem el **tag name** del pare amb tagName.
+
+
 ### Selecció d'Elements
 La **selecció d'elements** és la capacitat de trobar i accedir als elements del **DOM** utilitzant mètodes com `getElementById`, `getElementsByClassName`, `getElementsByTagName`, `querySelector` i `querySelectorAll`.
+Estos mètodes permeten
+seleccionar elements específics segons els seus identificadors, classes, noms d'etiqueta, etc.
 
 ```javascript
 // Seleccionem un element per id
@@ -100,9 +111,15 @@ const elementsEtiqueta = document.getElementsByTagName('p');
 const elementSelector = document.querySelector('.selectorClasse');
 const elementsSelector = document.querySelectorAll('p');
 ```
+A l'anterior exemple, es mostren diferents mètodes per seleccionar elements.
+- **getElementById** selecciona un únic element per l'ID especificat.
+- **getElementsByClassName** selecciona tots els elements amb la classe especificada.
+- **getElementsByTagName** selecciona tots els elements amb l'etiqueta especificada.
+- **querySelector** selecciona el primer element que coincideix amb el selector CSS especificat.
+- **querySelectorAll** selecciona tots els elements que coincideixen amb el selector CSS especificat
 
 ### Manipulació del DOM
-La **manipulació del DOM** és la capacitat de modificar l'estructura, l'estil i el contingut del document, afegint o eliminant elements, canviant atributs i text, modificant estils **CSS**, etc.
+La **manipulació del DOM** és la capacitat de modificar l'estructura, l'estil i el contingut del document, afegint o eliminant elements, canviant atributs i text, modificant estils **CSS**, i altres canvis que poden afectar la representació visual o la funcionalitat de la pàgina web.
 
 ```javascript
 // Creem un nou element
@@ -113,6 +130,8 @@ pare.appendChild(nouElement);
 pare.removeChild(fill);
 ```
 
+En este cas, estem creant un nou element  utilitzant `createElement` i l'afegim com a fill d'un altre element utilitzant `appendChild`. Després, eliminem un element del seu pare utilitzant removeChild.
+
 ### Esdeveniments del DOM
 Els **esdeveniments** són accions que es produeixen en el navegador, com clics de ratolí, premses de tecles o càrregues de pàgines.
 
@@ -122,6 +141,10 @@ const meuElement = document.getElementById('meuElement');
 meuElement.addEventListener('click', function() {
     alert('S\'ha clicat l\'element!');
 });
+
+```
+
+En este exemple, afegim un gestor d'esdeveniments de clic a l'element amb l'id **"meuElement"**. Quan aquest element siga clicat, es mostrarà un missatge d'alerta que indica que s'ha clicat l'element.
 
 ---
 

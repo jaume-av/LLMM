@@ -1,6 +1,7 @@
 ---
 
 title: 1.- JavaScript
+layout: default
 parent: 5.- JavaScript
 nav_order: 10
 has_children: true

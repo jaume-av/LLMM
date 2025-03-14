@@ -7,7 +7,6 @@ has_children: true
 
 ---
 
-
 # Document Object Model
 
 Les sigles **DOM** signifiquen *Document Object Model*, o el que és el mateix, l'estructura del document HTML.
@@ -120,7 +119,150 @@ const meuElement = document.getElementById('meuElement');
 meuElement.addEventListener('click', function() {
     alert('S\'ha clicat l\'element!');
 });
-
+```
 ---
 
 
+## Exemple Complet:
+
+Ací tens l'exemple separat en **tres fitxers**:  
+
+- `index.html` → Conté l'estructura HTML de la pàgina.  
+- `styles.css` → Conté els estils CSS per a donar format a la llista de tasques.  
+- `script.js` → Conté el codi JavaScript per a gestionar les tasques i manipular el DOM.  
+
+---
+
+### HTML
+```html
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llista de Tasques</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h2>Llista de Tasques</h2>
+    <input type="text" id="novaTasca" placeholder="Escriu una tasca">
+    <button id="afegir">Afegir Tasca</button>
+    <ul id="llistaTasques"></ul>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
+
+---
+
+### CSS
+```css
+body {
+    font-family: Arial, sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    background: #f4f4f4;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+button {
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+```
+
+---
+
+### JavaScript
+```js
+// Seleccionem els elements principals
+const inputTasca = document.getElementById('novaTasca');
+const botoAfegir = document.getElementById('afegir');
+const llistaTasques = document.getElementById('llistaTasques');
+
+// Funció per afegir una nova tasca
+function afegirTasca() {
+    const text = inputTasca.value.trim(); // Eliminem espais en blanc
+
+    if (text === "") return; // Evitem afegir tasques buides
+
+    // Creem un nou element <li>
+    const novaTasca = document.createElement('li');
+    novaTasca.textContent = text;
+
+    // Creem botó de completar
+    const botoCompletar = document.createElement('button');
+    botoCompletar.textContent = '✔';
+    botoCompletar.onclick = function() {
+        novaTasca.classList.toggle('completed'); // Marca/desmarca com a completada
+    };
+
+    // Creem botó d'eliminar
+    const botoEliminar = document.createElement('button');
+    botoEliminar.textContent = '🗑';
+    botoEliminar.onclick = function() {
+        llistaTasques.removeChild(novaTasca); // Eliminem la tasca
+    };
+
+    // Afegim els botons al <li>
+    novaTasca.appendChild(botoCompletar);
+    novaTasca.appendChild(botoEliminar);
+
+    // Afegim la tasca a la llista
+    llistaTasques.appendChild(novaTasca);
+
+    // Buidem l'input
+    inputTasca.value = "";
+}
+
+// Afegim esdeveniment al botó "Afegir"
+botoAfegir.addEventListener('click', afegirTasca);
+
+// També afegim la tasca si premem "Enter"
+inputTasca.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        afegirTasca();
+    }
+});
+```
+
+---
+
+**A l'exemple anterior:**
+
+
+- **`index.html`** conté l'estructura de la pàgina, amb un camp `<input>` per a introduir tasques, un `<button>` per afegir-les i una llista `<ul>` on es mostraran.
+- **`styles.css`** defineix els estils, incloent un aspecte diferenciat per a les tasques completades (`.completed`).
+- **`script.js`** conté la lògica per a afegir, marcar i eliminar tasques:
+  - Selecciona elements del DOM (`getElementById`).
+  - Afig elements nous (`createElement`, `appendChild`).
+  - Modifica atributs (`classList.toggle`).
+  - Gestió d’esdeveniments (`addEventListener` per a clics i tecla `Enter`).
+
+Este exemple mostra **tots els conceptes del DOM** de manera pràctica. 
+Amb **jQuery**, la implementació seria més curta. 

@@ -357,10 +357,19 @@ $(elementPare).on("esdeveniment", "elementFill", funció);
 |--------------------|------------------|----------------|
 | **Esdeveniments de ratolí** | `.click()` | Detecta quan es fa clic en un element. |
 |  | `.dblclick()` | Detecta quan es fa doble clic en un element. |
-| **Esdeveniments de teclat** | `.keypress()` | Detecta quan l'usuari prem una tecla dins d’un element com un `<input>`. |
-| **Esdeveniments de formulari** | `.submit()` | Detecta quan s’envia un formulari. Es pot utilitzar `event.preventDefault()` per evitar que es recarregue la pàgina. |
+|  | `.mouseenter()` | Detecta quan el ratolí entra dins d’un element. |
+|  | `.mouseleave()` | Detecta quan el ratolí ix d’un element. |
+| **Esdeveniments de teclat** | `.keypress()` | Detecta quan es prem una tecla dins d’un `<input>`. |
+|  | `.keydown()` | Detecta quan es prem qualsevol tecla (inclou Ctrl, Alt, etc.). |
+|  | `.keyup()` | Detecta quan es deixa de polsar una tecla. |
+| **Esdeveniments de formulari** | `.submit()` | Detecta quan s’envia un formulari. |
+|  | `.focus()` | Detecta quan un `<input>` rep el focus. |
+|  | `.blur()` | Detecta quan un `<input>` perd el focus. |
+|  | `.change()` | Detecta quan el valor d’un `<input>`, `<select>` o `<textarea>` canvia. |
 | **Esdeveniments de document i finestra** | `.ready()` | S'executa quan el document HTML ha carregat completament. |
 |  | `.resize()` | Detecta quan la finestra del navegador canvia de mida. |
+|  | `.scroll()` | Detecta quan l’usuari fa scroll dins d’un element o en la pàgina. |
+
 
 Tots estos esdeveniments es poden gestionar directament amb el seu mètode (`.click()`, `.submit()`, etc.) o amb `.on()`.
 
@@ -368,24 +377,78 @@ Tots estos esdeveniments es poden gestionar directament amb el seu mètode (`.cl
 
 ---
 
-## **7. Efectes i Animacions**  
+## **5. Efectes i Animacions en jQuery**  
 
-### **Mostrar i Ocultar**  
-```js
-$("#miElement").hide();  // Oculta l'element
-$("#miElement").show();  // Mostra l'element
-$("#miElement").toggle(); // Alterna entre visible i ocult
-```
-
-### **Efectes avançats**  
-```js
-$("#miElement").fadeOut(1000);  // Desapareix lentament (1 segon)
-$("#miElement").slideDown(500); // Baixa amb animació (0.5 segons)
-```
+Els **efectes i animacions** ens permeten **mostrar, ocultar i modificar elements de manera dinàmica**, millorant la interacció amb la pàgina web. Amb jQuery, podem afegir transicions suaus sense necessitat de codi CSS avançat o JavaScript complex.  
 
 ---
 
-## **8. AJAX amb jQuery**  
+### Estructura 
+
+Els efectes en jQuery segueixen una estructura comuna:  
+
+```js
+$(selector).mètodeEfecte(durada, callback);
+```
+
+🔹 **`selector`** → L'element sobre el qual aplicarem l'efecte.  
+🔹 **`mètodeEfecte`** → El tipus d’efecte (`show()`, `fadeIn()`, `slideUp()`, etc.).  
+🔹 **`durada`** *(opcional)* → Temps en mil·lisegons (`1000` per a 1 segon) o valors com `"fast"` o `"slow"`.  
+🔹 **`callback`** *(opcional)* → Una funció que s’executa quan acaba l'animació.  
+
+---
+
+**Per Exemple:**  
+ 
+
+- **Mostrar un element:**  
+  ```js
+  $("#miElement").show(500);
+  ```
+  *L'element es farà visible en mig segon.*  
+
+- **Ocultar un element:**  
+  ```js
+  $("#miElement").hide(500);
+  ```
+  *L'element desapareixerà gradualment en mig segon.*  
+
+- **Fer aparéixer un element suaument:**  
+  ```js
+  $("#miElement").fadeIn(1000);
+  ```
+  *L’element anirà apareixent durant 1 segon.*  
+
+- **Fer desaparéixer un element suaument:**  
+  ```js
+  $("#miElement").fadeOut(1000);
+  ```
+  
+### **Mètodes d'Efectes i Animacions**  
+
+| **Tipus d'Efecte** | **Mètode jQuery** | **Descripció** |
+|--------------------|------------------|----------------|
+| **Mostrar i Ocultar** | `.show()` | Mostra un element ocult. |
+|  | `.hide()` | Oculta un element de la pàgina. |
+|  | `.toggle()` | Alterna entre mostrar i ocultar un element. |
+| **Efectes de Desaparició i Aparició** | `.fadeIn()` | Fa que un element aparega amb transició suau. |
+|  | `.fadeOut()` | Fa que un element desaparega amb transició suau. |
+|  | `.fadeToggle()` | Alterna entre `fadeIn()` i `fadeOut()`. |
+|  | `.fadeTo()` | Ajusta l’opacitat d’un element. |
+| **Efectes de Desplaçament** | `.slideDown()` | Mostra un element lliscant-lo cap avall. |
+|  | `.slideUp()` | Oculta un element lliscant-lo cap amunt. |
+|  | `.slideToggle()` | Alterna entre `slideDown()` i `slideUp()`. |
+| **Animacions Personalitzades** | `.animate()` | Modifica propietats CSS amb transicions animades. |
+| **Control d'Animacions** | `.stop()` | Deté l’animació en marxa. |
+|  | `.finish()` | Deté l’animació i la completa immediatament. |
+
+---
+
+Tots aquests efectes es poden utilitzar amb **una duració opcional** i **una funció de callback** per executar accions quan finalitza l’animació.
+
+---
+
+## **6. AJAX amb jQuery**  
 
 ### **Petició GET**  
 ```js
@@ -405,42 +468,54 @@ $.post("servidor.php", { nom: "Jaume", edat: 30 }, function(resposta) {
 
 ## **9. Manipulació de CSS**  
 
+Amb jQuery, podem modificar els **estils CSS** d'un element de manera **dinàmica** sense necessitat de canviar directament el codi CSS. Això ens permet canviar colors, mides, marges i altres propietats visualment en resposta a interaccions de l’usuari.
+
+Hi ha dues maneres principals de modificar els estils en jQuery:
+
+1. Modificar els estils directament amb `.css()`.
+2. Afegir, eliminar o alternar classes CSS amb .`addClass()`, .`removeClass()` i `.toggleClass()`.
+
 ### **Modificar estils directament**  
 ```js
 $("#miDiv").css("background-color", "blue");
 ```
 
 ### **Afegir i eliminar classes**  
+
+Una altra manera més recomanada de modificar estils és **treballar amb classes CSS**, ja que permet separar la lògica de l'estil i mantindre el codi més net.  
+
+
+- **`.addClass("classe")`** → Afegeix una classe a un element.  
+- **`.removeClass("classe")`** → Elimina una classe d’un element.  
+- **`.toggleClass("classe")`** → Alterna entre afegir i eliminar una classe.  
+
+**Exemples**  
+
+- **Afegir una classe CSS**  
+  ```js
+  $("#miDiv").addClass("classeNova");
+  ```
+  *Afegeix la classe `.classeNova` a `#miDiv`.*  
+
+- **Eliminar una classe CSS**  
+  ```js
+  $("#miDiv").removeClass("classeAntiga");
+  ```
+*Elimina la classe `.classeAntiga` de `#miDiv`.*  
+
+- **Alternar una classe CSS** *(activa/desactiva estils al fer clic, per exemple)*  
+  ```js
+  $("#miDiv").toggleClass("actiu");
+  ```
+  *Si `#miDiv` té la classe `actiu`, se li eliminarà; si no la té, se li afegirà.*  
+
+-Este enfocament és ideal per canvis d'estils en resposta a esdeveniments, com quan un botó canvia d'estat:  
 ```js
-$("#miDiv").addClass("classeNova");
-$("#miDiv").removeClass("classeAntiga");
-$("#miDiv").toggleClass("actiu"); // Alterna entre afegir i eliminar
-```
-
----
-
-## **10. Quan usar jQuery avui dia?**  
-Tot i que **jQuery ha perdut popularitat**, encara pot ser útil en situacions com:  
-- Projectes **heretats** que ja utilitzen jQuery.  
-- Quan es necessita suport per navegadors antics.  
-- Petits projectes sense necessitat de llibreries grans com **React o Vue**.  
-
-**Alternativa moderna sense jQuery (JavaScript pur)**  
-```js
-document.querySelector("#miBotó").addEventListener("click", function() {
-    alert("Has fet clic!");
+$("#miBotó").click(function() {
+    $("#miDiv").toggleClass("resaltat");
 });
 ```
-
----
-
-## **Resum Final**  
-| Funció | jQuery | Alternativa JavaScript Modern |
-|--------|--------|------------------------------|
-| Seleccionar un element | `$("#id")` | `document.querySelector("#id")` |
-| Afegir contingut | `$("#id").html("<b>Hola</b>")` | `document.getElementById("id").innerHTML = "<b>Hola</b>";` |
-| Canviar estil | `$("#id").css("color", "red")` | `document.getElementById("id").style.color = "red";` |
-| Detectar clic | `$("#id").click(fn)` | `document.getElementById("id").addEventListener("click", fn);` |
+*Cada vegada que es fa clic en `#miBotó`, `#miDiv` alternarà la classe `.resaltat`.*  
 
 ---
 

@@ -1,48 +1,80 @@
-## **Gestió d'Esdeveniments en jQuery**  
+## **9. Manipulació de CSS amb jQuery**  
 
-Quan treballem amb pàgines web, és important poder reaccionar a les accions de l’usuari, com **clics, tecles premudes o enviament de formularis**. jQuery ens ofereix diversos mètodes per gestionar aquests esdeveniments de manera senzilla i eficient.  
+Amb jQuery, podem modificar els **estils CSS** d'un element de manera dinàmica sense necessitat de canviar directament el codi CSS. Això ens permet **canviar colors, mides, marges i altres propietats visualment** en resposta a interaccions de l’usuari.  
+
+Hi ha dues maneres principals de modificar els estils en jQuery:  
+1. **Modificar els estils directament** amb `.css()`.  
+2. **Afegir, eliminar o alternar classes CSS** amb `.addClass()`, `.removeClass()` i `.toggleClass()`.  
 
 ---
 
-### **Mètodes per gestionar esdeveniments**  
+### **1️⃣ Modificar estils directament**  
 
-- **`.click()`** → Detecta quan es fa **clic en un element** i executa una acció.  
+El mètode `.css()` permet modificar qualsevol propietat CSS d’un element mitjançant jQuery.  
+
+#### **Sintaxi**  
+```js
+$(selector).css("propietat-css", "valor");
+```
+📌 *On `propietat-css` és la propietat CSS que volem modificar i `valor` és el nou valor que li assignarem.*  
+
+#### **Exemple**  
+```js
+$("#miDiv").css("background-color", "blue");
+```
+📌 *Aquest codi canvia el color de fons de `#miDiv` a blau.*  
+
+🔹 També podem modificar **múltiples propietats CSS alhora** passant un objecte:  
+```js
+$("#miDiv").css({
+    "color": "white",
+    "font-size": "20px",
+    "border": "2px solid black"
+});
+```
+📌 *Això canvia el color del text a blanc, la mida de la lletra a 20 píxels i afegeix un contorn negre de 2 píxels.*  
+
+---
+
+### **2️⃣ Afegir, eliminar i alternar classes CSS**  
+
+Una altra manera més recomanada de modificar estils és **treballar amb classes CSS**, ja que permet separar la lògica de l'estil i mantindre el codi més net.  
+
+- **`.addClass("classe")`** → Afegeix una classe a un element.  
+- **`.removeClass("classe")`** → Elimina una classe d’un element.  
+- **`.toggleClass("classe")`** → Alterna entre afegir i eliminar una classe.  
+
+#### **Exemples**  
+
+- **Afegir una classe CSS**  
   ```js
-  $("#miBotó").click(function() {
-      alert("Has fet clic!");
-  });
+  $("#miDiv").addClass("classeNova");
   ```
-  📌 *Quan l'usuari fa clic en el botó amb `id="miBotó"`, apareix una alerta.*  
+  📌 *Afegeix la classe `.classeNova` a `#miDiv`.*  
 
----
-
-- **`.keypress()`** → Detecta quan es prem **una tecla** dins d’un `<input>` o un altre element.  
+- **Eliminar una classe CSS**  
   ```js
-  $("#miInput").keypress(function(event) {
-      console.log("Tecla premuda: " + event.key);
-  });
+  $("#miDiv").removeClass("classeAntiga");
   ```
-  📌 *Cada vegada que l’usuari prem una tecla dins del `<input>` amb `id="miInput"`, es mostra en la consola el nom de la tecla premuda.*  
+  📌 *Elimina la classe `.classeAntiga` de `#miDiv`.*  
 
----
-
-- **`.on()`** → Assigna un esdeveniment a un element i és especialment útil quan treballem amb elements creats dinàmicament.  
+- **Alternar una classe CSS** *(activa/desactiva estils al fer clic, per exemple)*  
   ```js
-  $(document).on("click", "#miBotó", function() {
-      alert("Botó clicat!");
-  });
+  $("#miDiv").toggleClass("actiu");
   ```
-  📌 *Encara que el botó es genere dinàmicament després de carregar la pàgina, aquest codi capturarà el clic correctament.*  
+  📌 *Si `#miDiv` té la classe `actiu`, se li eliminarà; si no la té, se li afegirà.*  
+
+🔹 Aquest enfocament és ideal per canvis d'estils en resposta a esdeveniments, com quan un botó canvia d'estat:  
+```js
+$("#miBotó").click(function() {
+    $("#miDiv").toggleClass("resaltat");
+});
+```
+📌 *Cada vegada que es fa clic en `#miBotó`, `#miDiv` alternarà la classe `.resaltat`.*  
 
 ---
 
-### **Quan utilitzar `.on()` en lloc de `.click()` o `.keypress()`?**  
-
-| Cas | Mètode recomanat |
-|-----|-----------------|
-| L'element ja existix en el HTML quan es carrega la pàgina | `.click()`, `.keypress()` |
-| L'element es genera dinàmicament amb JavaScript o AJAX | `.on("event", "selector", function())` |
-
----
-
-💡 *Amb aquests mètodes, podem fer que la nostra pàgina web siga més interactiva, reaccionant a les accions de l’usuari de manera eficient.* 🚀
+📌 **Conclusió**  
+Modificar estils amb jQuery és molt senzill. En general:  
+- Si volem **fer canvis puntuals**, podem utilitzar `.css()`.  
+- Si volem **modificar estils de manera més organitzada**, és millor usar `.addClass()`, `.removeClass()` i `.toggleClass()`. 🚀

@@ -8,7 +8,10 @@ has_children: true
 
 ---
 
-# Document Object Model
+{: .text-center }
+![alt text](imatges/dom.png)
+
+
 
 Les sigles **DOM** signifiquen *Document Object Model*, o el que és el mateix, l'estructura del document HTML.
 

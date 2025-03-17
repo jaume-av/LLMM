@@ -23,7 +23,7 @@ El seu lema és:
 
 Amb jQuery, podem fer en poques línies de codi accions que en **JavaScript pur (Vanilla JS)** requeririen més esforç i més línies de codi.  
 
-> **Nota:** Podem imaginar una **llibreria** com una **caixa d'eines** plena de funcions ja creades per altres desenvolupadors. En lloc d'escriure codi des de zero cada vegada que necessitem fer alguna cosa, podem utilitzar aquestes funcions per estalviar temps i esforç. **jQuery**, permet realitzar tasques complexes, com modificar el contingut d'una pàgina o gestionar esdeveniments, de manera **més senzilla i eficient**, ja que la llibreria ja inclou les funcions per fer-ho. 
+>**Nota:** Podem imaginar una **llibreria** com una **caixa d'eines** plena de funcions ja creades per altres desenvolupadors. En lloc d'escriure codi des de zero cada vegada que necessitem fer alguna cosa, podem utilitzar aquestes funcions per estalviar temps i esforç. **jQuery**, permet realitzar tasques complexes, com modificar el contingut d'una pàgina o gestionar esdeveniments, de manera **més senzilla i eficient**, ja que la llibreria ja inclou les funcions per fer-ho. 
 ---
 
 ### **Característiques de jQuery**  
@@ -141,8 +141,7 @@ $("[type='text']"); // Selecciona tots els <input> de tipus text
 $("p").hide(); // Amaga tots els elements <p>.
 $(".test").show(); // Mostra tots els elements amb class="test".
 $("#test").fadeIn(); // Mostra poc a poc l'element amb id="test".
-$(":button").toggle(); // Per a tots els elements <button> o inputs amb type
-button, alterna entre hide i show.
+$(":button").toggle(); // Per a tots els elements <button> o inputs amb type button, alterna entre hide i show.
 ```
 
 
@@ -221,6 +220,11 @@ $(document).ready(function() {
 
 ---
 
+- [Descarrega Exemples Modificació](<exemplesjQuery/1.Funcions Obtencio-Modificacio.zip>)
+
+---
+
+
 
 ### **Afegir elements al DOM amb jQuery**  
 
@@ -257,6 +261,14 @@ jQuery ens permet **afegir elements nous** a la pàgina de manera dinàmica. Per
   $("p").wrap("<div class='container'></div>");
   // Envolta tots els <p> amb un <div> de classe "container"
   ```
+
+
+---
+
+- [Descarrega Exemples Afegir](exemplesjQuery/2.FuncionsAfegir.zip)
+
+---
+
 
 
 ### **Eliminar elements o atributs del DOM amb jQuery**  
@@ -298,7 +310,12 @@ Per **esborrar elements o buidar el seu contingut** de manera senzilla jQueyr en
 
 ---
 
-## **4. Gestió d'Esdeveniments**  
+- [Descarrega Exemples Afegir](<exemplesjQuery/3.Funcions Esborrar.zip>)
+
+---
+
+
+## **5. Gestió d'Esdeveniments**  
 
 Un **esdeveniment** és qualsevol acció que un usuari realitza en la pàgina web, com ara:
 
@@ -380,7 +397,7 @@ Tots estos esdeveniments es poden gestionar directament amb el seu mètode (`.cl
 
 ---
 
-## **5. Efectes i Animacions en jQuery**  
+## **6. Efectes i Animacions en jQuery**  
 
 Els **efectes i animacions** ens permeten **mostrar, ocultar i modificar elements de manera dinàmica**, millorant la interacció amb la pàgina web. Amb jQuery, podem afegir transicions suaus sense necessitat de codi CSS avançat o JavaScript complex.  
 
@@ -451,25 +468,7 @@ Tots aquests efectes es poden utilitzar amb **una duració opcional** i **una fu
 
 ---
 
-## **6. AJAX amb jQuery**  
-
-### **Petició GET**  
-```js
-$.get("dades.json", function(data) {
-    console.log("Dades carregades:", data);
-});
-```
-
-### **Petició POST**  
-```js
-$.post("servidor.php", { nom: "Jaume", edat: 30 }, function(resposta) {
-    console.log("Resposta:", resposta);
-});
-```
-
----
-
-## **9. Manipulació de CSS**  
+## **7. Manipulació de CSS**  
 
 Amb jQuery, podem modificar els **estils CSS** d'un element de manera **dinàmica** sense necessitat de canviar directament el codi CSS. Això ens permet canviar colors, mides, marges i altres propietats visualment en resposta a interaccions de l’usuari.
 

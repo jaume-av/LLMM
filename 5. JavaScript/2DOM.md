@@ -135,11 +135,24 @@ En este cas, estem creant un nou element  utilitzant `createElement` i l'afegim 
 ### Esdeveniments del DOM
 Els **esdeveniments** són accions que es produeixen en el navegador, com clics de ratolí, premses de tecles o càrregues de pàgines.
 
-```javascript
-// Afegim un esdeveniment de clic a un element
-const meuElement = document.getElementById('meuElement');
-meuElement.addEventListener('click', function() {
+```js
+// Quan fem clic en un element, es mostra un missatge
+document.getElementById('meuElement').addEventListener('click', function() {
     alert('S\'ha clicat l\'element!');
+});
+```
+
+Altres exemples d'esdeveniments:
+
+```js
+// Quan passem el ratolí per damunt
+document.getElementById('meuElement').addEventListener('mouseenter', function() {
+    this.style.backgroundColor = 'yellow';
+});
+
+// Quan escrivim en un input
+document.getElementById('campText').addEventListener('keyup', function() {
+    console.log('Has escrit: ' + this.value);
 });
 ```
 ---
@@ -290,5 +303,18 @@ En este exemple, afegim un gestor d'esdeveniments de clic a l'element amb l'id *
   - Modifica atributs (`classList.toggle`).
   - Gestió d’esdeveniments (`addEventListener` per a clics i tecla `Enter`).
 
-Este exemple mostra **tots els conceptes del DOM** de manera pràctica. 
-Amb **jQuery**, la implementació seria més curta. 
+## **Per què usarem jQuery?**
+Encara que en **JavaScript** podem manipular el DOM, la sintaxi pot ser **llarga i complexa**.  
+Per això, en les pròximes classes treballarem amb **jQuery**, que simplifica molt aquestes tasques.
+
+## Amb jQuery:
+- La selecció d’elements és més curta i clara:
+
+  ```js
+  $("#meuElement").click(function() {
+      alert("S'ha clicat l'element!");
+  });
+  ```
+
+- La manipulació del DOM és més eficient.
+- Els esdeveniments són més fàcils de gestionar.

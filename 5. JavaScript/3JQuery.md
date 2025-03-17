@@ -63,8 +63,6 @@ Podem agregar jQuery des d’un **CDN** extern (**Content Deliery Network**). Ai
 
 
 
-
-
 Podem afegir jQuery a un projecte de dos maneres:  
 
 - **1. Utilitzant un CDN (recomanat)**  
@@ -86,14 +84,11 @@ Podem trovar les diferents versions de jQuery CDN a:
 ---
 
 
-
-
-
 ### Esperar a que la pàgina estiga carregada** 
 
 Després de carregar **jQuery** ens hem d’assegurar que la pàgina **estiga completament carregada abans de
 començar a executar el codi**. Ho farem **envoltant** el codi jQuery dins d’una funció que es crida quan el
-document està completament carregat, ho fem amb la funció. `$(document).ready()`
+document està completament carregat, ho fem amb la funció: `$(document).ready()`
 
 ```js
 $(document).ready(function() {
@@ -137,61 +132,239 @@ $("ul li");         // Selecciona tots els <li> dins de <ul>
 $("[type='text']"); // Selecciona tots els <input> de tipus text
 ```
 
----
+- **Exemples**
+
+```js
+$("p").hide(); // Amaga tots els elements <p>.
+$(".test").show(); // Mostra tots els elements amb class="test".
+$("#test").fadeIn(); // Mostra poc a poc l'element amb id="test".
+$(":button").toggle(); // Per a tots els elements <button> o inputs amb type
+button, alterna entre hide i show.
+```
+
+
 
 ## **4. Manipulació del DOM**  
 
+Quan treballem amb jQuery, una de les funcionalitats més útils és la capacitat de **modificar elements del DOM dinàmicament**. Podem canviar el contingut d’un element HTML, modificar els seus atributs o interactuar amb elements de formularis de manera senzilla.  
+
 ### **Modificar text i HTML**  
-```js
-$("#miParagraf").text("Nou text!");  // Modifica només el text
-$("#miParagraf").html("<b>Nou text!</b>"); // Modifica amb HTML
+Amb jQuery, podem modificar el text i el contingut HTML d’un element fàcilment amb els mètodes `.text()` i `.html()`.  
+
+- **`.text()`** → Modifica només el text d’un element, sense interpretar etiquetes HTML.  
+- **`.html()`** → Modifica el contingut de l’element i interpreta etiquetes HTML.  
+
+**Exemple**  
+```html
+<p id="miParagraf">Text original.</p>
+<button id="canviarText">Canviar Text</button>
+<button id="canviarHTML">Canviar HTML</button>
+
+<script>
+$(document).ready(function() {
+    $("#canviarText").click(function() {
+        $("#miParagraf").text("Este és el nou text!");  
+    });
+
+    $("#canviarHTML").click(function() {
+        $("#miParagraf").html("<b>Este és el nou text en negreta!</b>");  
+    });
+});
+</script>
 ```
+*Quan premem el botó "Canviar Text", es reemplaça el text sense permetre etiquetes HTML. En canvi, si premem "Canviar HTML", el text s’actualitza amb format HTML.*  
+
+---
 
 ### **Modificar atributs**  
-```js
-$("#miEnllac").attr("href", "https://example.com");
-$("#miInput").val("Valor predefinit");
+Els atributs d’un element HTML, com `href`, `src` o `value`, també es poden modificar fàcilment amb jQuery utilitzant `.attr()` i `.val()`.  
+
+- **`.attr("atribut", "valor")`** → Modifica el valor d’un atribut d’un element.  
+- **`.val("valor")`** → Modifica el valor d’un camp d’entrada (`<input>`, `<textarea>`, etc.).  
+
+**Exemple**  
+```html
+<a id="miEnllac" href="https://original.com">Visita la web</a>
+<button id="modificarEnllac">Modificar Enllaç</button>
+
+<input type="text" id="miInput" value="Valor inicial">
+<button id="modificarInput">Modificar Input</button>
+
+<script>
+$(document).ready(function() {
+    $("#modificarEnllac").click(function() {
+        $("#miEnllac").attr("href", "https://example.com");  
+        $("#miEnllac").text("Nou Enllaç");
+    });
+
+    $("#modificarInput").click(function() {
+        $("#miInput").val("Nou valor dins de l'input");
+    });
+});
+</script>
 ```
+*Quan premem "Modificar Enllaç", el text de l’enllaç i la seua URL canvien. Quan premem "Modificar Input", es modifica el contingut del camp de text.*  
 
 ---
 
-## **5. Afegir i Esborrar Elements**  
+### **Resum `.text()`, `.html()`, `.attr()` i `.val()**  
 
-### **Afegir elements**  
-```js
-$("ul").append("<li>Nou Element</li>"); // Afegeix al final
-$("ul").prepend("<li>Primer Element</li>"); // Afegeix al principi
-```
-
-### **Esborrar elements**  
-```js
-$("#miParagraf").remove(); // Elimina l'element
-$("#contenidor").empty(); // Buida el contingut sense eliminar el contenidor
-```
+| Funció | Ús principal | Exemple |
+|--------|-------------|---------|
+| `.text()` | Modificar només el text sense HTML | `$("#paragraf").text("Text nou");` |
+| `.html()` | Modificar el text i interpretar HTML | `$("#paragraf").html("<b>Text en negreta</b>");` |
+| `.attr()` | Modificar atributs d’un element | `$("#enllac").attr("href", "https://example.com");` |
+| `.val()` | Modificar el valor d’un `<input>` o `<textarea>` | `$("#input").val("Nou valor");` |
 
 ---
 
-## **6. Gestió d'Esdeveniments**  
+
+### **Afegir elements al DOM amb jQuery**  
+
+jQuery ens permet **afegir elements nous** a la pàgina de manera dinàmica. Per fer-ho, tenim diversos mètodes que ens ajuden a inserir contingut abans, després o dins d’un element existent.  
+
+**Mètodes per afegir elements**  
+
+- **`.append()`** → Afegeix un element **al final** de l’element seleccionat.  
+  ```js
+  $("p").append("<span>Adeu</span>"); 
+  // Afegeix un <span> amb el text "Adeu" al final de cada <p>
+  ```
+
+- **`.prepend()`** → Afegeix un element **al principi** de l’element seleccionat.  
+  ```js
+  $("p").prepend("<span>Hola</span> ");
+  // Afegeix un <span> amb el text "Hola" al principi de cada <p>
+  ```
+
+- **`.before()`** → Insereix un element **abans** de l’element seleccionat.  
+  ```js
+  $("p").before("<b>Salutació: </b>");
+  // Afegeix un <b> amb el text "Salutació" abans de cada <p>
+  ```
+
+- **`.after()`** → Insereix un element **després** de l’element seleccionat.  
+  ```js
+  $("p").after("<br>");
+  // Afegeix un salt de línia (<br>) després de tots els <p>
+  ```
+
+- **`.wrap()`** → Envolta cada element seleccionat amb un altre element HTML.  
+  ```js
+  $("p").wrap("<div class='container'></div>");
+  // Envolta tots els <p> amb un <div> de classe "container"
+  ```
+
+
+### **Eliminar elements o atributs del DOM amb jQuery**  
+
+Per **esborrar elements o buidar el seu contingut** de manera senzilla jQueyr ens proporciona diferents mètodes segons si volem eliminar només el contingut, l’element sencer o un atribut específic.  
+
+**Mètodes per esborrar elements**  
+
+- **`.empty()`** → Buida el contingut dels elements seleccionats, però **manté l’element en el DOM**.  
+  ```js
+  $("div").empty();  
+  // Buida tots els elements <div>, eliminant el seu contingut intern
+  ```
+
+- **`.remove()`** → Elimina completament els elements seleccionats del **DOM** (tant l’element com el seu contingut).  
+  ```js
+  $("div").remove();  
+  // Elimina completament tots els <div> de la pàgina
+  ```
+
+- **`.unwrap()`** → Elimina **el contenidor** d’un element, però manté el seu contingut.  
+  ```html
+  <div class="contenidor">
+      <p>Contingut aquí</p>
+  </div>
+  ```
+  ```js
+  $("p").unwrap();  
+  // Elimina el <div class="contenidor">, però deixa el <p> intacte
+  ```
+
+#### **Eliminar atributs d'un element**  
+
+- **`.removeAttr()`** → Elimina un atribut d’un element seleccionat.  
+  ```js
+  $("a").removeAttr("href");  
+  // Elimina l'atribut href de tots els enllaços <a>
+  ```
+
+---
+
+## **4. Gestió d'Esdeveniments**  
+
+Un **esdeveniment** és qualsevol acció que un usuari realitza en la pàgina web, com ara:
+
+- Fer clic en un botó.
+- Polzar una tecla dins d’un camp de text.
+- Passar el ratolí per damunt d’un element.
+- Enviar un formulari.
+
+Amb jQuery, podem capturar aquests esdeveniments i executar una funció en resposta a ells.
+
+Els mètodes com `.click()` o `.keypress()` ens permeten afegir directament un esdeveniment a un element específic.
 
 ### **Esdeveniments bàsics**  
-```js
-$("#miBotó").click(function() {
-    alert("Has fet clic!");
-});
-```
+- **`.click()`** → Detecta quan es fa **clic en un element** i executa una acció.  
+  ```js
+  $("#miBotó").click(function() {
+      alert("Has fet clic!");
+  });
+  ```
+*Quan l'usuari fa clic en el botó amb `id="miBotó"`, apareix una alerta.*  
 
-```js
-$("#miInput").keypress(function(event) {
-    console.log("Tecla premuda: " + event.key);
-});
-```
+---
+
+- **`.keypress()`** → Detecta quan es prem **una tecla** dins d’un `<input>` o un altre element.  
+  ```js
+  $("#miInput").keypress(function(event) {
+      console.log("Tecla premuda: " + event.key);
+  });
+  ```
+*Cada volta que l’usuari prem una tecla dins del `<input>` amb `id="miInput"`, es mostra en la consola el nom de la tecla premuda.*  
+
+---
+
 
 ### **Esdeveniments amb `.on()` (més eficient)**  
+
+
+- **`.on()`** → Assigna un esdeveniment a un element i és especialment útil quan treballem amb elements creats dinàmicament.  
+
+- **Sintaxi:**
+
 ```js
-$(document).on("click", "#miBotó", function() {
-    alert("Botó clicat!");
-});
+$(elementPare).on("esdeveniment", "elementFill", funció);
 ```
+
+- **Exemple:**
+
+  ```js
+  $(document).on("click", "#miBotó", function() {
+      alert("Botó clicat!");
+  });
+  ```
+*Encara que el botó es genere dinàmicament després de carregar la pàgina, aquest codi capturarà el clic correctament.*
+
+### Resum Esdeveniments:
+
+
+| **Tipus d'Esdeveniment** | **Mètode jQuery** | **Descripció** |
+|--------------------|------------------|----------------|
+| **Esdeveniments de ratolí** | `.click()` | Detecta quan es fa clic en un element. |
+|  | `.dblclick()` | Detecta quan es fa doble clic en un element. |
+| **Esdeveniments de teclat** | `.keypress()` | Detecta quan l'usuari prem una tecla dins d’un element com un `<input>`. |
+| **Esdeveniments de formulari** | `.submit()` | Detecta quan s’envia un formulari. Es pot utilitzar `event.preventDefault()` per evitar que es recarregue la pàgina. |
+| **Esdeveniments de document i finestra** | `.ready()` | S'executa quan el document HTML ha carregat completament. |
+|  | `.resize()` | Detecta quan la finestra del navegador canvia de mida. |
+
+Tots estos esdeveniments es poden gestionar directament amb el seu mètode (`.click()`, `.submit()`, etc.) o amb `.on()`.
+
+
 
 ---
 

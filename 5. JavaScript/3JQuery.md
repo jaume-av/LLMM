@@ -119,6 +119,10 @@ jQuery utilitza una sintaxi similar a **CSS** per seleccionar elements HTML de l
 $(selector).acció();
 ```
 
+Utilitzem el **$** per accedir a **jQuery**, seguit d'un **selector CSS** per identificar els elements sobre els quals
+volem actuar, i finalment una acció que s'executarà sobre estos elements
+
+
 ### **Selectors bàsics**  
 ```js
 $("#idElement");      // Selecciona un element per ID

@@ -1,9 +1,12 @@
+---
 
+title: 3.- jQuery
+parent: 5.- JavaScript
+layout: default
+nav_order: 30
+has_children: true
 
-
-
-
-
+---
 
 
 {: .text-center }

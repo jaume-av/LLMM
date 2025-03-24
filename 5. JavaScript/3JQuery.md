@@ -10,7 +10,7 @@ has_children: true
 
 
 {: .text-center }
-![alt text](imatges/jquery.png)
+![alt text](imatges/JQUERY.png)
 {:toc}
 
 
@@ -24,6 +24,7 @@ El seu lema és:
 Amb jQuery, podem fer en poques línies de codi accions que en **JavaScript pur (Vanilla JS)** requeririen més esforç i més línies de codi.  
 
 >**Nota:** Podem imaginar una **llibreria** com una **caixa d'eines** plena de funcions ja creades per altres desenvolupadors. En lloc d'escriure codi des de zero cada vegada que necessitem fer alguna cosa, podem utilitzar aquestes funcions per estalviar temps i esforç. **jQuery**, permet realitzar tasques complexes, com modificar el contingut d'una pàgina o gestionar esdeveniments, de manera **més senzilla i eficient**, ja que la llibreria ja inclou les funcions per fer-ho. 
+
 ---
 
 ### **Característiques de jQuery**  
@@ -39,7 +40,7 @@ Amb jQuery, podem fer en poques línies de codi accions que en **JavaScript pur 
 ### AJAX
 **AJAX  (Asynchronous JavaScript and XML)** és una tecnologia que permet actualitzar parts d'una pàgina web **sense necessitat de recarregar-la completament**. Això fa que les aplicacions web siguen més ràpides i dinàmiques, millorant l'experiència de l'usuari.  
 
-- **Funcionament de Ajax**  
+**Funcionament de Ajax**  
 Quan fem una petició AJAX, la pàgina pot:  
 - **Obtenir dades** del servidor (per exemple, carregar comentaris sense recarregar la web).  
 - **Enviar informació** al servidor (com guardar dades d’un formulari sense perdre la navegació).  
@@ -87,7 +88,7 @@ Podem trovar les diferents versions de jQuery CDN a:
 ---
 
 
-### Esperar a que la pàgina estiga carregada** 
+### Esperar a que la pàgina estiga carregada
 
 Després de carregar **jQuery** ens hem d’assegurar que la pàgina **estiga completament carregada abans de
 començar a executar el codi**. Ho farem **envoltant** el codi jQuery dins d’una funció que es crida quan el
@@ -310,7 +311,7 @@ Per **esborrar elements o buidar el seu contingut** de manera senzilla jQueyr en
 
 ---
 
-- [Descarrega Exemples Afegir](<exemplesjQuery/3.Funcions Esborrar.zip>)
+- [Descarrega Exemples Eliminar](<exemplesjQuery/3.Funcions Esborrar.zip>)
 
 ---
 

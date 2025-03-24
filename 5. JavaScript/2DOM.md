@@ -9,7 +9,7 @@ has_children: true
 ---
 
 {: .text-center }
-![alt text](imatges/dom.png)
+![alt text](imatges/DOM.png)
 
 
 
@@ -62,7 +62,7 @@ Els **elements** són un tipus especial de **node** que representa les etiquetes
 // Creem un nou element div
 const divElement = document.createElement('div');
 // Afegim un atribut a l'element
-divElement.setAttribute('id', 'nouDiv');
+divElement.setAttribute('id', 'div');
 // Afegim contingut de text a l'element
 divElement.textContent = 'Aquest és un nou div';
 // Afegim l'element al document
@@ -81,8 +81,7 @@ const element = document.getElementById('meuElement');
 // Canviem un atribut de l'element
 element.setAttribute('alt', 'Nova descripció');
 ```
-A  l'exemple anterior, accedim a un element utilitzant el seu `id` amb **getElementById**. A continuació, utilitzem **setAttribute** per canviar
-l'atribut `alt` de l'element a "Nova descripció"
+A  l'exemple anterior, accedim a un element utilitzant el seu `id` amb **getElementById**. A continuació, utilitzem **setAttribute** per canviar l'atribut `alt` de l'element a "Nova descripció"
 
 ### Nivell d'Element
 El **nivell d'element** fa referència a la relació jeràrquica entre els elements del document, que es representa com un arbre en el **DOM**. Cada element té un **pare** (excepte el `document`), i pot tindre **fills** i **germans**.
@@ -94,8 +93,7 @@ const pare = fill.parentNode;
 console.log('El pare de l\'element fill és:', pare.tagName);
 ```
 
-En este cas, accedim a l'element **fill** amb l'id "fill". A continuació, utilitzem la propietat **parentNode** per obtenir una
-referència al pare de l'element. Finalment, mostrem el **tag name** del pare amb tagName.
+En este cas, accedim a l'element **fill** amb l'id "fill". A continuació, utilitzem la propietat **parentNode** per obtenir una referència al pare de l'element. Finalment, mostrem el **tag name** del pare amb tagName.
 
 
 ### Selecció d'Elements
@@ -289,7 +287,7 @@ inputTasca.addEventListener('keyup', function(event) {
 });
 ```
 
-```
+
 
 En este exemple, afegim un gestor d'esdeveniments de clic a l'element amb l'id **"meuElement"**. Quan aquest element siga clicat, es mostrarà un missatge d'alerta que indica que s'ha clicat l'element.
 

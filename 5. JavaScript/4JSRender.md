@@ -1,9 +1,9 @@
 ---
 
-title: 4.- JsRender
+title: 4.- JsRender - Renderitzant dades
 parent: 5.- JavaScript
 layout: default
-nav_order: 40
+nav_order: 50
 has_children: true
 
 ---

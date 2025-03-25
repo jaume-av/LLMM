@@ -22,11 +22,12 @@ Amb JsRender podem crear contingut dinàmic d'una manera eficient gràcies a la 
 
 La **interpolació** és el procés de substituir variables dins d’una plantilla pels seus valors reals. Es fa servir la sintaxi:
 
-```js
+```
 {{:variable}}
 ```
 
 **Exemple:**
+
 
 ```html
 <script id="myTemplate" type="text/x-jsrender">

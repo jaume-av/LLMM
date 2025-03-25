@@ -8,6 +8,8 @@ has_children: true
 
 ---
 
+{% raw %}
+
 # JsRender
 
 **JsRender** és una biblioteca JavaScript que ens permet generar HTML de manera senzilla utilitzant plantilles. Forma part de la família **JsViews**, que també inclou eines com **JsViews** per a la vinculació de dades (data binding).
@@ -4219,3 +4221,7 @@ $(function() {
 ```
 
 ---
+
+
+
+{% endraw %}

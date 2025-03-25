@@ -243,6 +243,7 @@ També podem carregar les dades des d’un fitxer `.json` extern i renderitzar-l
 ### HTML principal
 
 ```html
+
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -297,6 +298,8 @@ També podem carregar les dades des d’un fitxer `.json` extern i renderitzar-l
 </body>
 </html>
 ```
+
+
 {: .text-center }
 ![alt text](imatges/exemplerender.png)
 

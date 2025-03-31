@@ -378,16 +378,7 @@ $("#sortida").html("<p>Hola!</p>");
 
 ---
 
-### `$(function() { ... })`
 
-Forma abreujada de jQuery per executar codi quan el document està carregat (equivalent a `DOMContentLoaded`).
-
-**Exemple:**
-```js
-$(function() {
-  alert("Document llest!");
-});
-```
 
 ---
 

@@ -2,7 +2,7 @@
 title: IA Generativa
 layout: default
 parent: Descripció del Mòdul
-nav_order: 20
+nav_order: 
 has_children: true
 has_toc: true
 ---

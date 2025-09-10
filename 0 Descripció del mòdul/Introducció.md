@@ -111,7 +111,7 @@ Validar és passar un “control de qualitat” al document per assegurar que es
 
 
 1. Obri el navegador i entra a la pàgina del validador oficial del W3C:
-   👉 [https://validator.w3.org/](https://validator.w3.org/)
+   [https://validator.w3.org/](https://validator.w3.org/)
 
 2. En el camp d’**adreça web**, escriu l’URL d’una web famosa, per exemple:
 
@@ -135,12 +135,6 @@ Fins i tot **pàgines molt famoses tenen errors** de validació.
 
 ---
 
-
-
-
-Perfecte! Et prepare l’activitat didàctica utilitzant exactament el que es veu a la teua captura (Inspector de Firefox, amb el codi HTML i el panell d’estils CSS):
-
----
 
 ### Activitat · Editar en viu una web amb l’Inspector
 

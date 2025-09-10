@@ -136,7 +136,7 @@ Fins i tot **pàgines molt famoses tenen errors** de validació.
 ---
 
 
-### Activitat · Editar en viu una web amb l’Inspector
+### Activitat 3 · Editar en viu una web amb l’Inspector
 
 
 1. **Obri Wikipedia** al navegador Firefox:
@@ -188,3 +188,38 @@ Fins i tot **pàgines molt famoses tenen errors** de validació.
 
 ---
 
+
+
+---
+
+### Evolució dels Llenguatges de Marques · El “codi retro” del `<marquee>`
+
+
+
+1. Obri un fitxer HTML senzill en Visual Studio Code.
+2. Escriu:
+
+```html
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Prova Marquee</title>
+</head>
+<body>
+  <marquee behavior="scroll" direction="left" scrollamount="10">
+    Hola DAM! Això es mou!
+  </marquee>
+</body>
+</html>
+```
+
+3. Obri’l al navegador i mira com el text es desplaça per la pantalla.
+
+---
+
+
+* Este codi funcionava molt als anys 90, però ara està **obsolet**.
+* Ens serveix per veure que els llenguatges de marques **canvien amb el temps** i que HTML5 ja no recomana aquestes etiquetes.
+
+---

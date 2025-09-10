@@ -2,7 +2,7 @@
 title: Introducció
 layout: default
 parent: Descripció del Mòdul
-nav_order: 30
+nav_order: 10
 has_children: true
 has_toc: true
 ---

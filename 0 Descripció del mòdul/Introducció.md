@@ -223,3 +223,119 @@ Fins i tot **pàgines molt famoses tenen errors** de validació.
 * Ens serveix per veure que els llenguatges de marques **canvien amb el temps** i que HTML5 ja no recomana aquestes etiquetes.
 
 ---
+
+## Treball RA1 · Llenguatges de Marques
+
+**Format general**
+
+* Grup de 2 persones.
+* Document en PDF, mínim 5 pàgines.
+* Exposició oral de 8-10 minuts amb participació dels dos membres.
+
+---
+
+### 1. Definició i característiques
+
+1.1. Cercar informació general sobre què és un llenguatge de marques.
+1.2. Explicar per a què serveix i quines propietats el defineixen.
+1.3. Elaborar un mapa conceptual amb idees clau:
+
+* Conceptes centrals.
+* Característiques.
+* Exemples bàsics.
+  1.4. Incloure el mapa al document i afegir una breu explicació amb les pròpies paraules.
+
+**Eines**: CmapTools, MindMeister, Miro, Canva, Draw\.io, Google Drawings.
+
+---
+
+### 2. Història i evolució
+
+2.1. Investigar l’origen dels llenguatges de marques.
+2.2. Analitzar la seua evolució fins a l’actualitat.
+2.3. Preparar una línia temporal amb fites principals:
+
+* SGML.
+* XML.
+* HTML5, etc.
+  2.4. Afegir una breu descripció de cada moment històric.
+
+**Eines**: Timeline JS, Canva, Genially, Google Slides, PowerPoint (SmartArt).
+
+---
+
+### 3. Diferències amb els llenguatges de programació
+
+3.1. Comprendre les diferències entre llenguatges de marques i llenguatges de programació:
+
+* Finalitat.
+* Sintaxi.
+* Problemes que resolen.
+* Contextos d’ús.
+  3.2. Representar-les en una taula amb dues columnes:
+* Marques vs. Programació.
+  3.3. Escriure un breu paràgraf de síntesi al final.
+
+**Eines**: Google Docs/Tables, Word, Canva (taules infogràfiques).
+
+---
+
+### 4. Principals llenguatges de marques
+
+4.1. Treballar tres llenguatges: HTML, XML i JSON.
+4.2. Preparar una fitxa per a cada llenguatge amb:
+
+* Breu descripció.
+* Exemple senzill de codi.
+* Explicació de la seua utilitat.
+  4.3. Incloure comentaris dins del codi per a facilitar la comprensió.
+  4.4. Integrar les fitxes al document i utilitzar-les en l’exposició oral.
+
+**Eines**: Visual Studio Code, Notepad++, Sublime Text, JSFiddle, CodePen.
+
+---
+
+#### 5. Importància actual i aplicacions
+
+5.1. Reflexionar sobre la importància dels llenguatges de marques actualment.
+5.2. Mostrar àmbits d’aplicació concrets:
+
+* Pàgines web.
+* Aplicacions mòbils.
+* APIs.
+* Documents electrònics.
+  5.3. Elaborar una infografia o esquema visual.
+  5.4. Afegir una explicació redactada amb exemples propers a l’alumnat.
+
+ **Eines**: Canva, Piktochart, Genially, PowerPoint, Google Slides.
+
+---
+
+## 6. Exemples pràctics
+
+6.1. Crear un o dos exemples originals de documents senzills en llenguatges de marques.
+
+* HTML amb un títol i una llista.
+* XML amb dades inventades.
+  6.2. Afegir comentaris que expliquen cada part del codi.
+
+**Eines**: Visual Studio Code, Notepad++, JSFiddle, CodePen.
+
+---
+
+### Exposició oral
+
+- Duració: 8-10 minuts.
+- Participació equilibrada dels dos membres.
+
+Diapositives:
+
+* Clars i visuals.
+* Poc text.
+* Suport gràfic (imatges, esquemes, infografies).
+* No llegir literalment.
+  9.4. Valoració: claredat, ordre, explicació amb les pròpies paraules.
+
+**Eines**: PowerPoint, Google Slides, Canva, Genially, Prezi.
+
+---

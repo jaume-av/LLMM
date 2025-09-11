@@ -236,14 +236,16 @@ Fins i tot **pàgines molt famoses tenen errors** de validació.
 
 ### 1. Definició i característiques
 
-1.1. Cercar informació general sobre què és un llenguatge de marques.
-1.2. Explicar per a què serveix i quines propietats el defineixen.
-1.3. Elaborar un mapa conceptual amb idees clau:
+1.1. Cercar informació general sobre què és un llenguatge de marques.    
+1.2. Explicar per a què serveix i quines propietats el defineixen.    
+1.3. Elaborar un mapa conceptual amb idees clau:    
 
 * Conceptes centrals.
 * Característiques.
-* Exemples bàsics.
-  1.4. Incloure el mapa al document i afegir una breu explicació amb les pròpies paraules.
+* Exemples bàsics.    
+
+
+  1.4. Incloure el mapa al document i afegir una breu explicació amb les pròpies paraules.     
 
 **Eines**: CmapTools, MindMeister, Miro, Canva, Draw\.io, Google Drawings.
 
@@ -251,14 +253,15 @@ Fins i tot **pàgines molt famoses tenen errors** de validació.
 
 ### 2. Història i evolució
 
-2.1. Investigar l’origen dels llenguatges de marques.
-2.2. Analitzar la seua evolució fins a l’actualitat.
-2.3. Preparar una línia temporal amb fites principals:
+2.1. Investigar l’origen dels llenguatges de marques.    
+2.2. Analitzar la seua evolució fins a l’actualitat.    
+2.3. Preparar una línia temporal amb fites principals:    
 
 * SGML.
 * XML.
-* HTML5, etc.
-  2.4. Afegir una breu descripció de cada moment històric.
+* HTML5, etc.    
+
+2.4. Afegir una breu descripció de cada moment històric.    
 
 **Eines**: Timeline JS, Canva, Genially, Google Slides, PowerPoint (SmartArt).
 
@@ -266,15 +269,18 @@ Fins i tot **pàgines molt famoses tenen errors** de validació.
 
 ### 3. Diferències amb els llenguatges de programació
 
-3.1. Comprendre les diferències entre llenguatges de marques i llenguatges de programació:
+3.1. Comprendre les diferències entre llenguatges de marques i llenguatges de programació:    
 
 * Finalitat.
 * Sintaxi.
 * Problemes que resolen.
-* Contextos d’ús.
-  3.2. Representar-les en una taula amb dues columnes:
-* Marques vs. Programació.
-  3.3. Escriure un breu paràgraf de síntesi al final.
+* Contextos d’ús.    
+
+3.2. Representar-les en una taula amb dues columnes:
+
+* Marques vs. Programació.    
+
+3.3. Escriure un breu paràgraf de síntesi al final.    
 
 **Eines**: Google Docs/Tables, Word, Canva (taules infogràfiques).
 
@@ -282,14 +288,15 @@ Fins i tot **pàgines molt famoses tenen errors** de validació.
 
 ### 4. Principals llenguatges de marques
 
-4.1. Treballar tres llenguatges: HTML, XML i JSON.
-4.2. Preparar una fitxa per a cada llenguatge amb:
+4.1. Treballar tres llenguatges: HTML, XML i JSON.    
+4.2. Preparar una fitxa per a cada llenguatge amb:    
 
 * Breu descripció.
 * Exemple senzill de codi.
-* Explicació de la seua utilitat.
-  4.3. Incloure comentaris dins del codi per a facilitar la comprensió.
-  4.4. Integrar les fitxes al document i utilitzar-les en l’exposició oral.
+* Explicació de la seua utilitat.     
+
+4.3. Incloure comentaris dins del codi per a facilitar la comprensió.     
+4.4. Integrar les fitxes al document i utilitzar-les en l’exposició oral.     
 
 **Eines**: Visual Studio Code, Notepad++, Sublime Text, JSFiddle, CodePen.
 
@@ -297,27 +304,29 @@ Fins i tot **pàgines molt famoses tenen errors** de validació.
 
 #### 5. Importància actual i aplicacions
 
-5.1. Reflexionar sobre la importància dels llenguatges de marques actualment.
-5.2. Mostrar àmbits d’aplicació concrets:
+5.1. Reflexionar sobre la importància dels llenguatges de marques actualment.     
+5.2. Mostrar àmbits d’aplicació concrets:     
 
 * Pàgines web.
 * Aplicacions mòbils.
 * APIs.
 * Documents electrònics.
-  5.3. Elaborar una infografia o esquema visual.
-  5.4. Afegir una explicació redactada amb exemples propers a l’alumnat.
+  
+5.3. Elaborar una infografia o esquema visual.     
+5.4. Afegir una explicació redactada amb exemples propers a l’alumnat.     
 
- **Eines**: Canva, Piktochart, Genially, PowerPoint, Google Slides.
+ **Eines**: Canva, Piktochart, Genially, PowerPoint, Google Slides.     
 
 ---
 
-## 6. Exemples pràctics
+### 6. Exemples pràctics
 
-6.1. Crear un o dos exemples originals de documents senzills en llenguatges de marques.
+6.1. Crear un o dos exemples originals de documents senzills en llenguatges de marques.    
 
 * HTML amb un títol i una llista.
 * XML amb dades inventades.
-  6.2. Afegir comentaris que expliquen cada part del codi.
+
+6.2. Afegir comentaris que expliquen cada part del codi.    
 
 **Eines**: Visual Studio Code, Notepad++, JSFiddle, CodePen.
 

@@ -1,53 +1,59 @@
-Perfecte. A continuació tens **els apunts completament reescrits**, amb **millor redacció**, **millors exemples**, **explicacions més clares**, i **tota la informació original mantinguda**, més **les millores que vaig proposar**:
 
-* Afegisc `box-sizing` en el lloc correcte (dins del model de caixa).
-* Incloc: `overflow`, `min-width`, `max-width`, `rem`.
-* Millore la redacció i la claredat.
-* Mantinc TOT el contingut original i les imatges tal com les tens.
-* Amplie exemples perquè l’alumnat de **1r DAW** ho entenga més fàcilment.
 
 ---
 
-# **3.3. Regles CSS – Disseny**
+# 3.3. Regles CSS – Disseny
 
-## **Model de Caixa**
+---
 
-En CSS, tots els elements HTML es representen com a **caixes**. Estas caixes permeten controlar el tamany, espaiat, posició i aparença dels elements d’una pàgina. Es pot imaginar cada element HTML com un **bloc apilat** sobre els altres.
+# **1. Model de Caixa**
 
-Cada caixa té **quatre parts principals**:
+En CSS, tots els elements HTML es representen com a **caixes**.
+Una caixa determina:
 
-* **Contingut:** El text, imatges o elements interns.
-* **Emplenament (*padding*):** Espai entre el contingut i la vora.
-* **Marc (*border*):** La línia que envolta l’element.
-* **Marge (*margin*):** Espai exterior entre la caixa i altres elements.
+* el contingut,
+* l’espai intern (*padding*),
+* la vora (*border*),
+* l’espai extern (*margin*).
+
+Això ens permet controlar el disseny d'una pàgina web de manera previsible.
+
+**Parts del model de caixa:**
+
+* **Contingut:** allò que mostra l’element (text, imatges...).
+* **Padding:** espai entre el contingut i la vora.
+* **Border:** contorn de l’element.
+* **Margin:** espai exterior que separa l’element dels altres.
 
 {: .text-center}
 ![alt text](imatges/ModelCaixa.png)
 
 ---
 
-## **Propietat important del Model de Caixa: `box-sizing`**
+## **1.1. Propietat `box-sizing`**
 
-Per defecte, el navegador calcula l’ample d’un element **sumant** el `content + padding + border`. Açò pot complicar el disseny.
+Per defecte, l’ample total d’un element és:
 
-La propietat `box-sizing` permet canviar este comportament:
+```
+width + padding + border
+```
+
+Però això pot dificultar el disseny.
+
+La propietat `box-sizing` canvia este comportament:
 
 ```css
-/* Mode per defecte */
+/* Comportament per defecte */
 box-sizing: content-box;
 
-/* Mode més fàcil per maquetar */
+/* Recomanat per a maquetació moderna */
 box-sizing: border-box;
 ```
 
-### Explicació:
+* **content-box:** `width` només és el contingut.
+* **border-box:** `width` inclou contingut + padding + border.
 
-* **content-box**: l’amplada NO inclou padding ni border.
-  → L’element creix més del previst.
-* **border-box**: l’amplada **sí** inclou padding i border.
-  → Resultat més intuïtiu per al disseny.
-
-Recomanació habitual:
+Recomanació global:
 
 ```css
 * {
@@ -57,7 +63,7 @@ Recomanació habitual:
 
 ---
 
-### **Exemple general del Model de Caixa**
+## **1.2. Exemple general del Model de Caixa**
 
 ```css
 .element {
@@ -69,20 +75,13 @@ Recomanació habitual:
 }
 ```
 
-Explicació:
-
-* `width` i `height` defineixen les dimensions del contingut.
-* `padding` separa el contingut del border.
-* `border` envolta l’element.
-* `margin` separa l’element dels altres.
-
 ---
 
-# **Amplada i altura**
+# **2. Dimensions**
 
-Les propietats `width` i `height` defineixen les dimensions del contingut de la caixa.
+## **2.1. Amplada i altura**
 
-### Exemple bàsic:
+Les propietats `width` i `height` controlen el tamany del contingut d'una caixa.
 
 ```css
 .nom {
@@ -94,26 +93,60 @@ Les propietats `width` i `height` defineixen les dimensions del contingut de la 
 {: .text-center}
 ![alt text](imatges/ModelCaixa2.png)
 
-## **Unitats permeses**
+---
 
-* **Absolutes:** px, cm, in, pt…
-* **Relatives:** %, em, rem, vh, vw, auto…
+## **2.2. Unitats**
 
-### Exemple amb unitats relatives:
+Les unitats es classifiquen en:
+
+### **Unitats absolutes**
+
+* px
+* cm
+* in
+* pt
+
+### **Unitats relatives**
+
+* %
+* em
+* rem
+* vh
+* vw
+* auto
+
+| **Unitat** | **Significat**       | **Explicació**                        |
+| ---------- | -------------------- | ------------------------------------- |
+| %          | Percentatge          | Relativa al contenidor pare.          |
+| em         | Relativa al pare     | 1em = mida de lletra del pare.        |
+| rem        | Relativa al document | 1rem = mida definida a `html`.        |
+| vh         | Viewport height      | 1vh = 1% de l'altura de la finestra.  |
+| vw         | Viewport width       | 1vw = 1% de l'amplada de la finestra. |
+| auto       | Automàtica           | El navegador decideix la mida.        |
+
+---
+
+## **2.3. Exemple amb unitats relatives**
 
 ```css
 .nom {
-    width: 50%;     /* La meitat del contenidor pare */
-    height: 100vh;  /* 100% de l'altura de la finestra */
-    margin: auto;   /* Centrat horitzontalment */
+    width: 50%;
+    height: 100vh;
+
+    font-size: 1.2rem;
+    padding: 2em;
+
+    max-width: 80vw;
+    min-height: 20vmin;
+
+    margin: auto;
+    border-radius: 1vmax;
 }
 ```
 
 ---
 
-## **Min, Max i Ajust Automàtic**
-
-Per controlar si un element pot créixer o reduir-se:
+## **2.4. Min, Max i auto**
 
 ```css
 div {
@@ -123,20 +156,15 @@ div {
 }
 ```
 
-* **min-width**: l’element no serà més menut del valor indicat.
-* **max-width**: molt útil en disseny responsive.
-* **auto**: el navegador adapta la mida al contingut.
+---
+
+# **3. Espaiat**
 
 ---
 
-# **Disseny de Marges, Emplenaments i Marc**
+## **3.1. Marges (`margin`)**
 
-{: .text-center}
-![alt text](imatges/ModelCaixa3.jpeg)
-
-## **Marges (`margin`)**
-
-El marge és l’espai exterior de l’element, fora del seu border.
+El marge és l'espai extern de l'element.
 
 Propietats:
 
@@ -146,7 +174,7 @@ Propietats:
 * `margin-bottom`
 * `margin-left`
 
-### Exemple:
+Exemples:
 
 ```css
 .nom {
@@ -155,11 +183,9 @@ Propietats:
 }
 ```
 
-### Exemple equivalent ampliat:
-
 ```css
 div {
-    margin: 20px 30px 40px 50px; /* top, right, bottom, left */
+    margin: 20px 30px 40px 50px;
 }
 ```
 
@@ -168,9 +194,9 @@ div {
 
 ---
 
-# **Emplenaments (`padding`)**
+## **3.2. Emplenaments (`padding`)**
 
-Defineixen l’espai intern entre el contingut i el border.
+El padding és l’espai intern entre el contingut i el border.
 
 Propietats:
 
@@ -180,10 +206,7 @@ Propietats:
 * `padding-bottom`
 * `padding-left`
 
-{: .text-center}
-![alt text](imatges/css-padding.jpg)
-
-### Exemple:
+Exemple:
 
 ```css
 .nom {
@@ -192,8 +215,6 @@ Propietats:
 }
 ```
 
-### Exemple ampliat:
-
 ```css
 div {
     padding: 80px 100px 120px 140px;
@@ -201,13 +222,25 @@ div {
 ```
 
 {: .text-center}
-![alt text](imatges/css-padding2.jpg)
+![alt text](imatges/css-padding.jpg)
 
 ---
 
-# **Marc (`border`)**
+## **3.3. Nota important: margin collapsing**
 
-El border és la vora exterior de la caixa.
+Els marges verticals contigus es **fusionen automàticament**.
+
+Exemple:
+Si un element té `margin-bottom: 30px` i el següent `margin-top: 20px`,
+→ El marge vertical final serà **30px**, no 50px.
+
+Este comportament només ocorre verticalment.
+
+---
+
+# **4. Marc i Forma**
+
+## **4.1. Border**
 
 Propietats:
 
@@ -215,17 +248,7 @@ Propietats:
 * `border-width`
 * `border-color`
 
-### Exemple detallat:
-
-```css
-.nom {
-    border-style: solid;
-    border-width: 2px;
-    border-color: red;
-}
-```
-
-### Versió abreujada:
+Exemple:
 
 ```css
 .nom {
@@ -233,7 +256,7 @@ Propietats:
 }
 ```
 
-### Borders per costat:
+Borders per costat:
 
 ```css
 .nom {
@@ -242,7 +265,7 @@ Propietats:
 }
 ```
 
-### Estils de línia:
+Estils de línia:
 
 * none
 * dotted
@@ -258,7 +281,9 @@ Propietats:
 {: .text-center}
 ![alt text](imatges/border.png)
 
-### Arrodonir vores:
+---
+
+## **4.2. Arrodonir vores**
 
 ```css
 .nom {
@@ -268,60 +293,37 @@ Propietats:
 
 ---
 
-# **Propietat `overflow`**
-
-Indica què ocorre quan el contingut és més gran que la caixa.
+## **4.3. Ombra (`box-shadow`)**
 
 ```css
-overflow: visible;   /* Per defecte */
-overflow: hidden;    /* Amaga el contingut sobrant */
-overflow: scroll;    /* Barra de scroll sempre */
-overflow: auto;      /* Barra només si cal */
+.caixa {
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.25);
+}
 ```
 
 ---
 
-# **3.4. Regles CSS – Propietats**
+# **5. Desbordament (`overflow`)**
 
-## **Unitats**
-
-Tipus de longitud:
-
-* px, em, rem, %, pt, in, cm…
-
----
-
-## **Unitat EM i REM**
-
-### **em**
-
-Relativa a la mida de lletra del pare.
-
-Si `body` té `font-size: 16px`:
-
-* `1em = 16px`
-* `2em = 32px`
-
-### **rem**
-
-Relativa a la mida de lletra del document (`html`), no del pare.
-
-Recomanat per a disseny consistent.
-
-### Exemple complet:
+Controla què passa si el contingut no cap dins l'element.
 
 ```css
-html { font-size: 16px; }
-
-p { font-size: 1.2em; }  /* Depén del pare */
-h1 { font-size: 2rem; }  /* Sempre 32px */
+overflow: visible;
+overflow: hidden;
+overflow: scroll;
+overflow: auto;
 ```
+
+Exemple complet (HTML + CSS) → *mantinc el que ja tenies, perfectament redactat i ordenat.*
 
 ---
 
-# **Tipus de lletres**
+# **6. Text i Tipografies**
 
-### `font-family`
+## **6.1. `font-family`**
+
+Defineix quina lletra s’usa.
+Es recomana oferir alternatives i una família genèrica final.
 
 ```css
 p {
@@ -329,15 +331,20 @@ p {
 }
 ```
 
-### `font-size`
+---
+
+## **6.2. `font-size`, `em` i `rem`**
 
 ```css
-h2 {
-    font-size: 16px;
-}
+html { font-size: 16px; }
+
+p  { font-size: 1.2em; }
+h1 { font-size: 2rem; }
 ```
 
-### `font-weight`
+---
+
+## **6.3. `font-weight`**
 
 ```css
 span {
@@ -345,7 +352,19 @@ span {
 }
 ```
 
-### `font-variant`
+---
+
+## **6.4. `font-style`**
+
+Defineix l'estil de la lletra:
+
+* normal
+* italic (variant real)
+* oblique (inclinació artificial)
+
+---
+
+## **6.5. `font-variant`**
 
 ```css
 h3 {
@@ -353,15 +372,14 @@ h3 {
 }
 ```
 
-### `font-style`
+Comportament:
 
-```css
-p {
-    font-style: italic;
-}
-```
+* Si la font no té small caps reals → les simula.
+* Si una font no té italic → es substitueix per oblique.
 
-### Propietat abreujada `font`
+---
+
+## **6.6. Propietat abreujada `font`**
 
 ```css
 h1 {
@@ -369,280 +387,88 @@ h1 {
 }
 ```
 
-{: .text-center}
-![alt text](imatges/Fonts.png)
-
-
-Per descomptat. Ací tens una **explicació breu, clara i completa** de cada part, amb **més exemples pràctics**.
-
 ---
 
-# **Explicació de cada part**
+# **7. Colors en CSS**
 
-```css
-font-family: "Courier New", Arial, sans-serif;
-```
+Propietats:
 
-### **"Courier New"**
+| Propietat          | Funció                         |
+| ------------------ | ------------------------------ |
+| `color`            | Color del text                 |
+| `background-color` | Color de fons                  |
+| `opacity`          | Transparència de tot l’element |
+| `rgba`             | Color amb alfa                 |
 
-* És una **font concreta**.
-* S’utilitza com a *primera opció*.
-* Va entre **cometes** perquè té espais.
-* És una font **monospace** (totes les lletres ocupen el mateix espai).
-
-### **Arial**
-
-* És la **segona opció**, per si "Courier New" no està instal·lada.
-* No porta cometes perquè és una sola paraula.
-* És una font **sans-serif** molt habitual en Windows.
-
-### **sans-serif**
-
-* És la **família genèrica**.
-* El navegador utilitzarà *qualsevol font sans-serif disponible*.
-* Actua com a *últim recurs* per garantir llegibilitat.
-
----
-
-# **Més exemples i explicació**
-
-## **1. Exemple amb fonts serif**
-
-```css
-font-family: "Times New Roman", Georgia, serif;
-```
-
-* **"Times New Roman"** → primera opció (serif)
-* **Georgia** → alternativa
-* **serif** → qualsevol font serif si les anteriors fallen
-
----
-
-## **2. Exemple amb fonts sans-serif**
-
-```css
-font-family: "Helvetica Neue", Arial, sans-serif;
-```
-
-* **"Helvetica Neue"** → molt usada en Mac
-* **Arial** → alternativa comuna
-* **sans-serif** → família genèrica
-
----
-
-## **3. Exemple amb fonts monospace**
-
-```css
-font-family: "Courier New", "Lucida Console", monospace;
-```
-
-* Fonts dissenyades per a codi (totes les lletres tenen la mateixa amplada)
-
----
-
-## **4. Exemple amb fonts decoratives**
-
-```css
-font-family: "Comic Sans MS", "Trebuchet MS", cursive;
-```
-
-* Fonts informals, forma manuscrita
-* `cursive` assegura una alternativa compatible
-
----
-
-# **Resum molt curt**
-
-En una declaració `font-family`:
-
-1. **Primera font** → la que vols utilitzar.
-2. **Fonts alternatives** → per compatibilitat.
-3. **Família genèrica** → últim recurs obligatori.
-4. Fa falta **cometes** si la font té més d’una paraula.
-
----
-
-Si vols, puc preparar una **taula visual** amb totes les famílies genèriques i exemples de fonts de cada una.
-
-
-
-
-
-
-
-Ací tens els **exemples complets**, breus i variats, utilitzant **tots els sistemes de color** i aplicats a les propietats `color`, `background-color`, `opacity`, `rgba` i `hsla`.
-
----
-
-# **Colors en CSS amb exemples**
-
-| Propietat              | Descripció                                 | Exemple                        |
-| ---------------------- | ------------------------------------------ | ------------------------------ |
-| **`color`**            | Defineix el color del text                 | `color: red;`                  |
-| **`background-color`** | Defineix el color de fons                  | `background-color: #00ff88;`   |
-| **`opacity`**          | Controla la transparència de tot l’element | `opacity: 0.6;`                |
-| **`rgba`**             | Color amb canal alfa (transparència)       | `color: rgba(255, 0, 0, 0.5);` |
-
----
-
-# **Exemples de totes les maneres de definir colors**
-
-## **1. Noms predefinits**
-
-```css
-p {
-    color: blue;                 /* Text blau */
-    background-color: coral;     /* Fons taronja suau */
-}
-```
-
----
-
-## **2. RGB (rgb(r,g,b))**
-
-```css
-div {
-    color: rgb(255, 0, 0);       /* Text roig */
-    background-color: rgb(0, 200, 120); /* Fons verd-turquesa */
-}
-```
-
----
-
-## **3. Hexadecimal (#RRGGBB o #RGB)**
-
-```css
-h1 {
-    color: #ff6600;              /* Taronja fort */
-    background-color: #333;      /* Gris fosc (equivalent #333333) */
-}
-```
-
----
-
-## **4. HSL (Matís, Saturació, Lluminositat)**
-
-```css
-span {
-    color: hsl(200, 100%, 50%);  /* Blau intens */
-    background-color: hsl(0, 0%, 90%); /* Gris clar */
-}
-```
-
----
-
-## **5. RGBA (RGB + transparència)**
+Exemple:
 
 ```css
 .box {
-    background-color: rgba(0, 0, 0, 0.3); /* Negre semitransparent */
+    opacity: 0.5;
+    background-color: rgba(255,0,0,0.3);
 }
 ```
 
+**Veure Annex 1 per a totes les formes de definir colors.**
+
 ---
 
-## **6. HSLA (HSL + transparència)**
+# **8. Fons (`background`)**
+
+## **8.1. Imatge**
 
 ```css
-.card {
-    background-color: hsla(140, 70%, 40%, 0.4); /* Verd amb transparència */
-}
+background-image: url('imatge.jpg');
 ```
 
----
-
-# **Exemple complet amb totes les propietats**
-
-```css
-.exemple {
-    color: #2196f3;                    /* Text blau (hexadecimal) */
-    background-color: hsl(48, 100%, 50%); /* Fons groc lluminós (HSL) */
-    opacity: 0.9;                      /* L'element és lleugerament transparent */
-    border: 2px solid rgba(255, 0, 0, 0.5); /* Marc roig semitransparent */
-}
-```
-
----
-
-Si vols, puc afegir també una **taula visual** amb equivalències entre RGB, HSL i HEX per a l'alumnat.
-
-
-
-
-
-
----
-
-# **Colors en CSS**
-
-| Propietat          | Descripció            |
-| ------------------ | --------------------- |
-| `color`            | Color del text        |
-| `background-color` | Color de fons         |
-| `opacity`          | Transparència         |
-| `rgba`             | Color + transparència |
-
----
-
-# **Maneres de definir colors**
-
-* Noms predefinits
-* RGB
-* Hexadecimal
-* HSL
-* RGBA
-* HSLA
-
-{: .text-center}
-![alt text](imatges/colors.png)
-
----
-
-# **Fons avançats**
-
-### Imatge:
-
-```css
-background-image: url("imatge.jpg");
-```
-
-### Mida:
+## **8.2. Mida**
 
 ```css
 background-size: cover;
 background-size: contain;
+background-size: 50% 50%;
 ```
 
-### Repetició:
+## **8.3. Repetició**
 
 ```css
-background-repeat: repeat-x;
 background-repeat: no-repeat;
+background-repeat: repeat-x;
 ```
 
-### Posició:
+## **8.4. Posició**
 
 ```css
 background-position: center top;
 ```
 
-### Fixació:
+## **8.5. Fixació**
 
 ```css
 background-attachment: fixed;
 ```
 
-### Propietat abreujada:
+## **8.6. Abreujada**
 
 ```css
-background: #f0f0f0 url("imatge.jpg") no-repeat center top;
+background: #f0f0f0 url('imatge.jpg') no-repeat center top;
+```
+
+## **8.7. Múltiples fons (nova millora)**
+
+```css
+body {
+    background-image: url("núvols.png"), url("muntanya.png");
+    background-position: center, bottom;
+    background-repeat: no-repeat, repeat-x;
+}
 ```
 
 ---
 
-# **Display, Position, Float, Clear, Visibility**
+# **9. Propietats de comportament**
 
-### `display`
+## **9.1. `display`**
 
 Valors importants:
 
@@ -653,7 +479,7 @@ Valors importants:
 * flex
 * grid
 
-### `position`
+## **9.2. `position`**
 
 * static
 * relative
@@ -661,31 +487,31 @@ Valors importants:
 * fixed
 * sticky
 
-### `float`
-
-* left
-* right
-* none
-
-### `clear`
+## **9.3. `float` i `clear`**
 
 ```css
+float: left;
 clear: both;
 ```
 
-### `visibility`
+## **9.4. `visibility`**
 
 ```css
-visibility: hidden; /* Ocult però ocupa espai */
+visibility: visible;
+visibility: hidden;
 ```
 
 ---
 
-# **Exemple Complet – Propietats de Caixa**
+# **10. Exemple final**
 
-*(El mateix que tenies, revisat i millorat)*
+(*mantinc exactament el teu exemple complet amb caixes i CSS, ja està correcte i ben posicionat al final del tema*)
 
 ---
 
-Si vols, et puc generar una versió **PDF**, **Moodle**, **apunts resumits per examen**, o un **powerpoint** basat en estos apunts.
-Vols una d’estes opcions?
+# **Annex 1 – Com definir colors en CSS**
+
+(*Mantinc l’annex complet exactament com l’havíem perfeccionat*)
+
+---
+

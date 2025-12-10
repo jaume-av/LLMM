@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Demostració Overflow</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef3f9;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #123c69;
+            margin-bottom: 40px;
+        }
+
+        .bloc {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .titol {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0b3c5d;
+            margin-bottom: 10px;
+        }
+
+        /* CAIXA BASE */
+        .caixa {
+            width: 140px;
+            height: 60px;
+            padding: 6px;
+            border-radius: 6px;
+            font-size: 14px;
+            line-height: 1.2;
+            background: #fdfdfd;
+            margin-top: 10px;
+        }
+
+        /* COLORS  */
+        .visible { border: 3px solid #d9534f; }
+        .hidden  { border: 3px solid #0275d8; }
+        .scroll  { border: 3px solid #5cb85c; }
+        .auto    { border: 3px solid #f0ad4e; }
+
+        /* exemple overflow-x / overflow-y */
+        .xscroll {
+            border: 3px solid #8e44ad;
+            white-space: nowrap;
+            width: 180px;
+            height: 50px;
+            padding: 6px;
+            border-radius: 6px;
+            font-size: 14px;
+            background: #fdfdfd;
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>Tipus d’Overflow</h1>
+
+<!-- visible -->
+<div class="bloc">
+    <div class="titol">overflow: visible</div>
+    <div class="caixa visible" style="overflow: visible;">
+        Aquest text és extremadament llarg i ix de la caixa de forma molt clara i evident, fins i tot trencant totalment el disseny visual a propòsit.
+    </div>
+</div>
+
+<!-- hidden -->
+<div class="bloc">
+    <div class="titol">overflow: hidden</div>
+    <div class="caixa hidden" style="overflow: hidden;">
+        Aquest text és extremadament llarg i serà tallat de manera radical perquè no càp dins de la caixa.
+    </div>
+</div>
+
+<!-- scroll -->
+<div class="bloc">
+    <div class="titol">overflow: scroll</div>
+    <div class="caixa scroll" style="overflow: scroll;">
+        Aquest text és extremadament llarg i mostra barres d’scroll encara que no siguen necessàries.
+    </div>
+</div>
+
+<!-- auto -->
+<div class="bloc">
+    <div class="titol">overflow: auto</div>
+    <div class="caixa auto" style="overflow: auto;">
+        Aquest text és extremadament llarg i mostra scroll només quan realment és necessari.
+    </div>
+</div>
+
+<!-- overflow-x / y -->
+<div class="bloc">
+    <div class="titol">overflow-x / overflow-y</div>
+    <div class="xscroll" style="overflow-x: scroll; overflow-y: hidden;">
+        TEXTLAAAAARGAAAAAASENSEESPACISPERFORÇARHORIZONTALMENT
+    </div>
+</div>
+
+</body>
+</html>

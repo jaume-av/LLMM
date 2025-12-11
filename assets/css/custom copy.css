@@ -49,8 +49,6 @@ h3 {
   border-bottom: 1px solid #12450b !important; /* Vora fina (2px) per als h3 */
 }
 
-
-
 h1 code, h2 code {
   background-color: #d0e6f7 !important; /* Color de fons blau suau */
   color: inherit !important; /* Manté el color de la capçalera */
@@ -64,28 +62,6 @@ h1 code, h2 code {
   white-space: normal !important; /* Permet trencar línies si és necessari */
 }
 
-/* h4 igual que h3 però amb punt davant i sense línia inferior */
-h4 {
-  font-family: 'Calibri', sans-serif !important;
-  color: #12450b !important; 
-  padding: 10px !important;
-  margin-bottom: 20px !important;
-  font-weight: bold !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0px !important;
-  border-bottom: none !important; /* Sense línia inferior */
-  position: relative !important;
-}
-
-/* Punt decoratiu abans del text */
-h4::before {
-  content: "• ";               /* Punt al davant */
-  color: #12450b !important;   /* Mateix verd que el títol */
-  font-size: 18px !important;  /* Un poc més gran que el text */
-  font-weight: bold !important;
-  margin-right: 4px !important;
-}
 
 
 

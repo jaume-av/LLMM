@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Demo – flex</title>
+
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            background: #f4f7f0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            background: #dcecd5;
+            color: #1b4d1b;
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .intro {
+            background: #eef7ea;
+            border-left: 4px solid #6ea96e;
+            padding: 12px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .demo-box {
+            border: 2px solid #6ea96e;
+            padding: 20px;
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 6px;
+        }
+
+        .label {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 15px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            color: white;
+            background: #6ea96e;
+            font-weight: bold;
+        }
+
+        .flex-container {
+            display: flex;
+            background: #f2f7ef;
+            padding: 15px;
+            border-radius: 6px;
+            border: 2px dashed #6ea96e;
+            gap: 8px;
+            width: 500px;
+        }
+
+        .item {
+            height: 70px;
+            background: #d9f2d0;
+            border: 2px solid #6ea96e;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        .explain {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #2f5e2f;
+            background: #eef7ea;
+            padding: 8px;
+            border-left: 4px solid #6ea96e;
+            border-radius: 4px;
+        }
+
+        .resum {
+            background: #eef7ea;
+            padding: 15px;
+            border-left: 5px solid #6ea96e;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>flex (abreviatura)</h1>
+
+<div class="intro">
+    <strong>flex</strong> és l’abreviatura de <strong>flex-grow</strong>, <strong>flex-shrink</strong> i <strong>flex-basis</strong>.<br>
+    Permet definir en una sola línia com creix, com es contraurà i quina és la mida inicial d’un element.
+</div>
+
+<!-- EXEMPLE 1 -->
+<div class="demo-box">
+    <span class="label">flex: 1 1 0 (el cas més habitual)</span>
+
+    <div class="flex-container">
+        <div class="item" style="flex:1 1 0">flex:1<br>grow:1<br>shrink:1<br>basis:0</div>
+        <div class="item" style="flex:1 1 0">flex:1<br>grow:1<br>shrink:1<br>basis:0</div>
+        <div class="item" style="flex:1 1 0">flex:1<br>grow:1<br>shrink:1<br>basis:0</div>
+    </div>
+
+    <div class="explain">
+        Tots creixen i es contrauen igualment. Ideal per <strong>repartir espai equitativament</strong>.
+    </div>
+</div>
+
+<!-- EXEMPLE 2 -->
+<div class="demo-box">
+    <span class="label">flex: 2 / flex: 1 / flex: 3</span>
+
+    <div class="flex-container">
+        <div class="item" style="flex:1">flex:1<br>grow:1</div>
+        <div class="item" style="flex:2">flex:2<br>grow:2</div>
+        <div class="item" style="flex:3">flex:3<br>grow:3</div>
+    </div>
+
+    <div class="explain">
+        Es reparteix l’espai sobrant en proporció <strong>1 : 2 : 3</strong>.<br>
+        L’últim element ocupa el triple d’espai que el primer.
+    </div>
+</div>
+
+<!-- EXEMPLE 3 -->
+<div class="demo-box">
+    <span class="label">flex: none (no creix ni es contraurà)</span>
+
+    <div class="flex-container">
+        <div class="item" style="flex:none">flex:none<br>(0 0 auto)</div>
+        <div class="item" style="flex:1">flex:1</div>
+        <div class="item" style="flex:1">flex:1</div>
+    </div>
+
+    <div class="explain">
+        L’element amb <strong>flex:none</strong> conserva sempre la seua mida.<br>
+        Els altres dos es reparteixen l’espai restant.
+    </div>
+</div>
+
+<!-- EXEMPLE 4 -->
+<div class="demo-box">
+    <span class="label">flex: 2 1 100px (definició completa)</span>
+
+    <div class="flex-container">
+        <div class="item" style="flex:2 1 100px">grow:2<br>shrink:1<br>basis:100px</div>
+        <div class="item" style="flex:1 1 100px">grow:1<br>shrink:1<br>basis:100px</div>
+        <div class="item" style="flex:1 1 100px">grow:1<br>shrink:1<br>basis:100px</div>
+    </div>
+
+    <div class="explain">
+        Els tres comencen amb <strong>100px</strong> però el primer té grow **2**, així que creix el doble.
+    </div>
+</div>
+
+<!-- RESUM -->
+<div class="resum">
+    <strong>En resum:</strong><br><br>
+    • <strong>flex</strong> = grow + shrink + basis.<br>
+    • <strong>flex:1</strong> → grow:1, shrink:1, basis:0 (molt utilitzat).<br>
+    • <strong>flex:none</strong> → 0 0 auto (no creix ni es contrau).<br>
+    • Es pot especificar completament: <strong>flex: 2 1 100px</strong>.<br>
+    • És la forma recomanada per controlar el comportament d’un item Flexbox.
+</div>
+
+</body>
+</html>

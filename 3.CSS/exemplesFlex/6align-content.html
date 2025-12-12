@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Demo – align-content</title>
+
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            background: #f4f7f0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            background: #dcecd5;
+            color: #1b4d1b;
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .intro {
+            background: #eef7ea;
+            border-left: 4px solid #6ea96e;
+            padding: 12px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .demo-box {
+            border: 2px solid #6ea96e;
+            padding: 20px;
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 6px;
+        }
+
+        .label {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 15px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            color: white;
+            background: #6ea96e;
+            font-weight: bold;
+        }
+
+        /* Importantíssim per a veure diferències */
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            width: 260px;
+            height: 360px;       /* Espai sobrant vertical => CLAR VISUALMENT */
+            background: #f2f7ef;
+            padding: 10px;
+            border-radius: 6px;
+            border: 2px dashed #6ea96e;
+            gap: 6px;
+        }
+
+        .item {
+            width: 60px;
+            height: 40px;
+            background: #d9f2d0;
+            border: 2px solid #6ea96e;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .explain {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #2f5e2f;
+            background: #eef7ea;
+            padding: 8px;
+            border-left: 4px solid #6ea96e;
+            border-radius: 4px;
+        }
+
+        .resum {
+            background: #eef7ea;
+            padding: 15px;
+            border-left: 5px solid #6ea96e;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>align-content</h1>
+
+<div class="intro">
+    Controla <strong>com es distribueixen les LÍNIES</strong> quan hi ha <strong>wrap</strong>wrap i espai vertical sobrant.
+    <br><br>
+    Només funciona si:
+    <strong>1) hi ha diverses línies</strong> i <strong>2) el contenidor és més alt que les línies</strong>.
+</div>
+
+<!-- stretch -->
+<div class="demo-box">
+    <span class="label">align-content: stretch (per defecte)</span>
+
+    <div class="flex" style="align-content: stretch;">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+        <div class="item">7</div><div class="item">8</div><div class="item">9</div>
+    </div>
+
+    <div class="explain">
+        Les línies s’estiren per ocupar TOT l’espai vertical disponible.
+    </div>
+</div>
+
+<!-- flex-start -->
+<div class="demo-box">
+    <span class="label">align-content: flex-start</span>
+
+    <div class="flex" style="align-content:flex-start;">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+        <div class="item">7</div><div class="item">8</div><div class="item">9</div>
+    </div>
+
+    <div class="explain">
+        Totes les línies s’acumulen a la part superior.
+    </div>
+</div>
+
+<!-- flex-end -->
+<div class="demo-box">
+    <span class="label">align-content: flex-end</span>
+
+    <div class="flex" style="align-content:flex-end;">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+        <div class="item">7</div><div class="item">8</div><div class="item">9</div>
+    </div>
+
+    <div class="explain">
+        Les línies baixen a la part inferior.
+    </div>
+</div>
+
+<!-- center -->
+<div class="demo-box">
+    <span class="label">align-content: center</span>
+
+    <div class="flex" style="align-content:center;">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+        <div class="item">7</div><div class="item">8</div><div class="item">9</div>
+    </div>
+
+    <div class="explain">
+        Les línies queden centrades verticalment dins del contenidor.
+    </div>
+</div>
+
+<!-- space-between -->
+<div class="demo-box">
+    <span class="label">align-content: space-between</span>
+
+    <div class="flex" style="align-content:space-between;">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+        <div class="item">7</div><div class="item">8</div><div class="item">9</div>
+    </div>
+
+    <div class="explain">
+        Primera línia dalt, última línia baix, i espai màxim entre línies.
+    </div>
+</div>
+
+<!-- space-around -->
+<div class="demo-box">
+    <span class="label">align-content: space-around</span>
+
+    <div class="flex" style="align-content:space-around;">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+        <div class="item">7</div><div class="item">8</div><div class="item">9</div>
+    </div>
+
+    <div class="explain">
+        Cada línia té espai a dalt i baix. Els extrems tenen la meitat.
+    </div>
+</div>
+
+<!-- space-evenly -->
+<div class="demo-box">
+    <span class="label">align-content: space-evenly</span>
+
+    <div class="flex" style="align-content:space-evenly;">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+        <div class="item">7</div><div class="item">8</div><div class="item">9</div>
+    </div>
+
+    <div class="explain">
+        TOT l’espai vertical es reparteix igual entre totes les línies.
+    </div>
+</div>
+
+<div class="resum">
+    <strong>En resum:</strong><br><br>
+    • <strong>stretch</strong> → les línies s’estiren (per defecte).<br>
+    • <strong>flex-start</strong> → totes dalt.<br>
+    • <strong>flex-end</strong> → totes baix.<br>
+    • <strong>center</strong> → totes al centre vertical.<br>
+    • <strong>space-between</strong> → primera dalt, última baix, espai màxim al mig.<br>
+    • <strong>space-around</strong> → espais iguals però extrems a la meitat.<br>
+    • <strong>space-evenly</strong> → espai uniforme per a totes les línies.<br>
+</div>
+
+</body>
+</html>

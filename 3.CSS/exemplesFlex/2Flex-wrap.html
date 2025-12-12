@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Demo – flex-wrap</title>
+
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            background: #f4f7f0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            background: #dcecd5;
+            color: #1b4d1b;
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .intro {
+            background: #eef7ea;
+            border-left: 4px solid #6ea96e;
+            padding: 12px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .demo-box {
+            border: 2px solid #6ea96e;
+            padding: 20px;
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 6px;
+        }
+
+        .label {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 15px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            color: white;
+            background: #6ea96e;
+            font-weight: bold;
+        }
+
+        .item {
+            width: 70px;
+            height: 70px;
+            background: #d9f2d0;
+            border: 2px solid #6ea96e;
+            border-radius: 6px;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Contenidor FLEX — LÍMIT D’AMPLADA PER A MOSTRAR EL WRAP */
+        .flex {
+            display: flex;
+            background: #f2f7ef;
+            padding: 15px;
+            border-radius: 6px;
+            max-width: 260px; /* CLAU perquè es veja el wrap */
+            margin: auto;
+            gap: 8px;
+        }
+
+        .nowrap       { flex-wrap: nowrap; }
+        .wrap         { flex-wrap: wrap; }
+        .wrap-reverse { flex-wrap: wrap-reverse; }
+
+        .explain {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #2f5e2f;
+            background: #eef7ea;
+            padding: 8px;
+            border-left: 4px solid #6ea96e;
+            border-radius: 4px;
+        }
+
+        .resum {
+            background: #eef7ea;
+            padding: 15px;
+            border-left: 5px solid #6ea96e;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>flex-wrap</h1>
+
+<div class="intro">
+    Controla si els elements flex poden ocupar <strong>una sola línia</strong> o <strong>diverses línies</strong> quan no hi ha prou espai en el contenidor.
+</div>
+
+
+<!-- nowrap -->
+<div class="demo-box">
+    <span class="label">flex-wrap: nowrap (per defecte)</span>
+
+    <div class="flex nowrap">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    </div>
+
+    <div class="explain">
+        Els elements romanen en <strong>una única línia</strong>, encara que es desborden del contenidor.
+    </div>
+</div>
+
+
+<!-- wrap -->
+<div class="demo-box">
+    <span class="label">flex-wrap: wrap</span>
+
+    <div class="flex wrap">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    </div>
+
+    <div class="explain">
+        Quan no hi ha espai suficient, <strong>els elements passen a una segona línia</strong>.
+    </div>
+</div>
+
+
+<!-- wrap-reverse -->
+<div class="demo-box">
+    <span class="label">flex-wrap: wrap-reverse</span>
+
+    <div class="flex wrap-reverse">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    </div>
+
+    <div class="explain">
+        Igual que <strong>wrap</strong>, però les línies noves apareixen <strong>per damunt</strong> de les anteriors.
+    </div>
+</div>
+
+
+<!-- RESUM -->
+<div class="resum">
+    <strong>En resum:</strong><br><br>
+    • <strong>nowrap</strong>: tot en una sola línia (valor per defecte).<br>
+    • <strong>wrap</strong>: els elements baixen a línies noves quan no capen.<br>
+    • <strong>wrap-reverse</strong>: igual que wrap, però les línies s’apilen a l’inrevés.<br>
+</div>
+
+</body>
+</html>

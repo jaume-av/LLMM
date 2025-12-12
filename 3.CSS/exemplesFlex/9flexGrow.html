@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Demo – flex-grow</title>
+
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            background: #f4f7f0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            background: #dcecd5;
+            color: #1b4d1b;
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .intro {
+            background: #eef7ea;
+            border-left: 4px solid #6ea96e;
+            padding: 12px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .demo-box {
+            border: 2px solid #6ea96e;
+            padding: 20px;
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 6px;
+        }
+
+        .label {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 15px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            color: white;
+            background: #6ea96e;
+            font-weight: bold;
+        }
+
+        .flex {
+            display: flex;
+            background: #f2f7ef;
+            padding: 15px;
+            border-radius: 6px;
+            gap: 10px;
+        }
+
+        .item {
+            height: 70px;
+            min-width: 70px;
+            background: #d9f2d0;
+            border: 2px solid #6ea96e;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            flex-basis: 70px; /* NO es mostra en el text */
+        }
+
+        /* Valors de grow */
+        .g0 { flex-grow: 0; }
+        .g1 { flex-grow: 1; }
+        .g2 { flex-grow: 2; }
+        .g3 { flex-grow: 3; }
+        .g5 { flex-grow: 5; }
+
+        .explain {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #2f5e2f;
+            background: #eef7ea;
+            padding: 8px;
+            border-left: 4px solid #6ea96e;
+            border-radius: 4px;
+        }
+
+        .resum {
+            background: #eef7ea;
+            padding: 15px;
+            border-left: 5px solid #6ea96e;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>flex-grow</h1>
+
+<div class="intro">
+    Indica quant pot créixer cada element quan el contenidor té espai disponible.
+    El valor és proporcional: un element amb grow 2 creixerà el doble que un amb grow 1.
+</div>
+
+<!-- Exemple bàsic -->
+<div class="demo-box">
+    <span class="label">Comparació bàsica (0, 1, 2)</span>
+
+    <div class="flex">
+        <div class="item g0">grow: 0</div>
+        <div class="item g1">grow: 1</div>
+        <div class="item g2">grow: 2</div>
+    </div>
+
+    <div class="explain">
+        L’element amb grow 2 creix el doble que el de grow 1.
+        El grow 0 no creix: manté la seua amplària mínima.
+    </div>
+</div>
+
+<!-- Exemple amb el MÉS GRAN al MIG -->
+<div class="demo-box">
+    <span class="label">Major creixement al centre</span>
+
+    <div class="flex">
+        <div class="item g1">grow: 1</div>
+        <div class="item g5">grow: 5</div>
+        <div class="item g1">grow: 1</div>
+    </div>
+
+    <div class="explain">
+        L’element central, amb grow 5, ocupa la major part de l’espai disponible.
+    </div>
+</div>
+
+<!-- Exemple amb més valors -->
+<div class="demo-box">
+    <span class="label">Comparació 1 : 2 : 3</span>
+
+    <div class="flex">
+        <div class="item g1">grow: 1</div>
+        <div class="item g2">grow: 2</div>
+        <div class="item g3">grow: 3</div>
+    </div>
+
+    <div class="explain">
+        Els elements creixen en proporció directa als seus valors:
+        grow 3 és el triple que grow 1.
+    </div>
+</div>
+
+<!-- RESUM -->
+<div class="resum">
+    <strong>En resum:</strong><br><br>
+    • <strong>grow 0</strong>: no creix.<br>
+    • <strong>grow 1</strong>: creix de manera estàndard.<br>
+    • <strong>grow 2, 3, 5…</strong>: creixen proporcionalment més.<br>
+    • El valor indica “pes de creixement”, no mida fixa.<br>
+</div>
+
+</body>
+</html>

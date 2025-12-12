@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Demo – align-items</title>
+
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            background: #f4f7f0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            background: #dcecd5;
+            color: #1b4d1b;
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .intro {
+            background: #eef7ea;
+            border-left: 4px solid #6ea96e;
+            padding: 12px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .demo-box {
+            border: 2px solid #6ea96e;
+            padding: 20px;
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 6px;
+        }
+
+        .label {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 15px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            color: white;
+            background: #6ea96e;
+            font-weight: bold;
+        }
+
+        .item {
+            width: 70px;
+            height: 70px;
+            background: #d9f2d0;
+            border: 2px solid #6ea96e;
+            border-radius: 6px;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .flex {
+            display: flex;
+            background: #f2f7ef;
+            padding: 15px;
+            border-radius: 6px;
+            gap: 10px;
+            min-height: 150px; /* important per veure clarament l'alineació */
+        }
+
+        .ai-start     { align-items: flex-start; }
+        .ai-end       { align-items: flex-end; }
+        .ai-center    { align-items: center; }
+        .ai-stretch   { align-items: stretch; }
+        .ai-baseline  { align-items: baseline; }
+
+        .item.baseline {
+            font-size: 26px; /* per mostrar diferència de línia base */
+            height: auto;
+            padding: 10px;
+        }
+
+        .explain {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #2f5e2f;
+            background: #eef7ea;
+            padding: 8px;
+            border-left: 4px solid #6ea96e;
+            border-radius: 4px;
+        }
+
+        .resum {
+            background: #eef7ea;
+            padding: 15px;
+            border-left: 5px solid #6ea96e;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>align-items</h1>
+
+<div class="intro">
+    Controla l’alineació dels elements al llarg de l’eix transversal (cross axis): a dalt, baix, centre, estirats o alineats per línia base.
+</div>
+
+
+<!-- flex-start -->
+<div class="demo-box">
+    <span class="label">align-items: flex-start</span>
+
+    <div class="flex ai-start">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    </div>
+
+    <div class="explain">Els elements s’alineen a la part superior del contenidor.</div>
+</div>
+
+
+<!-- flex-end -->
+<div class="demo-box">
+    <span class="label">align-items: flex-end</span>
+
+    <div class="flex ai-end">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    </div>
+
+    <div class="explain">Els elements s’alineen a la part inferior del contenidor.</div>
+</div>
+
+
+<!-- center -->
+<div class="demo-box">
+    <span class="label">align-items: center</span>
+
+    <div class="flex ai-center">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    </div>
+
+    <div class="explain">Els elements queden centrats verticalment (en un main-axis horitzontal).</div>
+</div>
+
+
+<!-- stretch -->
+<div class="demo-box">
+    <span class="label">align-items: stretch (per defecte)</span>
+
+    <div class="flex ai-stretch">
+        <div class="item" style="height:auto;">1</div>
+        <div class="item" style="height:auto;">2</div>
+        <div class="item" style="height:auto;">3</div>
+    </div>
+
+    <div class="explain">Els elements s’estiren per omplir l’alçada del contenidor (si no tenen height).</div>
+</div>
+
+
+<!-- baseline -->
+<div class="demo-box">
+    <span class="label">align-items: baseline</span>
+
+    <div class="flex ai-baseline">
+        <div class="item baseline">A</div>
+        <div class="item">B</div>
+        <div class="item baseline">C</div>
+    </div>
+
+    <div class="explain">Els elements s’alineen segons la línia base del text.</div>
+</div>
+
+
+<!-- RESUM -->
+<div class="resum">
+    <strong>En resum:</strong><br><br>
+    • <strong>flex-start</strong> → alineats dalt.<br>
+    • <strong>flex-end</strong> → alineats baix.<br>
+    • <strong>center</strong> → centrats verticalment.<br>
+    • <strong>stretch</strong> → s’estiren per omplir l’espai (valor per defecte).<br>
+    • <strong>baseline</strong> → alineats per la línia base del text.<br>
+</div>
+
+</body>
+</html>

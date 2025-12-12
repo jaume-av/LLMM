@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Demo – flex-shrink</title>
+
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            background: #f4f7f0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            background: #dcecd5;
+            color: #1b4d1b;
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .intro {
+            background: #eef7ea;
+            border-left: 4px solid #6ea96e;
+            padding: 12px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .demo-box {
+            border: 2px solid #6ea96e;
+            padding: 20px;
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 6px;
+        }
+
+        .label {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 15px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            color: white;
+            background: #6ea96e;
+            font-weight: bold;
+        }
+
+        .flex {
+            display: flex;
+            background: #f2f7ef;
+            padding: 15px;
+            border-radius: 6px;
+            border: 2px dashed #6ea96e;
+            gap: 8px;
+            width: 300px; /* IMPORTANT: provocar falta d'espai */
+        }
+
+        .item {
+            height: 70px;
+            width: 120px;                    /* força falta d'espai */
+            background: #d9f2d0;
+            border: 2px solid #6ea96e;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        /* DIFERENTS NIVELLS DE CONTRACCIÓ */
+        .shrink0 { flex-shrink: 0; }
+        .shrink1 { flex-shrink: 1; }
+        .shrink3 { flex-shrink: 3; }
+
+        .explain {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #2f5e2f;
+            background: #eef7ea;
+            padding: 8px;
+            border-left: 4px solid #6ea96e;
+            border-radius: 4px;
+        }
+
+        .resum {
+            background: #eef7ea;
+            padding: 15px;
+            border-left: 5px solid #6ea96e;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>flex-shrink</h1>
+
+<div class="intro">
+    Controla <strong>quant es contraurà un element</strong> quan el contenidor és massa estret i no hi ha prou espai.<br><br>
+    Un valor major → l’element es contraurà més.
+    Un valor 0 → l’element <strong>no es contraurà mai</strong>.
+</div>
+
+<div class="demo-box">
+    <span class="label">Comparació directa de shrink</span>
+
+    <div class="flex">
+        <div class="item shrink0">A<br><small>shrink:0</small></div>
+        <div class="item shrink1">B<br><small>shrink:1</small></div>
+        <div class="item shrink3">C<br><small>shrink:3</small></div>
+    </div>
+
+    <div class="explain">
+        El contenidor és massa estret.<br>
+        • L’element A (<strong>shrink:0</strong>) NO es contraurà gens.<br>
+        • L’element B (<strong>shrink:1</strong>) es contraurà una mica.<br>
+        • L’element C (<strong>shrink:3</strong>) es contraurà molt més que B.
+    </div>
+</div>
+
+<div class="demo-box">
+    <span class="label">Exemple extrem</span>
+
+    <div class="flex" style="width:260px;">
+        <div class="item shrink3">X<br><small>shrink:3</small></div>
+        <div class="item shrink0">Y<br><small>shrink:0</small></div>
+        <div class="item shrink3">Z<br><small>shrink:3</small></div>
+    </div>
+
+    <div class="explain">
+        L’element Y està protegit (<strong>shrink:0</strong>) i conserva quasi tota la mida.<br>
+        Els elements X i Z (<strong>shrink:3</strong>) es redueixen molt per a deixar-li espai.
+    </div>
+</div>
+
+<div class="resum">
+    <strong>En resum:</strong><br><br>
+    • <strong>flex-shrink</strong> defineix QUANT es redueix un element quan falta espai.<br>
+    • <strong>0</strong> → no es contraurà mai.<br>
+    • <strong>1</strong> → valor per defecte (es contraurà).<br>
+    • Valors majors (ex: <strong>3</strong>, <strong>5</strong>) → es contraurà molt més que els altres.<br>
+    • Serveix per protegir elements importants en layouts responsius.
+</div>
+
+</body>
+</html>

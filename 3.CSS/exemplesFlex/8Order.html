@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Demo – order (millorat)</title>
+
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            background: #f4f7f0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            background: #dcecd5;
+            color: #1b4d1b;
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .intro {
+            background: #eef7ea;
+            border-left: 4px solid #6ea96e;
+            padding: 12px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .demo-box {
+            border: 2px solid #6ea96e;
+            padding: 20px;
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 6px;
+        }
+
+        .label {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 15px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            color: white;
+            background: #6ea96e;
+            font-weight: bold;
+        }
+
+        .flex {
+            display: flex;
+            background: #f2f7ef;
+            padding: 15px;
+            border-radius: 6px;
+            gap: 10px;
+        }
+
+        .item {
+            width: 70px;
+            height: 70px;
+            background: #d9f2d0;
+            border: 2px solid #6ea96e;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* EXEMPLE COMPLET DE PESOS */
+        .oA { order: 2; }
+        .oB { order: 2; }
+        .oC { order: 1; }
+        .oD { order: 5; }
+
+        .explain {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #2f5e2f;
+            background: #eef7ea;
+            padding: 8px;
+            border-left: 4px solid #6ea96e;
+            border-radius: 4px;
+        }
+
+        .resum {
+            background: #eef7ea;
+            padding: 15px;
+            border-left: 5px solid #6ea96e;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>order</h1>
+
+<div class="intro">
+    <strong>order</strong> reordena els elements VISUALMENT.
+    El que té valor més baix apareix primer.
+    Si dos elements tenen el mateix valor, es manté l'ordre original del HTML.
+</div>
+
+
+<!-- ORDE NATURAL -->
+<div class="demo-box">
+    <span class="label">Orde natural (HTML)</span>
+
+    <div class="flex">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+    </div>
+
+    <div class="explain">
+        Orde real del codi: A, B, C, D.
+    </div>
+</div>
+
+
+<!-- ORDE AMB PESOS (valor repetit) -->
+<div class="demo-box">
+    <span class="label">order aplicat (amb empats)</span>
+
+    <div class="flex">
+        <div class="item oA">A</div> <!-- order 2 -->
+        <div class="item oB">B</div> <!-- order 2 -->
+        <div class="item oC">C</div> <!-- order 1 -->
+        <div class="item oD">D</div> <!-- order 5 -->
+    </div>
+
+    <div class="explain">
+        Valors aplicats:<br>
+        • C → <code>order: 1</code><br>
+        • A → <code>order: 2</code><br>
+        • B → <code>order: 2</code><br>
+        • D → <code>order: 5</code><br><br>
+
+        Nou ordre visual segons el pes:<br>
+        <strong>C, A, B, D</strong><br><br>
+
+        Nota important: A i B tenen el mateix ordre (2), així que es manté entre ells l'ordre HTML original: A va abans que B.
+    </div>
+</div>
+
+
+<!-- RESUM FINAL -->
+<div class="resum">
+    <strong>En resum:</strong><br><br>
+    • L’ordre natural és l’ordre del codi HTML.<br>
+    • <strong>order</strong> només canvia la posició visual.<br>
+    • Valor més baix = apareix primer.<br>
+    • Valors iguals → es manté l’ordre HTML intern.<br>
+    • Si no especifiques res: <strong>order = 0</strong> per a tots.<br>
+</div>
+
+</body>
+</html>

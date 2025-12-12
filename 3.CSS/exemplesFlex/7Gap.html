@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Demo – gap</title>
+
+    <style>
+        body {
+            font-family: Calibri, sans-serif;
+            background: #f4f7f0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            background: #dcecd5;
+            color: #1b4d1b;
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .intro {
+            background: #eef7ea;
+            border-left: 4px solid #6ea96e;
+            padding: 12px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .demo-box {
+            border: 2px solid #6ea96e;
+            padding: 20px;
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 6px;
+        }
+
+        .label {
+            display: inline-block;
+            padding: 6px 12px;
+            font-size: 15px;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            color: white;
+            background: #6ea96e;
+            font-weight: bold;
+        }
+
+        .flex {
+            display: flex;
+            background: #f2f7ef;
+            padding: 15px;
+            border-radius: 6px;
+            border: 2px dashed #6ea96e;
+        }
+
+        .item {
+            width: 70px;
+            height: 70px;
+            background: #d9f2d0;
+            border: 2px solid #6ea96e;
+            border-radius: 6px;
+            margin: 0; /* EL GAP controla els espais, no margin */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .gap0   { gap: 0; }
+        .gap10  { gap: 10px; }
+        .gap30  { gap: 30px; }
+        .gapMix { row-gap: 10px; column-gap: 30px; }
+
+        .explain {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #2f5e2f;
+            background: #eef7ea;
+            padding: 8px;
+            border-left: 4px solid #6ea96e;
+            border-radius: 4px;
+        }
+
+        .resum {
+            background: #eef7ea;
+            padding: 15px;
+            border-left: 5px solid #6ea96e;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>gap</h1>
+
+<div class="intro">
+    Defineix l’<strong>espai entre elements Flex</strong>.
+    Substitueix l’ús de <code>margin</code> per a separar elements i és més net, consistent i fàcil de mantenir.
+</div>
+
+<!-- gap: 0 -->
+<div class="demo-box">
+    <span class="label">gap: 0 (per defecte)</span>
+
+    <div class="flex gap0">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    </div>
+
+    <div class="explain">Els elements estan junts, sense espai entre ells.</div>
+</div>
+
+<!-- gap: 10px -->
+<div class="demo-box">
+    <span class="label">gap: 10px</span>
+
+    <div class="flex gap10">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    </div>
+
+    <div class="explain">Apareix un espai de 10px entre cada element.</div>
+</div>
+
+<!-- gap: 30px -->
+<div class="demo-box">
+    <span class="label">gap: 30px</span>
+
+    <div class="flex gap30">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+    </div>
+
+    <div class="explain">Espais més amplis: 30px entre elements.</div>
+</div>
+
+<!-- gap files / columnes -->
+<div class="demo-box">
+    <span class="label">row-gap: 10px + column-gap: 30px</span>
+
+    <div class="flex gapMix" style="flex-wrap: wrap; width: 260px;">
+        <div class="item">1</div><div class="item">2</div><div class="item">3</div>
+        <div class="item">4</div><div class="item">5</div><div class="item">6</div>
+    </div>
+
+    <div class="explain">
+        Es poden definir dos valors diferents:
+        <strong>10px per a files</strong> i <strong>30px per a columnes</strong>.
+    </div>
+</div>
+
+<!-- RESUM -->
+<div class="resum">
+    <strong>En resum:</strong><br><br>
+    • <strong>gap</strong> crea espais nets i consistents entre elements Flex.<br>
+    • Pot substituir <code>margin</code> en la majoria de casos.<br>
+    • <strong>gap: 10px 30px</strong> → primer fila, després columna.<br>
+    • Funciona també amb <strong>flex-wrap</strong> i amb múltiples línies.<br>
+</div>
+
+</body>
+</html>

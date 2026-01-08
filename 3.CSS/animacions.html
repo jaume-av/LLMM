@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animacions amb CSS Grid i Flexbox</title>
+
+    <style>
+        /* Estils generals */
+        body {
+            margin: 0; /* Elimina el marge per defecte del cos del document. */
+            font-family: Arial, sans-serif; /* Estableix la font general com Arial o sans-serif si Arial no està disponible. */
+            background-color: #f0f8ff; /* Aplica un color de fons clar (AliceBlue). */
+            color: #333; /* Estableix el color del text com un gris fosc. */
+            display: flex; /* Utilitza Flexbox per al cos per centrar el contingut. */
+            flex-direction: column; /* Organitza el contingut en una columna vertical. */
+            align-items: center; /* Centra els elements horitzontalment. */
+            justify-content: center; /* Centra els elements verticalment. */
+            height: 100vh; /* Fes que el cos ocupi tota l'altura de la finestra del navegador. */
+        }
+
+        .header {
+            text-align: center; /* Centra el contingut del text a l'encapçalament. */
+            margin-bottom: 20px; /* Afegeix un espai de 20 píxels sota l'encapçalament. */
+        }
+
+        .footer {
+            margin-top: 20px; /* Afegeix un espai de 20 píxels sobre el peu de pàgina. */
+            text-align: center; /* Centra el contingut del text al peu de pàgina. */
+        }
+
+        /* CSS Grid */
+        .contenidor-grid {
+            display: grid; /* Defineix un contenidor com a grid per organitzar els seus fills. */
+            grid-template-columns: repeat(3, 1fr); /* Crea 3 columnes amb amplades iguals. */
+            gap: 20px; /* Afegeix un espai de 20 píxels entre les files i columnes. */
+            width: 80%; /* Fes que el contenidor ocupi el 80% de l'amplada del navegador. */
+            max-width: 800px; /* Limita l'amplada màxima del contenidor a 800 píxels. */
+        }
+
+        .grid-item {
+            display: flex; /* Defineix cada element de la graella com a Flexbox per alinear el seu contingut. */
+            justify-content: center; /* Centra el contingut horitzontalment dins de l'element. */
+            align-items: center; /* Centra el contingut verticalment dins de l'element. */
+            padding: 20px; /* Afegeix espai interior de 20 píxels a tots els costats. */
+            background-color: #ffdd57; /* Aplica un color de fons groc (Goldenrod). */
+            color: white; /* Estableix el color del text com a blanc. */
+            font-size: 1.2rem; /* Defineix la mida del text com 1.2 vegades la mida base. */
+            font-weight: bold; /* Aplica un estil de text en negreta. */
+            text-align: center; /* Centra el text dins de l'element. */
+            border-radius: 10px; /* Afegeix cantonades arrodonides amb un radi de 10 píxels. */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Afegeix una ombra subtil a l'element. */
+        }
+
+        /* Animacions */
+
+        /* Salta */
+        .bounce {
+            animation: bounce 1.5s infinite; /* Aplica una animació de salt durant 1,5 segons en bucle infinit. */
+        }
+
+        @keyframes bounce {
+            0%, 100% { /* Defineix l'estat inicial i final de l'animació. */
+                transform: translateY(0); /* Posició vertical inicial i final sense moviment. */
+            }
+            50% { /* Defineix l'estat intermedi de l'animació. */
+                transform: translateY(-20px); /* Mou l'element cap amunt 20 píxels. */
+            }
+        }
+
+        /* Canvia de color */
+        .color-change {
+            animation: colorChange 3s infinite alternate; /* Canvia de color durant 3 segons, alternant en bucle infinit. */
+        }
+
+        @keyframes colorChange {
+            0% { /* Estat inicial. */
+                background-color: #ffdd57; /* Color de fons groc. */
+                color: white; /* Color del text blanc. */
+            }
+            100% { /* Estat final. */
+                background-color: #ff5733; /* Color de fons taronja fosc. */
+                color: black; /* Color del text negre. */
+            }
+        }
+
+        /* Gira */
+        .spin {
+            animation: spin 2s linear infinite; /* Fa que l'element gire en 2 segons amb una velocitat constant en bucle infinit. */
+        }
+
+        @keyframes spin {
+            0% { /* Estat inicial. */
+                transform: rotate(0deg); /* Sense rotació inicial. */
+            }
+            100% { /* Estat final. */
+                transform: rotate(360deg); /* Gira l'element completament en un cercle. */
+            }
+        }
+
+        /* Creix */
+        .grow {
+            animation: grow 2s infinite alternate; /* Fa que l'element cresca durant 2 segons, alternant en bucle infinit. */
+        }
+
+        @keyframes grow {
+            0% { /* Estat inicial. */
+                transform: scale(1); /* Mida original. */
+            }
+            100% { /* Estat final. */
+                transform: scale(1.5); /* Augmenta la mida al 150%. */
+            }
+        }
+
+        /* Es redueix */
+        .shrink {
+            animation: shrink 2s infinite alternate; /* Fa que l'element es redueixi durant 2 segons, alternant en bucle infinit. */
+        }
+
+        @keyframes shrink {
+            0% { /* Estat inicial. */
+                transform: scale(1); /* Mida original. */
+            }
+            100% { /* Estat final. */
+                transform: scale(0.5); /* Redueix la mida al 50%. */
+            }
+        }
+
+        /* Mou-te */
+        .move {
+            animation: move 3s infinite alternate; /* Desplaça l'element durant 3 segons, alternant en bucle infinit. */
+        }
+
+        @keyframes move {
+            0% { /* Estat inicial. */
+                transform: translateX(0); /* Posició inicial sense desplaçament horitzontal. */
+            }
+            100% { /* Estat final. */
+                transform: translateX(50px); /* Mou l'element 50 píxels cap a la dreta. */
+            }
+        }
+    </style>
+</head>
+
+<body>
+<header class="header">
+    <h1>&#x1F31F; Animacions CSS! &#x1F680;</h1>
+</header>
+
+<main class="contenidor-grid">
+    <div class="grid-item bounce">Salta!</div>
+    <div class="grid-item color-change">Canvia de Color!</div>
+    <div class="grid-item spin">Gira!</div>
+    <div class="grid-item grow">Creix!</div>
+    <div class="grid-item shrink">Es redueix!</div>
+    <div class="grid-item move">Mou-te!</div>
+</main>
+
+<footer class="footer">
+    <p>&#x1F602; Animacions per a CSS Grid i Flexbox.</p>
+</footer>
+</body>
+</html>

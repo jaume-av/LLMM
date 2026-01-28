@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercici Picnic CSS</title>
+
+  <link rel="stylesheet" href="estils.css">
+
+  <!-- Picnic CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+</head>
+
+<body>
+
+  <header>
+    <h1>Frameworks CSS</h1>
+    <p>Pràctica d’introducció a l’ús d’un microframework CSS.</p>
+
+    <button class="button">Acció</button>
+    <button class="button success">Confirmar</button>
+    <button class="button error">Eliminar</button>
+  </header>
+
+  <nav>
+    <a href="#">Inici</a>
+    <a href="#">Notícies</a>
+    <a href="#">Contacte</a>
+  </nav>
+
+  <main>
+
+    <section>
+      <h2>Articles</h2>
+
+      <div id="articles">
+        <article>
+          <h3>Article 1</h3>
+          <p>
+            Text amb <strong>negreta</strong>, <em>cursiva</em> i un
+            <a href="#">enllaç</a>.
+          </p>
+          <button class="button small">Llegir més</button>
+        </article>
+
+        <article>
+          <h3>Article 2</h3>
+          <p>Un altre text de prova.</p>
+          <button class="button success small">Correcte</button>
+        </article>
+
+        <article>
+          <h3>Article 3</h3>
+          <p>Informació addicional.</p>
+          <button class="button error small">Error</button>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Llista de tasques</h2>
+
+      <ul>
+        <li>Consultar documentació</li>
+        <li>Afegir classes CSS</li>
+        <li>Observar canvis visuals</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Taula d’exemple</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Estat</th>
+            <th>Acció</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Element 1</td>
+            <td>Correcte</td>
+            <td><button class="button small">Veure</button></td>
+          </tr>
+          <tr>
+            <td>Element 2</td>
+            <td>Error</td>
+            <td><button class="button error small">Veure</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Formulari</h2>
+
+      <form>
+        <label for="nom">Nom</label>
+        <input type="text" id="nom">
+
+        <label for="email">Correu</label>
+        <input type="email" id="email">
+
+        <button type="submit" class="button success full">Enviar</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Ampliació: TABS i galeria</h2>
+      <p>
+        Crea uns <strong>tabs amb CSS</strong> i una <strong>galeria</strong>
+        amb un mínim de 4 imatges.
+      </p>
+
+      <div id="tabs-galeria">
+        <p>(Espai reservat per a l’ampliació)</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <small>Pràctica d’introducció a frameworks CSS</small>
+  </footer>
+
+</body>
+</html>

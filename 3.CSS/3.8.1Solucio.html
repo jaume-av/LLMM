@@ -1,129 +1,208 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercici Picnic CSS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercici Picnic CSS</title>
 
-  <link rel="stylesheet" href="estils.css">
+    <!-- Picnic CSS (CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
 
-  <!-- Picnic CSS (CDN) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            color: #333;
+        }
+
+        header, main, footer {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            margin-top: 20px;
+            border-radius: 6px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            background-color: white;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        #articles article {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: #fafafa;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        footer {
+            text-align: center;
+            color: #666;
+        }
+
+
+
+    </style>
+
+
+
+
+
+
+
 </head>
 
 <body>
 
-  <header>
+<header>
     <h1>Frameworks CSS</h1>
     <p>Pràctica d’introducció a l’ús d’un microframework CSS.</p>
 
     <button class="button">Acció</button>
     <button class="button success">Confirmar</button>
     <button class="button error">Eliminar</button>
-  </header>
+</header>
 
-  <nav>
+<nav>
     <a href="#">Inici</a>
     <a href="#">Notícies</a>
     <a href="#">Contacte</a>
-  </nav>
+</nav>
 
-  <main>
+<main>
 
     <section>
-      <h2>Articles</h2>
+        <h2>Articles</h2>
 
-      <div id="articles">
-        <article>
-          <h3>Article 1</h3>
-          <p>
-            Text amb <strong>negreta</strong>, <em>cursiva</em> i un
-            <a href="#">enllaç</a>.
-          </p>
-          <button class="button small">Llegir més</button>
-        </article>
+        <div id="articles">
+            <article>
+                <h3>Article 1</h3>
+                <p>
+                    Text amb <strong>negreta</strong>, <em>cursiva</em> i un
+                    <a href="#">enllaç</a>.
+                </p>
+                <button class="button small">Llegir més</button>
+            </article>
 
-        <article>
-          <h3>Article 2</h3>
-          <p>Un altre text de prova.</p>
-          <button class="button success small">Correcte</button>
-        </article>
+            <article>
+                <h3>Article 2</h3>
+                <p>Un altre text de prova.</p>
+                <button class="button success small">Correcte</button>
+            </article>
 
-        <article>
-          <h3>Article 3</h3>
-          <p>Informació addicional.</p>
-          <button class="button error small">Error</button>
-        </article>
-      </div>
+            <article>
+                <h3>Article 3</h3>
+                <p>Informació addicional.</p>
+                <button class="button error small">Error</button>
+            </article>
+        </div>
     </section>
 
     <section>
-      <h2>Llista de tasques</h2>
+        <h2>Llista de tasques</h2>
 
-      <ul>
-        <li>Consultar documentació</li>
-        <li>Afegir classes CSS</li>
-        <li>Observar canvis visuals</li>
-      </ul>
+        <ul>
+            <li>Consultar documentació</li>
+            <li>Afegir classes CSS</li>
+            <li>Observar canvis visuals</li>
+        </ul>
     </section>
 
     <section>
-      <h2>Taula d’exemple</h2>
+        <h2>Taula d’exemple</h2>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Nom</th>
-            <th>Estat</th>
-            <th>Acció</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Element 1</td>
-            <td>Correcte</td>
-            <td><button class="button small">Veure</button></td>
-          </tr>
-          <tr>
-            <td>Element 2</td>
-            <td>Error</td>
-            <td><button class="button error small">Veure</button></td>
-          </tr>
-        </tbody>
-      </table>
+        <table>
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Estat</th>
+                <th>Acció</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Element 1</td>
+                <td>Correcte</td>
+                <td><button class="button small">Veure</button></td>
+            </tr>
+            <tr>
+                <td>Element 2</td>
+                <td>Error</td>
+                <td><button class="button error small">Veure</button></td>
+            </tr>
+            </tbody>
+        </table>
     </section>
 
     <section>
-      <h2>Formulari</h2>
+        <h2>Formulari</h2>
 
-      <form>
-        <label for="nom">Nom</label>
-        <input type="text" id="nom">
+        <form>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom">
 
-        <label for="email">Correu</label>
-        <input type="email" id="email">
+            <label for="email">Correu</label>
+            <input type="email" id="email">
 
-        <button type="submit" class="button success full">Enviar</button>
-      </form>
+            <button type="submit" class="button success full">Enviar</button>
+        </form>
     </section>
 
     <section>
-      <h2>Ampliació: TABS i galeria</h2>
-      <p>
-        Crea uns <strong>tabs amb CSS</strong> i una <strong>galeria</strong>
-        amb un mínim de 4 imatges.
-      </p>
+        <h2>Ampliació: TABS i galeria</h2>
+        <p>
+            Crea uns <strong>tabs amb CSS</strong> i una <strong>galeria</strong>
+            amb un mínim de 4 imatges.
+        </p>
 
-      <div id="tabs-galeria">
-        <p>(Espai reservat per a l’ampliació)</p>
-      </div>
+        <div id="tabs-galeria">
+            <p>(Espai reservat per a l’ampliació)</p>
+        </div>
     </section>
 
-  </main>
+</main>
 
-  <footer>
+<footer>
     <small>Pràctica d’introducció a frameworks CSS</small>
-  </footer>
+</footer>
 
 </body>
 </html>

@@ -615,11 +615,11 @@ En este cas:
 
 ### Índex dels arrays
 
-Els arrays en JavaScript comencen en la posició 0.
+Els arrays en JavaScript comencen en la **posició 0**.
 
 Això és molt important.
 
-```javascript id="3m8tuv"
+```javascript
 const colors = ["blau", "verd", "roig"];
 
 console.log(colors[0]); // blau
@@ -635,7 +635,7 @@ La posició dins de l’array es diu **índex**.
 
 Podem canviar el valor d’un element accedint al seu índex.
 
-```javascript id="k9c2px"
+```javascript
 const colors = ["blau", "verd", "roig"];
 
 colors[1] = "groc";
@@ -699,7 +699,7 @@ Quan tenim una col·lecció de dades, normalment volem recórrer-la.
 
 ### Bucle for tradicional
 
-```javascript id="l5qt0m"
+```javascript
 const colors = ["blau", "groc", "roig"];
 
 for (let i = 0; i < colors.length; i++) {
@@ -718,7 +718,7 @@ Este és el mètode clàssic:
 
 JavaScript també ens proporciona un mètode més directe.
 
-```javascript id="z4nv8j"
+```javascript
 const colors = ["blau", "groc", "roig"];
 
 colors.forEach(function(color) {
@@ -815,11 +815,8 @@ Diferència important:
 
 ---
 
-Perfecte. Continuem amb el següent bloc complet, mantenint el mateix nivell i coherència amb arrays i amb el futur treball amb el DOM.
 
----
-
-#@ 5. Objectes
+## 5. Objectes
 
 Fins ara hem treballat amb:
 
@@ -877,6 +874,7 @@ const producte = {
     disponible: true
 };
 ``` 
+
 ---
 
 ### Accedir a una propietat
@@ -1162,7 +1160,7 @@ Si una funció no té `return`, el valor que retorna és `undefined`.
 
 ---
 
-## Funcions com a valors
+## Funcions com a valors 
 
 En JavaScript, les funcions són valors.
 
@@ -1175,7 +1173,7 @@ A diferencia de Java o altres llenguatges, en JavaScript les funcions no són no
 
 
 
-### Expressió de funció
+### Expressió de funció  (funció anònima)
 
 Podem definir una funció i assignar-la a una variable.
 
@@ -1297,12 +1295,6 @@ Per això és important entendre bé què són les funcions abans d’entrar en 
 
 ---
 
-Perfecte. Ara sí fem el pont definitiu entre el llenguatge i el document HTML.
-Este bloc ha de connectar directament amb el tema següent del DOM, sense repetir-lo però deixant-lo preparat.
-
-Mantindrem el nivell. No pujarem dificultat. Però el farem coherent i modern.
-
----
 
 ## 7. Introducció al DOM
 

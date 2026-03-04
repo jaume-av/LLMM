@@ -357,6 +357,135 @@ En este curs utilitzarem sempre `===` per evitar comportaments inesperats.
 
 ---
 
+## Entrada i eixida de dades en JavaScript (navegador)
+
+Quan programem, no només necessitem crear variables i fer càlculs.
+
+També necessitem:
+
+* Llegir dades que introdueix l’usuari.
+* Mostrar resultats.
+
+En JavaScript que s’executa en el navegador, disposem de diverses formes senzilles d’entrada i eixida de dades.
+
+---
+
+### Eixida de dades
+
+#### console.log()
+
+La forma més habitual d’eixida durant l’aprenentatge és `console.log()`.
+
+```javascript
+console.log("Hola món");
+```
+
+Este mètode mostra informació en la consola del navegador.
+
+És molt útil per:
+
+* Comprovar valors de variables.
+* Verificar càlculs.
+* Depurar errors.
+
+---
+
+#### alert()
+
+També podem mostrar un missatge emergent utilitzant `alert()`.
+
+```javascript
+alert("Missatge important");
+```
+
+Esta funció mostra una finestra amb el missatge indicat.
+
+S’utilitza per mostrar informació a l’usuari de manera directa.
+
+---
+
+### Entrada de dades
+
+En el navegador podem demanar dades a l’usuari utilitzant `prompt()`.
+
+```javascript
+const nom = prompt("Introdueix el teu nom:");
+alert("Hola " + nom);
+```
+
+En este exemple:
+
+* `prompt()` mostra una finestra amb un camp de text.
+* El valor introduït es guarda en la variable `nom`.
+* Després el mostrem amb `alert()`.
+
+És important saber que:
+
+`prompt()` sempre retorna una cadena de text (`String`).
+
+---
+
+### Convertir text a número
+
+Si l’usuari introdueix un número amb `prompt()`, realment estem rebent un text.
+
+Per poder fer operacions matemàtiques, hem de convertir-lo a número.
+
+```javascript
+const edat = Number(prompt("Introdueix la teua edat:"));
+
+if (edat >= 18) {
+    alert("Eres major d'edat");
+} else {
+    alert("Eres menor d'edat");
+}
+```
+
+En este cas:
+
+* `Number()` converteix el text en número.
+* Ara sí podem comparar correctament.
+
+Si no férem la conversió, estaríem comparant textos.
+
+---
+
+### confirm()
+
+La funció `confirm()` mostra una finestra amb dues opcions: Acceptar o Cancel·lar.
+
+```javascript
+const resposta = confirm("Vols continuar?");
+
+if (resposta === true) {
+    console.log("L'usuari ha acceptat");
+} else {
+    console.log("L'usuari ha cancel·lat");
+}
+```
+
+`confirm()` retorna un valor booleà:
+
+* `true` si l’usuari accepta.
+* `false` si cancel·la.
+
+---
+
+### Resum d’entrada i eixida
+En esta fase inicial treballarem amb:
+
+* `console.log()` per mostrar resultats en consola.
+* `alert()` per mostrar missatges.
+* `prompt()` per llegir dades.
+* `confirm()` per llegir valors booleans.
+
+Més endavant, quan treballem amb el **DOM**, veurem una forma més completa i realista de gestionar entrada i eixida utilitzant formularis i elements HTML.
+
+De moment, estes funcions ens permeten practicar totes les estructures del llenguatge sense necessitat de treballar encara amb el DOM.
+
+---
+
+
 ## 3. Estructures de control
 
 Quan programem, no volem que el codi s’execute sempre de la mateixa manera.

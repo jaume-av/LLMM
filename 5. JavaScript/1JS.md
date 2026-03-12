@@ -1055,7 +1055,7 @@ Retorna una còpia d’una part de l’array.
 
 No modifica l’array original.
 
-```javascript id="k8j3fn"
+```javascript
 const colors = ["blau", "groc", "roig"];
 const subarray = colors.slice(1, 3);
 

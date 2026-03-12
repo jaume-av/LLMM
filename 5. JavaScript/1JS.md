@@ -55,6 +55,60 @@ Més endavant veurem que JavaScript també pot executar-se en el servidor (per e
 
 ---
 
+>Exemples Consola:
+
+```javascript
+document.body.contentEditable = true //false
+```
+
+```javascript
+
+document.body.style.backgroundColor = "lightyellow" //canviar el color de fons
+```
+
+
+```javascript
+document.querySelectorAll("img").forEach(img => {
+    img.style.border = "5px solid red"
+})  //Posar una vora roja a totes les imatges
+```
+
+```javascript
+
+// Afegir un missatge a la pàgina
+
+
+let div = document.createElement("div")
+
+div.textContent = "PÀGINA MODIFICADA AMB JAVASCRIPT PER L'ALUMNAT DE 1r de l'IES BENIGASLÓ"
+
+div.style.position = "fixed"
+div.style.top = "0"
+div.style.left = "0"
+div.style.width = "100%"
+div.style.background = "yellow"
+div.style.fontSize = "50px"
+div.style.textAlign = "center"
+div.style.zIndex = "9999"
+
+document.body.appendChild(div)
+
+```
+
+```javascript
+
+// Canviar colors a lletres
+
+document.querySelectorAll("p, h1, h2, h3").forEach(e => {
+    e.style.color = "red";
+});
+````
+
+>Encara que una web està publicada a internet, el navegador la converteix en un DOM.
+>JavaScript pot modificar eixe DOM des del costat del client.
+
+
+
 ### Com integrem JavaScript en HTML
 
 Per utilitzar JavaScript dins d’una pàgina web, utilitzem l’etiqueta `<script>`.

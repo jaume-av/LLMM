@@ -1023,7 +1023,7 @@ Els arrays tenen molts mètodes. En este nivell treballarem alguns dels més imp
 
 Ens indica la posició d’un element.
 
-```javascript id="6u2rty"
+```javascript
 const colors = ["blau", "groc", "roig"];
 console.log(colors.indexOf("groc")); // 1
 ```
@@ -1036,7 +1036,7 @@ Si no el troba, retorna `-1`.
 
 Uneix tots els elements en una cadena de text.
 
-```javascript id="q3p9ws"
+```javascript
 const colors = ["blau", "groc", "roig"];
 console.log(colors.join(", "));
 ```
@@ -1072,7 +1072,7 @@ Modifica l’array original.
 
 Pot eliminar o afegir elements.
 
-```javascript id="u4msx2"
+```javascript
 const colors = ["blau", "groc", "roig"];
 colors.splice(1, 1);
 

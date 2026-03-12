@@ -932,7 +932,7 @@ Ara l’array conté:
 
 Per saber quants elements té un array utilitzem la propietat `length`.
 
-```javascript id="p5znq4"
+```javascript"
 const colors = ["blau", "groc", "roig"];
 console.log(colors.length); // 3
 ```
@@ -945,7 +945,7 @@ Aquesta propietat és molt útil quan treballem amb bucles.
 
 #### Afegir al final → push()
 
-```javascript id="e8w1dl"
+```javascript"
 const colors = ["blau", "verd"];
 colors.push("roig");
 
@@ -958,7 +958,7 @@ console.log(colors);
 
 #### Eliminar l’últim element → pop()
 
-```javascript id="x7d4os"
+```javascript"
 const colors = ["blau", "verd", "roig"];
 colors.pop();
 

@@ -102,7 +102,14 @@ document.body.appendChild(div)
 document.querySelectorAll("p, h1, h2, h3").forEach(e => {
     e.style.color = "red";
 });
-````
+```
+
+```javascript
+
+document.querySelectorAll("div").forEach(e => {
+    e.style.border = "2px solid blue";
+});
+```
 
 >Encara que una web està publicada a internet, el navegador la converteix en un DOM.
 >JavaScript pot modificar eixe DOM des del costat del client.
@@ -410,6 +417,94 @@ Encara que aparentment siguen iguals, no tenen el mateix tipus, per això el res
 En este curs utilitzarem sempre `===` per evitar comportaments inesperats.
 
 ---
+
+### Taula bàsica d’operadors
+
+Quan programem, utilitzem **operadors** per:
+
+* assignar valors
+* fer càlculs
+* comparar dades
+* combinar condicions
+
+En esta fase ens centrarem en els operadors més habituals.
+
+| Tipus             | Operador | Significat                                          | Exemple                           | Resultat                                        |            |   |                   |                   |
+| ----------------- | -------- | --------------------------------------------------- | --------------------------------- | ----------------------------------------------- | ---------- | - | ----------------- | ----------------- |
+| Assignació        | `=`      | Assigna un valor a una variable                     | `let edat = 18`                   | Guarda `18` en `edat`                           |            |   |                   |                   |
+| Suma              | `+`      | Suma números o concatena textos                     | `3 + 2`                           | `5`                                             |            |   |                   |                   |
+| Resta             | `-`      | Resta valors                                        | `7 - 4`                           | `3`                                             |            |   |                   |                   |
+| Multiplicació     | `*`      | Multiplica valors                                   | `3 * 5`                           | `15`                                            |            |   |                   |                   |
+| Divisió           | `/`      | Divideix valors                                     | `10 / 2`                          | `5`                                             |            |   |                   |                   |
+| Mòdul             | `%`      | Retorna el residu d’una divisió                     | `7 % 2`                           | `1`                                             |            |   |                   |                   |
+| Major que         | `>`      | Comprova si un valor és major que un altre          | `8 > 3`                           | `true`                                          |            |   |                   |                   |
+| Menor que         | `<`      | Comprova si un valor és menor que un altre          | `2 < 5`                           | `true`                                          |            |   |                   |                   |
+| Major o igual que | `>=`     | Comprova si és major o igual                        | `6 >= 6`                          | `true`                                          |            |   |                   |                   |
+| Menor o igual que | `<=`     | Comprova si és menor o igual                        | `4 <= 7`                          | `true`                                          |            |   |                   |                   |
+| Igualtat estricta | `===`    | Comprova si tenen el mateix valor i el mateix tipus | `5 === "5"`                       | `false`                                         |            |   |                   |                   |
+| Diferent estricte | `!==`    | Comprova si són diferents en valor o tipus          | `5 !== "5"`                       | `true`                                          |            |   |                   |                   |
+| I lògic           | `&&`     | Retorna `true` si les dues condicions són certes    | `edat >= 18 && teCarnet === true` | Depén dels valors                               |            |   |                   |                   |
+| O lògic           | `        |                                                     | `                                 | Retorna `true` si almenys una condició és certa | `nota >= 5 |   | treball === true` | Depén dels valors |
+| Negació           | `!`      | Inverteix un valor booleà                           | `!true`                           | `false`                                         |            |   |                   |                   |
+
+---
+
+### Exemples ràpids d’operadors
+
+```javascript
+let numero = 10;
+let altreNumero = 3;
+
+console.log(numero + altreNumero);   // 13
+console.log(numero - altreNumero);   // 7
+console.log(numero * altreNumero);   // 30
+console.log(numero / altreNumero);   // 3.3333333333333335
+console.log(numero % altreNumero);   // 1
+```
+
+```javascript
+let edat = 20;
+let teCarnet = true;
+
+console.log(edat >= 18);             // true
+console.log(edat === 20);            // true
+console.log(edat === "20");          // false
+console.log(edat !== "20");          // true
+console.log(edat >= 18 && teCarnet); // true
+console.log(edat < 18 || teCarnet);  // true
+console.log(!teCarnet);              // false
+```
+
+---
+
+### Diferència entre `=`, `==` i `===`
+
+És important no confondre estos tres operadors, perquè tenen funcions diferents.
+
+| Operador | Funció                                      |
+| -------- | ------------------------------------------- |
+| `=`      | assigna un valor a una variable             |
+| `==`     | compara valors, però pot convertir el tipus |
+| `===`    | compara valor i tipus                       |
+
+Exemple:
+
+```javascript
+let edat = 18;
+
+console.log(edat == "18");   // true
+console.log(edat === "18");  // false
+```
+
+En el primer cas (`==`), JavaScript converteix automàticament el text `"18"` en número abans de comparar.
+
+En el segon cas (`===`), es compara tant el **valor** com el **tipus**.
+Com que `18` és un número i `"18"` és un text, el resultat és `false`.
+
+Per evitar resultats inesperats, en este curs **utilitzarem sempre `===` en lloc de `==`**.
+
+---
+
 
 ## Entrada i eixida de dades en JavaScript (navegador)
 

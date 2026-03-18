@@ -1049,47 +1049,141 @@ blau, groc, roig
 
 ---
 
+
 ### slice()
 
-Retorna una còpia d’una part de l’array.
+El mètode `slice()` s’utilitza per **obtindre una còpia d’una part de l’array**.
 
 No modifica l’array original.
 
-```javascript
-const colors = ["blau", "groc", "roig"];
-const subarray = colors.slice(1, 3);
+La sintaxi és:
 
-console.log(subarray); // ["groc", "roig"]
+```javascript
+array.slice(inici, final)
 ```
 
-El segon paràmetre no està inclòs.
+On:
+
+* `inici` és la posició des d’on comencem
+* `final` és la posició on parem
+* el valor de `final` **no s’inclou**
+
+```javascript
+const colors = ["blau", "groc", "roig", "verd"];
+
+// Copia des de la posició 1 fins abans de la 3
+const tros = colors.slice(1, 3);
+
+console.log(colors);
+console.log(tros);
+```
+
+**Eixida:**
+
+```javascript
+[ 'blau', 'groc', 'roig', 'verd' ]
+[ 'groc', 'roig' ]
+```
+
+També podem ometre el segon paràmetre per copiar fins al final:
+
+```javascript
+const numeros = [10, 20, 30, 40];
+
+// Copia des de la posició 2 fins al final
+const partFinal = numeros.slice(2);
+
+console.log(partFinal);
+```
+
+**Eixida:**
+
+```javascript
+[ 30, 40 ]
+```
 
 ---
 
 ### splice()
 
-Modifica l’array original.
+El mètode `splice()` s’utilitza per **modificar directament l’array original**.
 
-Pot eliminar o afegir elements.
+Pot servir per:
+
+* eliminar elements
+* afegir elements
+* substituir elements
+
+La sintaxi bàsica és:
+
+```javascript
+array.splice(inici, quantitat)
+```
 
 ```javascript
 const colors = ["blau", "groc", "roig"];
+
+// Elimina 1 element a partir de la posició 1
 colors.splice(1, 1);
 
 console.log(colors);
 ```
 
+**Eixida:**
+
+```javascript
+[ 'blau', 'roig' ]
+```
+
 En este cas:
 
-* Comença en la posició 1.
-* Elimina 1 element.
+* comença en la posició `1`
+* elimina `1` element
 
-Diferència important:
+També podem afegir elements:
 
-* `slice()` no modifica l’array.
-* `splice()` sí el modifica.
+```javascript
+const fruites = ["poma", "pera", "raïm"];
 
-És important entendre aquesta diferència per evitar errors.
+// Afig "plàtan" en la posició 1 sense eliminar res
+fruites.splice(1, 0, "plàtan");
+
+console.log(fruites);
+```
+
+**Eixida:**
+
+```javascript
+[ 'poma', 'plàtan', 'pera', 'raïm' ]
+```
+
+---
+
+### Diferència important
+
+* `slice()` **no modifica** l’array original
+* `splice()` **sí modifica** l’array original
+
+```javascript
+const array1 = ["a", "b", "c", "d"];
+const resultat = array1.slice(1, 3);
+
+console.log(array1);
+console.log(resultat);
+
+const array2 = ["a", "b", "c", "d"];
+array2.splice(1, 2);
+
+console.log(array2);
+```
+
+**Eixida:**
+
+```javascript
+[ 'a', 'b', 'c', 'd' ]
+[ 'b', 'c' ]
+[ 'a', 'd' ]
+```
 
 ---
 

@@ -1318,7 +1318,7 @@ Podem accedir a les propietats d’un objecte principalment de dues formes:
 
 ---
 
-#### Notació de punt
+* **Notació de punt**
 
 És la forma més habitual quan coneixem el nom de la propietat.
 
@@ -1340,7 +1340,7 @@ Ací:
 
 ---
 
-#### Notació amb claudàtors
+* **Notació amb claudàtors**
 
 També podem accedir a una propietat posant el seu nom com a text entre claudàtors.
 
@@ -1357,7 +1357,7 @@ Esta forma fa el mateix, però amb una sintaxi diferent.
 
 ---
 
-#### Comparació de les dues formes
+* **Comparativa**
 
 ```javascript
 console.log(persona.nom);
@@ -1430,7 +1430,7 @@ Per tant, les propietats d’un objecte es poden modificar.
 
 ---
 
-#### Important: objecte amb `const`
+* **OJO: objecte amb `const`**
 
 Encara que l’objecte estiga declarat amb `const`, podem modificar les seues propietats.
 
@@ -1476,7 +1476,7 @@ Per tant:
 
 ### Afegir una nova propietat
 
-Podem afegir noves propietats en qualsevol moment.
+Podem **afegir noves propietats** en qualsevol moment.
 
 ```javascript
 const persona = {
@@ -1577,7 +1577,7 @@ ciutat: València
 
 En cada iteració:
 
-* `clau` conté el nom d’una propietat
+* `clau` conté el nom d’una propietat, es una variable que creem nosaltres per a poder iterar per les propietats de l’objecte. Pot tindre qualsevol nom, però és habitual usar `clau` o `key`.
 * `persona[clau]` conté el valor associat a eixa propietat
 
 ---

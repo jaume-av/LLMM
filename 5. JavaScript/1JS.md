@@ -1188,24 +1188,39 @@ console.log(array2);
 ---
 
 
+
 ## 5. Objectes
 
 Fins ara hem treballat amb:
 
-* Valors individuals (números, text, booleans).
-* Col·leccions ordenades (arrays).
+* **valors individuals**, com números, textos o booleans
+* **col·leccions ordenades**, com els arrays
 
-Però moltes vegades necessitem representar una **entitat amb diverses propietats relacionades**.
+Això ens permet guardar informació, però hi ha situacions en què necessitem representar alguna cosa més completa.
 
-Per exemple:
+Per exemple, si volem guardar la informació d’una persona, no n’hi ha prou amb un únic valor. Normalment voldrem guardar diverses dades relacionades entre si:
 
-* Una persona amb nom, edat i ciutat.
-* Un producte amb nom, preu i estoc.
-* Una tasca amb text i estat de completada.
+* el nom
+* l’edat
+* la ciutat
+
+El mateix passa amb altres casos:
+
+* un producte pot tindre nom, preu i estoc
+* una tasca pot tindre text i estat de completada
 
 Per a això utilitzem els **objectes**.
 
 Un objecte és una estructura formada per **parells clau–valor**.
+
+Això significa que cada dada es guarda associada a un nom.
+
+Per exemple:
+
+* la clau `nom` pot tindre el valor `"Anna"`
+* la clau `edat` pot tindre el valor `30`
+
+Així, un objecte ens permet agrupar dades relacionades dins d’una sola estructura.
 
 ---
 
@@ -1223,21 +1238,47 @@ const persona = {
 console.log(persona);
 ```
 
+```javascript
+// Eixida:
+{ nom: 'Anna', edat: 30, ciutat: 'València' }
+```
+
 En este exemple:
 
-* `persona` és un objecte.
-* Té tres propietats: `nom`, `edat` i `ciutat`.
-* Cada propietat té un valor associat.
+* `persona` és l’objecte
+* `nom`, `edat` i `ciutat` són les seues propietats
+* cada propietat té un valor associat
 
-A diferència de JSON, en JavaScript no és necessari posar les claus entre cometes si són identificadors vàlids.
+Per tant:
 
-Entenem com a identificadors vàlids aquells que:
-* Comencen amb una lletra, un guió baix `_` o un signe de dòlar `$`.
-* No contenen espais ni caràcters especials.
-* No són paraules reservades del llenguatge.
-* Per exemple, `nom`, `edat` i `ciutat` són identificadors vàlids, per això no necessiten cometes.
-* Si la clau no és un identificador vàlid, sí que hem de posar-la entre cometes.
-* Per exemple:
+* `nom` guarda `"Anna"`
+* `edat` guarda `30`
+* `ciutat` guarda `"València"`
+
+---
+
+### Claus amb cometes i sense cometes
+
+A diferència de **JSON**, en JavaScript no és necessari posar les claus entre cometes si són identificadors vàlids.
+
+```javascript
+const persona = {
+    nom: "Anna",
+    edat: 30,
+    ciutat: "València"
+};
+```
+
+Açò és correcte perquè `nom`, `edat` i `ciutat` són noms vàlids per a propietats.
+
+De manera general, un identificador vàlid és un nom que:
+
+* comença amb una lletra, `_` o `$`
+* no conté espais
+* no conté caràcters especials
+* no és una paraula reservada
+
+Si la clau no és un identificador vàlid, sí que hem de posar-la entre cometes.
 
 ```javascript
 const producte = {
@@ -1245,26 +1286,115 @@ const producte = {
     preu: 29.99,
     disponible: true
 };
-``` 
+
+console.log(producte);
+```
+
+```javascript
+// Eixida:
+{ 'nom del producte': 'Auriculars', preu: 29.99, disponible: true }
+```
+
+Ací `"nom del producte"` porta cometes perquè conté espais.
 
 ---
 
 ### Accedir a una propietat
 
-Podem accedir als valors d’un objecte utilitzant la notació de punt.
+Partim d’este objecte:
+
+```javascript
+const persona = {
+    nom: "Anna",
+    edat: 30,
+    ciutat: "València"
+};
+```
+
+Podem accedir a les propietats d’un objecte principalment de dues formes:
+
+* amb **notació de punt**
+* amb **notació amb claudàtors**
+
+---
+
+#### Notació de punt
+
+És la forma més habitual quan coneixem el nom de la propietat.
 
 ```javascript
 console.log(persona.nom);
 console.log(persona.edat);
 ```
 
-També podem utilitzar la notació amb claudàtors.
+```javascript
+// Eixida:
+Anna
+30
+```
+
+Ací:
+
+* `persona.nom` accedeix al valor de `nom`
+* `persona.edat` accedeix al valor de `edat`
+
+---
+
+#### Notació amb claudàtors
+
+També podem accedir a una propietat posant el seu nom com a text entre claudàtors.
 
 ```javascript
 console.log(persona["ciutat"]);
 ```
 
-La notació de punt és la més habitual quan coneixem el nom de la propietat.
+```javascript
+// Eixida:
+València
+```
+
+Esta forma fa el mateix, però amb una sintaxi diferent.
+
+---
+
+#### Comparació de les dues formes
+
+```javascript
+console.log(persona.nom);
+console.log(persona["nom"]);
+console.log(persona.ciutat);
+console.log(persona["ciutat"]);
+```
+
+```javascript
+// Eixida:
+Anna
+Anna
+València
+València
+```
+
+La diferència no és el resultat, sinó la manera d’escriure-ho.
+
+La notació de punt és la més habitual quan coneixem el nom de la propietat i és un nom normal.
+
+La notació amb claudàtors és molt útil quan la propietat té espais o quan treballem amb el nom de la propietat com a text.
+
+Per exemple:
+
+```javascript
+const producte = {
+    "nom del producte": "Auriculars",
+    preu: 29.99
+};
+
+console.log(producte["nom del producte"]);
+```
+
+```javascript
+// Eixida:
+Auriculars
+```
 
 ---
 
@@ -1273,12 +1403,74 @@ La notació de punt és la més habitual quan coneixem el nom de la propietat.
 Podem canviar el valor d’una propietat assignant-li un nou valor.
 
 ```javascript
+const persona = {
+    nom: "Anna",
+    edat: 30,
+    ciutat: "València"
+};
+
 persona.edat = 31;
+
 console.log(persona.edat);
+console.log(persona);
 ```
 
+```javascript
+// Eixida:
+31
+{ nom: 'Anna', edat: 31, ciutat: 'València' }
+```
+
+En este cas:
+
+* abans `edat` valia `30`
+* ara `edat` val `31`
+
+Per tant, les propietats d’un objecte es poden modificar.
+
+---
+
+#### Important: objecte amb `const`
+
 Encara que l’objecte estiga declarat amb `const`, podem modificar les seues propietats.
+
+```javascript
+const persona = {
+    nom: "Anna",
+    edat: 30
+};
+
+persona.edat = 31;
+console.log(persona);
+```
+
+```javascript
+// Eixida:
+{ nom: 'Anna', edat: 31 }
+```
+
+Açò és correcte.
+
 El que no podem fer és reassignar l’objecte complet.
+
+```javascript
+const persona = {
+    nom: "Anna"
+};
+
+persona = {
+    nom: "Laura"
+};
+```
+
+```javascript
+// Error
+```
+
+Per tant:
+
+* amb `const` no podem canviar l’objecte per un altre
+* però sí que podem modificar les seues propietats
 
 ---
 
@@ -1287,14 +1479,44 @@ El que no podem fer és reassignar l’objecte complet.
 Podem afegir noves propietats en qualsevol moment.
 
 ```javascript
+const persona = {
+    nom: "Anna",
+    edat: 30
+};
+
 persona.professio = "Programadora";
+
 console.log(persona.professio);
+console.log(persona);
 ```
 
-Els objectes en JavaScript són dinàmics.
+```javascript
+// Eixida:
+Programadora
+{ nom: 'Anna', edat: 30, professio: 'Programadora' }
+```
+
+Això significa que els objectes en JavaScript són **dinàmics**.
+
 No cal definir totes les propietats des del principi.
 
-A diferencia de java o altres llenguatges, no existeix una classe o plantilla fixa que determine quines propietats té un objecte.
+Podem començar amb un objecte senzill i després afegir més informació.
+
+```javascript
+const llibre = {
+    titol: "1984"
+};
+
+llibre.autor = "George Orwell";
+llibre.any = 1949;
+
+console.log(llibre);
+```
+
+```javascript
+// Eixida:
+{ titol: '1984', autor: 'George Orwell', any: 1949 }
+```
 
 ---
 
@@ -1303,11 +1525,28 @@ A diferencia de java o altres llenguatges, no existeix una classe o plantilla fi
 Per eliminar una propietat utilitzem l’operador `delete`.
 
 ```javascript
+const persona = {
+    nom: "Anna",
+    edat: 30,
+    ciutat: "València"
+};
+
 delete persona.ciutat;
-console.log(persona.ciutat); // undefined
+
+console.log(persona);
+console.log(persona.ciutat);
 ```
 
-Després d’eliminar-la, la propietat ja no existeix dins de l’objecte.
+```javascript
+// Eixida:
+{ nom: 'Anna', edat: 30 }
+undefined
+```
+
+Després d’eliminar-la:
+
+* la propietat `ciutat` ja no existeix dins de l’objecte
+* si intentem accedir-hi, obtenim `undefined`
 
 ---
 
@@ -1318,15 +1557,56 @@ Quan treballem amb objectes, moltes vegades volem recórrer les seues propietats
 Per a això utilitzem el bucle `for...in`.
 
 ```javascript
+const persona = {
+    nom: "Anna",
+    edat: 30,
+    ciutat: "València"
+};
+
 for (let clau in persona) {
     console.log(clau + ": " + persona[clau]);
 }
 ```
 
+```javascript
+// Eixida:
+nom: Anna
+edat: 30
+ciutat: València
+```
+
 En cada iteració:
 
-* `clau` conté el nom de la propietat.
-* `persona[clau]` conté el valor associat.
+* `clau` conté el nom d’una propietat
+* `persona[clau]` conté el valor associat a eixa propietat
+
+---
+
+### Per què s’usen claudàtors en `for...in`?
+
+Açò és important.
+
+Dins del bucle, `clau` és una variable que va canviant de valor:
+
+* primer val `"nom"`
+* després val `"edat"`
+* després val `"ciutat"`
+
+Per això escrivim:
+
+```javascript
+persona[clau]
+```
+
+i no:
+
+```javascript
+persona.clau
+```
+
+Perquè `persona.clau` buscaria una propietat que es diguera literalment `clau`, i això no és el que volem.
+
+Volem que JavaScript use el valor que hi ha dins de la variable `clau`.
 
 ---
 
@@ -1335,11 +1615,27 @@ En cada iteració:
 Podem utilitzar l’operador `in`.
 
 ```javascript
-console.log("nom" in persona);     // true
-console.log("altura" in persona);  // false
+const persona = {
+    nom: "Anna",
+    edat: 30
+};
+
+console.log("nom" in persona);
+console.log("altura" in persona);
 ```
 
-Això és útil quan treballem amb objectes dinàmics.
+```javascript
+// Eixida:
+true
+false
+```
+
+Això significa:
+
+* `"nom" in persona` → és `true` perquè la propietat existeix
+* `"altura" in persona` → és `false` perquè no existeix
+
+Això és útil quan treballem amb objectes dinàmics o quan no sabem segur quines propietats hi haurà.
 
 ---
 
@@ -1357,15 +1653,55 @@ const persones = [
 ];
 
 console.log(persones[0].nom);
+console.log(persones[1].edat);
+```
+
+```javascript
+// Eixida:
+Anna
+25
 ```
 
 En este cas:
 
-* `persones` és un array.
-* Cada element és un objecte.
-* Podem accedir combinant índex i propietat.
+* `persones` és un array
+* cada element de l’array és un objecte
+* podem accedir combinant índex i propietat
 
-Aquest patró és molt comú en aplicacions reals i també quan treballem amb dades del DOM o amb JSON.
+Per exemple:
+
+* `persones[0]` és el primer objecte
+* `persones[0].nom` accedeix al `nom` d’eixe objecte
+
+Este patró és molt comú en aplicacions reals i també quan treballem amb JSON.
+
+---
+
+### Exemple més complet
+
+```javascript
+const alumnes = [
+    { nom: "Pau", nota: 8 },
+    { nom: "Marta", nota: 7 },
+    { nom: "Joan", nota: 9 }
+];
+
+console.log(alumnes[1]);
+console.log(alumnes[1].nom);
+console.log(alumnes[1].nota);
+```
+
+```javascript
+// Eixida:
+{ nom: 'Marta', nota: 7 }
+Marta
+7
+```
+
+Ací es veu clarament com es combina:
+
+* l’índex de l’array
+* la propietat de l’objecte
 
 ---
 
@@ -1375,36 +1711,131 @@ JavaScript proporciona alguns mètodes que ens ajuden a treballar amb objectes.
 
 ---
 
-* **Object.keys()**
+#### `Object.keys()`
 
-Retorna un array amb les claus.
+Retorna un array amb les claus de l’objecte.
 
 ```javascript
+const persona = {
+    nom: "Anna",
+    edat: 30,
+    ciutat: "València"
+};
+
 console.log(Object.keys(persona));
 ```
 
+```javascript
+// Eixida:
+[ 'nom', 'edat', 'ciutat' ]
+```
+
+És útil quan volem obtindre els noms de les propietats.
+
 ---
 
-* **Object.values()**
+#### `Object.values()`
 
-Retorna un array amb els valors.
+Retorna un array amb els valors de l’objecte.
 
 ```javascript
+const persona = {
+    nom: "Anna",
+    edat: 30,
+    ciutat: "València"
+};
+
 console.log(Object.values(persona));
 ```
 
+```javascript
+// Eixida:
+[ 'Anna', 30, 'València' ]
+```
+
+Ací no obtenim les claus, sinó els valors.
+
 ---
 
-* **Object.assign()**
+#### Exemple combinat
+
+```javascript
+const llibre = {
+    titol: "1984",
+    autor: "George Orwell",
+    any: 1949
+};
+
+console.log(Object.keys(llibre));
+console.log(Object.values(llibre));
+```
+
+```javascript
+// Eixida:
+[ 'titol', 'autor', 'any' ]
+[ '1984', 'George Orwell', 1949 ]
+```
+
+Per tant:
+
+* `Object.keys()` retorna les claus
+* `Object.values()` retorna els valors
+
+---
+
+#### `Object.assign()`
 
 Permet copiar o fusionar objectes.
 
 ```javascript
+const persona = {
+    nom: "Anna",
+    edat: 30
+};
+
 const personaCopia = Object.assign({}, persona);
+
 console.log(personaCopia);
 ```
 
-Això crea una còpia superficial de l’objecte.
+```javascript
+// Eixida:
+{ nom: 'Anna', edat: 30 }
+```
+
+Ací estem creant una còpia de l’objecte `persona`.
+
+La idea és esta:
+
+* `{}` crea un objecte buit
+* `Object.assign({}, persona)` copia dins d’eixe objecte buit les propietats de `persona`
+
+---
+
+#### Exemple de fusió
+
+```javascript
+const dadesBase = {
+    nom: "Anna",
+    edat: 30
+};
+
+const dadesExtra = {
+    ciutat: "València",
+    professio: "Programadora"
+};
+
+const personaCompleta = Object.assign({}, dadesBase, dadesExtra);
+
+console.log(personaCompleta);
+```
+
+```javascript
+// Eixida:
+{ nom: 'Anna', edat: 30, ciutat: 'València', professio: 'Programadora' }
+```
+
+Això permet unir informació de diversos objectes.
 
 ---
 
@@ -1413,39 +1844,37 @@ Això crea una còpia superficial de l’objecte.
 Podem impedir modificacions utilitzant `Object.freeze()`.
 
 ```javascript
+const persona = {
+    nom: "Anna",
+    edat: 30
+};
+
 Object.freeze(persona);
+
+persona.edat = 31;
+persona.ciutat = "València";
+delete persona.nom;
+
+console.log(persona);
 ```
-
-Després d’això:
-
-* No es poden modificar propietats.
-* No es poden afegir.
-* No es poden eliminar.
-
----
-
-### Relació amb el DOM
-
-És important entendre que:
-
-Quan treballem amb el DOM, els elements HTML que obtenim amb JavaScript també són **objectes**.
-
-Per exemple:
 
 ```javascript
-const titol = document.querySelector("h1");
+// Eixida:
+{ nom: 'Anna', edat: 30 }
 ```
 
-`titol` és un objecte amb propietats i mètodes.
+Després de congelar-lo:
 
-Per això és fonamental entendre bé què és un objecte abans d’entrar en profunditat en el DOM.
+* no es poden modificar propietats
+* no es poden afegir propietats
+* no es poden eliminar propietats
+
+Per tant, l’objecte queda bloquejat.
 
 ---
 
 
-Perfecte. Continuem amb el següent bloc complet, mantenint el mateix nivell, sense pujar dificultat i preparant el terreny per al DOM.
 
----
 
 ## 6. Funcions
 
@@ -1463,7 +1892,7 @@ Una funció és un bloc de codi reutilitzable que realitza una tasca concreta.
 
 ---
 
-### Declaració d’una funció
+## Declaració d’una funció
 
 La forma més habitual de definir una funció és utilitzant la paraula clau `function`.
 
@@ -1475,20 +1904,46 @@ function saludar() {
 
 En este cas:
 
-* `saludar` és el nom de la funció.
-* El codi dins de les claus és el que s’executarà quan la cridem.
+* `saludar` és el nom de la funció
+* El codi dins de les claus és el que s’executarà
 
-Per executar-la, hem de cridar-la pel seu nom:
+Per executar-la:
 
 ```javascript
 saludar();
 ```
 
-És important incloure els parèntesis, encara que no tinga paràmetres.
+```javascript
+// Eixida:
+Hola!
+```
+
+### Diferència important: definir vs executar
+
+```javascript
+function saludar() {
+    console.log("Hola!");
+}
+
+// Açò NO executa la funció
+console.log(saludar);
+
+// Açò SÍ executa la funció
+saludar();
+```
+
+```javascript
+// Eixida:
+[Function: saludar]
+Hola!
+```
+
+* `saludar` → és la funció
+* `saludar()` → executa la funció
 
 ---
 
-### Funcions amb paràmetres
+## Funcions amb paràmetres
 
 Les funcions poden rebre informació a través de **paràmetres**.
 
@@ -1500,18 +1955,46 @@ function saludar(nom) {
 saludar("Anna");
 ```
 
-En este exemple:
+```javascript
+// Eixida:
+Hola, Anna!
+```
 
-* `nom` és el paràmetre.
-* `"Anna"` és l’argument que passem en la crida.
+### Paràmetre vs argument
 
-Els paràmetres permeten que una mateixa funció treballe amb valors diferents.
+```javascript
+function saludar(nom) { // nom → paràmetre
+    console.log("Hola, " + nom);
+}
+
+saludar("Marc"); // "Marc" → argument
+```
+
+* **Paràmetre** → variable dins de la funció
+* **Argument** → valor real que passem
 
 ---
 
-### Retornar un valor
+### Exemple amb diversos paràmetres
 
-Les funcions poden retornar un resultat utilitzant la paraula clau `return`.
+```javascript
+function mostrarInfo(nom, edat) {
+    console.log(nom + " té " + edat + " anys");
+}
+
+mostrarInfo("Laura", 25);
+```
+
+```javascript
+// Eixida:
+Laura té 25 anys
+```
+
+---
+
+## Retornar un valor
+
+Les funcions poden retornar un resultat utilitzant `return`.
 
 ```javascript
 function suma(a, b) {
@@ -1522,32 +2005,140 @@ const resultat = suma(5, 3);
 console.log(resultat);
 ```
 
-En este cas:
+```javascript
+// Eixida:
+8
+```
 
-* La funció calcula la suma.
-* `return` envia el resultat cap a fora.
-* El valor retornat es pot guardar en una variable.
-
-Si una funció no té `return`, el valor que retorna és `undefined`.
+* `return` envia el resultat cap a fora
+* El valor es pot guardar en una variable
 
 ---
 
-## Funcions com a valors 
+Tens raó: així com està, **pot confondre**, perquè sembla que la funció “no fa res”.
+
+Millor deixar-ho més clar mostrant **què passa realment pas a pas**:
+
+---
+
+### Important: funció sense return
+
+En JavaScript, totes les funcions retornen un valor.
+
+Si no utilitzem `return`, la funció retorna automàticament `undefined`.
+
+```javascript
+function suma(a, b) {
+    console.log(a + b); // es calcula i es mostra
+}
+
+const resultat = suma(2, 3);
+console.log(resultat);
+```
+
+```javascript
+// Eixida:
+5
+undefined
+```
+
+En este cas:
+
+* `console.log(a + b)` → mostra `5`
+* però la funció **no retorna res**
+* per això `resultat` és `undefined`
+
+---
+
+### Comparació clara
+
+```javascript
+function suma(a, b) {
+    return a + b;
+}
+
+const resultat = suma(2, 3);
+console.log(resultat);
+```
+
+```javascript
+// Eixida:
+5
+```
+
+Ara:
+
+* la funció sí retorna el valor
+* `resultat` conté `5`
+
+>Mostrar un valor (`console.log`) **no és el mateix que retornar-lo**
+>Si no hi ha `return`, el resultat serà `undefined`
+
+---
+
+
+### Funcions que no necessiten return
+
+Hi ha funcions que només executen accions i no necessiten retornar res.
+
+```javascript
+function saludar() {
+    console.log("Hola!");
+}
+
+const resultat = saludar();
+console.log(resultat);
+```
+
+```javascript
+// Eixida:
+Hola!
+undefined
+```
+
+En estos casos:
+
+* la funció fa una acció (mostrar per pantalla)
+* el valor retornat (`undefined`) no s’utilitza
+
+---
+
+### Exemple combinat
+
+```javascript
+function calcularPreu(preu, iva) {
+    return preu + (preu * iva);
+}
+
+const total = calcularPreu(100, 0.21);
+console.log(total);
+```
+
+```javascript
+// Eixida:
+121
+```
+
+En este cas:
+
+* sí utilitzem `return`
+* perquè volem treballar amb el resultat
+
+---
+
+
+## Funcions com a valors
 
 En JavaScript, les funcions són valors.
 
 Això significa que podem:
 
-* Assignar-les a una variable.
-* Passar-les com a argument a una altra funció.
+* Guardar-les en variables
+* Passar-les com a paràmetres
 
-A diferencia de Java o altres llenguatges, en JavaScript les funcions no són només blocs de codi, sinó que també són objectes que es poden manipular com a qualsevol altre valor.
+---
 
-
-
-### Expressió de funció  (funció anònima)
-
-Podem definir una funció i assignar-la a una variable.
+### Expressió de funció (funció anònima)
 
 ```javascript
 const saludar = function(nom) {
@@ -1557,16 +2148,17 @@ const saludar = function(nom) {
 saludar("Marc");
 ```
 
-En este cas:
+```javascript
+// Eixida:
+Hola, Marc!
+```
 
-* La funció no té nom propi.
-* Està guardada dins de la variable `saludar`.
-
-Això es diu **funció anònima**.
+* La funció no té nom propi
+* Està guardada dins d’una variable
 
 ---
 
-### Funcions com a paràmetres
+## Funcions com a paràmetres
 
 Podem passar una funció a una altra funció.
 
@@ -1575,26 +2167,62 @@ function operacio(a, b, func) {
     return func(a, b);
 }
 
+const sumar = function(x, y) {
+    return x + y;
+};
+
 const multiplicar = function(x, y) {
     return x * y;
 };
 
-const resultat = operacio(4, 5, multiplicar);
-console.log(resultat);
+const resultat1 = operacio(2, 3, sumar);
+const resultat2 = operacio(2, 3, multiplicar);
+
+console.log(resultat1);
+console.log(resultat2);
 ```
 
-En este exemple:
+```javascript
+// Eixida:
+5
+6
+```
 
-* `operacio` rep una funció com a tercer paràmetre.
-* Executa aquesta funció amb els valors rebuts.
+### Idea clau
 
-Aquest patró és molt habitual, especialment en el treball amb esdeveniments del DOM.
+```javascript
+operacio(2, 3, sumar);
+```
+
+* Estem passant la funció `sumar`
+* No posem `sumar()` perquè això l’executaria
+
+---
+
+### Exemple pràctic
+
+```javascript
+function aplicarDescompte(preu, func) {
+    return func(preu);
+}
+
+const descompte10 = function(preu) {
+    return preu * 0.9;
+};
+
+console.log(aplicarDescompte(100, descompte10));
+```
+
+```javascript
+// Eixida:
+90
+```
 
 ---
 
 ## Funcions de fletxa (Arrow Functions)
 
-JavaScript modern permet definir funcions d’una manera més compacta amb la sintaxi de fletxa `=>`.
+JavaScript modern permet definir funcions de forma més curta amb `=>`.
 
 ```javascript
 const suma = (a, b) => {
@@ -1604,7 +2232,14 @@ const suma = (a, b) => {
 console.log(suma(2, 3));
 ```
 
-Si la funció només té una expressió, podem ometre les claus i el `return`.
+```javascript
+// Eixida:
+5
+```
+
+---
+
+### Forma reduïda
 
 ```javascript
 const quadrat = num => num * num;
@@ -1612,12 +2247,14 @@ const quadrat = num => num * num;
 console.log(quadrat(4));
 ```
 
-En este cas:
+```javascript
+// Eixida:
+16
+```
 
-* `num` és el paràmetre.
-* `num * num` és el valor retornat automàticament.
+---
 
-També podem definir funcions sense paràmetres:
+### Sense paràmetres
 
 ```javascript
 const saludar = () => {
@@ -1627,19 +2264,37 @@ const saludar = () => {
 saludar();
 ```
 
-Les funcions de fletxa són molt utilitzades, especialment quan treballem amb:
+```javascript
+// Eixida:
+Hola món
+```
 
-* `forEach`
-* `addEventListener`
-* Mètodes d’arrays
+---
+
+### Exemple amb arrays
+
+```javascript
+const numeros = [1, 2, 3];
+
+numeros.forEach(num => {
+    console.log(num);
+});
+```
+
+```javascript
+// Eixida:
+1
+2
+3
+```
+
+* Les arrow functions s’utilitzen molt en funcions curtes i callbacks
 
 ---
 
 ## Relació amb el DOM
 
-Quan treballem amb esdeveniments, necessitem passar una funció que s’execute quan ocorre una acció.
-
-Per exemple:
+Quan treballem amb esdeveniments, passem una funció que s’executarà després.
 
 ```javascript
 const boto = document.querySelector("button");
@@ -1649,13 +2304,9 @@ boto.addEventListener("click", function() {
 });
 ```
 
-En este cas:
+---
 
-* No cridem la funció immediatament.
-* La passem com a paràmetre.
-* El navegador la cridarà quan es produïsca l’esdeveniment.
-
-També podem utilitzar una funció de fletxa:
+### Amb arrow function
 
 ```javascript
 boto.addEventListener("click", () => {
@@ -1663,9 +2314,81 @@ boto.addEventListener("click", () => {
 });
 ```
 
-Per això és important entendre bé què són les funcions abans d’entrar en profunditat en el DOM.
+---
+
+### Idea clau
+
+```javascript
+boto.addEventListener("click", () => {
+    console.log("Has fet clic");
+});
+```
+
+* No executem la funció en eixe moment
+* La passem com a paràmetre
+* El navegador la cridarà quan passe l’esdeveniment
 
 ---
+
+### Error molt habitual
+
+```javascript
+boto.addEventListener("click", saludar());
+```
+
+Això és incorrecte perquè:
+
+* la funció s’executa immediatament
+* no s’espera al clic
+
+Forma correcta:
+
+```javascript
+boto.addEventListener("click", saludar);
+```
+
+---
+
+## Resum
+
+* Una funció és un bloc de codi reutilitzable
+* `function nom() {}` → defineix
+* `nom()` → executa
+* Els paràmetres reben dades
+* `return` permet retornar resultats
+* Les funcions es poden guardar i passar com a valors
+* Les arrow functions són una forma més curta
+* En el DOM, passem funcions sense executar-les
+
+```javascript
+function exemple(x) {
+    return x * 2;
+}
+
+console.log(exemple(5));
+```
+
+```javascript
+// Eixida:
+10
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## 7. Introducció al DOM

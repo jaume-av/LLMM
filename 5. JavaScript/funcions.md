@@ -1,3 +1,5 @@
+
+
 ## 6. Funcions
 
 Fins ara hem escrit codi que s’executa de manera seqüencial.
@@ -14,7 +16,7 @@ Una funció és un bloc de codi reutilitzable que realitza una tasca concreta.
 
 ---
 
-## Declaració d’una funció
+### Declaració d’una funció
 
 La forma més habitual de definir una funció és utilitzant la paraula clau `function`.
 
@@ -51,10 +53,10 @@ function saludar() {
     console.log("Hola!");
 }
 
-// Açò NO executa la funció
+// NO executa la funció
 console.log(saludar);
 
-// Açò SÍ executa la funció
+// SÍ executa la funció
 saludar();
 ```
 
@@ -64,19 +66,14 @@ saludar();
 Hola!
 ```
 
-En este exemple:
+On:
 
 * `saludar` → és la funció (el codi guardat)
 * `saludar()` → executa la funció
 
-Quan fem `console.log(saludar)`:
-
-* estem mostrant la funció
-* no s’executa el seu codi
-
 ---
 
-## Funcions amb paràmetres
+### Funcions amb paràmetres
 
 Les funcions poden rebre informació a través de **paràmetres**.
 
@@ -93,22 +90,20 @@ saludar("Anna");
 Hola, Anna!
 ```
 
-Els paràmetres permeten que una mateixa funció treballe amb valors diferents.
-
 ---
 
 ### Paràmetre vs argument
 
 ```javascript
-function saludar(nom) { // nom → paràmetre
+function saludar(nom) { // paràmetre
     console.log("Hola, " + nom);
 }
 
-saludar("Marc"); // "Marc" → argument
+saludar("Marc"); // argument
 ```
 
-* **Paràmetre** → variable definida dins de la funció
-* **Argument** → valor real que passem en executar-la
+* **Paràmetre** → variable dins de la funció
+* **Argument** → valor que passem en executar-la
 
 ---
 
@@ -129,9 +124,9 @@ Laura té 25 anys
 
 ---
 
-## Retornar un valor
+### Retornar un valor (return)
 
-Les funcions poden retornar un resultat utilitzant la paraula clau `return`.
+Les funcions poden retornar un resultat utilitzant `return`.
 
 ```javascript
 function suma(a, b) {
@@ -147,52 +142,54 @@ console.log(resultat);
 8
 ```
 
-En este cas:
+On:
 
-* la funció calcula un valor
-* `return` envia el resultat cap a fora
-* el valor es guarda en la variable `resultat`
-
-Sense `return`, no podem utilitzar el resultat fora de la funció.
+* `return` envia el resultat fora de la funció
+* permet utilitzar-lo després
 
 ---
 
-## Important: funció sense return
-
-En JavaScript, totes les funcions retornen un valor.
-
-Si no utilitzem `return`, la funció retorna automàticament `undefined`.
+### Diferència: return vs console.log
 
 ```javascript
-function suma(a, b) {
-    console.log(a + b); // es calcula i es mostra
+function suma1(a, b) {
+    console.log(a + b);
 }
 
-const resultat = suma(2, 3);
-console.log(resultat);
-```
-
-```javascript
-// Eixida:
-5
-undefined
-```
-
-En este cas:
-
-* `console.log(a + b)` → mostra `5`
-* però la funció **no retorna el valor**
-* per això `resultat` és `undefined`
-
----
-
-### Comparació clara
-
-```javascript
-function suma(a, b) {
+function suma2(a, b) {
     return a + b;
 }
 
+const r1 = suma1(2, 3);
+const r2 = suma2(2, 3);
+
+console.log(r1);
+console.log(r2);
+```
+
+```javascript
+// Eixida:
+5
+undefined
+5
+```
+
+On:
+
+* `console.log()` → només mostra
+* `return` → retorna el valor
+
+---
+
+### Important: funció sense return
+
+Si no utilitzem `return`, la funció retorna `undefined`.
+
+```javascript
+function suma(a, b) {
+    console.log(a + b);
+}
+
 const resultat = suma(2, 3);
 console.log(resultat);
 ```
@@ -200,71 +197,41 @@ console.log(resultat);
 ```javascript
 // Eixida:
 5
+undefined
 ```
 
-Ara:
-
-* la funció sí retorna el valor
-* podem utilitzar-lo fora
-
 ---
 
-### Idea clau
-
-* Mostrar un valor (`console.log`) **no és el mateix que retornar-lo**
-* Si no hi ha `return`, el resultat serà `undefined`
-
----
-
-### Funcions que no necessiten return
-
-Hi ha funcions que només executen accions i no necessiten retornar res.
+### Error  habitual
 
 ```javascript
-function mostrarMissatge() {
-    console.log("Operació correcta");
+function doble(num) {
+    console.log(num * 2);
 }
 
-const resultat = mostrarMissatge();
+const resultat = doble(5) + 10;
+
 console.log(resultat);
 ```
 
 ```javascript
 // Eixida:
-Operació correcta
-undefined
+10
+NaN
 ```
 
-En estos casos:
+### Explicació
 
-* la funció fa una acció
-* el valor retornat (`undefined`) no s’utilitza
+* la funció retorna `undefined`
+* `undefined + 10` → `NaN`
 
----
-
-### Exemple combinat
+Correcte:
 
 ```javascript
-function calcularPreu(preu, iva) {
-    return preu + (preu * iva);
+function doble(num) {
+    return num * 2;
 }
-
-const total = calcularPreu(100, 0.21);
-console.log(total);
 ```
-
-```javascript
-// Eixida:
-121
-```
-
-En este cas:
-
-* sí utilitzem `return`
-* perquè necessitem el resultat
-
----
-
 ## Funcions com a valors
 
 En JavaScript, les funcions són valors.
@@ -274,15 +241,53 @@ Això significa que podem:
 * guardar-les en variables
 * passar-les com a paràmetres
 
+Es a dir, **“una funció és un valor igual que un número”**
+
 ---
 
-### Expressió de funció (funció anònima)
+### Funcions anònimes (Function Expression)
+
+Una funció anònima és una funció **sense nom** que es guarda dins d’una variable.
+
+---
+
+### Com es crea
 
 ```javascript
 const saludar = function(nom) {
     console.log("Hola, " + nom + "!");
 };
+```
 
+En este cas:
+
+* `function(nom) { ... }` crea una funció
+* la funció no té nom
+* es guarda dins de la variable `saludar`
+
+---
+
+### Què hi ha dins de la variable
+
+```javascript
+console.log(saludar);
+```
+
+```javascript
+// Eixida:
+[Function]
+```
+
+Açò indica que:
+
+* `saludar` conté una funció
+* encara no s’ha executat res
+
+---
+
+### Ús
+
+```javascript
 saludar("Marc");
 ```
 
@@ -291,16 +296,70 @@ saludar("Marc");
 Hola, Marc!
 ```
 
-En este cas:
+---
 
-* la funció no té nom propi
-* està guardada dins de la variable
+### Què està passant pas a pas
+
+Quan fem:
+
+```javascript
+saludar("Marc");
+```
+
+1. JavaScript busca la variable `saludar`
+2. dins de `saludar` hi ha una funció
+3. els parèntesis `()` fan que la funció s’execute
+4. `"Marc"` es passa com a valor del paràmetre `nom`
+5. s’executa `console.log(...)`
+
+---
+
+### Idea clau
+
+* `saludar` → és la funció guardada
+* `saludar()` → executa la funció
+
+---
+
+### Comparació
+
+```javascript
+// Funció normal
+function saludar(nom) {
+    console.log("Hola, " + nom);
+}
+
+// Funció anònima
+const saludar2 = function(nom) {
+    console.log("Hola, " + nom);
+};
+
+saludar("Anna");
+saludar2("Anna");
+```
+
+```javascript
+// Eixida:
+Hola, Anna
+Hola, Anna
+```
+
+Les dues:
+
+* fan el mateix
+* s’executen igual
+
+Només canvia la forma de crear-les.
 
 ---
 
 ## Funcions com a paràmetres
 
 Podem passar una funció a una altra funció.
+
+---
+
+### Exemple
 
 ```javascript
 function operacio(a, b, func) {
@@ -315,11 +374,8 @@ const multiplicar = function(x, y) {
     return x * y;
 };
 
-const resultat1 = operacio(2, 3, sumar);
-const resultat2 = operacio(2, 3, multiplicar);
-
-console.log(resultat1);
-console.log(resultat2);
+console.log(operacio(2, 3, sumar));
+console.log(operacio(2, 3, multiplicar));
 ```
 
 ```javascript
@@ -328,48 +384,130 @@ console.log(resultat2);
 6
 ```
 
+
+> **Estem passant la funció, no executant-la**
 ---
 
-### Idea clau
+### Què està passant pas a pas
 
 ```javascript
 operacio(2, 3, sumar);
 ```
 
-* estem passant la funció
-* no posem `sumar()` perquè això l’executaria
+1. `sumar` és una funció
+2. NO hi ha `()`, per tant NO s’executa
+3. es passa com a valor a la funció `operacio`
+
+Dins de `operacio`:
+
+```javascript
+function operacio(a, b, func) {
+    return func(a, b);
+}
+```
+
+4. `func` conté la funció `sumar`
+5. `func(a, b)` és equivalent a escriure:
+
+```javascript
+sumar(2, 3);
+```
+
+6. `sumar(2, 3)` retorna `5`
+7. `operacio` retorna `5`
 
 ---
 
-### Exemple pràctic
+### Idea clau
+
+* `sumar` → passem la funció
+* `sumar()` → executaríem la funció
+
+---
+
+### Error habitual
 
 ```javascript
-function aplicarDescompte(preu, func) {
-    return func(preu);
+function operacio(a, b, func) {
+    return func(a, b);
 }
 
-const descompte10 = function(preu) {
-    return preu * 0.9;
+const sumar = function(x, y) {
+    return x + y;
 };
 
-console.log(aplicarDescompte(100, descompte10));
+console.log(operacio(2, 3, sumar()));
 ```
 
 ```javascript
 // Eixida:
-90
+Error (func no és una funció)
 ```
 
 ---
 
-## Funcions de fletxa (Arrow Functions)
-
-JavaScript modern permet definir funcions de forma més curta amb `=>`.
+### Què està passant en l’error
 
 ```javascript
-const suma = (a, b) => {
+operacio(2, 3, sumar());
+```
+
+1. `sumar()` s’executa immediatament
+2. `sumar(2, 3)` retorna `5`
+3. realment s’està fent:
+
+```javascript
+operacio(2, 3, 5);
+```
+
+4. dins de `operacio`, `func` val `5`
+5. `func(a, b)` intenta fer `5(2, 3)`
+6. això provoca un error
+
+---
+
+### Funcions de fletxa (Arrow Functions)
+
+Les **arrow functions** són una forma més curta d’escriure funcions.
+
+---
+
+### Comparativa amb funció normal
+
+```javascript
+// Funció normal
+const suma1 = function(a, b) {
     return a + b;
 };
+
+// Arrow function
+const suma2 = (a, b) => {
+    return a + b;
+};
+
+console.log(suma1(2, 3));
+console.log(suma2(2, 3));
+```
+
+```javascript
+// Eixida:
+5
+5
+```
+
+Les dues funcions:
+
+* fan el mateix
+* tenen el mateix comportament
+
+Només canvia la sintaxi.
+
+---
+
+### Forma reduïda
+
+```javascript
+const suma = (a, b) => a + b;
 
 console.log(suma(2, 3));
 ```
@@ -381,7 +519,25 @@ console.log(suma(2, 3));
 
 ---
 
-### Forma reduïda
+### Què està passant
+
+En este cas:
+
+```javascript
+(a, b) => a + b
+```
+
+és equivalent a:
+
+```javascript
+function(a, b) {
+    return a + b;
+}
+```
+
+---
+
+### Un sol paràmetre
 
 ```javascript
 const quadrat = num => num * num;
@@ -413,7 +569,15 @@ Hola món
 
 ---
 
-### Exemple amb arrays
+### Explicació clara
+
+* `=>` substitueix `function`
+* si hi ha una sola línia → no cal `return`
+* retorna automàticament el resultat
+
+---
+
+## Exemple amb arrays
 
 ```javascript
 const numeros = [1, 2, 3];
@@ -430,88 +594,22 @@ numeros.forEach(num => {
 3
 ```
 
-* Les arrow functions s’utilitzen molt en funcions curtes i callbacks
-
 ---
 
-## Relació amb el DOM
-
-Quan treballem amb esdeveniments, passem una funció que s’executarà després.
+### Què està passant
 
 ```javascript
-const boto = document.querySelector("button");
-
-boto.addEventListener("click", function() {
-    console.log("Has fet clic");
+numeros.forEach(num => {
+    console.log(num);
 });
 ```
 
----
-
-### Amb arrow function
-
-```javascript
-boto.addEventListener("click", () => {
-    console.log("Has fet clic");
-});
-```
-
----
-
-### Idea clau
+1. `forEach` recorre l’array
+2. en cada iteració, crida la funció
+3. `num` pren cada valor:
 
 ```javascript
-boto.addEventListener("click", () => {
-    console.log("Has fet clic");
-});
-```
-
-* no executem la funció en eixe moment
-* la passem com a paràmetre
-* el navegador la cridarà quan passe l’esdeveniment
-
----
-
-### Error molt habitual
-
-```javascript
-boto.addEventListener("click", saludar());
-```
-
-Això és incorrecte perquè:
-
-* la funció s’executa immediatament
-* no s’espera al clic
-
-Forma correcta:
-
-```javascript
-boto.addEventListener("click", saludar);
-```
-
----
-
-## Resum
-
-* Una funció és un bloc de codi reutilitzable
-* `function nom() {}` → defineix
-* `nom()` → executa
-* Els paràmetres reben dades
-* `return` permet retornar resultats
-* Sense `return` → retorna `undefined`
-* Les funcions es poden guardar i passar com a valors
-* Les arrow functions són una forma més curta
-* En el DOM, passem funcions sense executar-les
-
-```javascript
-function exemple(x) {
-    return x * 2;
-}
-
-console.log(exemple(5));
-```
-
-```javascript
-// Eixida:
-10
+num = 1 → es mostra 1  
+num = 2 → es mostra 2  
+num = 3 → es mostra 3  
 ```

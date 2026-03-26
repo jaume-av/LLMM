@@ -1874,17 +1874,15 @@ Per tant, l’objecte queda bloquejat.
 ---
 
 
-
-
 ## 6. Funcions
 
 Fins ara hem escrit codi que s’executa de manera seqüencial.
 
 Però moltes vegades necessitem:
 
-* Reutilitzar un mateix bloc de codi.
-* Organitzar millor el programa.
-* Executar una acció només quan la necessitem.
+* Reutilitzar un mateix bloc de codi
+* Organitzar millor el programa
+* Executar una acció només quan la necessitem
 
 Per a això utilitzem les **funcions**.
 
@@ -1892,7 +1890,7 @@ Una funció és un bloc de codi reutilitzable que realitza una tasca concreta.
 
 ---
 
-## Declaració d’una funció
+### Declaració d’una funció
 
 La forma més habitual de definir una funció és utilitzant la paraula clau `function`.
 
@@ -1918,17 +1916,21 @@ saludar();
 Hola!
 ```
 
-### Diferència important: definir vs executar
+---
+
+### Diferència: definir vs executar
+
+És molt important entendre que **definir una funció no és el mateix que executar-la**.
 
 ```javascript
 function saludar() {
     console.log("Hola!");
 }
 
-// Açò NO executa la funció
+// NO executa la funció
 console.log(saludar);
 
-// Açò SÍ executa la funció
+// SÍ executa la funció
 saludar();
 ```
 
@@ -1938,12 +1940,14 @@ saludar();
 Hola!
 ```
 
-* `saludar` → és la funció
+On:
+
+* `saludar` → és la funció (el codi guardat)
 * `saludar()` → executa la funció
 
 ---
 
-## Funcions amb paràmetres
+### Funcions amb paràmetres
 
 Les funcions poden rebre informació a través de **paràmetres**.
 
@@ -1960,18 +1964,20 @@ saludar("Anna");
 Hola, Anna!
 ```
 
+---
+
 ### Paràmetre vs argument
 
 ```javascript
-function saludar(nom) { // nom → paràmetre
+function saludar(nom) { // paràmetre
     console.log("Hola, " + nom);
 }
 
-saludar("Marc"); // "Marc" → argument
+saludar("Marc"); // argument
 ```
 
 * **Paràmetre** → variable dins de la funció
-* **Argument** → valor real que passem
+* **Argument** → valor que passem en executar-la
 
 ---
 
@@ -1992,7 +1998,7 @@ Laura té 25 anys
 
 ---
 
-## Retornar un valor
+### Retornar un valor (return)
 
 Les funcions poden retornar un resultat utilitzant `return`.
 
@@ -2010,26 +2016,52 @@ console.log(resultat);
 8
 ```
 
-* `return` envia el resultat cap a fora
-* El valor es pot guardar en una variable
+On:
+
+* `return` envia el resultat fora de la funció
+* permet utilitzar-lo després
 
 ---
 
-Tens raó: així com està, **pot confondre**, perquè sembla que la funció “no fa res”.
+### Diferència: return vs console.log
 
-Millor deixar-ho més clar mostrant **què passa realment pas a pas**:
+```javascript
+function suma1(a, b) {
+    console.log(a + b);
+}
+
+function suma2(a, b) {
+    return a + b;
+}
+
+const r1 = suma1(2, 3);
+const r2 = suma2(2, 3);
+
+console.log(r1);
+console.log(r2);
+```
+
+```javascript
+// Eixida:
+5
+undefined
+5
+```
+
+On:
+
+* `console.log()` → només mostra
+* `return` → retorna el valor
 
 ---
 
 ### Important: funció sense return
 
-En JavaScript, totes les funcions retornen un valor.
-
-Si no utilitzem `return`, la funció retorna automàticament `undefined`.
+Si no utilitzem `return`, la funció retorna `undefined`.
 
 ```javascript
 function suma(a, b) {
-    console.log(a + b); // es calcula i es mostra
+    console.log(a + b);
 }
 
 const resultat = suma(2, 3);
@@ -2042,109 +2074,94 @@ console.log(resultat);
 undefined
 ```
 
-En este cas:
-
-* `console.log(a + b)` → mostra `5`
-* però la funció **no retorna res**
-* per això `resultat` és `undefined`
-
 ---
 
-### Comparació clara
+### Error  habitual
 
 ```javascript
-function suma(a, b) {
-    return a + b;
+function doble(num) {
+    console.log(num * 2);
 }
 
-const resultat = suma(2, 3);
+const resultat = doble(5) + 10;
+
 console.log(resultat);
 ```
 
 ```javascript
 // Eixida:
-5
+10
+NaN
 ```
 
-Ara:
+### Explicació
 
-* la funció sí retorna el valor
-* `resultat` conté `5`
+* la funció retorna `undefined`
+* `undefined + 10` → `NaN`
 
->Mostrar un valor (`console.log`) **no és el mateix que retornar-lo**
->Si no hi ha `return`, el resultat serà `undefined`
-
----
-
-
-### Funcions que no necessiten return
-
-Hi ha funcions que només executen accions i no necessiten retornar res.
+Correcte:
 
 ```javascript
-function saludar() {
-    console.log("Hola!");
+function doble(num) {
+    return num * 2;
 }
-
-const resultat = saludar();
-console.log(resultat);
 ```
-
-```javascript
-// Eixida:
-Hola!
-undefined
-```
-
-En estos casos:
-
-* la funció fa una acció (mostrar per pantalla)
-* el valor retornat (`undefined`) no s’utilitza
-
----
-
-### Exemple combinat
-
-```javascript
-function calcularPreu(preu, iva) {
-    return preu + (preu * iva);
-}
-
-const total = calcularPreu(100, 0.21);
-console.log(total);
-```
-
-```javascript
-// Eixida:
-121
-```
-
-En este cas:
-
-* sí utilitzem `return`
-* perquè volem treballar amb el resultat
-
----
-
-
 ## Funcions com a valors
 
 En JavaScript, les funcions són valors.
 
 Això significa que podem:
 
-* Guardar-les en variables
-* Passar-les com a paràmetres
+* guardar-les en variables
+* passar-les com a paràmetres
+
+Es a dir, **“una funció és un valor igual que un número”**
 
 ---
 
-### Expressió de funció (funció anònima)
+### Funcions anònimes (Function Expression)
+
+Una funció anònima és una funció **sense nom** que es guarda dins d’una variable.
+
+---
+
+### Com es crea
 
 ```javascript
 const saludar = function(nom) {
     console.log("Hola, " + nom + "!");
 };
+```
 
+En este cas:
+
+* `function(nom) { ... }` crea una funció
+* la funció no té nom
+* es guarda dins de la variable `saludar`
+
+---
+
+### Què hi ha dins de la variable
+
+```javascript
+console.log(saludar);
+```
+
+```javascript
+// Eixida:
+[Function]
+```
+
+Açò indica que:
+
+* `saludar` conté una funció
+* encara no s’ha executat res
+
+---
+
+### Ús
+
+```javascript
 saludar("Marc");
 ```
 
@@ -2153,14 +2170,70 @@ saludar("Marc");
 Hola, Marc!
 ```
 
-* La funció no té nom propi
-* Està guardada dins d’una variable
+---
+
+### Què està passant pas a pas
+
+Quan fem:
+
+```javascript
+saludar("Marc");
+```
+
+1. JavaScript busca la variable `saludar`
+2. dins de `saludar` hi ha una funció
+3. els parèntesis `()` fan que la funció s’execute
+4. `"Marc"` es passa com a valor del paràmetre `nom`
+5. s’executa `console.log(...)`
+
+---
+
+### Idea clau
+
+* `saludar` → és la funció guardada
+* `saludar()` → executa la funció
+
+---
+
+### Comparació
+
+```javascript
+// Funció normal
+function saludar(nom) {
+    console.log("Hola, " + nom);
+}
+
+// Funció anònima
+const saludar2 = function(nom) {
+    console.log("Hola, " + nom);
+};
+
+saludar("Anna");
+saludar2("Anna");
+```
+
+```javascript
+// Eixida:
+Hola, Anna
+Hola, Anna
+```
+
+Les dues:
+
+* fan el mateix
+* s’executen igual
+
+Només canvia la forma de crear-les.
 
 ---
 
 ## Funcions com a paràmetres
 
 Podem passar una funció a una altra funció.
+
+---
+
+### Exemple
 
 ```javascript
 function operacio(a, b, func) {
@@ -2175,11 +2248,8 @@ const multiplicar = function(x, y) {
     return x * y;
 };
 
-const resultat1 = operacio(2, 3, sumar);
-const resultat2 = operacio(2, 3, multiplicar);
-
-console.log(resultat1);
-console.log(resultat2);
+console.log(operacio(2, 3, sumar));
+console.log(operacio(2, 3, multiplicar));
 ```
 
 ```javascript
@@ -2188,46 +2258,130 @@ console.log(resultat2);
 6
 ```
 
-### Idea clau
+
+> **Estem passant la funció, no executant-la**
+---
+
+### Què està passant pas a pas
 
 ```javascript
 operacio(2, 3, sumar);
 ```
 
-* Estem passant la funció `sumar`
-* No posem `sumar()` perquè això l’executaria
+1. `sumar` és una funció
+2. NO hi ha `()`, per tant NO s’executa
+3. es passa com a valor a la funció `operacio`
+
+Dins de `operacio`:
+
+```javascript
+function operacio(a, b, func) {
+    return func(a, b);
+}
+```
+
+4. `func` conté la funció `sumar`
+5. `func(a, b)` és equivalent a escriure:
+
+```javascript
+sumar(2, 3);
+```
+
+6. `sumar(2, 3)` retorna `5`
+7. `operacio` retorna `5`
 
 ---
 
-### Exemple pràctic
+### Idea clau
+
+* `sumar` → passem la funció
+* `sumar()` → executaríem la funció
+
+---
+
+### Error habitual
 
 ```javascript
-function aplicarDescompte(preu, func) {
-    return func(preu);
+function operacio(a, b, func) {
+    return func(a, b);
 }
 
-const descompte10 = function(preu) {
-    return preu * 0.9;
+const sumar = function(x, y) {
+    return x + y;
 };
 
-console.log(aplicarDescompte(100, descompte10));
+console.log(operacio(2, 3, sumar()));
 ```
 
 ```javascript
 // Eixida:
-90
+Error (func no és una funció)
 ```
 
 ---
 
-## Funcions de fletxa (Arrow Functions)
-
-JavaScript modern permet definir funcions de forma més curta amb `=>`.
+### Què està passant en l’error
 
 ```javascript
-const suma = (a, b) => {
+operacio(2, 3, sumar());
+```
+
+1. `sumar()` s’executa immediatament
+2. `sumar(2, 3)` retorna `5`
+3. realment s’està fent:
+
+```javascript
+operacio(2, 3, 5);
+```
+
+4. dins de `operacio`, `func` val `5`
+5. `func(a, b)` intenta fer `5(2, 3)`
+6. això provoca un error
+
+---
+
+### Funcions de fletxa (Arrow Functions)
+
+Les **arrow functions** són una forma més curta d’escriure funcions.
+
+---
+
+### Comparativa amb funció normal
+
+```javascript
+// Funció normal
+const suma1 = function(a, b) {
     return a + b;
 };
+
+// Arrow function
+const suma2 = (a, b) => {
+    return a + b;
+};
+
+console.log(suma1(2, 3));
+console.log(suma2(2, 3));
+```
+
+```javascript
+// Eixida:
+5
+5
+```
+
+Les dues funcions:
+
+* fan el mateix
+* tenen el mateix comportament
+
+Només canvia la sintaxi.
+
+---
+
+### Forma reduïda
+
+```javascript
+const suma = (a, b) => a + b;
 
 console.log(suma(2, 3));
 ```
@@ -2239,7 +2393,25 @@ console.log(suma(2, 3));
 
 ---
 
-### Forma reduïda
+### Què està passant
+
+En este cas:
+
+```javascript
+(a, b) => a + b
+```
+
+és equivalent a:
+
+```javascript
+function(a, b) {
+    return a + b;
+}
+```
+
+---
+
+### Un sol paràmetre
 
 ```javascript
 const quadrat = num => num * num;
@@ -2271,7 +2443,15 @@ Hola món
 
 ---
 
-### Exemple amb arrays
+### Explicació clara
+
+* `=>` substitueix `function`
+* si hi ha una sola línia → no cal `return`
+* retorna automàticament el resultat
+
+---
+
+## Exemple amb arrays
 
 ```javascript
 const numeros = [1, 2, 3];
@@ -2288,329 +2468,22 @@ numeros.forEach(num => {
 3
 ```
 
-* Les arrow functions s’utilitzen molt en funcions curtes i callbacks
-
 ---
 
-## Relació amb el DOM
-
-Quan treballem amb esdeveniments, passem una funció que s’executarà després.
+### Què està passant
 
 ```javascript
-const boto = document.querySelector("button");
-
-boto.addEventListener("click", function() {
-    console.log("Has fet clic");
+numeros.forEach(num => {
+    console.log(num);
 });
 ```
 
----
-
-### Amb arrow function
-
-```javascript
-boto.addEventListener("click", () => {
-    console.log("Has fet clic");
-});
-```
-
----
-
-### Idea clau
+1. `forEach` recorre l’array
+2. en cada iteració, crida la funció
+3. `num` pren cada valor:
 
 ```javascript
-boto.addEventListener("click", () => {
-    console.log("Has fet clic");
-});
+num = 1 → es mostra 1  
+num = 2 → es mostra 2  
+num = 3 → es mostra 3  
 ```
-
-* No executem la funció en eixe moment
-* La passem com a paràmetre
-* El navegador la cridarà quan passe l’esdeveniment
-
----
-
-### Error molt habitual
-
-```javascript
-boto.addEventListener("click", saludar());
-```
-
-Això és incorrecte perquè:
-
-* la funció s’executa immediatament
-* no s’espera al clic
-
-Forma correcta:
-
-```javascript
-boto.addEventListener("click", saludar);
-```
-
----
-
-## Resum
-
-* Una funció és un bloc de codi reutilitzable
-* `function nom() {}` → defineix
-* `nom()` → executa
-* Els paràmetres reben dades
-* `return` permet retornar resultats
-* Les funcions es poden guardar i passar com a valors
-* Les arrow functions són una forma més curta
-* En el DOM, passem funcions sense executar-les
-
-```javascript
-function exemple(x) {
-    return x * 2;
-}
-
-console.log(exemple(5));
-```
-
-```javascript
-// Eixida:
-10
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 7. Introducció al DOM
-
-Fins ara hem treballat amb JavaScript com a llenguatge: variables, funcions, arrays, objectes.
-
-Però encara no hem respost la pregunta més important:
-
-Com interactua JavaScript amb la pàgina web?
-
-La resposta és el **DOM**.
-
----
-
-### Què és el DOM
-
-Quan el navegador carrega un document HTML, no el tracta simplement com a text.
-
-El converteix en una estructura d’objectes organitzada en forma d’arbre.
-
-Aquesta estructura es denomina **Document Object Model**, o simplement **DOM**.
-
-Això significa que:
-
-* Cada etiqueta HTML és un objecte.
-* Cada atribut és part d’un objecte.
-* El text també forma part de l’estructura.
-
-I com que són objectes, podem treballar amb ells utilitzant JavaScript.
-
----
-
-### L’objecte document
-
-El punt d’entrada al DOM és l’objecte global `document`.
-
-Quan escrivim:
-
-```javascript
-console.log(document);
-```
-
-El que estem veient és la representació de l’arbre complet del document HTML.
-
-A partir de `document` podem:
-
-* Buscar elements.
-* Crear elements nous.
-* Modificar contingut.
-* Afegir o eliminar nodes.
-* Gestionar esdeveniments.
-
----
-
-### Seleccionar elements
-
-Per poder modificar un element, primer hem de seleccionar-lo.
-
-En JavaScript modern utilitzarem principalment:
-
-* `querySelector`
-* `querySelectorAll`
-
----
-
-* **querySelector**
-
-Retorna el primer element que coincideix amb un selector CSS.
-
-```javascript
-const titol = document.querySelector("h1");
-console.log(titol);
-```
-
-També podem seleccionar per id:
-
-```javascript
-const caixa = document.querySelector("#caixa");
-```
-
-O per classe:
-
-```javascript
-const element = document.querySelector(".important");
-```
-
-És molt flexible perquè utilitza la mateixa sintaxi que CSS.
-
----
-
-* **querySelectorAll**
-
-Retorna tots els elements que coincideixen amb el selector.
-
-```javascript
-const paragrafs = document.querySelectorAll("p");
-console.log(paragrafs);
-```
-
-El resultat és una col·lecció d’elements que podem recórrer.
-
-Per exemple:
-
-```javascript
-paragrafs.forEach(paragraf => {
-    console.log(paragraf.textContent);
-});
-```
-
-Ací estem combinant:
-
-* Arrays
-* Funcions de fletxa
-* DOM
-
-Tot comença a connectar-se.
-
----
-
-## Modificar contingut
-
-Una vegada tenim una referència a un element, podem modificar-lo.
-
----
-
-### textContent
-
-Permet canviar el text d’un element.
-
-```javascript
-const titol = document.querySelector("h1");
-titol.textContent = "Nou títol";
-```
-
-És la forma recomanada per modificar text.
-
----
-
-### classList
-
-Permet gestionar classes CSS.
-
-```javascript
-const caixa = document.querySelector("#caixa");
-
-caixa.classList.add("activa");
-caixa.classList.remove("activa");
-caixa.classList.toggle("activa");
-```
-
-`toggle()` és especialment útil perquè:
-
-* Si la classe no existeix, l’afegeix.
-* Si existeix, l’elimina.
-
-Això és molt habitual en interaccions.
-
----
-
-## Crear i afegir elements
-
-També podem crear elements nous.
-
-```javascript
-const nouDiv = document.createElement("div");
-nouDiv.textContent = "Element creat dinàmicament";
-
-document.body.appendChild(nouDiv);
-```
-
-En este procés:
-
-1. Creem l’element.
-2. Li assignem contingut.
-3. L’afegim al document.
-
-És exactament el que feiem en l’exemple de la llista de tasques.
-
----
-
-## Eliminar elements
-
-Per eliminar un element podem utilitzar el mètode `remove()`.
-
-```javascript
-const element = document.querySelector("#caixa");
-element.remove();
-```
-
-És una forma moderna i directa d’eliminar-lo del DOM.
-
----
-
-## Esdeveniments
-
-Un dels punts més importants del DOM és que podem reaccionar a les accions de l’usuari.
-
-Per fer això utilitzem `addEventListener`.
-
-```javascript
-const boto = document.querySelector("#meuBoto");
-
-boto.addEventListener("click", () => {
-    console.log("Has fet clic en el botó");
-});
-```
-
-En este cas:
-
-* No executem la funció immediatament.
-* La passem com a paràmetre.
-* El navegador l’executarà quan es produïsca l’esdeveniment.
-
-Alguns esdeveniments habituals són:
-
-* `"click"`
-* `"mouseenter"`
-* `"mouseleave"`
-* `"keyup"`
-* `"submit"`
-
----
-
-
-

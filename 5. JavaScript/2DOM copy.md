@@ -1,31 +1,68 @@
+
 ## El DOM (Document Object Model)
 
 Fins ara hem treballat amb dos parts separades:
 
 * HTML, que definix l’estructura de la pàgina
-* JavaScript, que permet treballar amb dades i amb lògica
+* JavaScript, que treballa amb dades i amb lògica
 
-Però per a construir aplicacions web necessitem que estes dos parts interactuen.
+Però en una aplicació web real, estes dos parts han de connectar.
 
 Necessitem poder accedir als elements HTML des de JavaScript per:
 
-* llegir el seu contingut
-* modificar-lo
+* llegir informació
+* modificar-la
 * crear nous elements
-* eliminar elements existents
-* reaccionar a les accions de l’usuari
+* eliminar-los
+* reaccionar a accions de l’usuari
 
-Per a això utilitzem el DOM.
+Per a això utilitzem el **DOM**.
+
+---
+
+## Del HTML al DOM
+
+Quan escrivim HTML, el navegador no treballa amb el text tal com està escrit.
+
+Per exemple:
+
+```html
+<body>
+    <h1>Hola</h1>
+    <p>Benvinguts</p>
+</body>
+```
+
+El navegador transforma este codi en una estructura jeràrquica.
+
+Aquesta estructura s’organitza com un arbre:
+
+* `body` és el node principal
+* dins de `body` hi ha `h1` i `p`
+* cada element és un node
+
+---
+
+## Representació del DOM
+
+A continuació es pot veure aquesta estructura en forma d’arbre:
+
+{: .text-center }
+![alt text](imatges/DOM.png)
+
+---
+
+En este punt hem de tindre clar:
+
+No treballem amb el text HTML, sinó amb objectes que representen els elements.
 
 ---
 
 ## Què és el DOM
 
-Quan el navegador carrega una pàgina HTML, no treballa directament amb el text del fitxer.
+Quan el navegador carrega una pàgina HTML, construïx una estructura interna formada per objectes.
 
-El que fa és construir una representació interna del document. Esta representació està formada per objectes que corresponen als elements HTML.
-
-Si tenim:
+Per exemple, si tenim:
 
 ```html
 <h1 id="titol">Hola</h1>
@@ -34,45 +71,36 @@ Si tenim:
 
 el navegador crea:
 
-* un objecte que representa l’element `h1`
-* un objecte que representa l’element `p`
-* els seus atributs (`id`, etc.)
+* un objecte que representa el `<h1>`
+* un objecte que representa el `<p>`
+* els seus atributs
 * el seu contingut
 
-Això és el DOM.
+Aquesta estructura és el **DOM**.
 
-Per tant, quan treballem amb JavaScript:
-
-no treballem amb el text HTML, sinó amb **objectes que representen eixe HTML**.
+Per tant, JavaScript no treballa amb el text HTML, sinó amb **objectes que representen els elements de la pàgina**.
 
 ---
 
-## `document`: punt d’entrada al DOM
+## `document`: punt d’entrada
 
-Per accedir al DOM utilitzem l’objecte global `document`.
+Per accedir a aquesta estructura utilitzem:
 
 ```javascript
 document
 ```
 
-`document` representa tota la pàgina web.
+`document` és un objecte global que representa tota la pàgina.
 
-Des d’ell podem:
+També es pot entendre com l’arrel de l’arbre DOM.
+
+A partir de `document` podem:
 
 * buscar elements
-* crear elements
+* crear-los
 * modificar-los
 
-```javascript
-console.log(document);
-```
-
-```javascript
-// Eixida:
-#document
-```
-
-No és necessari crear este objecte. El navegador el proporciona automàticament.
+Tot el treball amb el DOM comença ací.
 
 ---
 

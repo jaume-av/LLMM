@@ -56,7 +56,7 @@ Aquesta estructura s’organitza com un arbre:
 A continuació es pot veure aquesta estructura en forma d’arbre:
 
 {: .text-center }
-![alt text](imatges/DOM.png)
+![alt text](imatges/esquemaDom.webp)
 
 ---
 

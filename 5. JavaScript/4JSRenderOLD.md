@@ -1,12 +1,4 @@
----
 
-title: 4.- JsRender 
-parent: 5.- JavaScript  
-layout: default  
-nav_order: 50  
-has_children: true  
-
----
 
 {% raw %}
 

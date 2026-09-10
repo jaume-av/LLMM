@@ -149,7 +149,7 @@ Has de poder explicar **per què apareix cada tecnologia i quina relació té am
 
 Construeix una:
 
-# LÍNIA DEL TEMPS DELS LLENGUATGES DE MARQUES
+#### LÍNIA DEL TEMPS DELS LLENGUATGES DE MARQUES
 
 Cada entrada seguirà aproximadament:
 

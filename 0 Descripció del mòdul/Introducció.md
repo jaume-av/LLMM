@@ -165,7 +165,7 @@ Utilitza textos breus, imatges, icones i exemples.
 
 Observa aquest fragment:
 
-```xml id="f5g0l4"
+```xml
 <alumne id="23">
     <nom>Marc</nom>
     <cicle>DAM</cicle>
@@ -176,7 +176,7 @@ Observa aquest fragment:
 
 Indiquen l'inici i el final d'un element:
 
-```xml id="ewtzft"
+```xml
 <alumne>        </alumne>
 ```
 
@@ -186,7 +186,7 @@ Indiquen l'inici i el final d'un element:
 
 Un element està format per les etiquetes i el seu contingut:
 
-```xml id="odrvj9"
+```xml
 <nom>Marc</nom>
 ```
 
@@ -194,7 +194,7 @@ Un element està format per les etiquetes i el seu contingut:
 
 Afigen informació a un element:
 
-```xml id="qsyy9a"
+```xml
 <alumne id="23">
 ```
 
@@ -204,7 +204,7 @@ Afigen informació a un element:
 
 Els elements poden estar dins d'altres elements:
 
-```text id="2w8h8i"
+```text
              alumne
             /      \
           nom      cicle
@@ -232,7 +232,7 @@ Pots utilitzar **cercadors, documentació, IA, l'editor de codi i el navegador**
 
 ### PROVA A
 
-```text id="euw2nf"
+```text
 # Projecte Gestió Acadèmica
 
 ## Tecnologies
@@ -248,7 +248,7 @@ Pots utilitzar **cercadors, documentació, IA, l'editor de codi i el navegador**
 
 ### PROVA B
 
-```html id="shw1sz"
+```html
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -266,11 +266,10 @@ Pots utilitzar **cercadors, documentació, IA, l'editor de codi i el navegador**
 
 ### PROVA C
 
-```xml id="ig9v6h"
+```xml
 <centre>
     <cicle codi="DAM">
         <nom>Desenvolupament d'Aplicacions Multiplataforma</nom>
-
         <modul curs="1">
             <nom>Llenguatges de Marques</nom>
         </modul>
@@ -282,7 +281,7 @@ Pots utilitzar **cercadors, documentació, IA, l'editor de codi i el navegador**
 
 ### PROVA D
 
-```xml id="8wkt25"
+```xml
 <svg width="300" height="180"
      xmlns="http://www.w3.org/2000/svg">
 
@@ -304,7 +303,7 @@ Guarda aquest fragment com `prova-d.svg` i obri'l amb el navegador per comprovar
 
 ### PROVA E
 
-```xml id="fqlrbh"
+```xml
 <math xmlns="http://www.w3.org/1998/Math/MathML">
     <msup>
         <mi>x</mi>
@@ -326,20 +325,24 @@ Divideix-lo en **cinc zones**, una per cada prova.
 En cada zona ha d'aparéixer:
 
 **1. LLENGUATGE**
+
 Nom del llenguatge identificat.
 
 **2. PISTES**
+
 Dos o tres elements del codi que t'han permés identificar-lo.
 
 **3. FINALITAT**
+
 Per a què serveix, explicat breument.
 
 **4. ÚS REAL**
+
 Un exemple d'on podem trobar aquest llenguatge en la realitat.
 
 Per exemple:
 
-```text id="2ijrgg"
+```text
 ┌──────────────────────────────┐
 │ PROVA __                     │
 │                              │

@@ -7,344 +7,925 @@ has_children: true
 has_toc: true
 ---
 
+# RA1 — Introducció al LLneguatge de Marques - EL MÓN ESTÀ PLE DE MARQUES
 
-### Què és un llenguatge de marques?
+## Introducció
 
-Un **llenguatge de marques** és un sistema que utilitza **etiquetes** (marques) per **afegir informació extra** a un text: estructura, significat o estil.
+Pàgines web, documentació tècnica, aplicacions, gràfics vectorials, fórmules matemàtiques, canals de notícies... En molts dels sistemes que utilitzem diàriament apareixen els **llenguatges de marques**.
 
-Per exemple, en lloc d’escriure només paraules seguides, podem indicar quin fragment és un títol, quin és un paràgraf, on hi ha una imatge, etc.
+HTML, XML, Markdown, SVG o MathML en són alguns exemples.
 
-Exemples de llenguatges de marques: **HTML, XML, JSON, Markdown**.
+Al llarg d'aquest projecte aprendràs què són, com funcionen, per què n'existeixen diferents i on s'utilitzen.
 
----
+No començarem estudiant una llarga llista de conceptes. En cada fase rebràs una **caixa d'eines** amb els coneixements mínims necessaris i, a continuació, hauràs d'aplicar-los per superar un repte.
 
-### Diferència amb text pla
+La seqüència serà sempre:
 
-* **Text pla:** només conté caràcters, sense estructura ni informació afegida.
+**APRENDRE → OBSERVAR → EXPERIMENTAR → CONSTRUIR**
 
-  ```
-  Benvinguts al curs
-  Açò és una prova
-  ```
-
-  El navegador o el programa ho mostraria exactament així, sense saber què és un títol o un paràgraf.
-
-* **Text amb marques:** incorpora etiquetes per indicar què és cada part.
-
-  ```html
-  <h1>Benvinguts al curs</h1>
-  <p>Açò és una prova</p>
-  ```
-
-  Ara el navegador sap que el primer fragment és un **títol gran** i el segon és un **paràgraf**.
+Al final hauràs creat diferents productes que mostraran el que has descobert.
 
 ---
 
-En resum: el **text pla només mostra informació**, mentre que el **llenguatge de marques descriu com s’ha d’entendre i representar eixa informació**.
+# ABANS DE COMENÇAR — QUÈ ÉS UN LLENGUATGE DE MARQUES?
 
----
+Observa aquests tres fragments:
 
-### Exemple 1. Comparar text pla vs XML
+### Fragment A
 
-
-1. Crea el fitxer **llibre.txt** amb text pla:
-
-```
-Títol: El Quixot
-Autor: Miguel de Cervantes
-Any: 1605
-ISBN: 978-84-376-0494-7
+```html
+<h1>Llenguatges de Marques</h1>
+<p>Primer curs de DAM i DAW</p>
 ```
 
-2. Obri **llibre.txt** al navegador (arrossega’l sobre el navegador o Ctrl + o).
-   — Observa que el navegador només mostra text sense cap estructura.
-
-3. Crea el fitxer **llibre.xml** amb el mateix contingut però marcat:
+### Fragment B
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<llibre>
-  <titol>El Quixot</titol>
-  <autor>Miguel de Cervantes</autor>
-  <any>1605</any>
-  <isbn>978-84-376-0494-7</isbn>
-</llibre>
+<modul>
+    <nom>Llenguatges de Marques</nom>
+    <curs>1</curs>
+</modul>
 ```
 
-4. Obri **llibre.xml** al navegador.
-   — En molts navegadors veuràs un arbre o, com a mínim, un document estructurat i “neteget”.
+### Fragment C
 
-5. Afig un segon llibre i transforma’l en una **col·lecció**:
+```markdown
+# Llenguatges de Marques
+
+**Curs:** Primer DAM/DAW
+```
+
+Els tres representen informació mitjançant **marques o convencions especials inserides dins del mateix document**.
+
+Un llenguatge de marques és un sistema que utilitza aquestes marques per **estructurar, descriure o presentar informació**.
+
+Les marques no tenen sempre la mateixa finalitat.
+
+HTML pot indicar que un text és un títol:
+
+```html
+<h1>Hola</h1>
+```
+
+XML pot indicar que una dada representa un nom:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<biblioteca>
-  <llibre>
-    <titol>El Quixot</titol>
-    <autor>Miguel de Cervantes</autor>
-    <any>1605</any>
-    <isbn>978-84-376-0494-7</isbn>
-  </llibre>
-  <llibre>
-    <titol>Tirant lo Blanc</titol>
-    <autor>Joanot Martorell</autor>
-    <any>1490</any>
-    <isbn>978-84-376-1234-5</isbn>
-  </llibre>
-</biblioteca>
+<nom>Anna</nom>
 ```
 
+Markdown pot indicar que un text és important:
 
-**En resum**
+```markdown
+**important**
+```
 
-* En **text pla**: informació sense estructura.
-* En **XML**: la mateixa informació però **amb estructura clara** (etiquetes, jerarquia) i fàcilment processable per programes.
+Per tant, durant aquest projecte hauràs d'intentar respondre una pregunta:
 
-
-
-
-### Exemple 2 · Validar una web famosa amb el W3C Validator
-
-A banda de estructurats, els LLMM han de ser **vàlids**. Validar significa que el codi compleix les normes i està ben format. Això és important per assegurar la compatibilitat i accessibilitat.
-
-Validar és passar un “control de qualitat” al document per assegurar que està ben escrit i serà comprensible tant per a persones com per a màquines.
-
-
-1. Obri el navegador i entra a la pàgina del validador oficial del W3C:
-   [https://validator.w3.org/](https://validator.w3.org/)
-
-2. En el camp d’**adreça web**, escriu l’URL d’una web famosa, per exemple:
-
-   * `https://www.wikipedia.org`
-   * `https://www.google.com`
-
-3. Fes clic en el botó **Check** per comprovar si el codi HTML de la web és vàlid.
-
-4. Observa els resultats:
-
-   * **Errors:** problemes greus que trenquen l’estàndard (etiquetes mal tancades, atributs prohibits…).
-   * **Warnings (avisos):** recomanacions de bones pràctiques, no sempre són errors fatals.
-
-
-Fins i tot **pàgines molt famoses tenen errors** de validació.
-* Entendràs que la validació serveix per a **detectar problemes de qualitat** i que nosaltres, en els nostres projectes, hem d’intentar aconseguir el màxim de **0 errors**.
+> **Què tenen en comú tecnologies tan diferents com HTML, XML, Markdown o SVG?**
 
 ---
 
-**La validació és una eina pràctica i necessària** i que no és “opcional”, sinó part del treball professional.
+# REPTE 1 — ARQUEÒLEGS DIGITALS
+
+## CAIXA D'EINES 1 — D'ON VENEN ELS LLENGUATGES DE MARQUES?
+
+Els llenguatges de marques no van aparéixer amb Internet.
+
+La necessitat d'indicar l'estructura d'un document és molt anterior.
+
+Amb el desenvolupament de la informàtica van aparéixer sistemes capaços de separar millor:
+
+**INFORMACIÓ → ESTRUCTURA → PRESENTACIÓ**
+
+Una tecnologia especialment important va ser **SGML**, que permetia definir llenguatges de marques.
+
+A partir d'aquesta evolució van aparéixer tecnologies com:
+
+**HTML · XML · XHTML · SVG · MathML**
+
+Altres sistemes, com **Markdown**, van buscar una manera molt més senzilla d'escriure documents estructurats.
+
+No totes aquestes tecnologies substitueixen les anteriors.
+
+Algunes conviuen perquè **resolen problemes diferents**.
+
+## Eina
+
+Per representar aquesta evolució utilitzarem una **línia del temps visual**.
+
+Pot construir-se amb l'eina indicada pel professorat o mitjançant una plantilla proporcionada.
+
+Una entrada de la línia temporal podria tindre aquesta estructura:
+
+**1991 — HTML**
+
+**Necessitat:** publicar documents en la Web.
+
+**Aportació:** estructura documents mitjançant etiquetes predefinides.
+
+**Actualment:** continua sent la base estructural de les pàgines web.
 
 ---
 
+## EL REPTE
 
-### Activitat 3 · Editar en viu una web amb l’Inspector
+Investiga:
 
+**SGML · HTML · XML · XHTML · SVG · MathML · Markdown**
 
-1. **Obri Wikipedia** al navegador Firefox:
-    [https://www.wikipedia.org](https://www.wikipedia.org)
+Per a cadascuna determina:
 
-2. Prem **F12** o fes clic dret i tria **“Inspeccionar”**.
+* quan va aparéixer;
+* quin problema o necessitat intentava resoldre;
+* què va aportar;
+* si continua utilitzant-se;
+* un exemple actual.
 
-   * Veureu dues parts:
+No copies una definició.
 
-     * **Esquerra:** codi **HTML** del DOM.
-     * **Dreta:** regles de **CSS** que afecten l’element seleccionat.
+Has de poder explicar **per què apareix cada tecnologia i quina relació té amb les altres**.
 
-3. Busca al panell HTML (esquerra) el text:
+## Producte
 
-   ```html
-   <span class="central-textlogo__image sprite svg-Wikipedia_wordmark">Wikipedia</span>
-   ```
+Construeix una:
 
-   * Fes **doble clic** sobre la paraula **Wikipedia** i canvia-la per:
+# LÍNIA DEL TEMPS DELS LLENGUATGES DE MARQUES
 
-     ```
-     DAMpedia
-     ```
-   * Prem **Enter**.
-   * La pàgina mostrarà ara *Dampedia* en lloc de *Wikipedia*.
+Cada entrada seguirà aproximadament:
 
-4. A la part dreta (CSS), busca la regla:
+**DATA → TECNOLOGIA → NECESSITAT → APORTACIÓ → ÚS ACTUAL**
 
-   ```css
-   color: transparent;
-   ```
-
-   * Fes clic i canvia-la per:
-
-     ```css
-     color: red;
-     ```
-   * Ara el text es veurà en roig.
-
-5. Prova a afegir una nova regla CSS:
-
-   * Escriu:
-
-     ```css
-     font-size: 40px;
-     font-family: Comic Sans MS;
-     ```
-   * Mira com canvia l’aspecte del títol.
+Utilitza textos breus, imatges, icones i exemples.
 
 ---
 
+# REPTE 2 — CSI: QUIN LLENGUATGE ÉS?
 
+## CAIXA D'EINES 2 — APRENDRE A LLEGIR MARQUES
+
+Observa:
+
+```xml
+<alumne id="23">
+    <nom>Marc</nom>
+    <cicle>DAM</cicle>
+</alumne>
+```
+
+Podem identificar diferents components.
+
+### Etiqueta d'obertura
+
+```xml
+<alumne>
+```
+
+Indica on comença un element.
+
+### Etiqueta de tancament
+
+```xml
+</alumne>
+```
+
+Indica on acaba.
+
+### Element
+
+```xml
+<nom>Marc</nom>
+```
+
+Està format per l'etiqueta, el contingut i el seu tancament.
+
+### Atribut
+
+```xml
+id="23"
+```
+
+Afig informació a l'element.
+
+En aquest cas:
+
+`id` és el nom de l'atribut.
+
+`23` és el seu valor.
+
+### Estructura jeràrquica
+
+Els elements poden estar dins d'altres elements:
+
+```text
+              alumne
+              /    \
+            nom    cicle
+             |       |
+            Marc     DAM
+```
+
+Aquesta estructura en forma d'arbre apareixerà moltes vegades en els llenguatges de marques.
 
 ---
 
-### Evolució dels Llenguatges de Marques · El “codi retro” del `<marquee>`
+## EL REPTE
 
+Has trobat cinc fragments.
 
+Has d'identificar **què és cadascun i per a què serveix**.
 
-1. Obri un fitxer HTML senzill en Visual Studio Code.
-2. Escriu:
+### PROVA A
+
+```text
+# Projecte Gestió Acadèmica
+
+## Tecnologies
+
+- Java
+- PostgreSQL
+- Git
+
+**Cicle:** DAM
+```
+
+### PROVA B
 
 ```html
 <!DOCTYPE html>
+
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
-  <title>Prova Marquee</title>
+    <meta charset="UTF-8">
+    <title>IES Benigasló</title>
 </head>
+
 <body>
-  <marquee behavior="scroll" direction="left" scrollamount="10">
-    Hola DAM! Això es mou!
-  </marquee>
+    <h1>Cicles d'Informàtica</h1>
+    <p>Oferta formativa del centre.</p>
 </body>
 </html>
 ```
 
-3. Obri’l al navegador i mira com el text es desplaça per la pantalla.
+### PROVA C
+
+```xml
+<centre>
+    <cicle codi="DAM">
+        <nom>Desenvolupament d'Aplicacions Multiplataforma</nom>
+        <modul curs="1">
+            <nom>Llenguatges de Marques</nom>
+        </modul>
+    </cicle>
+</centre>
+```
+
+### PROVA D
+
+```xml
+<svg width="300" height="180"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <rect x="20" y="20"
+          width="260" height="140"
+          fill="lightgray"/>
+
+    <circle cx="80" cy="90"
+            r="35"
+            fill="orange"/>
+
+    <text x="135" y="100">DAM</text>
+
+</svg>
+```
+
+### PROVA E
+
+```xml
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <msup>
+        <mi>x</mi>
+        <mn>2</mn>
+    </msup>
+</math>
+```
+
+Per a cada prova determina:
+
+**LLENGUATGE → PISTES → FINALITAT → POSSIBLE ÚS REAL**
+
+Identifica també etiquetes, elements o atributs que t'hagen ajudat.
+
+## Producte
+
+Construeix un:
+
+# PANELL CSI DELS LLENGUATGES DE MARQUES
+
+No presentes cinc definicions.
+
+Utilitza fragments de codi, captures, fletxes, anotacions i conclusions breus.
 
 ---
 
+# REPTE 3 — LA TEUA PRIMERA PÀGINA EN MARKDOWN
 
-* Este codi funcionava molt als anys 90, però ara està **obsolet**.
-* Ens serveix per veure que els llenguatges de marques **canvien amb el temps** i que HTML5 ja no recomana aquestes etiquetes.
+## CAIXA D'EINES 3 — MARKDOWN
 
----
+Markdown és un llenguatge de marques lleuger creat per escriure documents de manera senzilla i llegible.
 
-## Treball RA1 · Llenguatges de Marques
+Un document Markdown utilitza normalment l'extensió:
 
-**Format general**
+`.md`
 
-* Grup de 2 persones.
-* Document en PDF, mínim 5 pàgines.
-* Exposició oral de 8-10 minuts amb participació dels dos membres.
+Per exemple:
 
----
+`README.md`
 
-### 1. Definició i característiques
+GitHub interpreta automàticament aquest format.
 
-1.1. Cercar informació general sobre què és un llenguatge de marques.    
-1.2. Explicar per a què serveix i quines propietats el defineixen.    
-1.3. Elaborar un mapa conceptual amb idees clau:    
+### Títols
 
-* Conceptes centrals.
-* Característiques.
-* Exemples bàsics.    
+```markdown
+# Títol principal
+## Apartat
+### Subapartat
+```
 
+### Negreta i cursiva
 
-  1.4. Incloure el mapa al document i afegir una breu explicació amb les pròpies paraules.     
+```markdown
+**text important**
 
-**Eines**: CmapTools, MindMeister, Miro, Canva, Draw\.io, Google Drawings.
+*text en cursiva*
+```
 
----
+### Llistes
 
-### 2. Història i evolució
+```markdown
+- Java
+- Python
+- JavaScript
+```
 
-2.1. Investigar l’origen dels llenguatges de marques.    
-2.2. Analitzar la seua evolució fins a l’actualitat.    
-2.3. Preparar una línia temporal amb fites principals:    
+### Llistes numerades
 
-* SGML.
-* XML.
-* HTML5, etc.    
+```markdown
+1. DAM
+2. DAW
+3. ASIX
+```
 
-2.4. Afegir una breu descripció de cada moment històric.    
+### Enllaços
 
-**Eines**: Timeline JS, Canva, Genially, Google Slides, PowerPoint (SmartArt).
+```markdown
+[Visitar GitHub](https://github.com)
+```
 
----
+### Imatges
 
-### 3. Diferències amb els llenguatges de programació
+```markdown
+![Descripció](imatge.png)
+```
 
-3.1. Comprendre les diferències entre llenguatges de marques i llenguatges de programació:    
+### Codi
 
-* Finalitat.
-* Sintaxi.
-* Problemes que resolen.
-* Contextos d’ús.    
+Un fragment curt:
 
-3.2. Representar-les en una taula amb dues columnes:
+```text
+`<h1>Hola</h1>`
+```
 
-* Marques vs. Programació.    
+Per mostrar diverses línies podem utilitzar un bloc de codi.
 
-3.3. Escriure un breu paràgraf de síntesi al final.    
+### Taules
 
-**Eines**: Google Docs/Tables, Word, Canva (taules infogràfiques).
-
----
-
-### 4. Principals llenguatges de marques
-
-4.1. Treballar tres llenguatges: HTML, XML i JSON.    
-4.2. Preparar una fitxa per a cada llenguatge amb:    
-
-* Breu descripció.
-* Exemple senzill de codi.
-* Explicació de la seua utilitat.     
-
-4.3. Incloure comentaris dins del codi per a facilitar la comprensió.     
-4.4. Integrar les fitxes al document i utilitzar-les en l’exposició oral.     
-
-**Eines**: Visual Studio Code, Notepad++, Sublime Text, JSFiddle, CodePen.
+```markdown
+| Tecnologia | Finalitat |
+|---|---|
+| HTML | Web |
+| XML | Dades |
+| SVG | Gràfics |
+```
 
 ---
 
-#### 5. Importància actual i aplicacions
+## Eina
 
-5.1. Reflexionar sobre la importància dels llenguatges de marques actualment.     
-5.2. Mostrar àmbits d’aplicació concrets:     
+Utilitza l'editor de codi indicat pel professorat.
 
-* Pàgines web.
-* Aplicacions mòbils.
-* APIs.
-* Documents electrònics.
-  
-5.3. Elaborar una infografia o esquema visual.     
-5.4. Afegir una explicació redactada amb exemples propers a l’alumnat.     
+Crea:
 
- **Eines**: Canva, Piktochart, Genially, PowerPoint, Google Slides.     
+`README.md`
+
+Visualitza el resultat en GitHub o amb el visor Markdown disponible.
 
 ---
 
-### 6. Exemples pràctics
+## EL REPTE
 
-6.1. Crear un o dos exemples originals de documents senzills en llenguatges de marques.    
+Crea una **targeta digital de presentació com a estudiant de DAM/DAW**.
 
-* HTML amb un títol i una llista.
-* XML amb dades inventades.
+Ha de contindre:
 
-6.2. Afegir comentaris que expliquen cada part del codi.    
+* nom o identificador;
+* cicle;
+* una breu presentació;
+* tecnologies que coneixes;
+* una taula;
+* almenys un enllaç;
+* almenys una imatge;
+* un fragment de codi.
 
-**Eines**: Visual Studio Code, Notepad++, JSFiddle, CodePen.
+No has de reproduir els exemples de la caixa d'eines. Utilitza'ls per construir el teu propi document.
+
+## Producte
+
+`README.md`
+
+Aquest document serà també el primer element del teu projecte.
+
+---
+
+# REPTE 4 — EL MATEIX CONTINGUT, TRES MONS
+
+## CAIXA D'EINES 4 — HTML I XML NO FAN EL MATEIX
+
+Observa:
+
+### HTML
+
+```html
+<h1>Marta Soler</h1>
+
+<p>Estudia <strong>DAM</strong>.</p>
+```
+
+El navegador sap que:
+
+`h1` representa un encapçalament.
+
+`p` representa un paràgraf.
+
+`strong` representa informació destacada.
+
+HTML disposa d'un **conjunt d'etiquetes definides**.
 
 ---
 
-### Exposició oral
+### XML
 
-- Duració: 8-10 minuts.
-- Participació equilibrada dels dos membres.
+```xml
+<alumna>
+    <nom>Marta Soler</nom>
+    <cicle>DAM</cicle>
+</alumna>
+```
 
-Diapositives:
+En XML les etiquetes:
 
-* Clars i visuals.
-* Poc text.
-* Suport gràfic (imatges, esquemes, infografies).
-* No llegir literalment.
-  9.4. Valoració: claredat, ordre, explicació amb les pròpies paraules.
+`alumna`
 
-**Eines**: PowerPoint, Google Slides, Canva, Genially, Prezi.
+`nom`
+
+`cicle`
+
+no tenen un significat visual predefinit.
+
+Les hem utilitzades per **descriure les dades**.
+
+Per tant:
+
+**HTML → estructura contingut destinat principalment a la Web.**
+
+**XML → estructura i descriu informació.**
 
 ---
+
+## EL REPTE
+
+Representa:
+
+**Alumna:** Marta Soler
+**Cicle:** DAM
+**Mòdul:** Llenguatges de Marques
+**Nota:** 8,5
+**Estat:** Aprovat
+
+en tres formats.
+
+### Markdown
+
+Crea:
+
+`alumna.md`
+
+Utilitza títols, negreta, llista, taula i enllaç.
+
+### HTML
+
+Crea:
+
+`alumna.html`
+
+Pots utilitzar:
+
+```text
+h1
+h2
+p
+strong
+ul
+li
+table
+a
+```
+
+Obri'l amb el navegador.
+
+### XML
+
+Crea:
+
+`alumna.xml`
+
+En aquest cas hauràs de decidir:
+
+* element arrel;
+* elements;
+* atributs;
+* jerarquia.
+
+No existeix una única solució correcta.
+
+---
+
+## Producte
+
+Construeix un:
+
+# COMPARADOR MARKDOWN — HTML — XML
+
+Mostra fragments i captures.
+
+Finalment respon:
+
+> **Si els tres representen la mateixa informació, per què necessitem formats diferents?**
+
+---
+
+# REPTE 5 — CAÇA DE MARQUES
+
+## CAIXA D'EINES 5 — L'INSPECTOR DEL NAVEGADOR
+
+Les pàgines web que visites estan construïdes, entre altres tecnologies, amb HTML.
+
+El navegador permet observar aquest codi.
+
+En Chrome, Firefox o navegadors similars pots obrir les **eines de desenvolupament**.
+
+Normalment:
+
+`F12`
+
+o:
+
+**botó dret → Inspeccionar**
+
+Busca l'apartat:
+
+**Elements / Inspector**
+
+Allí podràs observar estructures com:
+
+```html
+<header>
+<nav>
+<h1>
+<p>
+<a>
+<img>
+```
+
+També pots seleccionar visualment un element de la pàgina i descobrir quin fragment HTML el representa.
+
+Les modificacions que faces des de l'inspector són **locals i temporals**. No estàs modificant la web original.
+
+---
+
+## MINIEXPERIMENT
+
+Obri una pàgina web.
+
+Localitza un títol.
+
+Inspecciona'l.
+
+Modifica temporalment el seu text perquè aparega el teu nom.
+
+Comprova què ocorre.
+
+---
+
+## EL REPTE
+
+Localitza **5 evidències reals** de llenguatges de marques.
+
+Pots investigar:
+
+* pàgines web;
+* GitHub;
+* canals RSS;
+* SVG;
+* documentació;
+* altres serveis.
+
+Per cada evidència mostra:
+
+**ORIGEN → CAPTURA/FRAGMENT → LLENGUATGE → PISTES → FINALITAT**
+
+Almenys una evidència haurà de procedir de l'**Inspector del navegador**.
+
+No és vàlid buscar «exemple XML» i copiar el resultat.
+
+Has de trobar les marques **utilitzades en un recurs real**.
+
+## Producte
+
+Crea:
+
+# LES MARQUES ESTAN PERTOT ARREU
+
+Un mural digital amb les cinc evidències.
+
+---
+
+# REPTE 6 — CONSTRUEIX AMB MARQUES
+
+## CAIXA D'EINES 6 — SVG
+
+SVG significa **Scalable Vector Graphics**.
+
+Permet descriure gràfics vectorials utilitzant marques.
+
+Un document mínim pot ser:
+
+```xml
+<svg width="400"
+     height="200"
+     xmlns="http://www.w3.org/2000/svg">
+
+</svg>
+```
+
+Podem dibuixar un rectangle:
+
+```xml
+<rect
+    x="20"
+    y="20"
+    width="150"
+    height="80"
+    fill="orange"/>
+```
+
+Un cercle:
+
+```xml
+<circle
+    cx="100"
+    cy="100"
+    r="40"
+    fill="blue"/>
+```
+
+Una línia:
+
+```xml
+<line
+    x1="20"
+    y1="20"
+    x2="200"
+    y2="150"
+    stroke="black"/>
+```
+
+I text:
+
+```xml
+<text
+    x="100"
+    y="100"
+    font-size="24">
+    DAM
+</text>
+```
+
+Alguns atributs importants són:
+
+| Atribut           | Funció             |
+| ----------------- | ------------------ |
+| `x`, `y`          | Posició            |
+| `width`, `height` | Dimensions         |
+| `cx`, `cy`        | Centre d'un cercle |
+| `r`               | Radi               |
+| `fill`            | Color interior     |
+| `stroke`          | Contorn            |
+| `font-size`       | Grandària del text |
+
+---
+
+## MINIEXPERIMENT
+
+Crea:
+
+`prova.svg`
+
+Copia únicament l'estructura mínima i crea un cercle.
+
+Obri'l amb el navegador.
+
+Ara modifica:
+
+`cx`
+
+`r`
+
+`fill`
+
+No canvies tots els valors alhora.
+
+**MODIFICA → GUARDA → ACTUALITZA → OBSERVA**
+
+Comprova què controla cadascun.
+
+---
+
+## EL REPTE
+
+Crea una **insígnia digital relacionada amb DAM, DAW o la informàtica**.
+
+Ha d'incloure almenys:
+
+* `<rect>`;
+* `<circle>`;
+* `<line>`;
+* `<text>`;
+* `<g>` per agrupar elements.
+
+Ha de contindre:
+
+**DAM/DAW + element relacionat amb informàtica + inicials o identificador**
+
+El disseny ha de ser propi.
+
+No es pot generar automàticament el SVG amb un editor gràfic.
+
+## Producte
+
+`insignia.svg`
+
+Acompanya'l d'una breu explicació visual:
+
+**ELEMENT → ETIQUETA → ATRIBUTS**
+
+Per exemple:
+
+`Cercle central → <circle> → cx, cy, r, fill`
+
+---
+
+# REPTE FINAL — EL MAPA DELS LLENGUATGES DE MARQUES
+
+Ja has treballat amb diferents llenguatges i eines.
+
+Has descobert:
+
+**d'on venen → com reconéixer-los → com escriure Markdown → diferències entre HTML/XML → on apareixen → què podem construir**
+
+Ara hauràs de seleccionar els resultats més importants.
+
+## La missió
+
+Imagina que una persona començarà DAM o DAW i et pregunta:
+
+> **Què és un llenguatge de marques i per què n'existeixen tants?**
+
+Construeix una **presentació visual del teu recorregut pels reptes**.
+
+Haurà d'incloure:
+
+### 1. Evolució
+
+La línia del temps.
+
+### 2. Identificació
+
+Les conclusions del CSI.
+
+### 3. Markdown
+
+La teua targeta.
+
+### 4. Diferents finalitats
+
+Markdown vs HTML vs XML.
+
+### 5. Món real
+
+Les evidències trobades.
+
+### 6. Creació
+
+La insígnia SVG.
+
+No copies tots els continguts dels reptes.
+
+**Selecciona les evidències que millor demostren el que has aprés.**
+
+---
+
+# ÚS DE LA INTEL·LIGÈNCIA ARTIFICIAL
+
+Pots utilitzar eines d'IA per:
+
+* investigar;
+* demanar explicacions;
+* resoldre dubtes;
+* entendre codi;
+* detectar errors;
+* buscar alternatives.
+
+Però l'objectiu dels reptes no és generar informació.
+
+Durant qualsevol sessió es podrà demanar que:
+
+* expliques una part;
+* identifiques una etiqueta;
+* modifiques un atribut;
+* predigues un resultat;
+* justifiques una decisió.
+
+Una part del treball que no pugues explicar o modificar **no demostra el teu aprenentatge**.
+
+---
+
+# ENTREGA
+
+Conserva tots els productes generats durant els reptes.
+
+La carpeta del projecte haurà de contindre, com a mínim:
+
+```text
+RA1-Llenguatges-Marques/
+│
+├── repte-1/
+│
+├── repte-2/
+│
+├── repte-3/
+│   └── README.md
+│
+├── repte-4/
+│   ├── alumna.md
+│   ├── alumna.html
+│   └── alumna.xml
+│
+├── repte-5/
+│
+└── repte-6/
+    └── insignia.svg
+```
+
+Al final del projecte s'indicarà el procediment per publicar o entregar el conjunt del treball.
+
+---
+
+# DURACIÓ
+
+**7-8 hores de classe.**
+
+---
+
+# OBJECTIU FINAL
+
+No es tracta de memoritzar etiquetes.
+
+En acabar, davant d'un document o fragment desconegut, has de començar a ser capaç d'analitzar:
+
+**QUÈ ÉS**
+
+↓
+
+**QUINES MARQUES UTILITZA**
+
+↓
+
+**COM ORGANITZA LA INFORMACIÓ**
+
+↓
+
+**PER A QUÈ SERVEIX**
+
+I poder respondre la pregunta inicial:
+
+> **Què fa que HTML, XML, Markdown, SVG o MathML siguen llenguatges de marques si s'utilitzen per a coses tan diferents?**

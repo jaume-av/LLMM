@@ -7,9 +7,9 @@ has_children: true
 has_toc: true
 ---
 
-# RA1 — Introducció al LLneguatge de Marques - EL MÓN ESTÀ PLE DE MARQUES
+# RA1 — Introducció al LLneguatge de Marques 
 
-## Introducció
+## Introducció - EL MÓN ESTÀ PLE DE MARQUES
 
 Pàgines web, documentació tècnica, aplicacions, gràfics vectorials, fórmules matemàtiques, canals de notícies... En molts dels sistemes que utilitzem diàriament apareixen els **llenguatges de marques**.
 
@@ -27,7 +27,7 @@ Al final hauràs creat diferents productes que mostraran el que has descobert.
 
 ---
 
-# ABANS DE COMENÇAR — QUÈ ÉS UN LLENGUATGE DE MARQUES?
+## ABANS DE COMENÇAR — QUÈ ÉS UN LLENGUATGE DE MARQUES?
 
 Observa aquests tres fragments:
 
@@ -85,9 +85,9 @@ Per tant, durant aquest projecte hauràs d'intentar respondre una pregunta:
 
 ---
 
-# REPTE 1 — ARQUEÒLEGS DIGITALS
+## REPTE 1 — ARQUEÒLEGS DIGITALS
 
-## CAIXA D'EINES 1 — D'ON VENEN ELS LLENGUATGES DE MARQUES?
+### CAIXA D'EINES 1 — D'ON VENEN ELS LLENGUATGES DE MARQUES?
 
 Els llenguatges de marques no van aparéixer amb Internet.
 
@@ -109,7 +109,7 @@ No totes aquestes tecnologies substitueixen les anteriors.
 
 Algunes conviuen perquè **resolen problemes diferents**.
 
-## Eina
+### Eina
 
 Per representar aquesta evolució utilitzarem una **línia del temps visual**.
 
@@ -127,7 +127,7 @@ Una entrada de la línia temporal podria tindre aquesta estructura:
 
 ---
 
-## EL REPTE
+### EL REPTE
 
 Investiga:
 
@@ -145,7 +145,7 @@ No copies una definició.
 
 Has de poder explicar **per què apareix cada tecnologia i quina relació té amb les altres**.
 
-## Producte
+### Producte
 
 Construeix una:
 
@@ -159,84 +159,80 @@ Utilitza textos breus, imatges, icones i exemples.
 
 ---
 
-# REPTE 2 — CSI: QUIN LLENGUATGE ÉS?
+## REPTE 2 — CSI: QUIN LLENGUATGE ÉS?
 
-## CAIXA D'EINES 2 — APRENDRE A LLEGIR MARQUES
+### CAIXA D'EINES — APRENDRE A LLEGIR MARQUES
 
-Observa:
+Observa aquest fragment:
 
-```xml
+```xml id="f5g0l4"
 <alumne id="23">
     <nom>Marc</nom>
     <cicle>DAM</cicle>
 </alumne>
 ```
 
-Podem identificar diferents components.
+#### Etiquetes
 
-### Etiqueta d'obertura
+Indiquen l'inici i el final d'un element:
 
-```xml
-<alumne>
+```xml id="ewtzft"
+<alumne>        </alumne>
 ```
 
-Indica on comença un element.
+`<alumne>` és l'etiqueta d'obertura i `</alumne>` la de tancament.
 
-### Etiqueta de tancament
+#### Elements
 
-```xml
-</alumne>
-```
+Un element està format per les etiquetes i el seu contingut:
 
-Indica on acaba.
-
-### Element
-
-```xml
+```xml id="odrvj9"
 <nom>Marc</nom>
 ```
 
-Està format per l'etiqueta, el contingut i el seu tancament.
+#### Atributs
 
-### Atribut
+Afigen informació a un element:
 
-```xml
-id="23"
+```xml id="qsyy9a"
+<alumne id="23">
 ```
 
-Afig informació a l'element.
+`id` és l'atribut i `23` és el seu valor.
 
-En aquest cas:
-
-`id` és el nom de l'atribut.
-
-`23` és el seu valor.
-
-### Estructura jeràrquica
+#### Estructura jeràrquica
 
 Els elements poden estar dins d'altres elements:
 
-```text
-              alumne
-              /    \
-            nom    cicle
-             |       |
-            Marc     DAM
+```text id="2w8h8i"
+             alumne
+            /      \
+          nom      cicle
+           |         |
+          Marc       DAM
 ```
 
-Aquesta estructura en forma d'arbre apareixerà moltes vegades en els llenguatges de marques.
+Aquesta organització en forma d'arbre és habitual en els llenguatges de marques.
 
 ---
 
-## EL REPTE
+### EL REPTE
 
-Has trobat cinc fragments.
+A continuació tens **cinc fragments de codi**.
 
-Has d'identificar **què és cadascun i per a què serveix**.
+Investiga cada fragment i determina:
+
+**LLENGUATGE → PISTES → FINALITAT → ÚS REAL**
+
+Per identificar-lo, fixa't en les marques, etiquetes, atributs o paraules que apareixen al codi.
+
+Pots utilitzar **cercadors, documentació, IA, l'editor de codi i el navegador** per investigar i provar els fragments.
+
+---
 
 ### PROVA A
 
-```text
+```text id="euw2nf"
 # Projecte Gestió Acadèmica
 
 ## Tecnologies
@@ -248,17 +244,17 @@ Has d'identificar **què és cadascun i per a què serveix**.
 **Cicle:** DAM
 ```
 
+---
+
 ### PROVA B
 
-```html
+```html id="shw1sz"
 <!DOCTYPE html>
-
 <html lang="ca">
 <head>
     <meta charset="UTF-8">
     <title>IES Benigasló</title>
 </head>
-
 <body>
     <h1>Cicles d'Informàtica</h1>
     <p>Oferta formativa del centre.</p>
@@ -266,12 +262,15 @@ Has d'identificar **què és cadascun i per a què serveix**.
 </html>
 ```
 
+---
+
 ### PROVA C
 
-```xml
+```xml id="ig9v6h"
 <centre>
     <cicle codi="DAM">
         <nom>Desenvolupament d'Aplicacions Multiplataforma</nom>
+
         <modul curs="1">
             <nom>Llenguatges de Marques</nom>
         </modul>
@@ -279,9 +278,11 @@ Has d'identificar **què és cadascun i per a què serveix**.
 </centre>
 ```
 
+---
+
 ### PROVA D
 
-```xml
+```xml id="8wkt25"
 <svg width="300" height="180"
      xmlns="http://www.w3.org/2000/svg">
 
@@ -294,13 +295,16 @@ Has d'identificar **què és cadascun i per a què serveix**.
             fill="orange"/>
 
     <text x="135" y="100">DAM</text>
-
 </svg>
 ```
 
+Guarda aquest fragment com `prova-d.svg` i obri'l amb el navegador per comprovar què genera.
+
+---
+
 ### PROVA E
 
-```xml
+```xml id="fqlrbh"
 <math xmlns="http://www.w3.org/1998/Math/MathML">
     <msup>
         <mi>x</mi>
@@ -309,21 +313,53 @@ Has d'identificar **què és cadascun i per a què serveix**.
 </math>
 ```
 
-Per a cada prova determina:
+---
 
-**LLENGUATGE → PISTES → FINALITAT → POSSIBLE ÚS REAL**
+# COM PRESENTAR-HO
 
-Identifica també etiquetes, elements o atributs que t'hagen ajudat.
-
-## Producte
-
-Construeix un:
+Crea un únic:
 
 # PANELL CSI DELS LLENGUATGES DE MARQUES
 
-No presentes cinc definicions.
+Divideix-lo en **cinc zones**, una per cada prova.
 
-Utilitza fragments de codi, captures, fletxes, anotacions i conclusions breus.
+En cada zona ha d'aparéixer:
+
+**1. LLENGUATGE**
+Nom del llenguatge identificat.
+
+**2. PISTES**
+Dos o tres elements del codi que t'han permés identificar-lo.
+
+**3. FINALITAT**
+Per a què serveix, explicat breument.
+
+**4. ÚS REAL**
+Un exemple d'on podem trobar aquest llenguatge en la realitat.
+
+Per exemple:
+
+```text id="2ijrgg"
+┌──────────────────────────────┐
+│ PROVA __                     │
+│                              │
+│ LLENGUATGE: _______________  │
+│                              │
+│ PISTES                       │
+│ __________                   │
+│ __________                   │
+│                              │
+│ FINALITAT                    │
+│ ___________________________  │
+│                              │
+│ ÚS REAL                      │
+│ ___________________________  │
+└──────────────────────────────┘
+```
+
+Utilitza **fragments de codi, captures, fletxes, anotacions i paraules clau**. Evita les explicacions llargues.
+
+Pots crear el panell amb **Canva, Genially, PowerPoint, Google Slides, LibreOffice Impress o una altra eina visual similar**.
 
 ---
 

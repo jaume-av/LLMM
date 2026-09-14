@@ -7,7 +7,7 @@ has_children: true
 has_toc: true
 ---
 
-# RA1 — Introducció al LLneguatge de Marques 
+# RA1 — Introducció als Lneguatges de Marques 
 
 ### Introducció - EL MÓN ESTÀ PLE DE MARQUES
 
@@ -460,7 +460,7 @@ Visualitza el resultat en GitHub o amb el visor Markdown disponible.
 
 ---
 
-#####EL REPTE
+### EL REPTE
 
 Crea una **targeta digital de presentació com a estudiant de DAM/DAW**.
 
@@ -477,7 +477,7 @@ Ha de contindre:
 
 No has de reproduir els exemples de la caixa d'eines. Utilitza'ls per construir el teu propi document.
 
-### Producte
+#### Producte
 
 `README.md`
 
@@ -540,7 +540,7 @@ Per tant:
 
 ---
 
-### EL REPTE
+#### EL REPTE
 
 Representa:
 
@@ -651,7 +651,7 @@ Les modificacions que faces des de l'inspector són **locals i temporals**. No e
 
 ---
 
-## MINIEXPERIMENT
+### MINIEXPERIMENT
 
 Obri una pàgina web.
 

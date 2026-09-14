@@ -8,7 +8,7 @@ has_toc: true
 
 ## REPTE 6 — CONSTRUEIX AMB MARQUES
 ### CAIXA D'EINES 6 — SVG
-SVG significa ****Scalable Vector Graphics****.
+SVG significa **Scalable Vector Graphics**.
 
 Permet descriure gràfics vectorials utilitzant marques.
 
@@ -137,14 +137,14 @@ Ara modifica:
 
 No canvies tots els valors alhora.
 
-****MODIFICA → GUARDA → ACTUALITZA → OBSERVA****
+**MODIFICA → GUARDA → ACTUALITZA → OBSERVA**
 
 Comprova què controla cadascun.
 
 ---
 
 ### EL REPTE
-Crea una ****insígnia digital relacionada amb DAM, DAW o la informàtica****.
+Crea una **insígnia digital relacionada amb DAM, DAW o la informàtica**.
 
 Ha d'incloure almenys:
 
@@ -160,7 +160,7 @@ Ha d'incloure almenys:
 
 Ha de contindre:
 
-****DAM/DAW + element relacionat amb informàtica + inicials o identificador****
+**DAM/DAW + element relacionat amb informàtica + inicials o identificador**
 
 El disseny ha de ser propi.
 
@@ -171,7 +171,7 @@ No es pot generar automàticament el SVG amb un editor gràfic.
 
 Acompanya'l d'una breu explicació visual:
 
-****ELEMENT → ETIQUETA → ATRIBUTS****
+**ELEMENT → ETIQUETA → ATRIBUTS**
 
 Per exemple:
 

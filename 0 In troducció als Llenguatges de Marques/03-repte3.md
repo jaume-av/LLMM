@@ -31,7 +31,7 @@ GitHub interpreta automàticament aquest format.
 ### Negreta i cursiva
 ```markdown
 
-****text important****
+**text important**
 
 **text en cursiva**
 
@@ -113,7 +113,7 @@ Visualitza el resultat en GitHub o amb el visor Markdown disponible.
 ---
 
 ### EL REPTE
-Crea una ****targeta digital de presentació com a estudiant de DAM/DAW****.
+Crea una **targeta digital de presentació com a estudiant de DAM/DAW**.
 
 Ha de contindre:
 

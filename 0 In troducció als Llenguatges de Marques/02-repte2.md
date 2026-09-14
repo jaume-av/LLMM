@@ -75,15 +75,15 @@ Aquesta organització en forma d'arbre és habitual en els llenguatges de marque
 ---
 
 ### EL REPTE
-A continuació tens ****cinc fragments de codi****.
+A continuació tens **cinc fragments de codi**.
 
 Investiga cada fragment i determina:
 
-****LLENGUATGE → PISTES → FINALITAT → ÚS REAL****
+**LLENGUATGE → PISTES → FINALITAT → ÚS REAL**
 
 Per identificar-lo, fixa't en les marques, etiquetes, atributs o paraules que apareixen al codi.
 
-Pots utilitzar ****cercadors, documentació, IA, l'editor de codi i el navegador**** per investigar i provar els fragments.
+Pots utilitzar **cercadors, documentació, IA, l'editor de codi i el navegador** per investigar i provar els fragments.
 
 ---
 
@@ -210,23 +210,23 @@ Guarda aquest fragment com `prova-d.svg` i obri'l amb el navegador per comprovar
 Crea un únic:
 
 ### PANELL CSI DELS LLENGUATGES DE MARQUES
-Divideix-lo en ****cinc zones****, una per cada prova.
+Divideix-lo en **cinc zones**, una per cada prova.
 
 En cada zona ha d'aparéixer:
 
-****1. LLENGUATGE****
+**1. LLENGUATGE**
 
 Nom del llenguatge identificat.
 
-****2. PISTES****
+**2. PISTES**
 
 Dos o tres elements del codi que t'han permés identificar-lo.
 
-****3. FINALITAT****
+**3. FINALITAT**
 
 Per a què serveix, explicat breument.
 
-****4. ÚS REAL****
+**4. ÚS REAL**
 
 Un exemple d'on podem trobar aquest llenguatge en la realitat.
 
@@ -266,8 +266,8 @@ Per exemple:
 
 ```
 
-Utilitza ****fragments de codi, captures, fletxes, anotacions i paraules clau****. Evita les explicacions llargues.
+Utilitza **fragments de codi, captures, fletxes, anotacions i paraules clau**. Evita les explicacions llargues.
 
-Pots crear el panell amb ****Canva, Genially, PowerPoint, Google Slides, LibreOffice Impress o una altra eina visual similar****.
+Pots crear el panell amb **Canva, Genially, PowerPoint, Google Slides, LibreOffice Impress o una altra eina visual similar**.
 
 ---

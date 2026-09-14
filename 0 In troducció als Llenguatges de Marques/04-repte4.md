@@ -27,7 +27,7 @@ El navegador sap que:
 
 `strong` representa informació destacada.
 
-HTML disposa d'un ****conjunt d'etiquetes definides****.
+HTML disposa d'un **conjunt d'etiquetes definides**.
 
 ---
 
@@ -54,28 +54,28 @@ En XML les etiquetes:
 
 no tenen un significat visual predefinit.
 
-Les hem utilitzades per ****descriure les dades****.
+Les hem utilitzades per **descriure les dades**.
 
 Per tant:
 
-****HTML → estructura contingut destinat principalment a la Web.****
+**HTML → estructura contingut destinat principalment a la Web.**
 
-****XML → estructura i descriu informació.****
+**XML → estructura i descriu informació.**
 
 ---
 
 #### EL REPTE
 Representa:
 
-****Alumna:**** Marta Soler
+**Alumna:** Marta Soler
 
-****Cicle:**** DAM
+**Cicle:** DAM
 
-****Mòdul:**** Llenguatges de Marques
+**Mòdul:** Llenguatges de Marques
 
-****Nota:**** 8,5
+**Nota:** 8,5
 
-****Estat:**** Aprovat
+**Estat:** Aprovat
 
 en tres formats.
 
@@ -142,6 +142,6 @@ Mostra fragments i captures.
 
 Finalment respon:
 
-> ****Si els tres representen la mateixa informació, per què necessitem formats diferents?****
+> **Si els tres representen la mateixa informació, per què necessitem formats diferents?**
 
 ---

@@ -12,7 +12,7 @@ Les pàgines web que visites estan construïdes, entre altres tecnologies, amb H
 
 El navegador permet observar aquest codi.
 
-En Chrome, Firefox o navegadors similars pots obrir les ****eines de desenvolupament****.
+En Chrome, Firefox o navegadors similars pots obrir les **eines de desenvolupament**.
 
 Normalment:
 
@@ -20,11 +20,11 @@ Normalment:
 
 o:
 
-****botó dret → Inspeccionar****
+**botó dret → Inspeccionar**
 
 Busca l'apartat:
 
-****Elements / Inspector****
+**Elements / Inspector**
 
 Allí podràs observar estructures com:
 
@@ -46,7 +46,7 @@ Allí podràs observar estructures com:
 
 També pots seleccionar visualment un element de la pàgina i descobrir quin fragment HTML el representa.
 
-Les modificacions que faces des de l'inspector són ****locals i temporals****. No estàs modificant la web original.
+Les modificacions que faces des de l'inspector són **locals i temporals**. No estàs modificant la web original.
 
 ---
 
@@ -64,7 +64,7 @@ Comprova què ocorre.
 ---
 
 ### EL REPTE
-Localitza ****5 evidències reals**** de llenguatges de marques.
+Localitza **5 evidències reals** de llenguatges de marques.
 
 Pots investigar:
 
@@ -82,13 +82,13 @@ Pots investigar:
 
 Per cada evidència mostra:
 
-****ORIGEN → CAPTURA/FRAGMENT → LLENGUATGE → PISTES → FINALITAT****
+**ORIGEN → CAPTURA/FRAGMENT → LLENGUATGE → PISTES → FINALITAT**
 
-Almenys una evidència haurà de procedir de l'****Inspector del navegador****.
+Almenys una evidència haurà de procedir de l'**Inspector del navegador**.
 
 No és vàlid buscar «exemple XML» i copiar el resultat.
 
-Has de trobar les marques ****utilitzades en un recurs real****.
+Has de trobar les marques **utilitzades en un recurs real**.
 
 
 Crea:

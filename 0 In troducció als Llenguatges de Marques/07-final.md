@@ -11,16 +11,16 @@ Ja has treballat amb diferents llenguatges i eines.
 
 Has descobert:
 
-****d'on venen → com reconéixer-los → com escriure Markdown → diferències entre HTML/XML → on apareixen → què podem construir****
+**d'on venen → com reconéixer-los → com escriure Markdown → diferències entre HTML/XML → on apareixen → què podem construir**
 
 Ara hauràs de seleccionar els resultats més importants.
 
 ## La missió
 Imagina que una persona començarà DAM o DAW i et pregunta:
 
-> ****Què és un llenguatge de marques i per què n'existeixen tants?****
+> **Què és un llenguatge de marques i per què n'existeixen tants?**
 
-Construeix una ****presentació visual del teu recorregut pels reptes****.
+Construeix una **presentació visual del teu recorregut pels reptes**.
 
 Haurà d'incloure:
 
@@ -44,6 +44,6 @@ La insígnia SVG.
 
 No copies tots els continguts dels reptes.
 
-****Selecciona les evidències que millor demostren el que has aprés.****
+**Selecciona les evidències que millor demostren el que has aprés.**
 
 ---

@@ -1,7 +1,7 @@
---
+---
 title: Introducció
 layout: default
-parent: Descripció del Mòdul
+parent: Introducció als Llenguatges de Marques
 nav_order: 10
 has_children: true
 has_toc: true
@@ -118,7 +118,7 @@ Pot construir-se amb l'eina indicada pel professorat o mitjançant una plantilla
 
 Una entrada de la línia temporal podria tindre aquesta estructura:
 
-**1991 — H-TML**
+**1991 — HTML**
 
 **Necessitat:** publicar documents en la Web.
 

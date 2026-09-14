@@ -3,7 +3,7 @@
 title: 5.- JavaScript
 layout: default
 parent: Llenguatges de Marques
-nav_order: 6
+nav_order: 60
 has_children: true
 has_toc: true
 

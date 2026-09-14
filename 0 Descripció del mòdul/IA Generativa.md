@@ -1,3 +1,4 @@
+
 ---
 title: IA Generativa
 layout: default

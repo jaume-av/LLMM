@@ -1,7 +1,7 @@
 ---
 title: "Repte 5 — Caça de marques"
 layout: default
-parent: Introducció als Llenguatges de Marques
+parent: 0.- Introducció als Llenguatges de Marques
 nav_order: 15
 has_toc: true
 ---

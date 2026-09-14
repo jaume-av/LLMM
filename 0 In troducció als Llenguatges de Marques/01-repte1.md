@@ -1,7 +1,7 @@
 ---
 title: "Repte 1 — Arqueòlegs digitals"
 layout: default
-parent: Introducció als Llenguatges de Marques
+parent: 0.- Introducció als Llenguatges de Marques
 nav_order: 11
 has_toc: true
 ---

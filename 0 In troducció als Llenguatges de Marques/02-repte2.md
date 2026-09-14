@@ -1,7 +1,7 @@
 ---
 title: "Repte 2 — CSI: Quin llenguatge és?"
 layout: default
-parent: Introducció als Llenguatges de Marques
+parent: 0.- Introducció als Llenguatges de Marques
 nav_order: 12
 has_toc: true
 ---

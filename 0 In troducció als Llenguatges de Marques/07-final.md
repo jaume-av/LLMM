@@ -1,7 +1,7 @@
 ---
 title: "Repte final — El mapa dels llenguatges de marques"
 layout: default
-parent: Introducció als Llenguatges de Marques
+parent: 0.- Introducció als Llenguatges de Marques
 nav_order: 17
 has_toc: true
 ---

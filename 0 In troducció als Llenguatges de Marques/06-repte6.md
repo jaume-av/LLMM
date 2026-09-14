@@ -1,7 +1,7 @@
 ---
 title: "Repte 6 — Construeix amb marques"
 layout: default
-parent: Introducció als Llenguatges de Marques
+parent: 0.- Introducció als Llenguatges de Marques
 nav_order: 16
 has_toc: true
 ---

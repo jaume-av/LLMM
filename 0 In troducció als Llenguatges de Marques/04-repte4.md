@@ -1,7 +1,7 @@
 ---
 title: "Repte 4 — El mateix contingut, tres mons"
 layout: default
-parent: Introducció als Llenguatges de Marques
+parent: 0.- Introducció als Llenguatges de Marques
 nav_order: 14
 has_toc: true
 ---

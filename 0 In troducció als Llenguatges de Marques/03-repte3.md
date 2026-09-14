@@ -1,7 +1,7 @@
 ---
 title: "Repte 3 — La teua primera pàgina en Markdown"
 layout: default
-parent: Introducció als Llenguatges de Marques
+parent: 0.- Introducció als Llenguatges de Marques
 nav_order: 13
 has_toc: true
 ---

@@ -8,7 +8,8 @@ has_toc: true
 ---
 
 
-# RA1 — Introducció als Lneguatges de Marques
+# RA1 — Introducció als Llenguatges de Marques
+
 ### Introducció - EL MÓN ESTÀ PLE DE MARQUES
 Pàgines web, documentació tècnica, aplicacions, gràfics vectorials, fórmules matemàtiques, canals de notícies... En molts dels sistemes que utilitzem diàriament apareixen els **llenguatges de marques**.
 

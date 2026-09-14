@@ -6,9 +6,13 @@ nav_order: 1
 has_children: true
 has_toc: true
 ---
+
+
 <div align="center">
 
 <img src="logo.png" alt="Logo IES Benigasló" width="220"/>
+
+</div>
 
 # GUIA DOCENT
 
@@ -18,7 +22,7 @@ has_toc: true
 
 *Conselleria d'Educació, Cultura, Universitats i Ocupació — Generalitat Valenciana*
 
-</div>
+
 
 ---
 
@@ -31,7 +35,7 @@ has_toc: true
 | **Mòdul**            | Llenguatges de Marques i Sistemes de Gestió d'Informació                                      |
 | **Curs Acadèmic**    | 2026 / 2027                                                                                   |
 | **Curs**             | 1r curs                                                                                       |
-| **Aula**             | Aula d'informàtica                                                                            |
+
 
 ---
 
@@ -39,7 +43,7 @@ has_toc: true
 
 * **Professor:** Jaume Aragó Valls
 * **Correu electrònic corporatiu:** `j.aragovalls@edu.gva.es`
-* **Horari d'Atenció a l'Alumnat / Tutoria:** segons l'horari establit pel centre.
+* **Horari d'Atenció a l'Alumnat / Tutoria:** Dimarts de 11:15 a 12:10
 
 > **Nota Important de Comunicació**
 >

@@ -9,7 +9,7 @@ has_toc: true
 
 # RA1 — Introducció al LLneguatge de Marques 
 
-## Introducció - EL MÓN ESTÀ PLE DE MARQUES
+### Introducció - EL MÓN ESTÀ PLE DE MARQUES
 
 Pàgines web, documentació tècnica, aplicacions, gràfics vectorials, fórmules matemàtiques, canals de notícies... En molts dels sistemes que utilitzem diàriament apareixen els **llenguatges de marques**.
 
@@ -27,7 +27,7 @@ Al final hauràs creat diferents productes que mostraran el que has descobert.
 
 ---
 
-## ABANS DE COMENÇAR — QUÈ ÉS UN LLENGUATGE DE MARQUES?
+### ABANS DE COMENÇAR — QUÈ ÉS UN LLENGUATGE DE MARQUES?
 
 Observa aquests tres fragments:
 
@@ -50,9 +50,11 @@ Observa aquests tres fragments:
 ### Fragment C
 
 ```markdown
+
 # Llenguatges de Marques
 
 **Curs:** Primer DAM/DAW
+
 ```
 
 Els tres representen informació mitjançant **marques o convencions especials inserides dins del mateix document**.
@@ -109,7 +111,6 @@ No totes aquestes tecnologies substitueixen les anteriors.
 
 Algunes conviuen perquè **resolen problemes diferents**.
 
-### Eina
 
 Per representar aquesta evolució utilitzarem una **línia del temps visual**.
 
@@ -145,7 +146,7 @@ No copies una definició.
 
 Has de poder explicar **per què apareix cada tecnologia i quina relació té amb les altres**.
 
-### Producte
+---
 
 Construeix una:
 
@@ -314,11 +315,10 @@ Guarda aquest fragment com `prova-d.svg` i obri'l amb el navegador per comprovar
 
 ---
 
-# COM PRESENTAR-HO
 
 Crea un únic:
 
-# PANELL CSI DELS LLENGUATGES DE MARQUES
+### PANELL CSI DELS LLENGUATGES DE MARQUES
 
 Divideix-lo en **cinc zones**, una per cada prova.
 
@@ -366,9 +366,9 @@ Pots crear el panell amb **Canva, Genially, PowerPoint, Google Slides, LibreOffi
 
 ---
 
-# REPTE 3 — LA TEUA PRIMERA PÀGINA EN MARKDOWN
+## REPTE 3 — LA TEUA PRIMERA PÀGINA EN MARKDOWN
 
-## CAIXA D'EINES 3 — MARKDOWN
+### CAIXA D'EINES 3 — MARKDOWN
 
 Markdown és un llenguatge de marques lleuger creat per escriure documents de manera senzilla i llegible.
 
@@ -448,11 +448,11 @@ Per mostrar diverses línies podem utilitzar un bloc de codi.
 
 ---
 
-## Eina
 
-Utilitza l'editor de codi indicat pel professorat.
 
-Crea:
+Utilitza un l'editor de codi i crea un document amb l'extensió `.md`.
+
+Per exemple:
 
 `README.md`
 
@@ -460,7 +460,7 @@ Visualitza el resultat en GitHub o amb el visor Markdown disponible.
 
 ---
 
-## EL REPTE
+#####EL REPTE
 
 Crea una **targeta digital de presentació com a estudiant de DAM/DAW**.
 
@@ -477,7 +477,7 @@ Ha de contindre:
 
 No has de reproduir els exemples de la caixa d'eines. Utilitza'ls per construir el teu propi document.
 
-## Producte
+### Producte
 
 `README.md`
 
@@ -485,9 +485,9 @@ Aquest document serà també el primer element del teu projecte.
 
 ---
 
-# REPTE 4 — EL MATEIX CONTINGUT, TRES MONS
+## REPTE 4 — EL MATEIX CONTINGUT, TRES MONS
 
-## CAIXA D'EINES 4 — HTML I XML NO FAN EL MATEIX
+### CAIXA D'EINES 4 — HTML I XML NO FAN EL MATEIX
 
 Observa:
 
@@ -540,7 +540,7 @@ Per tant:
 
 ---
 
-## EL REPTE
+### EL REPTE
 
 Representa:
 
@@ -598,11 +598,11 @@ No existeix una única solució correcta.
 
 ---
 
-## Producte
+
 
 Construeix un:
 
-# COMPARADOR MARKDOWN — HTML — XML
+### COMPARADOR MARKDOWN — HTML — XML
 
 Mostra fragments i captures.
 
@@ -612,9 +612,9 @@ Finalment respon:
 
 ---
 
-# REPTE 5 — CAÇA DE MARQUES
+## REPTE 5 — CAÇA DE MARQUES
 
-## CAIXA D'EINES 5 — L'INSPECTOR DEL NAVEGADOR
+### CAIXA D'EINES 5 — L'INSPECTOR DEL NAVEGADOR
 
 Les pàgines web que visites estan construïdes, entre altres tecnologies, amb HTML.
 
@@ -665,7 +665,7 @@ Comprova què ocorre.
 
 ---
 
-## EL REPTE
+### EL REPTE
 
 Localitza **5 evidències reals** de llenguatges de marques.
 
@@ -688,19 +688,18 @@ No és vàlid buscar «exemple XML» i copiar el resultat.
 
 Has de trobar les marques **utilitzades en un recurs real**.
 
-## Producte
 
 Crea:
 
-# LES MARQUES ESTAN PERTOT ARREU
+### LES MARQUES ESTAN PERTOT ARREU
 
 Un mural digital amb les cinc evidències.
 
 ---
 
-# REPTE 6 — CONSTRUEIX AMB MARQUES
+## REPTE 6 — CONSTRUEIX AMB MARQUES
 
-## CAIXA D'EINES 6 — SVG
+### CAIXA D'EINES 6 — SVG
 
 SVG significa **Scalable Vector Graphics**.
 
@@ -773,7 +772,7 @@ Alguns atributs importants són:
 
 ---
 
-## MINIEXPERIMENT
+### MINIEXPERIMENT
 
 Crea:
 
@@ -799,7 +798,7 @@ Comprova què controla cadascun.
 
 ---
 
-## EL REPTE
+### EL REPTE
 
 Crea una **insígnia digital relacionada amb DAM, DAW o la informàtica**.
 
@@ -819,7 +818,7 @@ El disseny ha de ser propi.
 
 No es pot generar automàticament el SVG amb un editor gràfic.
 
-## Producte
+### Producte
 
 `insignia.svg`
 
@@ -833,7 +832,7 @@ Per exemple:
 
 ---
 
-# REPTE FINAL — EL MAPA DELS LLENGUATGES DE MARQUES
+### REPTE FINAL — EL MAPA DELS LLENGUATGES DE MARQUES
 
 Ja has treballat amb diferents llenguatges i eines.
 
@@ -882,89 +881,3 @@ No copies tots els continguts dels reptes.
 **Selecciona les evidències que millor demostren el que has aprés.**
 
 ---
-
-# ÚS DE LA INTEL·LIGÈNCIA ARTIFICIAL
-
-Pots utilitzar eines d'IA per:
-
-* investigar;
-* demanar explicacions;
-* resoldre dubtes;
-* entendre codi;
-* detectar errors;
-* buscar alternatives.
-
-Però l'objectiu dels reptes no és generar informació.
-
-Durant qualsevol sessió es podrà demanar que:
-
-* expliques una part;
-* identifiques una etiqueta;
-* modifiques un atribut;
-* predigues un resultat;
-* justifiques una decisió.
-
-Una part del treball que no pugues explicar o modificar **no demostra el teu aprenentatge**.
-
----
-
-# ENTREGA
-
-Conserva tots els productes generats durant els reptes.
-
-La carpeta del projecte haurà de contindre, com a mínim:
-
-```text
-RA1-Llenguatges-Marques/
-│
-├── repte-1/
-│
-├── repte-2/
-│
-├── repte-3/
-│   └── README.md
-│
-├── repte-4/
-│   ├── alumna.md
-│   ├── alumna.html
-│   └── alumna.xml
-│
-├── repte-5/
-│
-└── repte-6/
-    └── insignia.svg
-```
-
-Al final del projecte s'indicarà el procediment per publicar o entregar el conjunt del treball.
-
----
-
-# DURACIÓ
-
-**7-8 hores de classe.**
-
----
-
-# OBJECTIU FINAL
-
-No es tracta de memoritzar etiquetes.
-
-En acabar, davant d'un document o fragment desconegut, has de començar a ser capaç d'analitzar:
-
-**QUÈ ÉS**
-
-↓
-
-**QUINES MARQUES UTILITZA**
-
-↓
-
-**COM ORGANITZA LA INFORMACIÓ**
-
-↓
-
-**PER A QUÈ SERVEIX**
-
-I poder respondre la pregunta inicial:
-
-> **Què fa que HTML, XML, Markdown, SVG o MathML siguen llenguatges de marques si s'utilitzen per a coses tan diferents?**

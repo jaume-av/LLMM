@@ -10,7 +10,7 @@ has_toc: true
 
 <div align="center">
 
-<img src="logo.png" alt="Logo IES Benigasló" width="220"/>
+<img src="logo.png" alt="Logo IES Benigasló"/>
 
 </div>
 
@@ -28,13 +28,15 @@ has_toc: true
 
 ## 1. Dades Generals del Cicle i del Mòdul
 
-| Concepte             | Detall                                                                                        |
-| :------------------- | :-------------------------------------------------------------------------------------------- |
-| **Cicles Formatius** | Desenvolupament d'Aplicacions Multiplataforma (DAM) / Desenvolupament d'Aplicacions Web (DAW) |
-| **Grau**             | Grau Superior                                                                                 |
-| **Mòdul**            | Llenguatges de Marques i Sistemes de Gestió d'Informació                                      |
-| **Curs Acadèmic**    | 2026 / 2027                                                                                   |
-| **Curs**             | 1r curs                                                                                       |
+| Concepte               | Detall                                                                                        |
+| :--------------------- | :-------------------------------------------------------------------------------------------- |
+| **Cicles Formatius**   | Desenvolupament d'Aplicacions Multiplataforma (DAM) / Desenvolupament d'Aplicacions Web (DAW) |
+| **Grau**               | Grau Superior                                                                                 |
+| **Mòdul**              | Llenguatges de Marques i Sistemes de Gestió d'Informació                                      |
+| **Component formatiu** | 0373 – Llenguatges de Marques i SGI                                                           |
+| **Curs Acadèmic**      | 2026 / 2027                                                                                   |
+| **Curs**               | 1r curs                                                                                       |
+| **Durada total**       | 128 hores                                                                                     |
 
 
 ---

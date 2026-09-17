@@ -7,137 +7,153 @@ has_toc: true
 ---
 
 ## REPTE 3 — LA TEUA PRIMERA PÀGINA EN MARKDOWN
-### CAIXA D'EINES 3 — MARKDOWN
-Markdown és un llenguatge de marques lleuger creat per escriure documents de manera senzilla i llegible.
 
-Un document Markdown utilitza normalment l'extensió:
+### OBJECTIU
 
-`.md`
+Crearàs una pàgina de presentació personal utilitzant Markdown.
 
-Per exemple:
+El document s’anomenarà:
 
-`README.md`
+```text
+README.md
+```
 
-GitHub interpreta automàticament aquest format.
+---
 
-### Títols
+### CAIXA D’EINES — MARKDOWN
+
+En els requadres apareix exactament el que has d’escriure.
+
+#### Títols
+
 ```markdown
-
 # Títol principal
 ## Apartat
 ### Subapartat
 ```
 
-### Negreta i cursiva
+* `#` crea el títol principal.
+* `##` crea un apartat.
+* `###` crea un subapartat.
+* Deixa sempre un espai després de `#`.
+
+#### Negreta i cursiva
+
 ```markdown
-
-**text important**
-
-**text en cursiva**
-
+**Text en negreta**
+*Text en cursiva*
 ```
 
-### Llistes
-```markdown
+#### Llistes
 
+```markdown
 - Java
-
 - Python
-
 - JavaScript
-
 ```
 
-### Llistes numerades
+Per crear una llista numerada:
+
 ```markdown
-
-1. DAM
-
-2. DAW
-
-3. ASIX
-
+1. Aprendre programació
+2. Crear aplicacions
+3. Treballar en equip
 ```
 
-### Enllaços
-```markdown
+#### Enllaços
 
+```markdown
 [Visitar GitHub](https://github.com)
-
 ```
 
-### Imatges
+* Entre `[ ]` s’escriu el text visible.
+* Entre `( )` s’escriu l’adreça web.
+
+#### Imatges
+
 ```markdown
-
-![Descripció](imatge.png)
-
+![Descripció de la imatge](imatges/perfil.png)
 ```
 
-### Codi
-Un fragment curt:
+La imatge ha d’estar dins de la carpeta `imatges`:
 
 ```text
-
-`<h1>Hola</h1>`
-
+repte-3-markdown/
+├── README.md
+└── imatges/
+    └── perfil.png
 ```
 
-Per mostrar diverses línies podem utilitzar un bloc de codi.
+El nom i l’extensió de la imatge han de coincidir exactament amb els que apareixen en el document.
 
-### Taules
+#### Codi
+
+Per mostrar una instrucció curta:
+
 ```markdown
-
-| Tecnologia | Finalitat |
-
-|---|---|
-
-| HTML | Web |
-
-| XML | Dades |
-
-| SVG | Gràfics |
-
+El document s’anomena `README.md`.
 ```
 
----
+Per mostrar diverses línies:
 
+````markdown
+```python
+print("Hola")
+print("Soc estudiant de DAM")
+```
+````
 
-Utilitza un l'editor de codi i crea un document amb l'extensió `.md`.
+Després dels tres accents greus pots indicar el llenguatge: `java`, `python`, `html`, `xml`, `javascript` o `text`.
 
-Per exemple:
+#### Taules
 
-`README.md`
+```markdown
+| Tecnologia | Coneixement |
+|---|---|
+| Java | Inicial |
+| HTML | Bàsic |
+| Git | Encara no l’he utilitzat |
+```
 
-Visualitza el resultat en GitHub o amb el visor Markdown disponible.
+* Les barres `|` separen les columnes.
+* La línia `|---|---|` és obligatòria.
 
 ---
 
 ### EL REPTE
-Crea una **targeta digital de presentació com a estudiant de DAM/DAW**.
 
-Ha de contindre:
+Crea una **pàgina digital de presentació com a estudiant de DAM o DAW**.
 
-* nom o identificador;
+#### Pas 1. Prepara la carpeta
 
-* cicle;
+Crea esta estructura:
 
-* una breu presentació;
+```text
+repte-3-markdown/
+├── README.md
+└── imatges/
+    └── la-teua-imatge.png
+```
 
-* tecnologies que coneixes;
+La imatge pot ser un avatar, una icona, un dibuix o una imatge relacionada amb la informàtica. No és necessari utilitzar una fotografia personal.
 
-* una taula;
+#### Pas 2. Completa el document
 
-* almenys un enllaç;
+Crea el següent document en  `README.md`, però has de substituir les indicacions per la teua informació:
 
-* almenys una imatge;
-
-* un fragment de codi.
-
-No has de reproduir els exemples de la caixa d'eines. Utilitza'ls per construir el teu propi document.
-
-#### Producte
-`README.md`
-
-Aquest document serà també el primer element del teu projecte.
+![alt text](imatges/md.png)
 
 ---
+
+
+
+###  S’HA D’ENTREGAR
+
+La carpeta completa:
+
+```text
+repte-3-markdown/
+├── README.md
+└── imatges/
+    └── la-teua-imatge.png
+```

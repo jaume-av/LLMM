@@ -132,7 +132,9 @@ Crea esta estructura:
 repte-3-markdown/
 ├── README.md
 └── imatges/
-    └── la-teua-imatge.png0 In troducció als Llenguatges de Marques/imatges/md.png
+    └── la-teua-imatge.png
+``` 
+
 La imatge pot ser un avatar, una icona, un dibuix o una imatge relacionada amb la informàtica. No és necessari utilitzar una fotografia personal.
 
 #### Pas 2. Completa el document

@@ -6,94 +6,153 @@ nav_order: 15
 has_toc: true
 ---
 
+
 ## REPTE 5 — CAÇA DE MARQUES
-### CAIXA D'EINES 5 — L'INSPECTOR DEL NAVEGADOR
-Les pàgines web que visites estan construïdes, entre altres tecnologies, amb HTML.
 
-El navegador permet observar aquest codi.
+Les marques no estan només als apunts.
 
-En Chrome, Firefox o navegadors similars pots obrir les **eines de desenvolupament**.
+En este repte entraràs **darrere d'una web** i buscaràs altres llenguatges de marques en funcionament.
 
-Normalment:
+---
 
-`F12`
+## CAIXA D'EINES — L'INSPECTOR
 
-o:
+L'**Inspector** permet veure i modificar temporalment el codi d'una web.
 
-**botó dret → Inspeccionar**
+| ACCIÓ                             | COM FER-HO                                    |
+| --------------------------------- | --------------------------------------------- |
+| Obrir l'Inspector                 | `F12`                                         |
+| Seleccionar alguna cosa de la web | botó **↖** de la part superior de l'Inspector |
+| Buscar dins del codi              | `Ctrl + F`                                    |
 
-Busca l'apartat:
+### PROVA-HO
 
-**Elements / Inspector**
+1. Prem `F12`.
+2. Prem **↖ Seleccionar element**.
+3. Fes clic sobre un titular de la web.
+4. Busca el mateix text en el codi.
+5. Fes doble clic sobre el text i canvia'l.
+6. Prem `Enter`.
 
-Allí podràs observar estructures com:
+Ara prem `F5`.
 
-```html
+**Què ha passat?**
 
-<header>
+---
 
-<nav>
+# MISSIÓ 1 — DESTROSSA UNA WEB
 
-<h1>
+Busca a Google:
 
-<p>
+> **diari digital**
 
-<a>
+Entra en una notícia.
 
-<img>
+Utilitzant només l'Inspector aconsegueix:
 
+* [ ] Canviar el titular.
+* [ ] Canviar el nom d'una persona.
+* [ ] Canviar una data, número o resultat.
+* [ ] Eliminar algun element.
+* [ ] Fer un canvi inventat per tu.
+
+**Fes una captura abans de prémer `F5`.**
+
+La captura ha de mostrar:
+
+**WEB DESTROSSADA + INSPECTOR**
+
+---
+
+# MISSIÓ 2 — ALTRES MARQUES
+
+Ara busca altres llenguatges de marques.
+
+No has d'aprendre el codi.
+
+**Mira el resultat i localitza les marques que el creen.**
+
+---
+
+### SVG — UN DIBUIX
+
+Busca a Google:
+
+> **W3Schools SVG Circle**
+
+Localitza el **cercle** i el seu codi.
+
+Busca:
+
+```xml
+<svg>
+<circle>
 ```
 
-També pots seleccionar visualment un element de la pàgina i descobrir quin fragment HTML el representa.
+Prem **Try it Yourself** i canvia algun color del codi.
 
-Les modificacions que faces des de l'inspector són **locals i temporals**. No estàs modificant la web original.
+Executa'l i observa el resultat.
 
----
-
-### MINIEXPERIMENT
-Obri una pàgina web.
-
-Localitza un títol.
-
-Inspecciona'l.
-
-Modifica temporalment el seu text perquè aparega el teu nom.
-
-Comprova què ocorre.
+**Fes una captura: CODI + DIBUIX**
 
 ---
 
-### EL REPTE
-Localitza **5 evidències reals** de llenguatges de marques.
+### MathML — UNA FÓRMULA
 
-Pots investigar:
+Busca a Google:
 
-* pàgines web;
+> **MDN MathML math**
 
-* GitHub;
+Entra en el resultat **`<math> - MathML`**.
 
-* canals RSS;
+Busca l'apartat **Examples**.
 
-* SVG;
+Localitza una fórmula i, en el seu codi:
 
-* documentació;
+```xml
+<math>
+```
 
-* altres serveis.
+Observa les altres marques que apareixen dins.
 
-Per cada evidència mostra:
-
-**ORIGEN → CAPTURA/FRAGMENT → LLENGUATGE → PISTES → FINALITAT**
-
-Almenys una evidència haurà de procedir de l'**Inspector del navegador**.
-
-No és vàlid buscar «exemple XML» i copiar el resultat.
-
-Has de trobar les marques **utilitzades en un recurs real**.
-
-
-Crea:
-
-### LES MARQUES ESTAN PERTOT ARREU
-Un mural digital amb les cinc evidències.
+**Fes una captura: CODI + FÓRMULA**
 
 ---
+
+### XML — DADES
+
+Busca a Google:
+
+> **W3Schools XML Tree**
+
+Busca l'exemple de la llibreria:
+
+```xml
+<bookstore>
+```
+
+Localitza el llibre **Harry Potter**.
+
+Observa quines marques envolten:
+
+**títol · autor · any · preu**
+
+**Fes una captura: MARQUES + DADES**
+
+---
+
+# PRODUCTE — LES MARQUES ESTAN PERTOT ARREU
+
+Crea una composició amb les **4 captures**:
+
+| HTML            | SVG    | MathML  | XML   |
+| --------------- | ------ | ------- | ----- |
+| Web destrossada | Dibuix | Fórmula | Dades |
+
+En cada captura **encercla les marques importants**.
+
+No copies definicions.
+
+Acaba responent:
+
+> **Què tenen en comú els quatre exemples?**

@@ -135,7 +135,7 @@ Afig:
     font-family="Arial"
     font-weight="bold"
     fill="black">
-    DAM
+    DAM/DAW
 </text>
 ```
 
@@ -400,3 +400,8 @@ insignia.svg
 i la taula:
 
 **ELEMENT → QUÈ HE MODIFICAT → QUIN EFECTE HA TINGUT**
+
+
+exemple:
+
+![alt text](imatges/descarga.svg)

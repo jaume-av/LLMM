@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="2100" viewBox="0 0 1400 2100">
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0b3153"/>
+      <stop offset="0.55" stop-color="#174c72"/>
+      <stop offset="1" stop-color="#0d3558"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff7df"/>
+      <stop offset="1" stop-color="#fffdf7"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e5f5ff"/>
+      <stop offset="1" stop-color="#f7fcff"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e1f8ec"/>
+      <stop offset="1" stop-color="#f6fffb"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eeeaff"/>
+      <stop offset="1" stop-color="#fbfaff"/>
+    </linearGradient>
+    <linearGradient id="pink" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe8ef"/>
+      <stop offset="1" stop-color="#fff8fa"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#203a55" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .title{font-family:'DejaVu Sans',sans-serif;font-size:69px;font-weight:900;fill:#fff;letter-spacing:1px}
+      .subtitle{font-family:'DejaVu Sans',sans-serif;font-size:42px;font-weight:700;font-style:italic;fill:#cbe6ff;letter-spacing:8px}
+      .head{font-family:'DejaVu Sans',sans-serif;font-size:35px;font-weight:800;fill:#0b2142}
+      .body{font-family:'DejaVu Sans',sans-serif;font-size:23px;fill:#102846}
+      .small{font-family:'DejaVu Sans',sans-serif;font-size:19px;fill:#193550}
+      .tiny{font-family:'DejaVu Sans',sans-serif;font-size:17px;fill:#193550}
+      .code{font-family:'DejaVu Sans Mono',monospace;font-size:20px;fill:#143366}
+      .code-sm{font-family:'DejaVu Sans Mono',monospace;font-size:17px;fill:#143366}
+      .tag{fill:#bb0872;font-weight:700}
+      .attr{fill:#075fb6}
+      .str{fill:#19863c}
+      .comment{fill:#4c8b5b}
+      .num{font-family:'DejaVu Sans',sans-serif;font-size:34px;font-weight:900;fill:#071b36;text-anchor:middle}
+      .pill-title{font-family:'DejaVu Sans',sans-serif;font-size:18px;font-weight:800;text-anchor:middle;fill:#0b3153}
+      .pill-text{font-family:'DejaVu Sans',sans-serif;font-size:15px;text-anchor:middle;fill:#163651}
+      .whitebox{fill:#fff;fill-opacity:.86;stroke:#b7cce0;stroke-width:1.5}
+    </style>
+  </defs>
+
+  <rect width="1400" height="2100" fill="#f8fbfd"/>
+
+  <!-- Capçalera -->
+  <rect x="16" y="16" width="1368" height="188" rx="28" fill="url(#header)"/>
+  <circle cx="108" cy="108" r="62" fill="#ffffff" fill-opacity=".09" stroke="#71c9ff" stroke-width="3"/>
+  <text x="108" y="125" text-anchor="middle" font-family="DejaVu Sans Mono" font-size="49" font-weight="800" fill="#58c6ff">&lt;/&gt;</text>
+  <text x="210" y="100" class="title">XML</text>
+  <text x="210" y="163" class="subtitle">CHEAT SHEET</text>
+  <rect x="1025" y="50" width="300" height="104" rx="24" fill="none" stroke="#ffe36e" stroke-width="3" transform="rotate(-4 1175 102)"/>
+  <text x="1175" y="89" text-anchor="middle" font-family="DejaVu Sans" font-size="22" font-style="italic" font-weight="700" fill="#ffe36e">Dades clares,</text>
+  <text x="1175" y="119" text-anchor="middle" font-family="DejaVu Sans" font-size="22" font-style="italic" font-weight="700" fill="#ffe36e">estructura robusta</text>
+  <path d="M1135 143 Q1180 132 1227 137" fill="none" stroke="#ffe36e" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- 1 -->
+  <rect x="18" y="224" width="525" height="294" rx="24" fill="url(#cream)" filter="url(#shadow)"/>
+  <circle cx="70" cy="272" r="31" fill="#ffd84d"/>
+  <text x="70" y="284" class="num">1</text>
+  <text x="118" y="284" class="head">QUÈ ÉS XML?</text>
+  <text x="43" y="330" class="body">Llenguatge de marques extensible per a</text>
+  <text x="43" y="362" class="body">organitzar i intercanviar informació.</text>
+  <rect x="42" y="391" width="458" height="101" rx="13" class="whitebox"/>
+  <text x="62" y="425" class="code"><tspan class="tag">&lt;videojoc&gt;</tspan></text>
+  <text x="87" y="455" class="code"><tspan class="tag">&lt;titol&gt;</tspan>Minecraft<tspan class="tag">&lt;/titol&gt;</tspan></text>
+  <text x="62" y="483" class="code"><tspan class="tag">&lt;/videojoc&gt;</tspan></text>
+
+  <!-- 2 -->
+  <rect x="563" y="224" width="819" height="294" rx="24" fill="url(#blue)" filter="url(#shadow)"/>
+  <circle cx="616" cy="272" r="31" fill="#55bfff"/>
+  <text x="616" y="284" class="num">2</text>
+  <text x="664" y="284" class="head">ANATOMIA D’UN ELEMENT</text>
+  <rect x="590" y="314" width="765" height="76" rx="13" class="whitebox"/>
+  <text x="616" y="360" class="code"><tspan class="tag">&lt;videojoc</tspan>&#160;<tspan class="attr">id</tspan>=<tspan class="str">"j01"</tspan><tspan class="tag">&gt;</tspan>Minecraft<tspan class="tag">&lt;/videojoc&gt;</tspan></text>
+  <rect x="590" y="410" width="174" height="78" rx="12" fill="#d7edff"/>
+  <rect x="780" y="410" width="174" height="78" rx="12" fill="#e8dcff"/>
+  <rect x="970" y="410" width="174" height="78" rx="12" fill="#dff5e6"/>
+  <rect x="1160" y="410" width="195" height="78" rx="12" fill="#ffe3ea"/>
+  <text x="677" y="440" class="pill-title">ELEMENT</text><text x="677" y="469" class="pill-text">videojoc</text>
+  <text x="867" y="440" class="pill-title">ATRIBUT</text><text x="867" y="469" class="pill-text">id</text>
+  <text x="1057" y="440" class="pill-title">VALOR</text><text x="1057" y="469" class="pill-text">j01</text>
+  <text x="1257" y="440" class="pill-title">TEXT</text><text x="1257" y="469" class="pill-text">Minecraft</text>
+
+  <!-- 3 -->
+  <rect x="18" y="540" width="650" height="394" rx="24" fill="url(#green)" filter="url(#shadow)"/>
+  <circle cx="70" cy="590" r="31" fill="#6cdb8d"/>
+  <text x="70" y="602" class="num">3</text>
+  <text x="118" y="602" class="head">REGLES BÀSIQUES</text>
+  <g class="body">
+    <circle cx="58" cy="650" r="16" fill="#20a653"/><text x="58" y="658" text-anchor="middle" fill="#fff" font-weight="800">✓</text>
+    <text x="88" y="658">Un únic element arrel.</text>
+    <circle cx="58" cy="697" r="16" fill="#20a653"/><text x="58" y="705" text-anchor="middle" fill="#fff" font-weight="800">✓</text>
+    <text x="88" y="705">Totes les etiquetes es tanquen.</text>
+    <circle cx="58" cy="744" r="16" fill="#20a653"/><text x="58" y="752" text-anchor="middle" fill="#fff" font-weight="800">✓</text>
+    <text x="88" y="752">Imbricació en l’ordre correcte.</text>
+    <circle cx="58" cy="791" r="16" fill="#20a653"/><text x="58" y="799" text-anchor="middle" fill="#fff" font-weight="800">✓</text>
+    <text x="88" y="799">Diferencia majúscules i minúscules.</text>
+    <circle cx="58" cy="838" r="16" fill="#20a653"/><text x="58" y="846" text-anchor="middle" fill="#fff" font-weight="800">✓</text>
+    <text x="88" y="846">Atributs entre cometes i no repetits.</text>
+  </g>
+  <rect x="42" y="869" width="602" height="45" rx="10" fill="#fff2f3" stroke="#ed8793"/>
+  <text x="59" y="898" class="code-sm"><tspan fill="#d71e49">✗</tspan> &lt;titol&gt;Minecraft&lt;/Titol&gt;  <tspan fill="#229351">✓</tspan> &lt;titol&gt;Minecraft&lt;/titol&gt;</text>
+
+  <!-- 4 -->
+  <rect x="688" y="540" width="694" height="394" rx="24" fill="url(#purple)" filter="url(#shadow)"/>
+  <circle cx="740" cy="590" r="31" fill="#a88aff"/>
+  <text x="740" y="602" class="num">4</text>
+  <text x="788" y="602" class="head">JERARQUIA</text>
+  <rect x="714" y="630" width="385" height="273" rx="13" class="whitebox"/>
+  <text x="735" y="667" class="code-sm"><tspan class="tag">&lt;cataleg&gt;</tspan></text>
+  <text x="755" y="701" class="code-sm"><tspan class="tag">&lt;videojoc</tspan>&#160;<tspan class="attr">id</tspan>=<tspan class="str">"j01"</tspan><tspan class="tag">&gt;</tspan></text>
+  <text x="779" y="735" class="code-sm"><tspan class="tag">&lt;titol&gt;</tspan>Minecraft<tspan class="tag">&lt;/titol&gt;</tspan></text>
+  <text x="779" y="769" class="code-sm"><tspan class="tag">&lt;plataforma&gt;</tspan></text>
+  <text x="805" y="803" class="code-sm">Multiplataforma</text>
+  <text x="779" y="837" class="code-sm"><tspan class="tag">&lt;/plataforma&gt;</tspan></text>
+  <text x="755" y="871" class="code-sm"><tspan class="tag">&lt;/videojoc&gt;</tspan></text>
+  <text x="735" y="896" class="code-sm"><tspan class="tag">&lt;/cataleg&gt;</tspan></text>
+  <text x="1132" y="677" class="body" font-weight="700">PARE</text>
+  <text x="1132" y="712" class="small">cataleg conté</text>
+  <text x="1132" y="739" class="small">videojoc</text>
+  <text x="1132" y="791" class="body" font-weight="700">FILLS</text>
+  <text x="1132" y="826" class="small">titol i plataforma</text>
+  <text x="1132" y="853" class="small">són fills de videojoc</text>
+  <text x="1132" y="897" class="small" font-style="italic">La indentació ajuda</text>
+  <text x="1132" y="921" class="small" font-style="italic">a veure l’arbre.</text>
+
+  <!-- 5 -->
+  <rect x="18" y="956" width="650" height="386" rx="24" fill="url(#pink)" filter="url(#shadow)"/>
+  <circle cx="70" cy="1006" r="31" fill="#ff729c"/>
+  <text x="70" y="1018" class="num">5</text>
+  <text x="118" y="1018" class="head">ELEMENTS O ATRIBUTS?</text>
+  <rect x="42" y="1052" width="288" height="210" rx="14" fill="#e5f5ff" stroke="#8fcdf4"/>
+  <rect x="348" y="1052" width="296" height="210" rx="14" fill="#fff1d7" stroke="#f1c66e"/>
+  <text x="186" y="1090" text-anchor="middle" class="body" font-weight="800" fill="#075fb6">ELEMENTS</text>
+  <text x="496" y="1090" text-anchor="middle" class="body" font-weight="800" fill="#b65c00">ATRIBUTS</text>
+  <text x="61" y="1128" class="small">Informació principal</text>
+  <text x="61" y="1161" class="small">Text llarg o repetible</text>
+  <text x="61" y="1194" class="small">Pot tindre estructura</text>
+  <text x="367" y="1128" class="small">Identificadors</text>
+  <text x="367" y="1161" class="small">Metadades breus</text>
+  <text x="367" y="1194" class="small">No tenen fills</text>
+  <text x="58" y="1236" class="code-sm">&lt;titol&gt;Fortnite&lt;/titol&gt;</text>
+  <text x="365" y="1236" class="code-sm">id="j02"</text>
+  <rect x="42" y="1280" width="602" height="43" rx="10" fill="#fff" fill-opacity=".72"/>
+  <text x="343" y="1308" text-anchor="middle" class="small" font-weight="700">Model clar, coherent i fàcil d’ampliar.</text>
+
+  <!-- 6 -->
+  <rect x="688" y="956" width="694" height="386" rx="24" fill="url(#cream)" filter="url(#shadow)"/>
+  <circle cx="740" cy="1006" r="31" fill="#ffc928"/>
+  <text x="740" y="1018" class="num">6</text>
+  <text x="788" y="1018" class="head">ENTITATS</text>
+  <rect x="714" y="1050" width="642" height="220" rx="14" class="whitebox"/>
+  <rect x="714" y="1050" width="642" height="44" rx="14" fill="#ffb423"/>
+  <text x="805" y="1080" class="small" font-weight="800">CARÀCTER</text>
+  <text x="1021" y="1080" class="small" font-weight="800">ENTITAT</text>
+  <text x="1226" y="1080" class="small" font-weight="800">ÚS</text>
+  <g class="code-sm">
+    <text x="823" y="1127">&lt;</text><text x="1004" y="1127">&amp;lt;</text><text x="1184" y="1127" class="small">Menor que</text>
+    <text x="823" y="1164">&gt;</text><text x="1004" y="1164">&amp;gt;</text><text x="1184" y="1164" class="small">Major que</text>
+    <text x="823" y="1201">&amp;</text><text x="1004" y="1201">&amp;amp;</text><text x="1184" y="1201" class="small">Ampersand</text>
+    <text x="823" y="1238">&quot;</text><text x="1004" y="1238">&amp;quot;</text><text x="1184" y="1238" class="small">Cometes</text>
+  </g>
+  <rect x="714" y="1284" width="642" height="39" rx="9" fill="#fff4cf" stroke="#e8c866"/>
+  <text x="1035" y="1310" text-anchor="middle" class="code-sm">nivell &amp;lt; 10 · Rockstar &amp;amp; Take-Two</text>
+
+  <!-- 7 -->
+  <rect x="18" y="1364" width="430" height="412" rx="24" fill="url(#blue)" filter="url(#shadow)"/>
+  <circle cx="70" cy="1414" r="31" fill="#55bfff"/>
+  <text x="70" y="1426" class="num">7</text>
+  <text x="118" y="1426" class="head">TEXT ESPECIAL</text>
+  <text x="43" y="1469" class="small" font-weight="700">Comentari:</text>
+  <rect x="42" y="1488" width="382" height="54" rx="12" class="whitebox"/>
+  <text x="59" y="1522" class="code-sm comment">&lt;!-- Catàleg de videojocs --&gt;</text>
+  <text x="43" y="1574" class="small">No pot contindre la seqüència <tspan font-family="DejaVu Sans Mono">--</tspan>.</text>
+  <text x="43" y="1617" class="small" font-weight="700">CDATA:</text>
+  <rect x="42" y="1635" width="382" height="83" rx="12" class="whitebox"/>
+  <text x="59" y="1665" class="code-sm"><tspan class="tag">&lt;![CDATA[</tspan></text>
+  <text x="80" y="1690" class="code-sm">if (x &lt; 10 &amp;&amp; y &gt; 5)</text>
+  <text x="59" y="1713" class="code-sm"><tspan class="tag">]]&gt;</tspan></text>
+  <text x="43" y="1752" class="tiny">Inclou marques com a text literal.</text>
+
+  <!-- 8 -->
+  <rect x="468" y="1364" width="430" height="412" rx="24" fill="url(#green)" filter="url(#shadow)"/>
+  <circle cx="520" cy="1414" r="31" fill="#6cdb8d"/>
+  <text x="520" y="1426" class="num">8</text>
+  <text x="568" y="1426" class="head">ESPAIS DE NOMS</text>
+  <text x="493" y="1469" class="small">Eviten conflictes entre vocabularis</text>
+  <text x="493" y="1496" class="small">que utilitzen etiquetes iguals.</text>
+  <rect x="492" y="1520" width="382" height="153" rx="12" class="whitebox"/>
+  <text x="511" y="1554" class="code-sm"><tspan class="tag">&lt;document</tspan></text>
+  <text x="527" y="1587" class="code-sm"><tspan class="attr">xmlns:pc</tspan>=<tspan class="str">"https://ex.org/pc"</tspan><tspan class="tag">&gt;</tspan></text>
+  <text x="527" y="1620" class="code-sm"><tspan class="tag">&lt;pc:nom&gt;</tspan>Equip 1<tspan class="tag">&lt;/pc:nom&gt;</tspan></text>
+  <text x="511" y="1653" class="code-sm"><tspan class="tag">&lt;/document&gt;</tspan></text>
+  <text x="493" y="1708" class="small"><tspan font-weight="700">pc</tspan> és el prefix.</text>
+  <text x="493" y="1740" class="small"><tspan font-weight="700">xmlns</tspan> declara l’espai de noms.</text>
+
+  <!-- 9 -->
+  <rect x="918" y="1364" width="464" height="412" rx="24" fill="url(#purple)" filter="url(#shadow)"/>
+  <circle cx="970" cy="1414" r="31" fill="#a88aff"/>
+  <text x="970" y="1426" class="num">9</text>
+  <text x="1018" y="1426" class="head">VALIDACIÓ</text>
+  <rect x="942" y="1461" width="416" height="112" rx="13" fill="#e5f5ff" stroke="#9acbea"/>
+  <text x="1150" y="1496" text-anchor="middle" class="body" font-weight="800" fill="#075fb6">BEN FORMAT</text>
+  <text x="962" y="1531" class="small">Complix les regles generals d’XML.</text>
+  <text x="962" y="1558" class="small">Arrel, tancament, ordre i cometes.</text>
+  <rect x="942" y="1591" width="416" height="112" rx="13" fill="#e3f7e9" stroke="#82c998"/>
+  <text x="1150" y="1626" text-anchor="middle" class="body" font-weight="800" fill="#19863c">VÀLID</text>
+  <text x="962" y="1661" class="small">Està ben format i complix una DTD</text>
+  <text x="962" y="1688" class="small">o un altre esquema.</text>
+  <rect x="942" y="1720" width="416" height="37" rx="9" fill="#fff3c9" stroke="#e5c860"/>
+  <text x="1150" y="1745" text-anchor="middle" class="tiny" font-weight="700">Primer ben format; després, vàlid.</text>
+
+  <!-- Resum final -->
+  <rect x="18" y="1798" width="1364" height="228" rx="24" fill="#fff" stroke="#b7cce0" stroke-width="2" filter="url(#shadow)"/>
+  <path d="M43 1824 h250 l-17 49 h-233 z" fill="#e3f2fb"/>
+  <text x="68" y="1857" class="head" font-size="29">RESUM FINAL</text>
+  <g>
+    <rect x="42" y="1884" width="126" height="111" rx="10" fill="#dff1ff"/>
+    <rect x="177" y="1884" width="126" height="111" rx="10" fill="#e0f7e8"/>
+    <rect x="312" y="1884" width="126" height="111" rx="10" fill="#ffe5ec"/>
+    <rect x="447" y="1884" width="126" height="111" rx="10" fill="#fff0c9"/>
+    <rect x="582" y="1884" width="126" height="111" rx="10" fill="#e7e1ff"/>
+    <rect x="717" y="1884" width="126" height="111" rx="10" fill="#dff1ff"/>
+    <rect x="852" y="1884" width="126" height="111" rx="10" fill="#e0f7e8"/>
+    <rect x="987" y="1884" width="166" height="111" rx="10" fill="#ffe5ec"/>
+    <rect x="1162" y="1884" width="178" height="111" rx="10" fill="#fff0c9"/>
+    <text x="105" y="1923" class="pill-title">ARREL</text><text x="105" y="1960" class="pill-text">Una única</text>
+    <text x="240" y="1923" class="pill-title">ELEMENT</text><text x="240" y="1960" class="pill-text">Dada principal</text>
+    <text x="375" y="1923" class="pill-title">ATRIBUT</text><text x="375" y="1960" class="pill-text">Metadada</text>
+    <text x="510" y="1923" class="pill-title">ENTITAT</text><text x="510" y="1960" class="pill-text">Caràcter especial</text>
+    <text x="645" y="1923" class="pill-title">CDATA</text><text x="645" y="1960" class="pill-text">Text literal</text>
+    <text x="780" y="1923" class="pill-title">XMLNS</text><text x="780" y="1960" class="pill-text">Espai de noms</text>
+    <text x="915" y="1923" class="pill-title">PARSER</text><text x="915" y="1960" class="pill-text">Analitza</text>
+    <text x="1070" y="1923" class="pill-title">BEN FORMAT</text><text x="1070" y="1960" class="pill-text">Sintaxi correcta</text>
+    <text x="1251" y="1923" class="pill-title">VÀLID</text><text x="1251" y="1960" class="pill-text">Complix la DTD</text>
+  </g>
+
+  <!-- Peu -->
+  <text x="32" y="2072" font-family="DejaVu Sans" font-size="20" font-style="italic" font-weight="700" fill="#17395d">Estructura les dades, entén la informació!</text>
+  <path d="M33 2084 Q165 2070 330 2080" fill="none" stroke="#ffc400" stroke-width="5" stroke-linecap="round"/>
+  <text x="1368" y="2072" text-anchor="end" font-family="DejaVu Sans" font-size="18" fill="#17395d">Dissenyat per Jaume Aragó · Generat amb IA Codex</text>
+</svg>

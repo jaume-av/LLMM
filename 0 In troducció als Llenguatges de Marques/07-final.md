@@ -20,7 +20,9 @@ Imagina que una persona començarà DAM o DAW i et pregunta:
 
 > **Què és un llenguatge de marques i per què n'existeixen tants?**
 
-Construeix una **presentació visual del teu recorregut pels reptes**.
+Construeix una **presentació visual del teu recorregut pels reptes**, Un cartell o una única diapossitiva. 
+
+Es valorarà sobre tot, el disseny i la elecció dels continguts ja treballats a les activitats anteriors
 
 Haurà d'incloure:
 

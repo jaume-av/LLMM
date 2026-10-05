@@ -1,4 +1,6 @@
+
 ---
+
 title: Resum d'XML
 parent: 1.1.- XML - Definició, estructura i regles bàsiques
 nav_order: 2

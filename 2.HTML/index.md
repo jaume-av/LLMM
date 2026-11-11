@@ -23,6 +23,10 @@ has_toc: true
 
 **HTML (HyperText Markup Language)** és el llenguatge de marques que utilitzem per a definir **l’estructura i el contingut d’una pàgina web**.
 
+El terme **hipertext** fa referència a text amb enllaços que permeten navegar entre documents o recursos de la web.
+
+**HTML no és un llenguatge de programació**: descriu l’estructura i el significat del contingut mitjançant marques. Per a expressar algoritmes i programar comportaments, utilitzem llenguatges com JavaScript.
+
 Mitjançant **etiquetes**, indiquem quina funció té cada part del document: un títol, un paràgraf, una imatge, un enllaç, una llista o un formulari. Els navegadors interpreten aquestes etiquetes per a presentar el contingut als usuaris.
 
 Podem imaginar HTML com **l’esquelet d’una pàgina web**: organitza el contingut i aporta significat a cadascuna de les seues parts.
@@ -32,9 +36,6 @@ Podem imaginar HTML com **l’esquelet d’una pàgina web**: organitza el conti
 HTML va nàixer a principis dels anys noranta, creat per **Tim Berners-Lee** per a compartir documents connectats mitjançant enllaços.
 
 Amb el creixement de la web, el llenguatge va evolucionar a través de versions com **HTML 2.0**, **HTML 3.2** i **HTML 4.01**.
-
-{: .text-center }
-![Evolució d’HTML fins a l’HTML Living Standard](imatges/html-evolucio.png)
 
 L’any **2014**, el W3C va publicar HTML5 com a recomanació. Aquesta versió va representar una fita important: va incorporar elements semàntics com `<main>`, `<section>` i `<article>`, i va facilitar la inclusió d’àudio i vídeo amb `<audio>` i `<video>`.
 
@@ -53,6 +54,9 @@ En els documents utilitzarem aquesta declaració:
 ```
 
 Aquesta declaració permet que el navegador interprete la pàgina en mode estàndard.
+
+{: .text-center }
+![Evolució d’HTML fins a l’HTML Living Standard](imatges/html-evolucio.png)
 
 ## HTML, CSS i JavaScript
 

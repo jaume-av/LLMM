@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formularis en HTML · LLMM</title>
+<style>
+    :root {
+        --verd-fosc: #12450b;
+        --verd-clar: #e6f5e6;
+        --vora: #cdddc9;
+        --blau: #d0e6f7;
+        color: #202820;
+        background: #fff;
+        font: 100%/1.65 Calibri, 'Segoe UI', sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: var(--verd-fosc); text-underline-offset: .2em; }
+    :focus-visible { outline: 3px solid #2569a0; outline-offset: 3px; }
+    .capcalera { background: var(--verd-clar); border-bottom: 1px solid var(--vora); }
+    .contenidor { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+    .capcalera .contenidor {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: .25rem 1rem;
+        padding-block: .7rem;
+        color: var(--verd-fosc);
+    }
+    main { padding-block: 2rem 4rem; }
+    h1, h2 {
+        color: var(--verd-fosc);
+        background: var(--verd-clar);
+        border-radius: .3rem;
+        line-height: 1.25;
+        padding: .75rem 1rem;
+        margin: 0 0 1rem;
+    }
+    h1 { text-align: center; font-size: clamp(1.8rem, 4vw, 2.6rem); }
+    h2 { font-size: 1.45rem; }
+    nav ul { display: flex; flex-wrap: wrap; gap: .35rem 1.5rem; padding-inline-start: 1.2rem; }
+    section { margin-top: 2rem; scroll-margin-top: 1rem; }
+    .graella {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
+        gap: 1rem;
+        align-items: start;
+    }
+    article { min-width: 0; padding: 1rem; border: 1px solid var(--vora); border-radius: .4rem; }
+    h3 {
+        color: var(--verd-fosc);
+        font-size: 1.16rem;
+        line-height: 1.35;
+        margin: 0 0 .9rem;
+        padding-bottom: .45rem;
+        border-bottom: 1px solid var(--verd-fosc);
+    }
+    details { margin-top: .8rem; border-radius: .3rem; background: var(--verd-clar); }
+    summary { cursor: pointer; padding: .5rem .75rem; color: var(--verd-fosc); font-weight: bold; }
+    pre {
+        margin: 0;
+        padding: .85rem;
+        overflow: auto;
+        background: #f3f7fa;
+        border-top: 1px solid var(--vora);
+        border-radius: 0 0 .3rem .3rem;
+        font: .875rem/1.5 Consolas, monospace;
+        tab-size: 4;
+    }
+    .resultat {
+        margin: .7rem 0 0;
+        padding: .45rem .65rem;
+        background: var(--blau);
+        border-radius: .3rem;
+        overflow-wrap: anywhere;
+    }
+    .resultat:empty { display: none; }
+</style>
+</head>
+<body>
+<header class="capcalera">
+    <div class="contenidor">
+        <strong>Llenguatges de Marques · IES Benigasló</strong>
+        <span>1r de DAW · HTML</span>
+    </div>
+</header>
+<main class="contenidor">
+    <h1>Formularis en HTML</h1>
+    <p>Prova els controls i obri <strong>Mostra el codi HTML</strong> per veure com es creen. Els enviaments es simulen al navegador.</p>
+    <nav aria-label="Apartats dels exemples">
+        <ul>
+            <li><a href="#estructura">Estructura i enviament</a></li>
+            <li><a href="#controls">Controls del formulari</a></li>
+            <li><a href="#botons">Botons i selector de fitxers</a></li>
+        </ul>
+    </nav>
+    <section id="estructura">
+        <h2>Estructura i enviament</h2>
+        <div class="graella">
+            <article>
+                <h3>Formulari bàsic</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;body&gt;
+    &lt;form action="saluda.php" method="post"&gt;
+        Posa aquí el teu nom: &lt;input type="text" name="nom" value="" /&gt; &lt;br/&gt;
+        &lt;input type="submit" value="Enviar" /&gt;
+    &lt;/form&gt;
+&lt;/body&gt;</code></pre>
+                </details>
+            </article>
+            <article>
+                <h3>Enviament amb GET</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;form action="/processar" method="get"&gt;
+    &lt;input type="text" name="usuari" value="Jaume"&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+                </details>
+            </article>
+            <article>
+                <h3>Enviament amb POST</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;form action="/processar" method="post"&gt;
+    &lt;input type="text" name="usuari" value="Jaume"&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+                </details>
+            </article>
+            <article>
+                <h3>Etiqueta que envolta el camp</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;form action="/processar" method="post"&gt;
+    &lt;label&gt;
+        Nom:
+        &lt;input type="text" name="nom"&gt;
+    &lt;/label&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+                </details>
+            </article>
+            <article>
+                <h3>Etiqueta amb for i id</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;form action="/processar" method="post"&gt;
+    &lt;label for="nom"&gt;Nom:&lt;/label&gt;
+    &lt;input type="text" id="nom" name="nom"&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+                </details>
+            </article>
+            <article>
+                <h3>Correu obligatori i validació</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;form action="/processar" method="post"&gt;
+    &lt;label for="usuari"&gt;Nom d'usuari:&lt;/label&gt;
+    &lt;input type="text" id="usuari" name="usuari"&gt;
+    &lt;label for="correu"&gt;Correu electrònic:&lt;/label&gt;
+    &lt;input type="email" id="correu" name="correu" required&gt;
+    &lt;input type="submit" value="Registrar"&gt;
+&lt;/form&gt;</code></pre>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="controls">
+        <h2>Controls del formulari</h2>
+        <div class="graella">
+            <article>
+                <h3>Text, contrasenya i reinici</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ca"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Exemple d'Input Types&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form action="/processar" method="post"&gt;
+    &lt;label for="nom"&gt;Nom:&lt;/label&gt;
+    &lt;input type="text" id="nom" name="nom" placeholder="Introdueix el teu nom"&gt;&lt;br&gt;
+
+    &lt;label for="contrasenya"&gt;Contrasenya:&lt;/label&gt;
+    &lt;input type="password" id="contrasenya" name="contrasenya" placeholder="Introdueix la teva contrasenya"&gt;&lt;br&gt;
+
+    &lt;input type="submit" value="Enviar"&gt;
+    &lt;input type="reset" value="Reiniciar"&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </details>
+            </article>
+            <article>
+                <h3>Botons d’opció i caselles de selecció</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;form action="/action_page.php"&gt;
+    &lt;!-- Opcions de tipus Radio --&gt;
+    &lt;input type="radio" name="genere" id="home" value="home"&gt;
+    &lt;label for="home"&gt; Home&lt;/label&gt;&lt;br&gt;
+
+    &lt;input type="radio" name="genere" id="dona" value="dona"&gt;
+    &lt;label for="dona"&gt; Dona&lt;/label&gt;&lt;br&gt;
+
+    &lt;input type="radio" name="genere" id="altres" value="altres"&gt;
+    &lt;label for="altres"&gt; Altres&lt;/label&gt;&lt;br&gt;
+
+    &lt;!-- Caselles de verificació tipus Checkbox --&gt;
+    &lt;input type="checkbox" name="preferencia" id="noticies" value="noticies"&gt;
+    &lt;label for="noticies"&gt; Notícies&lt;/label&gt;&lt;br&gt;
+
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+                </details>
+            </article>
+            <article>
+                <h3>Grups amb fieldset i legend</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ca"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Exemple d'Opcions&lt;/title&gt;
+    &lt;style&gt;
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form action="/processar" method="post"&gt;
+
+&lt;!-- Opcions de tipus Radio --&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Gènere:&lt;/legend&gt;
+    &lt;label&gt;
+        &lt;input type="radio" name="genere" value="home"&gt; Home
+    &lt;/label&gt;
+
+    &lt;label&gt; &lt;input type="radio" name="genere" value="dona"&gt; Dona &lt;/label&gt;
+
+&lt;/fieldset&gt;
+
+&lt;!-- Caselles de verificació tipus Checkbox --&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;Preferències:&lt;/legend&gt;
+    &lt;label&gt;
+        &lt;input type="checkbox" name="preferencia" value="noticies"&gt; Notícies
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type="checkbox" name="preferencia" value="esports"&gt; Esports
+    &lt;/label&gt;
+    &lt;label&gt;
+        &lt;input type="checkbox" name="preferencia" value="entreteniment"&gt; Entreteniment
+    &lt;/label&gt;
+&lt;/fieldset&gt;
+
+&lt;!-- Botó d'enviament --&gt;
+&lt;input type="submit" value="Enviar"&gt;
+
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </details>
+            </article>
+            <article>
+                <h3>Número i control de rang</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;body&gt;
+&lt;form action="/processar" method="post"&gt;
+
+&lt;!-- Camp de tipus Number --&gt;
+&lt;label for="edat"&gt;Edat (entre 18 i 99): &lt;/label&gt;
+&lt;input type="number" name="edat" id="edat" min="18" max="99"&gt;&lt;br&gt;
+
+&lt;!-- Camp de tipus Range --&gt;
+&lt;label for="volum"&gt;Volum (entre 0 i 50):&lt;/label&gt;
+&lt;input type="range" name="volum" id="volum" min="0" max="50" step="1"&gt;&lt;br&gt;
+
+&lt;!-- Botó d'enviament --&gt;
+&lt;input type="submit" value="Enviar"&gt;
+
+&lt;/form&gt;
+&lt;/body&gt;</code></pre>
+                </details>
+            </article>
+            <article>
+                <h3>Data i fitxer</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;body&gt;
+&lt;form action="/processar" method="post" enctype="multipart/form-data"&gt;
+
+&lt;!-- Camp de tipus Date --&gt;
+&lt;label for="dataNaixement"&gt;Data de Naixement:&lt;/label&gt;
+&lt;input type="date" name="dataNaixement" id="dataNaixement"&gt;&lt;br&gt;
+
+&lt;!-- Camp de tipus File --&gt;
+&lt;label for="fitxer"&gt;Pujar Fitxer:&lt;/label&gt;
+&lt;input type="file" name="fitxer" id="fitxer"&gt;&lt;br&gt;
+
+&lt;!-- Botó d'enviament --&gt;
+&lt;input type="submit" value="Enviar"&gt;
+
+&lt;/form&gt;
+&lt;/body&gt;</code></pre>
+                </details>
+            </article>
+            <article>
+                <h3>Àrea de text</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ca"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Exemple de TextArea&lt;/title&gt;
+    &lt;style&gt;
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 300px;
+            height: 100px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form action="/processar" method="post"&gt;
+
+&lt;!-- Camp de tipus TextArea --&gt;
+&lt;label for="comentaris"&gt;Comentaris:&lt;/label&gt;
+&lt;textarea name="comentaris" id="comentaris" placeholder="Escriu aquí els teus comentaris..."&gt;&lt;/textarea&gt;&lt;br&gt;
+
+&lt;!-- Botó d'enviament --&gt;
+&lt;input type="submit" value="Enviar"&gt;
+
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </details>
+            </article>
+            <article>
+                <h3>Llista desplegable</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ca"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Exemple de Select i Options&lt;/title&gt;
+    &lt;style&gt;
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form action="/processar" method="post"&gt;
+
+&lt;!-- Camp de tipus Select amb Options --&gt;
+&lt;label for="poblacio"&gt;Selecciona una població:&lt;/label&gt;
+&lt;select name="poblacio" id="poblacio"&gt;
+    &lt;option value="La Vall d'Uixó"&gt;La Vall d'Uixó&lt;/option&gt;
+    &lt;option value="Nules"&gt;Nules&lt;/option&gt;
+    &lt;option value="La Vila Vella"&gt;La Vila Vella&lt;/option&gt;
+    &lt;option value="Burriana"&gt;Burriana&lt;/option&gt;
+    &lt;option value="Sagunt"&gt;Sagunt&lt;/option&gt;
+&lt;/select&gt;&lt;br&gt;
+
+&lt;!-- Botó d'enviament --&gt;
+&lt;input type="submit" value="Enviar"&gt;
+
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </details>
+            </article>
+            <article>
+                <h3>Hora, color i adreça web</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;form&gt;
+    &lt;label for="hora"&gt;Hora&lt;/label&gt;
+    &lt;input type="time" id="hora" name="hora"&gt;&lt;br&gt;
+    &lt;label for="color"&gt;Color&lt;/label&gt;
+    &lt;input type="color" id="color" name="color"&gt;&lt;br&gt;
+    &lt;label for="web"&gt;Adreça web&lt;/label&gt;
+    &lt;input type="url" id="web" name="web"&gt;&lt;br&gt;
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                </details>
+            </article>
+        </div>
+    </section>
+    <section id="botons">
+        <h2>Botons i selector de fitxers</h2>
+        <div class="graella">
+            <article>
+                <h3>Botó d’imatge, fitxer i altres botons</h3>
+                <div class="exemple"></div>
+                <p class="resultat" role="status"></p>
+                <details>
+                    <summary>Mostra el codi HTML</summary>
+                    <pre><code>&lt;!-- Input de tipus Image --&gt;
+&lt;form action="/submit" method="post"&gt;
+    &lt;label for="imatge"&gt;Botó d'Imatge:&lt;/label&gt;
+    &lt;input type="image" src="imatges/HTML.png" width="80" alt="Enviar" id="imatge"&gt;
+&lt;/form&gt;
+
+&lt;!-- Input de tipus File --&gt;
+&lt;form action="/upload" method="post" enctype="multipart/form-data"&gt;
+    &lt;label for="arxiu"&gt;Selecciona un arxiu:&lt;/label&gt;
+    &lt;input type="file" id="arxiu" name="arxiu"&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;
+
+&lt;!-- Altres botons --&gt;
+ &lt;form&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+    &lt;input type="reset" value="Restablir"&gt;
+    &lt;button type="button"&gt;Botó Personalitzat&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                </details>
+            </article>
+        </div>
+    </section>
+</main>
+<script>
+    // Cada exemple té els seus identificadors i estils aïllats.
+    for (const article of document.querySelectorAll('article')) {
+        const code = article.querySelector('code').textContent;
+        const example = new DOMParser().parseFromString(code, 'text/html');
+        const preview = article.querySelector('.exemple').attachShadow({ mode: 'open' });
+        const result = article.querySelector('.resultat');
+        const style = document.createElement('style');
+        style.textContent = `
+            input, button, select, textarea { font: inherit; max-width: 100%; }
+            input, button, select, textarea, fieldset { box-sizing: border-box; }
+            fieldset { min-inline-size: 0; border: 1px solid #cdddc9; margin-block: .5rem; }
+            form + form { margin-top: .75rem; }
+            :focus-visible { outline: 3px solid #2569a0; outline-offset: 2px; }
+        `;
+        preview.append(style, ...example.querySelectorAll('head style'), ...example.body.childNodes);
+
+        preview.addEventListener('input', () => { result.textContent = ''; });
+        preview.addEventListener('reset', () => { result.textContent = ''; });
+        preview.addEventListener('click', (event) => {
+            if (event.target.matches('button[type="button"]')) {
+                result.textContent = 'Has premut el botó personalitzat.';
+            }
+        });
+        preview.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const form = event.target;
+            const passwords = new Set(
+                Array.from(form.querySelectorAll('input[type="password"]'), (input) => input.name)
+            );
+            const fields = new URLSearchParams();
+            for (const [name, value] of new FormData(form, event.submitter)) {
+                if (passwords.has(name)) {
+                    fields.append(name, '••••');
+                } else if (value instanceof File) {
+                    if (value.name) fields.append(name, value.name);
+                } else {
+                    fields.append(name, value);
+                }
+            }
+
+            const method = form.method.toUpperCase();
+            const action = form.getAttribute('action') || '(esta pàgina)';
+            const query = fields.toString();
+            if (method === 'GET' && query) {
+                result.textContent = `GET ${action}?${query}`;
+            } else if (method === 'POST' && query) {
+                const data = Array.from(fields, ([name, value]) => `${name}=${value}`);
+                result.textContent = `POST ${action} · Camps: ${data.join(', ')}`;
+            } else {
+                result.textContent = `${method} ${action} · Cap camp per a enviar.`;
+            }
+        });
+    }
+</script>
+</body>
+</html>

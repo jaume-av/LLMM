@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ca"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Examen XML i DTD · Solucions desplegables</title><style>*{box-sizing:border-box}body{margin:0;background:#edf3f0;color:#24362e;font:17px/1.65 system-ui,sans-serif}main{max-width:1080px;margin:30px auto;padding:38px 44px;background:white;border:1px solid #d6e2db;border-radius:14px}h1,h2,h3{color:#17553e;line-height:1.35}h1{font-size:1.9rem}h2{font-size:1.45rem}h3{font-size:1.1rem;margin-top:25px}.exercise{padding:20px 0 28px;border-top:1px solid #d6e2db}pre{background:#f4f7f5;border:1px solid #dce5df;padding:16px;border-radius:7px;overflow:auto;font:14px/1.55 ui-monospace,Consolas,monospace}code{font-family:ui-monospace,Consolas,monospace;font-size:.91em}pre code{font-size:inherit}p code,li code,td code{background:#f0f4f1;padding:1px 4px;border-radius:3px}table{border-collapse:collapse;width:100%;margin:18px 0;font-size:.94em}th,td{border:1px solid #c9d9cf;text-align:left;padding:10px 12px;vertical-align:top;overflow-wrap:anywhere}th{background:#eaf3ed}blockquote{border-left:4px solid #7fae94;margin:20px 0;padding:1px 18px;background:#f5f9f6}details{border:1px solid #bbd6c6;border-radius:8px;margin:22px 0;background:#f6faf7}summary{cursor:pointer;padding:15px 18px;font-weight:700;color:#185b40}summary:focus-visible{outline:3px solid #286eaa;outline-offset:3px}.answer,.teacher[open]{padding:0 18px 18px}.teacher[open]>summary{margin:0 -18px}hr{border:0;border-top:1px solid #d6e2db;margin:24px 0}a{color:#145f92}@media(max-width:720px){main{margin:0;padding:22px 16px;border:0;border-radius:0}body{font-size:16px}table{display:block;overflow:auto}h1{font-size:1.55rem}}@media print{body{background:white}main{margin:0;max-width:none;padding:0;border:0}pre{white-space:pre-wrap}summary{color:black}.exercise{break-before:auto}h2,h3,summary{break-after:avoid}}</style></head><body><main><h1>Examen XML i DTD — 1r DAW</h1>
+<p><strong>Proposta reformulada amb solucions comentades · Total: 10 punts</strong></p>
+<p>Nom i cognoms: ____________________________________</p>
+<blockquote>
+<p>Versió de revisió per al professorat. Obri el desplegable de cada exercici per consultar-ne la solució comentada.</p>
+</blockquote>
+<h2>Instruccions</h2>
+<ul>
+<li>Escriu només les declaracions, fragments o correccions demanats. No copies els documents proporcionats.</li>
+<li>En les correccions, no modifiques la DTD ni relaxes els requisits, excepte quan s’indique expressament.</li>
+<li>S’accepten solucions equivalents que complisquen totes les condicions.</li>
+</ul>
+<hr />
+<section class="exercise"><h2>Exercici 1. Test — 1,5 punts</h2>
+<p><strong>Deu preguntes. Correcta: +0,15; incorrecta: −0,05; en blanc: 0.</strong></p>
+<h3>1. Quina seqüència compleix aquest model?</h3>
+<pre><code class="language-dtd">&lt;!ELEMENT trajecte (origen, parada*, desti)&gt;
+</code></pre>
+<p>a) origen, desti, parada<br />
+b) origen, parada, parada, desti<br />
+c) origen, parada<br />
+d) parada, origen, desti</p>
+<h3>2. Amb aquesta DTD, com es classifica <code>&lt;llista/&gt;</code>?</h3>
+<pre><code class="language-dtd">&lt;!ELEMENT llista (item+)&gt;
+&lt;!ELEMENT item (#PCDATA)&gt;
+</code></pre>
+<p>a) No està ben format perquè està buit.<br />
+b) És vàlid: <code>+</code> permet zero elements.<br />
+c) Està ben format, però no és vàlid: falta almenys un <code>item</code>.<br />
+d) No està ben format perquè no té declaració XML.</p>
+<h3>3. Quin fragment està ben format?</h3>
+<p>a) <code>&lt;registre&gt;&lt;!-- pendent --&gt;&lt;entrada/&gt;&lt;/registre&gt;</code><br />
+b) <code>&lt;registre&gt;&lt;entrada&gt;&lt;/registre&gt;&lt;/entrada&gt;</code><br />
+c) <code>&lt;registre data=2026&gt;&lt;entrada/&gt;&lt;/registre&gt;</code><br />
+d) <code>&lt;registre&gt;&lt;Entrada&gt;&lt;/entrada&gt;&lt;/registre&gt;</code></p>
+<h3>4. Què declara aquesta línia?</h3>
+<pre><code class="language-dtd">&lt;!ENTITY % estats &quot;(pendent | en_proces | finalitzada)&quot;&gt;
+</code></pre>
+<p>a) Una entitat general, referenciada amb <code>&amp;estats;</code>.<br />
+b) Un atribut de tipus <code>ENTITY</code>.<br />
+c) Una entitat que només es pot usar en les dades XML.<br />
+d) Una entitat de paràmetre, referenciada en la DTD amb <code>%estats;</code>.</p>
+<h3>5. Quina afirmació és correcta?</h3>
+<pre><code class="language-xml">&lt;!-- A --&gt;
+&lt;codi&gt;if (a &amp;lt; b &amp;amp;&amp;amp; c &amp;gt; d)&lt;/codi&gt;
+&lt;!-- B --&gt;
+&lt;codi&gt;&lt;![CDATA[if (a &lt; b &amp;&amp; c &gt; d)]]&gt;&lt;/codi&gt;
+</code></pre>
+<p>a) Només A està ben format.<br />
+b) Només B està ben format.<br />
+c) Els dos estan ben formats i representen el mateix text.<br />
+d) Cap dels dos està ben format.</p>
+<h3>6. Per què poden coexistir aquests dos elements <code>nom</code>?</h3>
+<pre><code class="language-xml">&lt;document xmlns:a=&quot;urn:alumnes&quot; xmlns:c=&quot;urn:cursos&quot;&gt;
+    &lt;a:nom&gt;Aina&lt;/a:nom&gt;
+    &lt;c:nom&gt;Programació&lt;/c:nom&gt;
+&lt;/document&gt;
+</code></pre>
+<p>a) Perquè contenen textos diferents.<br />
+b) Perquè pertanyen a espais de noms diferents.<br />
+c) Perquè els prefixos substitueixen la DTD.<br />
+d) Perquè XML no diferencia els noms.</p>
+<h3>7. Quina afirmació descriu correctament aquests models?</h3>
+<pre><code class="language-dtd">&lt;!ELEMENT contingut ANY&gt;
+&lt;!ELEMENT paragraf (#PCDATA | destacat)*&gt;
+&lt;!ELEMENT destacat (#PCDATA)&gt;
+</code></pre>
+<p>a) Els dos elements han d’estar buits.<br />
+b) <code>paragraf</code> només admet text.<br />
+c) <code>contingut</code> només admet elements <code>destacat</code>.<br />
+d) <code>contingut</code> admet text i elements declarats; <code>paragraf</code>, text i elements <code>destacat</code>.</p>
+<h3>8. Quin text conté l’element <code>codi</code>?</h3>
+<pre><code class="language-xml">&lt;codi&gt;&lt;![CDATA[&amp;lt;]]&gt;&lt;/codi&gt;
+</code></pre>
+<p>a) <code>&lt;</code><br />
+b) <code>&amp;lt;</code><br />
+c) Una cadena buida.<br />
+d) El fragment no està ben format.</p>
+<h3>9. Quina afirmació diferencia <code>SYSTEM</code> i <code>PUBLIC</code> en una referència a DTD externa?</h3>
+<p>a) <code>SYSTEM</code> indica una ruta o URL; <code>PUBLIC</code> inclou un identificador públic i un identificador de sistema.<br />
+b) <code>SYSTEM</code> només serveix per a DTD internes.<br />
+c) <code>SYSTEM</code> valida elements i <code>PUBLIC</code>, atributs.<br />
+d) Són dues paraules intercanviables amb la mateixa sintaxi.</p>
+<h3>10. Un XML usa <code>&amp;empresa;</code>, declarada només en una DTD externa. Quin valor de <code>standalone</code> és coherent?</h3>
+<p>a) <code>&quot;yes&quot;</code>, perquè la referència apareix en l’XML.<br />
+b) <code>&quot;no&quot;</code>, perquè el document depén d’una declaració externa.<br />
+c) Qualsevol: només indica la codificació.<br />
+d) No pot incloure <code>standalone</code>.</p>
+<details class="solution"><summary>Mostrar la solució comentada de l’exercici 1</summary><div class="answer"><table>
+<thead>
+<tr>
+<th>Pregunta</th>
+<th>Resposta</th>
+<th>Comentari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>b</td>
+<td>L’ordre és obligatori; <code>parada*</code> permet zero o més parades entre origen i destí.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>c</td>
+<td>Un element buit pot estar ben format. El problema de validesa és que <code>item+</code> exigeix almenys un fill.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>a</td>
+<td>Els altres fragments tenen, respectivament, imbricació incorrecta, un valor d’atribut sense cometes i tancament amb majúscules diferents.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>d</td>
+<td>El símbol <code>%</code> identifica una entitat de paràmetre. La pregunta no demana inserir-ne la referència en una declaració interna.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>c</td>
+<td>Les entitats d’A produeixen els mateixos caràcters que el text literal de B.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>b</td>
+<td>Els noms locals coincideixen, però les URI dels espais de noms són diferents.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>d</td>
+<td><code>ANY</code> no elimina l’obligació de declarar els elements utilitzats. El model mixt de <code>paragraf</code> només permet el fill <code>destacat</code>, a més de text.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>b</td>
+<td>Dins de CDATA no s’expandeixen les referències a entitats: es conserven els quatre caràcters <code>&amp;lt;</code>.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>a</td>
+<td>La referència <code>PUBLIC</code> a una DTD externa incorpora també l’identificador de sistema.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>b</td>
+<td><code>standalone=&quot;yes&quot;</code> no és coherent amb aquesta dependència. La declaració <code>standalone</code> es pot ometre, però entre les opcions proposades la correcta és b.</td>
+</tr>
+</tbody>
+</table>
+</div></details></section><section class="exercise"><h2>Exercici 2. Diagnòstic i correcció mínima — 2,5 punts</h2>
+<p>Considera aquestes declaracions:</p>
+<pre><code class="language-dtd">&lt;!ELEMENT incidencia (titol, descripcio, resolta?)&gt;
+&lt;!ATTLIST incidencia
+    categoria NMTOKEN #REQUIRED
+    etiquetes NMTOKENS #IMPLIED
+    detall CDATA #IMPLIED
+    estat (oberta | tancada) &quot;oberta&quot;
+    revisio (manual | automatica) #FIXED &quot;manual&quot;&gt;
+&lt;!ELEMENT titol (#PCDATA)&gt;
+&lt;!ELEMENT descripcio (#PCDATA)&gt;
+&lt;!ELEMENT resolta EMPTY&gt;
+</code></pre>
+<p><strong>a) Indica si cada fragment respecta les declaracions. Per a cada error, escriu el canvi mínim. No copies els fragments. — 2 punts</strong></p>
+<p><strong>A</strong></p>
+<pre><code class="language-xml">&lt;incidencia categoria=&quot;xarxa&quot; etiquetes=&quot;urgent intern&quot;&gt;
+    &lt;titol&gt;Sense connexió&lt;/titol&gt;
+    &lt;descripcio&gt;No hi ha accés a Internet.&lt;/descripcio&gt;
+&lt;/incidencia&gt;
+</code></pre>
+<p><strong>B</strong></p>
+<pre><code class="language-xml">&lt;incidencia categoria=&quot;error sistema&quot; revisio=&quot;automatica&quot;
+            detall=&quot;Error en l’aplicació principal&quot;&gt;
+    &lt;titol&gt;Error d’inici&lt;/titol&gt;
+    &lt;descripcio&gt;L’aplicació no respon.&lt;/descripcio&gt;
+&lt;/incidencia&gt;
+</code></pre>
+<p><strong>C</strong></p>
+<pre><code class="language-xml">&lt;incidencia categoria=&quot;maquinari&quot;&gt;
+    &lt;descripcio&gt;Algunes tecles no funcionen.&lt;/descripcio&gt;
+    &lt;titol&gt;Teclat avariat&lt;/titol&gt;
+    &lt;resolta&gt;sí&lt;/resolta&gt;
+&lt;/incidencia&gt;
+</code></pre>
+<p><strong>D</strong></p>
+<pre><code class="language-xml">&lt;incidencia&gt;
+    &lt;titol&gt;Pantalla apagada&lt;/titol&gt;
+    &lt;descripcio&gt;El monitor no mostra cap imatge.&lt;/descripcio&gt;
+&lt;/incidencia&gt;
+</code></pre>
+<p><strong>b) En D, quins valors s’apliquen a <code>estat</code> i <code>revisio</code> si es corregeix l’omissió de <code>categoria</code>? Per què <code>categoria</code> no es pot ometre? — 0,5 punts</strong></p>
+<details class="solution"><summary>Mostrar la solució comentada de l’exercici 2</summary><div class="answer"><table>
+<thead>
+<tr>
+<th>Fragment</th>
+<th>Correcte?</th>
+<th>Error i correcció mínima possible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Sí</td>
+<td><code>categoria</code> és un token; <code>etiquetes</code> conté dos tokens separats per un espai; l’ordre dels fills és correcte.</td>
+</tr>
+<tr>
+<td>B</td>
+<td>No</td>
+<td><code>categoria=&quot;error sistema&quot;</code> conté un espai: substituir-lo, per exemple, per <code>categoria=&quot;error_sistema&quot;</code>. <code>revisio=&quot;automatica&quot;</code> contradiu el valor fix: substituir-lo per <code>revisio=&quot;manual&quot;</code> o ometre l’atribut.</td>
+</tr>
+<tr>
+<td>C</td>
+<td>No</td>
+<td>Intercanviar <code>titol</code> i <code>descripcio</code>. Substituir <code>&lt;resolta&gt;sí&lt;/resolta&gt;</code> per <code>&lt;resolta/&gt;</code>, perquè l’element és buit.</td>
+</tr>
+<tr>
+<td>D</td>
+<td>No</td>
+<td>Afegir <code>categoria</code> amb un valor vàlid, per exemple <code>categoria=&quot;pantalla&quot;</code>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>b)</strong> S’apliquen <code>estat=&quot;oberta&quot;</code> i <code>revisio=&quot;manual&quot;</code>. El primer és un valor predeterminat; el segon és un valor fix que també s’aplica quan s’omet l’atribut. <code>categoria</code> és <code>#REQUIRED</code> i no té un valor que suplisca l’omissió.</p>
+<p><strong>Criteri orientatiu:</strong> A: 0,2; B: 0,7; C: 0,7; D: 0,4. En b: valors, 0,2; distinció entre predeterminat i fix, 0,15; obligatorietat de categoria, 0,15. No és un error que <code>detall</code>, de tipus CDATA, continga espais.</p>
+</div></details></section><section class="exercise"><h2>Exercici 3. DTD interna i models de contingut — 2,5 punts</h2>
+<p>Una DTD interna ha de descriure un document de manteniment amb aquests requisits:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Contingut, en ordre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>part</code></td>
+<td>Una capçalera, una o més tasques i un resultat.</td>
+</tr>
+<tr>
+<td><code>capcalera</code></td>
+<td>Un centre i una data.</td>
+</tr>
+<tr>
+<td><code>tasca</code></td>
+<td>Una descripció i, opcionalment, una observació.</td>
+</tr>
+<tr>
+<td><code>resultat</code></td>
+<td>Un element <code>correcte</code> o un element <code>error</code>, però no els dos.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>part</code> i <code>tasca</code> tenen <code>estat</code> obligatori: <code>pendent</code>, <code>en_proces</code> o <code>finalitzada</code>.</li>
+<li><code>tasca</code> té <code>tipus</code> obligatori: <code>preventiu</code> o <code>correctiu</code>.</li>
+<li><code>&amp;empresa;</code> ha de produir el text <code>Manteniment Delta</code>.</li>
+</ul>
+<p>Ja estan declarats com a <code>(#PCDATA)</code> els elements <code>centre</code>, <code>data</code>, <code>descripcio</code>, <code>observacio</code>, <code>correcte</code> i <code>error</code>.</p>
+<p><strong>a) Escriu només les quatre declaracions estructurals, els atributs indicats i l’entitat general. No utilitzes <code>ANY</code>. — 2 punts</strong></p>
+<p><strong>b) Per al contingut de <code>tasca</code>, quin model compleix els requisits? Dona una seqüència de fills no buida que l’altre admeta indegudament. Pots respondre només amb noms d’elements. — 0,5 punts</strong></p>
+<pre><code class="language-text">A: (descripcio, observacio?)
+B: (descripcio, observacio)*
+</code></pre>
+<details class="solution"><summary>Mostrar la solució comentada de l’exercici 3</summary><div class="answer"><p><strong>a)</strong></p>
+<pre><code class="language-dtd">&lt;!ELEMENT part (capcalera, tasca+, resultat)&gt;
+&lt;!ELEMENT capcalera (centre, data)&gt;
+&lt;!ELEMENT tasca (descripcio, observacio?)&gt;
+&lt;!ELEMENT resultat (correcte | error)&gt;
+
+&lt;!ATTLIST part estat (pendent | en_proces | finalitzada) #REQUIRED&gt;
+&lt;!ATTLIST tasca
+    estat (pendent | en_proces | finalitzada) #REQUIRED
+    tipus (preventiu | correctiu) #REQUIRED&gt;
+
+&lt;!ENTITY empresa &quot;Manteniment Delta&quot;&gt;
+</code></pre>
+<ul>
+<li><code>tasca+</code> exigeix almenys una tasca i permet repetir-la.</li>
+<li><code>observacio?</code> afecta només l’observació, no la descripció.</li>
+<li><code>|</code> selecciona una alternativa en <code>resultat</code>.</li>
+<li>Es poden escriure els atributs en declaracions ATTLIST separades.</li>
+<li>L’entitat és general: es declara sense <code>%</code> i es referencia amb <code>&amp;empresa;</code>.</li>
+<li>No es demana repetir les sis declaracions de text ja proporcionades.</li>
+<li>Com que es tracta d’una DTD interna, no s’ha de substituir l’enumeració per una referència a una entitat de paràmetre dins d’ATTLIST.</li>
+</ul>
+<p><strong>b)</strong> El model correcte és <strong>A</strong>. Un contraexemple admés per B és:</p>
+<pre><code class="language-text">descripcio, observacio, descripcio, observacio
+</code></pre>
+<p>B repeteix el grup complet i, per tant, permet més d’una descripció. També permet zero grups i exigeix una observació en cada grup present. No es demana escriure etiquetes XML ni contingut de text.</p>
+<p><strong>Criteri orientatiu:</strong> a: models estructurals, 1 punt; atributs, 0,75; entitat, 0,25. b: selecció d’A, 0,15; contraexemple vàlid i incompatible amb els requisits, 0,35.</p>
+</div></details></section><section class="exercise"><h2>Exercici 4. Projectes: definició i coherència — 3,5 punts</h2>
+<p>Una empresa usa <code>empresa.dtd</code>. Ja estan declarats:</p>
+<pre><code class="language-dtd">&lt;!ELEMENT empresa (empleats, projectes)&gt;
+&lt;!ELEMENT empleats (empleat+)&gt;
+&lt;!ELEMENT projectes (projecte+)&gt;
+&lt;!ELEMENT nom (#PCDATA)&gt;
+&lt;!ELEMENT correu (#PCDATA)&gt;
+&lt;!ELEMENT telefon (#PCDATA)&gt;
+&lt;!ELEMENT data_inici (#PCDATA)&gt;
+&lt;!ELEMENT descripcio (#PCDATA)&gt;
+</code></pre>
+<p>Falten les declaracions necessàries per complir aquests requisits:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Contingut, en ordre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>empleat</code></td>
+<td>Nom, correu i telèfon opcional.</td>
+</tr>
+<tr>
+<td><code>projecte</code></td>
+<td>Nom, data d’inici, descripció opcional i <code>urgent</code> buit opcional.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Atribut</th>
+<th>Restricció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>empleat/@id</code></td>
+<td>Identificador únic obligatori.</td>
+</tr>
+<tr>
+<td><code>empleat/@perfil</code></td>
+<td>Obligatori: <code>programacio</code>, <code>disseny</code> o <code>analisi</code>.</td>
+</tr>
+<tr>
+<td><code>projecte/@codi</code></td>
+<td>Identificador únic obligatori.</td>
+</tr>
+<tr>
+<td><code>projecte/@responsable</code></td>
+<td>Referència obligatòria a un ID existent.</td>
+</tr>
+<tr>
+<td><code>projecte/@equip</code></td>
+<td>Una o més referències a IDs existents; atribut obligatori.</td>
+</tr>
+<tr>
+<td><code>projecte/@estat</code></td>
+<td><code>planificat</code>, <code>actiu</code> o <code>finalitzat</code>; predeterminat: <code>planificat</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Aquest document és vàlid respecte de la DTD que has de completar:</p>
+<pre><code class="language-xml">&lt;empresa&gt;
+    &lt;empleats&gt;
+        &lt;empleat id=&quot;E1&quot; perfil=&quot;programacio&quot;&gt;
+            &lt;nom&gt;Ada&lt;/nom&gt;&lt;correu&gt;ada@empresa.test&lt;/correu&gt;
+        &lt;/empleat&gt;
+        &lt;empleat id=&quot;E2&quot; perfil=&quot;disseny&quot;&gt;
+            &lt;nom&gt;Pau&lt;/nom&gt;&lt;correu&gt;pau@empresa.test&lt;/correu&gt;
+        &lt;/empleat&gt;
+    &lt;/empleats&gt;
+    &lt;projectes&gt;
+        &lt;projecte codi=&quot;P1&quot; responsable=&quot;E1&quot; equip=&quot;E1 E2&quot; estat=&quot;actiu&quot;&gt;
+            &lt;nom&gt;Gestor de tasques&lt;/nom&gt;
+            &lt;data_inici&gt;2026-11-10&lt;/data_inici&gt;
+            &lt;urgent/&gt;
+        &lt;/projecte&gt;
+    &lt;/projectes&gt;
+&lt;/empresa&gt;
+</code></pre>
+<p><strong>a) Escriu les declaracions dels elements <code>empleat</code>, <code>projecte</code> i <code>urgent</code>, i dels seus atributs. No declares entitats. — 1,75 punts</strong></p>
+<p><strong>b) Escriu només: — 0,75 punts</strong></p>
+<ul>
+<li>La línia DOCTYPE que vincula aquest document amb <code>empresa.dtd</code>. <strong>0,25 punts.</strong></li>
+<li>Un nou element <code>empleat</code>, amb ID <code>E4</code>, perfil <code>analisi</code>, nom <code>Mar</code> i correu <code>mar@empresa.test</code>, sense telèfon. <strong>0,5 punts.</strong></li>
+</ul>
+<p><strong>c) Es proposa afegir aquest projecte al document anterior. Té tres incompliments de la DTD. Escriu les tres correccions mínimes, sense copiar el fragment. — 0,75 punts</strong></p>
+<pre><code class="language-xml">&lt;projecte codi=&quot;E1&quot; responsable=&quot;E2&quot; equip=&quot;E1 E3&quot;&gt;
+    &lt;data_inici&gt;2027-01-15&lt;/data_inici&gt;
+    &lt;nom&gt;Aplicació mòbil&lt;/nom&gt;
+&lt;/projecte&gt;
+</code></pre>
+<p>Considera aquest apartat independent de b: els únics IDs previs són <code>E1</code>, <code>E2</code> i <code>P1</code>.</p>
+<p><strong>d) Torna al document vàlid proporcionat, sense afegir els fragments de b o c. Si l’ID de l’empleat Ada canvia d’<code>E1</code> a <code>E7</code>, quins valors d’atribut del projecte cal actualitzar? — 0,25 punts</strong></p>
+<details class="solution"><summary>Mostrar la solució comentada de l’exercici 4</summary><div class="answer"><p><strong>a)</strong></p>
+<pre><code class="language-dtd">&lt;!ELEMENT empleat (nom, correu, telefon?)&gt;
+&lt;!ATTLIST empleat
+    id ID #REQUIRED
+    perfil (programacio | disseny | analisi) #REQUIRED&gt;
+
+&lt;!ELEMENT projecte (nom, data_inici, descripcio?, urgent?)&gt;
+&lt;!ATTLIST projecte
+    codi ID #REQUIRED
+    responsable IDREF #REQUIRED
+    equip IDREFS #REQUIRED
+    estat (planificat | actiu | finalitzat) &quot;planificat&quot;&gt;
+
+&lt;!ELEMENT urgent EMPTY&gt;
+</code></pre>
+<ul>
+<li>Els valors de tipus ID han de ser únics en tot el document, encara que els atributs tinguen noms diferents.</li>
+<li><code>IDREF</code> conté una referència; <code>IDREFS</code>, una o més referències separades per espais.</li>
+<li>No s’ha de declarar l’estat com a <code>#FIXED</code>: els altres valors enumerats han d’estar permesos.</li>
+<li>Les dues interrogacions fan independents les omissions de descripció i urgent.</li>
+<li>Per precisió tècnica, els requisits demanen referències a IDs existents. La DTD no restringeix per si mateixa el tipus d’element destinatari; aquesta limitació no es pregunta ni es puntua.</li>
+</ul>
+<p><strong>b)</strong></p>
+<pre><code class="language-xml">&lt;!DOCTYPE empresa SYSTEM &quot;empresa.dtd&quot;&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;empleat id=&quot;E4&quot; perfil=&quot;analisi&quot;&gt;
+    &lt;nom&gt;Mar&lt;/nom&gt;
+    &lt;correu&gt;mar@empresa.test&lt;/correu&gt;
+&lt;/empleat&gt;
+</code></pre>
+<p>El DOCTYPE es col·locaria abans de l’element arrel. El nou empleat s’inseriria dins d’<code>empleats</code>; no cal copiar eixos contenidors. El telèfon és opcional i es pot ometre.</p>
+<p><strong>c)</strong> Una resposta suficient és:</p>
+<ol>
+<li><code>codi=&quot;E1&quot;</code> → <code>codi=&quot;P2&quot;</code>: E1 ja identifica un empleat; no pot tornar a usar-se com a ID d’un projecte.</li>
+<li><code>equip=&quot;E1 E3&quot;</code> → <code>equip=&quot;E1 E2&quot;</code>: E3 no existeix. També s’accepta eliminar només E3 i deixar <code>equip=&quot;E1&quot;</code>.</li>
+<li>Situar <code>nom</code> abans de <code>data_inici</code>: el model de contingut fixa aquest ordre.</li>
+</ol>
+<p>Ometre <code>estat</code> és correcte: s’aplica <code>planificat</code>. També es poden ometre <code>descripcio</code> i <code>urgent</code>. No s’ha de penalitzar aquestes omissions.</p>
+<p><strong>d)</strong> Cal canviar els dos atributs del projecte que referencien E1:</p>
+<pre><code class="language-text">responsable=&quot;E1&quot; → responsable=&quot;E7&quot;
+equip=&quot;E1 E2&quot; → equip=&quot;E7 E2&quot;
+</code></pre>
+<p><code>codi=&quot;P1&quot;</code> es conserva. Canviar només <code>responsable</code> deixaria una referència inexistent en <code>equip</code>.</p>
+<p><strong>Criteri orientatiu:</strong> a: models i element buit, 0,6; atributs d’empleat, 0,4; atributs de projecte, 0,75. b: DOCTYPE, 0,25; fragment XML, 0,5. c: 0,25 per correcció vàlida amb identificació de la causa. d: 0,125 per cada actualització.</p>
+</div></details></section><details class="teacher"><summary>Notes per al professorat: abast i canvis</summary><p>Aquest apartat tampoc forma part de la versió per a l’alumnat.</p>
+<ul>
+<li>Es mantenen els quatre contextos de l’examen original i la distribució 1,5 + 2,5 + 2,5 + 3,5 = 10 punts.</li>
+<li>Es redueix la construcció repetida de declaracions <code>(#PCDATA)</code> i la còpia de dades. Es conserva producció autònoma de declaracions DTD i d’un fragment XML.</li>
+<li>El test substitueix la pregunta d’ENTITY/ENTITIES i entitats externes no analitzades per interpretació literal de CDATA, practicada en els materials aportats.</li>
+<li>La comparació de models aplica els quantificadors i les agrupacions treballats en els exercicis d’elements. No exigeix teoria formal de llenguatges.</li>
+<li>El canvi d’ID aplica la coherència de referències treballada en Geografia, Pizzes, Cine i la pràctica de videojocs.</li>
+<li>NMTOKEN, NMTOKENS, #FIXED, entitats generals i de paràmetre, SYSTEM/PUBLIC i standalone es mantenen dels continguts de l’examen original i dels apunts consultats. Els fitxers d’exercicis aportats no documenten per si sols tots aquests continguts: convé mantindre’ls només si els apartats corresponents dels apunts s’han treballat a classe.</li>
+<li>No s’avaluen limitacions noves de les DTD, tipatge de dates, regles de negoci no expressades ni destinataris de referència restringits a un tipus d’element.</li>
+<li>L’augment de raonament és modest i deliberat: comparar dos models i seguir l’efecte d’un canvi d’identificador. No s’afegeix un altre exercici extens.</li>
+<li>La duració no està fixada: cal ajustar-la després d’una lectura i resolució pilot. Menys escriptura no implica necessàriament una reducció equivalent del temps de raonament.</li>
+</ul>
+</details></main></body></html>
